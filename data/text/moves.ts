@@ -5203,6 +5203,11 @@ export const MovesText: {[k: string]: MoveText} = {
 		desc: "Has a 20% chance to lower the target's Special Defense by 1 stage.",
 		shortDesc: "20% chance to lower the target's Sp. Def by 1.",
 	},
+	shadowblast: {
+		name: "Shadow Blast",
+		desc: "Has a higher chance for a critical hit.",
+		shortDesc: "High critical hit ratio.",
+	},
 	shadowbone: {
 		name: "Shadow Bone",
 		desc: "Has a 20% chance to lower the target's Defense by 1 stage.",
