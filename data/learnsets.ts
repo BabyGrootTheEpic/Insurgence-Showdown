@@ -1,6 +1,13 @@
 /* eslint-disable max-len */
 
 export const Learnsets: {[speciesid: string]: LearnsetData} = {
+	testmon: {
+		learnset: {
+			shadowclaw: ["6L1"],
+			crystalrush: ["6L1"],
+			sketch: ["6L1"],
+		},
+	},
 	missingno: {
 		learnset: {
 			blizzard: ["3L1"],

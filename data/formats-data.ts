@@ -1,4 +1,7 @@
 export const FormatsData: {[k: string]: SpeciesFormatsData} = {
+	testmon: {
+		tier: "Illegal",
+	},
 	bulbasaur: {
 		tier: "LC",
 	},
