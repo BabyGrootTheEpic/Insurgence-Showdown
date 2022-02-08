@@ -27,6 +27,7 @@ export class BattleActions {
 		Normal: 'Max Strike',
 		Dragon: 'Max Wyrmwind',
 		Crystal: 'Max Strike',
+		Shadow: 'Max Darkness',
 	};
 
 	readonly Z_MOVES: {readonly [k: string]: string} = {
@@ -49,6 +50,7 @@ export class BattleActions {
 		Ground: "Tectonic Rage",
 		Fairy: "Twinkle Tackle",
 		Crystal: "Breakneck Blitz",
+		Shadow: "Black Hole Eclipse",
 	};
 
 	constructor(battle: Battle) {
@@ -1688,7 +1690,13 @@ export class BattleActions {
 		if (isCrit && !suppressMessages) this.battle.add('-crit', target);
 
 		if (pokemon.status === 'brn' && move.category === 'Physical' && !pokemon.hasAbility('guts')) {
-			if (this.battle.gen < 6 || move.id !== 'facade') {
+			if (this.battle.gen < 6 || ( move.id !== 'facade' && move.id !== 'barbbarage' )) {
+				baseDamage = this.battle.modify(baseDamage, 0.5);
+			}
+		}
+
+		if (pokemon.status === 'fsb' && move.category === 'Special') {
+			if (this.battle.gen < 6 || move.id !== 'bittermalice') {
 				baseDamage = this.battle.modify(baseDamage, 0.5);
 			}
 		}
