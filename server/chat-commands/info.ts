@@ -942,6 +942,7 @@ export const commands: Chat.ChatCommands = {
 			sandstorm: "Sandstorm damage",
 			tox: "Toxic",
 			trapped: "Trapping",
+			fsb: "Frostbite",
 		};
 		for (const status in statuses) {
 			if (!dex.getImmunity(status, species)) {

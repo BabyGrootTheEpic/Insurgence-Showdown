@@ -7,14 +7,14 @@ export const MovesText: {[k: string]: MoveText} = {
 		shortDesc: "High critical hit ratio.",
 	},
 	//Legends Arceus Moves:
-	barbbarage: {
+	barbbarrage: {
 		name: "Barb Barrage",
-		desc: "Has a 30% chance to poison the target. Power doubles if the user is burned, paralyzed, poisoned, or has frostbite. The physical damage halving effect from the user's burn is ignored.",
+		desc: "Has a 30% chance to poison the target. Power doubles if the user is burned, paralyzed, poisoned, or frostbitten. The physical damage halving effect from the user's burn is ignored.",
 		shortDesc: "30% chance to poison the target. Facade effect.",
 	},
 	bittermalice: {
 		name: "Bitter Malice",
-		desc: "Has a 30% chance to give the target frostbite. Power doubles if the user is burned, paralyzed, poisoned, or has frostbite. The special damage halving effect from the user's frostbite is ignored.",
+		desc: "Has a 30% chance to give the target frostbite. Power doubles if the user is burned, paralyzed, poisoned, or frostbitten. The special damage halving effect from the user's frostbite is ignored.",
 		shortDesc: "30% chance to give frostbite. Facade effect.",
 	},
 	mysticalpower: {
