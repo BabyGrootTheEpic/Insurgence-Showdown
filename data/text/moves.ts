@@ -4041,6 +4041,11 @@ export const MovesText: {[k: string]: MoveText} = {
 		desc: "Has a 100% chance to lower the target's Special Attack by 1 stage.",
 		shortDesc: "100% chance to lower the target's Sp. Atk by 1.",
 	},
+	mysticalpower: {
+		name: "Mystical Power",
+		desc: "This Pokemon's highest stat is raised by 1 stage if this move does damage.",
+		shortDesc: "Beast Boost on hit.",
+	},
 	nanorepair: {
 		name: "Nanorepair",
 		desc: "The user restores 1/2 of its maximum HP, rounded half up and boosts its defense by 1 stage.",

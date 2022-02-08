@@ -12275,19 +12275,6 @@ export const Moves: {[moveid: string]: MoveData} = {
 		type: "Psychic",
 		contestType: "Clever",
 	},
-	/*
-	(length, target, source, effect)
-	let statName = 'atk';
-				let bestStat = 0;
-				let s: StatIDExceptHP;
-				for (s in source.storedStats) {
-					if (source.storedStats[s] > bestStat) {
-						statName = s;
-						bestStat = source.storedStats[s];
-					}
-				}
-				this.boost({[statName]: length}, source);
-	*/
 	nanorepair: {
 		num: 13,
 		accuracy: true,

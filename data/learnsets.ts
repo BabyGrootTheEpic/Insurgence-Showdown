@@ -6,6 +6,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			shadowblast: ["6L1"],
 			crystalrush: ["6L65"],
 			sketch: ["6L1"],
+			mysticalpower: ["6L1"],
 		},
 	},
 	missingno: {
