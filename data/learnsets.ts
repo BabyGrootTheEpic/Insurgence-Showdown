@@ -3,13 +3,15 @@
 export const Learnsets: {[speciesid: string]: LearnsetData} = {
 	testmon: {
 		learnset: {
-			shadowblast: ["6L1"],
-			crystalrush: ["6L65"],
-			sketch: ["6L1"],
-			mysticalpower: ["6L1"],
-			barbbarage: ["6L1"],
-			bittermalice: ["6L1"],
+			shadowblast: ["6L1","6S0"],
+			crystalrush: ["6L1","6S0"],
+			mysticalpower: ["6L1","6S0"],
+			sketch: ["6L1","6S0"],
 		},
+		eventData: [
+			{generation: 6, level: 1, shiny: 1, moves: ["shadowblast", "crystalrush", "mysticalpower", "sketch"]},
+		],
+		eventOnly: true,
 	},
 	missingno: {
 		learnset: {
