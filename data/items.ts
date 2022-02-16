@@ -267,12 +267,12 @@ export const Items: {[itemid: string]: ItemData} = {
 			type: "Ice",
 		},
 		onUpdate(pokemon) {
-			if (pokemon.status === 'frz' || pokemon.status === 'fsb') {
+			if (pokemon.status === 'frz') {
 				pokemon.eatItem();
 			}
 		},
 		onEat(pokemon) {
-			if (pokemon.status === 'frz' || pokemon.status === 'fsb') {
+			if (pokemon.status === 'frz') {
 				pokemon.cureStatus();
 			}
 		},
