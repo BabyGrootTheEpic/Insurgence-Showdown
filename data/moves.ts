@@ -27,67 +27,8 @@ sound: Has no effect on Pokemon with the Soundproof Ability.
 */
 
 export const Moves: {[moveid: string]: MoveData} = {
-	//Custom Moves:
-	//XD Shadow Moves:
-	shadowblast: {
-		num: 9000,
-		accuracy: 100,
-		basePower: 80,
-		category: "Special", //Yes this is a physical move in XD, but this is supposed to be a shadow version of Aeroblast, which was physical (like all flying-type moves) and is now special.
-		name: "Shadow Blast",
-		pp: 625,
-		priority: 0,
-		flags: {protect: 1, mirror: 1, distance: 1},
-		critRatio: 2,
-		secondary: null,
-		target: "any",
-		type: "Shadow",
-	},
-	//Legends Arceus Moves:
-	barbbarrage: {
-		num: 9002,
-		accuracy: 100,
-		basePower: 60,
-		category: "Physical",
-		name: "Barb Barrage",
-		pp: 15,
-		priority: 0,
-		flags: {contact: 1, protect: 1, mirror: 1},
-		//Facade effect
-		onBasePower(basePower, pokemon) {
-			if (pokemon.status && pokemon.status !== 'slp') {
-				return this.chainModify(2);
-			}
-		},
-		secondary: {
-			chance: 30,
-			status: 'psn',
-		},
-		target: "normal",
-		type: "Poison",
-	},
-	bittermalice: {
-		num: 9003,
-		accuracy: 100,
-		basePower: 60,
-		category: "Special",
-		name: "Bitter Malice",
-		pp: 15,
-		priority: 0,
-		flags: {contact: 1, protect: 1, mirror: 1},
-		//Facade effect
-		onBasePower(basePower, pokemon) {
-			if (pokemon.status && pokemon.status !== 'slp') {
-				return this.chainModify(2);
-			}
-		},
-		secondary: {
-			chance: 100,
-			status: 'fsb',
-		},
-		target: "normal",
-		type: "Ghost",
-	},
+	//Custom:
+	//Legends Arceus:
 	mysticalpower: {
 		num: 9001,
 		accuracy: 90,
@@ -116,7 +57,24 @@ export const Moves: {[moveid: string]: MoveData} = {
 		target: "normal",
 		type: "Psychic",
 	},
-	//Normal Moves & Insurgence Moves:
+	//Shadow:
+	shadowblast: {
+		num: 9000,
+		accuracy: 100,
+		basePower: 80,
+		category: "Special",
+		name: "Shadow Blast",
+		pp: 999,
+		noPPBoosts: true,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, distance: 1},
+		critRatio: 2,
+		secondary: null,
+		target: "any",
+		type: "Shadow",
+	},
+	//Zeta & Omicron:
+	//Normal & Insurgence:
 	"10000000voltthunderbolt": {
 		num: 719,
 		accuracy: true,

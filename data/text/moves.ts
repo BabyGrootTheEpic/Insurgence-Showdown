@@ -1,28 +1,19 @@
 export const MovesText: {[k: string]: MoveText} = {
-	//Custom Moves:
-	//XD Shadow Moves:
-	shadowblast: {
-		name: "Shadow Blast",
-		desc: "Has a higher chance for a critical hit.",
-		shortDesc: "High critical hit ratio.",
-	},
-	//Legends Arceus Moves:
-	barbbarage: {
-		name: "Barb Barrage",
-		desc: "Has a 30% chance to poison the target. Power doubles if the user is burned, paralyzed, poisoned, or has frostbite. The physical damage halving effect from the user's burn is ignored.",
-		shortDesc: "30% chance to poison the target. Facade effect.",
-	},
-	bittermalice: {
-		name: "Bitter Malice",
-		desc: "Has a 30% chance to give the target frostbite. Power doubles if the user is burned, paralyzed, poisoned, or has frostbite. The special damage halving effect from the user's frostbite is ignored.",
-		shortDesc: "30% chance to give frostbite. Facade effect.",
-	},
+	//Custom:
+	//Legends Arceus:
 	mysticalpower: {
 		name: "Mystical Power",
 		desc: "This Pokemon's highest stat is raised by 1 stage if this move does damage.",
 		shortDesc: "Beast Boost on hit.",
 	},
-	//Normal Moves & Insurgence Moves:
+	//Shadow:
+	shadowblast: {
+		name: "Shadow Blast",
+		desc: "Has a higher chance for a critical hit.",
+		shortDesc: "High critical hit ratio.",
+	},
+	//Zeta & Omicron:
+	//Normal & Insurgence:
 	"10000000voltthunderbolt": {
 		name: "10,000,000 Volt Thunderbolt",
 		desc: "Has a very high chance for a critical hit.",
@@ -1743,10 +1734,8 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	facade: {
 		name: "Facade",
-		desc: "Power doubles if the user is burned, paralyzed, poisoned, or frosbitten. The physical damage halving effect from the user's burn is ignored.",
-		shortDesc: "Power doubles if user has brn/psn/tox/par/fsb.",
-		//desc: "Power doubles if the user is burned, paralyzed, or poisoned. The physical damage halving effect from the user's burn is ignored.",
-		//shortDesc: "Power doubles if user is burn/poison/paralyzed.",
+		desc: "Power doubles if the user is burned, paralyzed, or poisoned. The physical damage halving effect from the user's burn is ignored.",
+		shortDesc: "Power doubles if user is burn/poison/paralyzed.",
 		gen5: {
 			desc: "Power doubles if the user is burned, paralyzed, or poisoned.",
 		},
