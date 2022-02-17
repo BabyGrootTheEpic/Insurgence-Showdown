@@ -20,7 +20,52 @@ The column value will be ignored for repeat sections.
 export const Formats: FormatList = [
 
 	{
-		section: "Anything Goes Dmax",
+		section: "Anything Goes (Dynamax Clause)",
+	},
+	{
+		name: "[Gen 8] Singles AG",
+		desc: `Singles NatDex AG with Dynamax Clause, up to level 120 Pokémon, duplicates fusions, and duplicate LGPE starters. For more info, use /om BGTEStandard`,
+
+		mod: 'gen8leaks',
+		ruleset: ['[Gen 8] Singles AG Dmax', 'Dynamax Clause'],
+	},
+	{
+		name: "[Gen 8] Doubles AG",
+		desc: `Doubles NatDex AG with Dynamax Clause, up to level 120 Pokémon, duplicates fusions, and duplicate LGPE starters. For more info, use /om BGTEStandard`,
+		
+		mod: 'gen8leaks',
+		gameType: 'doubles',
+		ruleset: ['[Gen 8] Singles AG'],
+	},
+	{
+		name: "[Gen 8] Triples AG",
+		desc: `Triples NatDex AG with Dynamax Clause, up to level 120 Pokémon, duplicates fusions, and duplicate LGPE starters. For more info, use /om BGTEStandard`,
+		
+		mod: 'gen8leaks',
+		gameType: 'triples',
+		ruleset: ['[Gen 8] Singles AG'],
+	},
+	{
+		name: "[Gen 8] Multi AG",
+		desc: `Multi Battle NatDex AG with Dynamax Clause, up to level 120 Pokémon, duplicates fusions, and duplicate LGPE starters. For more info, use /om BGTEStandard`,
+		
+		mod: 'gen8leaks',
+		gameType: 'multi',
+		ruleset: ['[Gen 8] Singles AG'],
+	},
+	{
+		name: "[Gen 8] FFA AG",
+		desc: `Free-For-All NatDex AG with Dynamax Clause, up to level 120 Pokémon, duplicates fusions, and duplicate LGPE starters. For more info, use /om BGTEStandard`,
+		
+		mod: 'gen8leaks',
+		gameType: 'freeforall',
+		ruleset: ['[Gen 8] Singles AG'],
+	},
+
+
+
+	{
+		section: "Anything Goes (Dynamax legal)",
 	},
 	{
 		name: "[Gen 8] Singles AG Dmax",
@@ -60,51 +105,6 @@ export const Formats: FormatList = [
 		mod: 'gen8leaks',
 		gameType: 'freeforall',
 		ruleset: ['[Gen 8] Singles AG Dmax'],
-	},
-
-
-
-	{
-		section: "Anything Goes noDmax",
-	},
-	{
-		name: "[Gen 8] Singles AG noDmax",
-		desc: `Singles NatDex AG with Dynamax Clause, up to level 120 Pokémon, duplicates fusions, and duplicate LGPE starters. For more info, use /om BGTEStandard`,
-
-		mod: 'gen8leaks',
-		ruleset: ['[Gen 8] Singles AG Dmax', 'Dynamax Clause'],
-	},
-	{
-		name: "[Gen 8] Doubles AG noDmax",
-		desc: `Doubles NatDex AG with Dynamax Clause, up to level 120 Pokémon, duplicates fusions, and duplicate LGPE starters. For more info, use /om BGTEStandard`,
-		
-		mod: 'gen8leaks',
-		gameType: 'doubles',
-		ruleset: ['[Gen 8] Singles AG noDmax'],
-	},
-	{
-		name: "[Gen 8] Triples AG noDmax",
-		desc: `Triples NatDex AG with Dynamax Clause, up to level 120 Pokémon, duplicates fusions, and duplicate LGPE starters. For more info, use /om BGTEStandard`,
-		
-		mod: 'gen8leaks',
-		gameType: 'triples',
-		ruleset: ['[Gen 8] Singles AG noDmax'],
-	},
-	{
-		name: "[Gen 8] Multi AG noDmax",
-		desc: `Multi Battle NatDex AG with Dynamax Clause, up to level 120 Pokémon, duplicates fusions, and duplicate LGPE starters. For more info, use /om BGTEStandard`,
-		
-		mod: 'gen8leaks',
-		gameType: 'multi',
-		ruleset: ['[Gen 8] Singles AG noDmax'],
-	},
-	{
-		name: "[Gen 8] FFA AG noDmax",
-		desc: `Free-For-All NatDex AG with Dynamax Clause, up to level 120 Pokémon, duplicates fusions, and duplicate LGPE starters. For more info, use /om BGTEStandard`,
-		
-		mod: 'gen8leaks',
-		gameType: 'freeforall',
-		ruleset: ['[Gen 8] Singles AG noDmax'],
 	},
 
 
