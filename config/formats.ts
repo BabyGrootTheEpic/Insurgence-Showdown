@@ -20,7 +20,7 @@ The column value will be ignored for repeat sections.
 export const Formats: FormatList = [
 
 	{
-		section: "Anything Goes",
+		section: "Anything Goes Dmax",
 	},
 	{
 		name: "[Gen 8] Singles AG Dmax",
@@ -105,6 +105,52 @@ export const Formats: FormatList = [
 		mod: 'gen8leaks',
 		gameType: 'freeforall',
 		ruleset: ['[Gen 8] Singles AG noDmax'],
+	},
+
+
+
+	{
+		section: "Ubers",
+	},
+	{
+		name: "[Gen 8] Singles Ubers",
+		desc: `NatDex Singles with all the clauses and bans from [Gen 8] Ubers. For more info, use /om BGTEStandard`,
+
+		mod: 'gen8leaks',
+		ruleset: ['BGTEStandard', 'Sleep Clause Mod', 'Species Clause', 'OHKO Clause', 'Evasion Moves Clause', 'Dynamax Clause'],
+		banlist: ['AG', 'Shadow Tag', 'Baton Pass'],
+	},
+	{
+		name: "[Gen 8] Doubles Ubers",
+		desc: `NatDex Doubles with all the clauses from [Gen 8] Doubles Ubers. For more info, use /om BGTEStandard`,
+
+		mod: 'gen8leaks',
+		gameType: 'doubles',
+		ruleset: ['BGTEStandard', 'Species Clause', 'OHKO Clause', 'Evasion Moves Clause'],
+	},
+	{
+		name: "[Gen 8] Triples Ubers",
+		desc: `NatDex Triples with all the clauses from [Gen 8] Doubles Ubers. For more info, use /om BGTEStandard`,
+
+		mod: 'gen8leaks',
+		gameType: 'triples',
+		ruleset: ['BGTEStandard', 'Species Clause', 'OHKO Clause', 'Evasion Moves Clause'],
+	},
+	{
+		name: "[Gen 8] Multi Ubers",
+		desc: `NatDex Multi Battle with all the clauses from [Gen 8] Doubles Ubers as well as Dynamax Clause. For more info, use /om BGTEStandard`,
+
+		mod: 'gen8leaks',
+		gameType: 'multi',
+		ruleset: ['BGTEStandard', 'Species Clause', 'OHKO Clause', 'Evasion Moves Clause', 'Dynamax Clause'],
+	},
+	{
+		name: "[Gen 8] FFA Ubers",
+		desc: `NatDex Free-For-All with all the clauses from [Gen 8] Ubers. For more info, use /om BGTEStandard`,
+
+		mod: 'gen8leaks',
+		ruleset: ['BGTEStandard', 'Sleep Clause Mod', 'Species Clause', 'OHKO Clause', 'Evasion Moves Clause', 'Dynamax Clause'],
+		banlist: ['Baton Pass'],
 	},
 
 
@@ -202,55 +248,8 @@ export const Formats: FormatList = [
 
 
 	{
-		section: "Ubers",
-		column: 3,
-	},
-	{
-		name: "[Gen 8] Singles Ubers",
-		desc: `NatDex Singles with all the clauses and bans from [Gen 8] Ubers. For more info, use /om BGTEStandard`,
-
-		mod: 'gen8leaks',
-		ruleset: ['BGTEStandard', 'Sleep Clause Mod', 'Species Clause', 'OHKO Clause', 'Evasion Moves Clause', 'Dynamax Clause'],
-		banlist: ['AG', 'Shadow Tag', 'Baton Pass'],
-	},
-	{
-		name: "[Gen 8] Doubles Ubers",
-		desc: `NatDex Doubles with all the clauses from [Gen 8] Doubles Ubers. For more info, use /om BGTEStandard`,
-
-		mod: 'gen8leaks',
-		gameType: 'doubles',
-		ruleset: ['BGTEStandard', 'Species Clause', 'OHKO Clause', 'Evasion Moves Clause'],
-	},
-	{
-		name: "[Gen 8] Triples Ubers",
-		desc: `NatDex Triples with all the clauses from [Gen 8] Doubles Ubers. For more info, use /om BGTEStandard`,
-
-		mod: 'gen8leaks',
-		gameType: 'triples',
-		ruleset: ['BGTEStandard', 'Species Clause', 'OHKO Clause', 'Evasion Moves Clause'],
-	},
-	{
-		name: "[Gen 8] Multi Ubers",
-		desc: `NatDex Multi Battle with all the clauses from [Gen 8] Doubles Ubers as well as Dynamax Clause. For more info, use /om BGTEStandard`,
-
-		mod: 'gen8leaks',
-		gameType: 'multi',
-		ruleset: ['BGTEStandard', 'Species Clause', 'OHKO Clause', 'Evasion Moves Clause', 'Dynamax Clause'],
-	},
-	{
-		name: "[Gen 8] FFA Ubers",
-		desc: `NatDex Free-For-All with all the clauses from [Gen 8] Ubers. For more info, use /om BGTEStandard`,
-
-		mod: 'gen8leaks',
-		ruleset: ['BGTEStandard', 'Sleep Clause Mod', 'Species Clause', 'OHKO Clause', 'Evasion Moves Clause', 'Dynamax Clause'],
-		banlist: ['Baton Pass'],
-	},
-
-
-
-	{
 		section: "Custom Game",
-		column: 3,
+		column: 2,
 	},
 	{
 		name: "[Gen 8] Singles Custom Game",
