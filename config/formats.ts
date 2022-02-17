@@ -135,20 +135,20 @@ export const Formats: FormatList = [
 		name: "[Gen 8] OT: normal",
 
 		mod: 'gen8',
-		ruleset: ['Obtainable', 'Team Preview', 'HP Percentage Mod', 'Cancel Mod'],
+		ruleset: ['Obtainable', 'Team Preview', 'HP Percentage Mod', 'Cancel Mod', '+Eternatus-Eternamax'],
 	},
 	{
 		name: "[Gen 8] OT: trunc",
 
 		mod: 'gen8',
 		battle: {trunc: Math.trunc},
-		ruleset: ['Obtainable', 'Team Preview', 'HP Percentage Mod', 'Cancel Mod'],
+		ruleset: ['Obtainable', 'Team Preview', 'HP Percentage Mod', 'Cancel Mod', '+Eternatus-Eternamax'],
 	},
 	{
 		name: "[Gen 8] OT: overflowstatmod",
 
 		mod: 'gen8',
-		ruleset: ['Obtainable', 'Team Preview', 'HP Percentage Mod', 'Cancel Mod', 'Overflow Stat Mod'],
+		ruleset: ['Obtainable', 'Team Preview', 'HP Percentage Mod', 'Cancel Mod', 'Overflow Stat Mod', '+Eternatus-Eternamax'],
 	},
 	
 
