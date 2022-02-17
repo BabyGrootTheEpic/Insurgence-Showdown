@@ -23,82 +23,88 @@ export const Formats: FormatList = [
 		section: "Anything Goes",
 	},
 	{
-		name: "[Gen 8] Singles AG DMax",
+		name: "[Gen 8] Singles AG Dmax",
 		desc: `Singles NatDex AG with Dynamaxing, up to level 120 Pokémon, duplicates fusions, and duplicate LGPE starters. For more info, use /om BGTEStandard`,
 
 		mod: 'gen8leaks',
 		ruleset: ['BGTEStandard', 'Level 120', '!NoFusionDupes', '!Limit One LGPE Starter'],
 	},
 	{
-		name: "[Gen 8] Singles AG noDMax",
-		desc: `Singles NatDex AG with Dynamax Clause, up to level 120 Pokémon, duplicates fusions, and duplicate LGPE starters. For more info, use /om BGTEStandard`,
-
-		mod: 'gen8leaks',
-		ruleset: ['BGTEStandard', 'Level 120', '!NoFusionDupes', '!Limit One LGPE Starter', 'Dynamax Clause'],
-	},
-	{
-		name: "[Gen 8] Doubles AG DMax",
+		name: "[Gen 8] Doubles AG Dmax",
 		desc: `Doubles NatDex AG with Dynamaxing, up to level 120 Pokémon, duplicates fusions, and duplicate LGPE starters. For more info, use /om BGTEStandard`,
 		
 		mod: 'gen8leaks',
 		gameType: 'doubles',
-		ruleset: ['BGTEStandard', 'Level 120', '!NoFusionDupes', '!Limit One LGPE Starter'],
+		ruleset: ['[Gen 8] Singles AG Dmax'],
 	},
 	{
-		name: "[Gen 8] Doubles AG noDMax",
-		desc: `Doubles NatDex AG with Dynamax Clause, up to level 120 Pokémon, duplicates fusions, and duplicate LGPE starters. For more info, use /om BGTEStandard`,
-		
-		mod: 'gen8leaks',
-		gameType: 'doubles',
-		ruleset: ['BGTEStandard', 'Level 120', '!NoFusionDupes', '!Limit One LGPE Starter', 'Dynamax Clause'],
-	},
-	{
-		name: "[Gen 8] Triples AG DMax",
+		name: "[Gen 8] Triples AG Dmax",
 		desc: `Triples NatDex AG with Dynamaxing, up to level 120 Pokémon, duplicates fusions, and duplicate LGPE starters. For more info, use /om BGTEStandard`,
 		
 		mod: 'gen8leaks',
 		gameType: 'triples',
-		ruleset: ['BGTEStandard', 'Level 120', '!NoFusionDupes', '!Limit One LGPE Starter'],
+		ruleset: ['[Gen 8] Singles AG Dmax'],
 	},
 	{
-		name: "[Gen 8] Triples AG nodDMax",
-		desc: `Triples NatDex AG with Dynamax Clause, up to level 120 Pokémon, duplicates fusions, and duplicate LGPE starters. For more info, use /om BGTEStandard`,
-		
-		mod: 'gen8leaks',
-		gameType: 'triples',
-		ruleset: ['BGTEStandard', 'Level 120', '!NoFusionDupes', '!Limit One LGPE Starter', 'Dynamax Clause'],
-	},
-	{
-		name: "[Gen 8] Multi AG DMax",
+		name: "[Gen 8] Multi AG Dmax",
 		desc: `Multi Battle NatDex AG with Dynamaxing, up to level 120 Pokémon, duplicates fusions, and duplicate LGPE starters. For more info, use /om BGTEStandard`,
 		
 		mod: 'gen8leaks',
 		gameType: 'multi',
-		ruleset: ['BGTEStandard', 'Level 120', '!NoFusionDupes', '!Limit One LGPE Starter'],
+		ruleset: ['[Gen 8] Singles AG Dmax'],
 	},
 	{
-		name: "[Gen 8] Multi AG noDMax",
-		desc: `Multi Battle NatDex AG with Dynamax Clause, up to level 120 Pokémon, duplicates fusions, and duplicate LGPE starters. For more info, use /om BGTEStandard`,
-		
-		mod: 'gen8leaks',
-		gameType: 'multi',
-		ruleset: ['BGTEStandard', 'Level 120', '!NoFusionDupes', '!Limit One LGPE Starter', 'Dynamax Clause'],
-	},
-	{
-		name: "[Gen 8] FFA AG DMax",
+		name: "[Gen 8] FFA AG Dmax",
 		desc: `Free-For-All NatDex AG with Dynamaxing, up to level 120 Pokémon, duplicates fusions, and duplicate LGPE starters. For more info, use /om BGTEStandard`,
 		
 		mod: 'gen8leaks',
 		gameType: 'freeforall',
-		ruleset: ['BGTEStandard', 'Level 120', '!NoFusionDupes', '!Limit One LGPE Starter'],
+		ruleset: ['[Gen 8] Singles AG Dmax'],
+	},
+
+
+
+	{
+		section: "Anything Goes noDmax",
 	},
 	{
-		name: "[Gen 8] FFA AG noDMax",
+		name: "[Gen 8] Singles AG noDmax",
+		desc: `Singles NatDex AG with Dynamax Clause, up to level 120 Pokémon, duplicates fusions, and duplicate LGPE starters. For more info, use /om BGTEStandard`,
+
+		mod: 'gen8leaks',
+		ruleset: ['[Gen 8] Singles AG Dmax', 'Dynamax Clause'],
+	},
+	{
+		name: "[Gen 8] Doubles AG noDmax",
+		desc: `Doubles NatDex AG with Dynamax Clause, up to level 120 Pokémon, duplicates fusions, and duplicate LGPE starters. For more info, use /om BGTEStandard`,
+		
+		mod: 'gen8leaks',
+		gameType: 'doubles',
+		ruleset: ['[Gen 8] Singles AG noDmax'],
+	},
+	{
+		name: "[Gen 8] Triples AG noDmax",
+		desc: `Triples NatDex AG with Dynamax Clause, up to level 120 Pokémon, duplicates fusions, and duplicate LGPE starters. For more info, use /om BGTEStandard`,
+		
+		mod: 'gen8leaks',
+		gameType: 'triples',
+		ruleset: ['[Gen 8] Singles AG noDmax'],
+	},
+	{
+		name: "[Gen 8] Multi AG noDmax",
+		desc: `Multi Battle NatDex AG with Dynamax Clause, up to level 120 Pokémon, duplicates fusions, and duplicate LGPE starters. For more info, use /om BGTEStandard`,
+		
+		mod: 'gen8leaks',
+		gameType: 'multi',
+		ruleset: ['[Gen 8] Singles AG noDmax'],
+	},
+	{
+		name: "[Gen 8] FFA AG noDmax",
 		desc: `Free-For-All NatDex AG with Dynamax Clause, up to level 120 Pokémon, duplicates fusions, and duplicate LGPE starters. For more info, use /om BGTEStandard`,
 		
 		mod: 'gen8leaks',
 		gameType: 'freeforall',
-		ruleset: ['BGTEStandard', 'Level 120', '!NoFusionDupes', '!Limit One LGPE Starter', 'Dynamax Clause'],
+		ruleset: ['[Gen 8] Singles AG noDmax'],
 	},
 
 
@@ -112,7 +118,8 @@ export const Formats: FormatList = [
 		desc: `NatDex Singles with Flat Rules. For more info, use /om BGTEStandard`,
 
 		mod: 'gen8leaks',
-		ruleset: ['BGTEStandard', 'Flat Clauses'],
+		ruleset: ['BGTEStandard', 'Species Clause', 'Item Clause', 'Adjust Level Down = 50', 'Picked Team Size = Auto'],
+		banlist: ['Mythical', 'Restricted Legendary'],
 	},
 	{
 		name: "[Gen 8] Doubles Flat Rules",
@@ -120,7 +127,7 @@ export const Formats: FormatList = [
 
 		mod: 'gen8leaks',
 		gameType: 'doubles',
-		ruleset: ['BGTEStandard', 'Flat Clauses'],
+		ruleset: ['[Gen 8] Singles Flat Rules'],
 	},
 	{
 		name: "[Gen 8] Triples Flat Rules",
@@ -128,22 +135,22 @@ export const Formats: FormatList = [
 
 		mod: 'gen8leaks',
 		gameType: 'triples',
-		ruleset: ['BGTEStandard', 'Flat Clauses'],
+		ruleset: ['[Gen 8] Singles Flat Rules'],
 	},
 	{
 		name: "[Gen 8] Multi Flat Rules",
-		desc: `NatDex Multi Battle with Flat Rules and Dynamax Clause. For more info, use /om BGTEStandard`,
+		desc: `NatDex Multi Battle with Flat Rules. For more info, use /om BGTEStandard`,
 
 		mod: 'gen8leaks',
 		gameType: 'multi',
-		ruleset: ['BGTEStandard', 'Flat Clauses', 'Dynamax Clause'],
+		ruleset: ['[Gen 8] Singles Flat Rules'],
 	},
 	{
 		name: "[Gen 8] FFA Flat Rules",
-		desc: `NatDex Free-For-All with Flat Rules and Dynamax Clause. For more info, use /om BGTEStandard`,
+		desc: `NatDex Free-For-All with Flat Rules. For more info, use /om BGTEStandard`,
 
 		mod: 'gen8leaks',
-		ruleset: ['BGTEStandard', 'Flat Clauses', 'Dynamax Clause'],
+		ruleset: ['[Gen 8] Singles Flat Rules'],
 	},
 
 
@@ -153,47 +160,43 @@ export const Formats: FormatList = [
 		column: 2,
 	},
 	{
-		name: "[Gen 8] Singles Flat 2R",
+		name: "[Gen 8] Singles Flat Rules 2R",
 		desc: `NatDex Singles with Flat Rules. 2 Restricted Legendaries are allowed. For more info, use /om BGTEStandard`,
 
 		mod: 'gen8leaks',
-		ruleset: ['BGTEStandard', 'Flat Clauses', 'Limit Two Restricted'],
+		ruleset: ['[Gen 8] Singles Flat Rules', 'Limit Two Restricted'],
 		restricted: ['Restricted Legendary'],
 	},
 	{
-		name: "[Gen 8] Doubles Flat 2R",
+		name: "[Gen 8] Doubles Flat Rules 2R",
 		desc: `NatDex Doubles with Flat Rules. 2 Restricted Legendaries are allowed. For more info, use /om BGTEStandard`,
 
 		mod: 'gen8leaks',
 		gameType: 'doubles',
-		ruleset: ['BGTEStandard', 'Flat Clauses', 'Limit Two Restricted'],
-		restricted: ['Restricted Legendary'],
+		ruleset: ['[Gen 8] Singles Flat Rules 2R'],
 	},
 	{
-		name: "[Gen 8] Triples Flat 2R",
+		name: "[Gen 8] Triples Flat Rules 2R",
 		desc: `NatDex Triples with Flat Rules. 2 Restricted Legendaries are allowed. For more info, use /om BGTEStandard`,
 
 		mod: 'gen8leaks',
 		gameType: 'triples',
-		ruleset: ['BGTEStandard', 'Flat Clauses', 'Limit Two Restricted'],
-		restricted: ['Restricted Legendary'],
+		ruleset: ['[Gen 8] Singles Flat Rules 2R'],
 	},
 	{
-		name: "[Gen 8] Multi Flat 2R",
-		desc: `NatDex Multi Battle with Flat Rules and Dynamax Clause. 2 Restricted Legendaries are allowed. For more info, use /om BGTEStandard`,
+		name: "[Gen 8] Multi Flat Rules 2R",
+		desc: `NatDex Multi Battle with Flat Rules. 2 Restricted Legendaries are allowed. For more info, use /om BGTEStandard`,
 
 		mod: 'gen8leaks',
 		gameType: 'multi',
-		ruleset: ['BGTEStandard', 'Flat Clauses', 'Dynamax Clause', 'Limit Two Restricted'],
-		restricted: ['Restricted Legendary'],
+		ruleset: ['[Gen 8] Singles Flat Rules 2R'],
 	},
 	{
-		name: "[Gen 8] FFA Flat 2R",
-		desc: `NatDex Free-For-All with Flat Rules and Dynamax Clause. 2 Restricted Legendaries are allowed. For more info, use /om BGTEStandard`,
+		name: "[Gen 8] FFA Flat Rules 2R",
+		desc: `NatDex Free-For-All with Flat Rules. 2 Restricted Legendaries are allowed. For more info, use /om BGTEStandard`,
 
 		mod: 'gen8leaks',
-		ruleset: ['BGTEStandard', 'Flat Clauses', 'Dynamax Clause', 'Limit Two Restricted'],
-		restricted: ['Restricted Legendary'],
+		ruleset: ['[Gen 8] Singles Flat Rules 2R'],
 	},
 
 

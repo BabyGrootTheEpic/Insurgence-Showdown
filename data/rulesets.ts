@@ -40,13 +40,6 @@ export const Rulesets: {[k: string]: FormatData} = {
 			pokemon.illusion = null;
 		},
 	},
-	flatclauses: {
-		effectType: 'ValidatorRule',
-		name: 'Flat Clauses',
-		desc: "The in-game Flat Rules: Adjust Level Down 50, Species Clause, Item Clause, -Mythical, -Restricted Legendary, Bring 6 Pick 3-6 depending on game type.",
-		ruleset: ['Species Clause', 'Item Clause', 'Adjust Level Down = 50', 'Picked Team Size = Auto'],
-		banlist: ['Mythical', 'Restricted Legendary'],
-	},
 	nofusiondupes: {
 		effectType: 'ValidatorRule',
 		name: 'NoFusionDupes',
