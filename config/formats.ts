@@ -23,59 +23,244 @@ export const Formats: FormatList = [
 		section: "Anything Goes",
 	},
 	{
-		name: "[Gen 8] Singles AG",
+		name: "[Gen 8] Singles AG DMax",
+		desc: `Singles NatDex AG with Dynamaxing, up to level 120 Pokémon, duplicates fusions, and duplicate LGPE starters. For more info, use /om BGTEStandard`,
 
 		mod: 'gen8leaks',
-		ruleset: ['BGTEStandard', '!NoFusionDupes'],
+		ruleset: ['BGTEStandard', 'Level 120', '!NoFusionDupes', '!Limit One LGPE Starter'],
 	},
 	{
-		name: "[Gen 8] Doubles AG",
+		name: "[Gen 8] Singles AG noDMax",
+		desc: `Singles NatDex AG with Dynamax Clause, up to level 120 Pokémon, duplicates fusions, and duplicate LGPE starters. For more info, use /om BGTEStandard`,
+
+		mod: 'gen8leaks',
+		ruleset: ['BGTEStandard', 'Level 120', '!NoFusionDupes', '!Limit One LGPE Starter', 'Dynamax Clause'],
+	},
+	{
+		name: "[Gen 8] Doubles AG DMax",
+		desc: `Doubles NatDex AG with Dynamaxing, up to level 120 Pokémon, duplicates fusions, and duplicate LGPE starters. For more info, use /om BGTEStandard`,
 		
 		mod: 'gen8leaks',
 		gameType: 'doubles',
-		ruleset: ['BGTEStandard', '!NoFusionDupes'],
+		ruleset: ['BGTEStandard', 'Level 120', '!NoFusionDupes', '!Limit One LGPE Starter'],
 	},
 	{
-		name: "[Gen 8] Triples AG",
+		name: "[Gen 8] Doubles AG noDMax",
+		desc: `Doubles NatDex AG with Dynamax Clause, up to level 120 Pokémon, duplicates fusions, and duplicate LGPE starters. For more info, use /om BGTEStandard`,
+		
+		mod: 'gen8leaks',
+		gameType: 'doubles',
+		ruleset: ['BGTEStandard', 'Level 120', '!NoFusionDupes', '!Limit One LGPE Starter', 'Dynamax Clause'],
+	},
+	{
+		name: "[Gen 8] Triples AG DMax",
+		desc: `Triples NatDex AG with Dynamaxing, up to level 120 Pokémon, duplicates fusions, and duplicate LGPE starters. For more info, use /om BGTEStandard`,
 		
 		mod: 'gen8leaks',
 		gameType: 'triples',
-		ruleset: ['BGTEStandard', '!NoFusionDupes'],
+		ruleset: ['BGTEStandard', 'Level 120', '!NoFusionDupes', '!Limit One LGPE Starter'],
 	},
 	{
-		name: "[Gen 8] Multi AG",
+		name: "[Gen 8] Triples AG nodDMax",
+		desc: `Triples NatDex AG with Dynamax Clause, up to level 120 Pokémon, duplicates fusions, and duplicate LGPE starters. For more info, use /om BGTEStandard`,
+		
+		mod: 'gen8leaks',
+		gameType: 'triples',
+		ruleset: ['BGTEStandard', 'Level 120', '!NoFusionDupes', '!Limit One LGPE Starter', 'Dynamax Clause'],
+	},
+	{
+		name: "[Gen 8] Multi AG DMax",
+		desc: `Multi Battle NatDex AG with Dynamaxing, up to level 120 Pokémon, duplicates fusions, and duplicate LGPE starters. For more info, use /om BGTEStandard`,
 		
 		mod: 'gen8leaks',
 		gameType: 'multi',
-		ruleset: ['BGTEStandard', '!NoFusionDupes'],
+		ruleset: ['BGTEStandard', 'Level 120', '!NoFusionDupes', '!Limit One LGPE Starter'],
 	},
 	{
-		name: "[Gen 8] FFA AG",
+		name: "[Gen 8] Multi AG noDMax",
+		desc: `Multi Battle NatDex AG with Dynamax Clause, up to level 120 Pokémon, duplicates fusions, and duplicate LGPE starters. For more info, use /om BGTEStandard`,
+		
+		mod: 'gen8leaks',
+		gameType: 'multi',
+		ruleset: ['BGTEStandard', 'Level 120', '!NoFusionDupes', '!Limit One LGPE Starter', 'Dynamax Clause'],
+	},
+	{
+		name: "[Gen 8] FFA AG DMax",
+		desc: `Free-For-All NatDex AG with Dynamaxing, up to level 120 Pokémon, duplicates fusions, and duplicate LGPE starters. For more info, use /om BGTEStandard`,
 		
 		mod: 'gen8leaks',
 		gameType: 'freeforall',
-		ruleset: ['BGTEStandard', '!NoFusionDupes'],
+		ruleset: ['BGTEStandard', 'Level 120', '!NoFusionDupes', '!Limit One LGPE Starter'],
 	},
+	{
+		name: "[Gen 8] FFA AG noDMax",
+		desc: `Free-For-All NatDex AG with Dynamax Clause, up to level 120 Pokémon, duplicates fusions, and duplicate LGPE starters. For more info, use /om BGTEStandard`,
+		
+		mod: 'gen8leaks',
+		gameType: 'freeforall',
+		ruleset: ['BGTEStandard', 'Level 120', '!NoFusionDupes', '!Limit One LGPE Starter', 'Dynamax Clause'],
+	},
+
+
+
+	{
+		section: "Flat Rules",
+		column: 2,
+	},
+	{
+		name: "[Gen 8] Singles Flat Rules",
+		desc: `NatDex Singles with Flat Rules. For more info, use /om BGTEStandard`,
+
+		mod: 'gen8leaks',
+		ruleset: ['BGTEStandard', 'Flat Clauses'],
+	},
+	{
+		name: "[Gen 8] Doubles Flat Rules",
+		desc: `NatDex Doubles with Flat Rules. For more info, use /om BGTEStandard`,
+
+		mod: 'gen8leaks',
+		gameType: 'doubles',
+		ruleset: ['BGTEStandard', 'Flat Clauses'],
+	},
+	{
+		name: "[Gen 8] Triples Flat Rules",
+		desc: `NatDex Triples with Flat Rules. For more info, use /om BGTEStandard`,
+
+		mod: 'gen8leaks',
+		gameType: 'triples',
+		ruleset: ['BGTEStandard', 'Flat Clauses'],
+	},
+	{
+		name: "[Gen 8] Multi Flat Rules",
+		desc: `NatDex Multi Battle with Flat Rules and Dynamax Clause. For more info, use /om BGTEStandard`,
+
+		mod: 'gen8leaks',
+		gameType: 'multi',
+		ruleset: ['BGTEStandard', 'Flat Clauses', 'Dynamax Clause'],
+	},
+	{
+		name: "[Gen 8] FFA Flat Rules",
+		desc: `NatDex Free-For-All with Flat Rules and Dynamax Clause. For more info, use /om BGTEStandard`,
+
+		mod: 'gen8leaks',
+		ruleset: ['BGTEStandard', 'Flat Clauses', 'Dynamax Clause'],
+	},
+
+
+
+	{
+		section: "Flat Rules Two Restricted",
+		column: 2,
+	},
+	{
+		name: "[Gen 8] Singles Flat 2R",
+		desc: `NatDex Singles with Flat Rules. 2 Restricted Legendaries are allowed. For more info, use /om BGTEStandard`,
+
+		mod: 'gen8leaks',
+		ruleset: ['BGTEStandard', 'Flat Clauses', 'Limit Two Restricted'],
+		restricted: ['Restricted Legendary'],
+	},
+	{
+		name: "[Gen 8] Doubles Flat 2R",
+		desc: `NatDex Doubles with Flat Rules. 2 Restricted Legendaries are allowed. For more info, use /om BGTEStandard`,
+
+		mod: 'gen8leaks',
+		gameType: 'doubles',
+		ruleset: ['BGTEStandard', 'Flat Clauses', 'Limit Two Restricted'],
+		restricted: ['Restricted Legendary'],
+	},
+	{
+		name: "[Gen 8] Triples Flat 2R",
+		desc: `NatDex Triples with Flat Rules. 2 Restricted Legendaries are allowed. For more info, use /om BGTEStandard`,
+
+		mod: 'gen8leaks',
+		gameType: 'triples',
+		ruleset: ['BGTEStandard', 'Flat Clauses', 'Limit Two Restricted'],
+		restricted: ['Restricted Legendary'],
+	},
+	{
+		name: "[Gen 8] Multi Flat 2R",
+		desc: `NatDex Multi Battle with Flat Rules and Dynamax Clause. 2 Restricted Legendaries are allowed. For more info, use /om BGTEStandard`,
+
+		mod: 'gen8leaks',
+		gameType: 'multi',
+		ruleset: ['BGTEStandard', 'Flat Clauses', 'Dynamax Clause', 'Limit Two Restricted'],
+		restricted: ['Restricted Legendary'],
+	},
+	{
+		name: "[Gen 8] FFA Flat 2R",
+		desc: `NatDex Free-For-All with Flat Rules and Dynamax Clause. 2 Restricted Legendaries are allowed. For more info, use /om BGTEStandard`,
+
+		mod: 'gen8leaks',
+		ruleset: ['BGTEStandard', 'Flat Clauses', 'Dynamax Clause', 'Limit Two Restricted'],
+		restricted: ['Restricted Legendary'],
+	},
+
+
+
+	{
+		section: "Ubers",
+		column: 3,
+	},
+	{
+		name: "[Gen 8] Singles Ubers",
+		desc: `NatDex Singles with all the clauses and bans from [Gen 8] Ubers. For more info, use /om BGTEStandard`,
+
+		mod: 'gen8leaks',
+		ruleset: ['BGTEStandard', 'Sleep Clause Mod', 'Species Clause', 'OHKO Clause', 'Evasion Moves Clause', 'Dynamax Clause'],
+		banlist: ['AG', 'Shadow Tag', 'Baton Pass'],
+	},
+	{
+		name: "[Gen 8] Doubles Ubers",
+		desc: `NatDex Doubles with all the clauses from [Gen 8] Doubles Ubers. For more info, use /om BGTEStandard`,
+
+		mod: 'gen8leaks',
+		gameType: 'doubles',
+		ruleset: ['BGTEStandard', 'Species Clause', 'OHKO Clause', 'Evasion Moves Clause'],
+	},
+	{
+		name: "[Gen 8] Triples Ubers",
+		desc: `NatDex Triples with all the clauses from [Gen 8] Doubles Ubers. For more info, use /om BGTEStandard`,
+
+		mod: 'gen8leaks',
+		gameType: 'triples',
+		ruleset: ['BGTEStandard', 'Species Clause', 'OHKO Clause', 'Evasion Moves Clause'],
+	},
+	{
+		name: "[Gen 8] Multi Ubers",
+		desc: `NatDex Multi Battle with all the clauses from [Gen 8] Doubles Ubers as well as Dynamax Clause. For more info, use /om BGTEStandard`,
+
+		mod: 'gen8leaks',
+		gameType: 'multi',
+		ruleset: ['BGTEStandard', 'Species Clause', 'OHKO Clause', 'Evasion Moves Clause', 'Dynamax Clause'],
+	},
+	{
+		name: "[Gen 8] FFA Ubers",
+		desc: `NatDex Free-For-All with all the clauses from [Gen 8] Ubers. For more info, use /om BGTEStandard`,
+
+		mod: 'gen8leaks',
+		ruleset: ['BGTEStandard', 'Sleep Clause Mod', 'Species Clause', 'OHKO Clause', 'Evasion Moves Clause', 'Dynamax Clause'],
+		banlist: ['Baton Pass'],
+	},
+
 
 
 	{
 		section: "Custom Game",
-		column: 2,
+		column: 3,
 	},
 	{
 		name: "[Gen 8] Singles Custom Game",
-		desc: `An exact copy of the [Gen 8] Custom Game format from the official server.`,
 
 		mod: 'gen8',
 		searchShow: false,
 		debug: true,
 		battle: {trunc: Math.trunc},
 		// no restrictions, for serious (other than team preview)
-		ruleset: ['Team Preview', 'Cancel Mod', 'Max Team Size = 24', 'Max Move Count = 24', 'Max Level = 9999', 'Default Level = 120'],
+		ruleset: ['HP Percentage Mod', 'Team Preview', 'Cancel Mod', 'Max Team Size = 24', 'Max Move Count = 24', 'Max Level = 9999', 'Default Level = 120'],
 	},
 	{
 		name: "[Gen 8] Doubles Custom Game",
-		desc: `An exact copy of the [Gen 8] Doubles Custom Game format from the official server.`,
 
 		mod: 'gen8',
 		gameType: 'doubles',
@@ -83,11 +268,10 @@ export const Formats: FormatList = [
 		battle: {trunc: Math.trunc},
 		debug: true,
 		// no restrictions, for serious (other than team preview)
-		ruleset: ['Team Preview', 'Cancel Mod', 'Max Team Size = 24', 'Max Move Count = 24', 'Max Level = 9999', 'Default Level = 120'],
+		ruleset: ['HP Percentage Mod', 'Team Preview', 'Cancel Mod', 'Max Team Size = 24', 'Max Move Count = 24', 'Max Level = 9999', 'Default Level = 120'],
 	},
 	{
 		name: "[Gen 8] Triples Custom Game",
-		desc: `A Triples variant of the [Gen 8] Custom Game format from the official server.`,
 
 		mod: 'gen8',
 		gameType: 'triples',
@@ -95,11 +279,10 @@ export const Formats: FormatList = [
 		battle: {trunc: Math.trunc},
 		debug: true,
 		// no restrictions, for serious (other than team preview)
-		ruleset: ['Team Preview', 'Cancel Mod', 'Max Team Size = 24', 'Max Move Count = 24', 'Max Level = 9999', 'Default Level = 120'],
+		ruleset: ['HP Percentage Mod', 'Team Preview', 'Cancel Mod', 'Max Team Size = 24', 'Max Move Count = 24', 'Max Level = 9999', 'Default Level = 120'],
 	},
 	{
 		name: "[Gen 8] Multi Custom Game",
-		desc: `A Multi Battle variant of the [Gen 8] Custom Game format from the official server.`,
 
 		mod: 'gen8',
 		gameType: 'multi',
@@ -109,11 +292,10 @@ export const Formats: FormatList = [
 		tournamentShow: false,
 		rated: false,
 		// no restrictions, for serious (other than team preview)
-		ruleset: ['Team Preview', 'Cancel Mod', 'Max Team Size = 24', 'Max Move Count = 24', 'Max Level = 9999', 'Default Level = 120'],
+		ruleset: ['HP Percentage Mod', 'Team Preview', 'Cancel Mod', 'Max Team Size = 24', 'Max Move Count = 24', 'Max Level = 9999', 'Default Level = 120'],
 	},
 	{
 		name: "[Gen 8] FFA Custom Game",
-		desc: `A Free-For-All variant of the [Gen 8] Custom Game format from the official server.`,
 
 		mod: 'gen8',
 		gameType: 'freeforall',
@@ -123,33 +305,9 @@ export const Formats: FormatList = [
 		tournamentShow: false,
 		rated: false,
 		// no restrictions, for serious (other than team preview)
-		ruleset: ['Team Preview', 'Cancel Mod', 'Max Team Size = 24', 'Max Move Count = 24', 'Max Level = 9999', 'Default Level = 120'],
+		ruleset: ['HP Percentage Mod', 'Team Preview', 'Cancel Mod', 'Max Team Size = 24', 'Max Move Count = 24', 'Max Level = 9999', 'Default Level = 120'],
 	},
-
-
-
-	{
-		section: "Eternamax Overflow Test",
-	},
-	{
-		name: "[Gen 8] OT: normal",
-
-		mod: 'gen8',
-		ruleset: ['Obtainable', 'Team Preview', 'HP Percentage Mod', 'Cancel Mod', '+Eternatus-Eternamax'],
-	},
-	{
-		name: "[Gen 8] OT: trunc",
-
-		mod: 'gen8',
-		battle: {trunc: Math.trunc},
-		ruleset: ['Obtainable', 'Team Preview', 'HP Percentage Mod', 'Cancel Mod', '+Eternatus-Eternamax'],
-	},
-	{
-		name: "[Gen 8] OT: overflowstatmod",
-
-		mod: 'gen8',
-		ruleset: ['Obtainable', 'Team Preview', 'HP Percentage Mod', 'Cancel Mod', 'Overflow Stat Mod', '+Eternatus-Eternamax'],
-	},
+	
 	
 
 	/*

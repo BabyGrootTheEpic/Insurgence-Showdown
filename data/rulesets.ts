@@ -11,11 +11,8 @@ export const Rulesets: {[k: string]: FormatData} = {
 	bgtestandard: {
 		effectType: 'ValidatorRule',
 		name: 'BGTE Standard',
-		desc: "BGTE's Standard ruleset.",
-		ruleset: [
-			'Obtainable', '+Unobtainable', '+Past', 'Sketch Gen 8 Moves', '+PastMove', 'Team Preview', 'Nickname Clause', 'HP Percentage Mod', 'Cancel Mod', 'Endless Battle Clause',
-			'Max Level = 120', 'Default Level = 120',
-		],
+		desc: "In addition to normal NatDex AG, allows Cosplay Pikachu, Let's GO Starters, Pichu-Spiky-Eared, Floette-Eternal, Gems, duplicate fusions, and everything added by this fork and the Insurgence fork.",
+		ruleset: ['Obtainable', '+Unobtainable', '+Past', 'Sketch Gen 8 Moves', '+PastMove', 'Team Preview', 'Nickname Clause', 'HP Percentage Mod', 'Cancel Mod', 'Endless Battle Clause'],
 		banlist: ['Eternatus-Eternamax'],
 		onValidateSet(set) {
 			// Items other than Z-Crystals, Pokémon-specific items, and gems should be illegal
@@ -42,6 +39,13 @@ export const Rulesets: {[k: string]: FormatData} = {
 		onFaint(pokemon) {
 			pokemon.illusion = null;
 		},
+	},
+	flatclauses: {
+		effectType: 'ValidatorRule',
+		name: 'Flat Clauses',
+		desc: "The in-game Flat Rules: Adjust Level Down 50, Species Clause, Item Clause, -Mythical, -Restricted Legendary, Bring 6 Pick 3-6 depending on game type.",
+		ruleset: ['Species Clause', 'Item Clause', 'Adjust Level Down = 50', 'Picked Team Size = Auto'],
+		banlist: ['Mythical', 'Restricted Legendary'],
 	},
 	nofusiondupes: {
 		effectType: 'ValidatorRule',
@@ -88,6 +92,23 @@ export const Rulesets: {[k: string]: FormatData} = {
 						];
 					}
 					calyrexCount++;
+				}
+			}
+			return [];
+		},
+	},
+	limitonelgpestarter: {
+		effectType: 'ValidatorRule',
+		name: 'Limit One LGPE Starter',
+		desc: "Formats with this rule can only have one of Pikachu-Starter or Eevee-Starter on a team.",
+		onValidateTeam(team, format) {
+			let lgpeStarterCount = 0;
+			for (const set of team) {
+				if (set.species === 'Pikachu-Starter' || set.species === 'Eevee-Starter') {
+					if (lgpeStarterCount > 0) {
+						return [`You can only have one of Pikachu-Starter or Eevee-Starter on a team.`,];
+					}
+					lgpeStarterCount++;
 				}
 			}
 			return [];
@@ -256,7 +277,7 @@ export const Rulesets: {[k: string]: FormatData} = {
 		effectType: 'ValidatorRule',
 		name: 'Obtainable',
 		desc: "Makes sure the team is possible to obtain in-game.",
-		ruleset: ['Obtainable Moves', 'Obtainable Abilities', 'Obtainable Formes', 'EV Limit = Auto', 'Obtainable Misc', 'NoFusionDupes'],
+		ruleset: ['Obtainable Moves', 'Obtainable Abilities', 'Obtainable Formes', 'EV Limit = Auto', 'Obtainable Misc', 'NoFusionDupes', 'Limit One LGPE Starter'],
 		banlist: ['Unreleased', 'Unobtainable', 'Nonexistent'],
 		// Mostly hardcoded in team-validator.ts
 		// Duplicate Fusion Code moved to 'NoFusionDupes' rule (so my NatDex AG format can allow duplicate fusions)
@@ -590,7 +611,8 @@ export const Rulesets: {[k: string]: FormatData} = {
 		effectType: 'ValidatorRule',
 		name: 'Level 120',
 		desc: "Allows Pokémon up to Level 120.",
-		ruleset: ['Max Level = 120', 'Default Level = 120', 'Overflow Stat Mod'],
+		battle: {trunc: Math.trunc}, //Disables the overflow 'glitch' without capping the stats like Overflow Stat Mod does.
+		ruleset: ['Max Level = 120', 'Default Level = 120'],
 	},
 	blitz: {
 		effectType: 'Rule',
