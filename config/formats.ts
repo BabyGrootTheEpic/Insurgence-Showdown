@@ -19,6 +19,140 @@ The column value will be ignored for repeat sections.
 
 export const Formats: FormatList = [
 
+	{
+		section: "Anything Goes",
+	},
+	{
+		name: "[Gen 8] Singles AG",
+
+		mod: 'gen8leaks',
+		ruleset: ['BGTEStandard', '!NoFusionDupes'],
+	},
+	{
+		name: "[Gen 8] Doubles AG",
+		
+		mod: 'gen8leaks',
+		gameType: 'doubles',
+		ruleset: ['BGTEStandard', '!NoFusionDupes'],
+	},
+	{
+		name: "[Gen 8] Triples AG",
+		
+		mod: 'gen8leaks',
+		gameType: 'triples',
+		ruleset: ['BGTEStandard', '!NoFusionDupes'],
+	},
+	{
+		name: "[Gen 8] Multi AG",
+		
+		mod: 'gen8leaks',
+		gameType: 'multi',
+		ruleset: ['BGTEStandard', '!NoFusionDupes'],
+	},
+	{
+		name: "[Gen 8] FFA AG",
+		
+		mod: 'gen8leaks',
+		gameType: 'freeforall',
+		ruleset: ['BGTEStandard', '!NoFusionDupes'],
+	},
+
+
+	{
+		section: "Custom Game",
+		column: 2,
+	},
+	{
+		name: "[Gen 8] Singles Custom Game",
+		desc: `An exact copy of the [Gen 8] Custom Game format from the official server.`,
+
+		mod: 'gen8',
+		searchShow: false,
+		debug: true,
+		battle: {trunc: Math.trunc},
+		// no restrictions, for serious (other than team preview)
+		ruleset: ['Team Preview', 'Cancel Mod', 'Max Team Size = 24', 'Max Move Count = 24', 'Max Level = 9999', 'Default Level = 120'],
+	},
+	{
+		name: "[Gen 8] Doubles Custom Game",
+		desc: `An exact copy of the [Gen 8] Doubles Custom Game format from the official server.`,
+
+		mod: 'gen8',
+		gameType: 'doubles',
+		searchShow: false,
+		battle: {trunc: Math.trunc},
+		debug: true,
+		// no restrictions, for serious (other than team preview)
+		ruleset: ['Team Preview', 'Cancel Mod', 'Max Team Size = 24', 'Max Move Count = 24', 'Max Level = 9999', 'Default Level = 120'],
+	},
+	{
+		name: "[Gen 8] Triples Custom Game",
+		desc: `A Triples variant of the [Gen 8] Custom Game format from the official server.`,
+
+		mod: 'gen8',
+		gameType: 'triples',
+		searchShow: false,
+		battle: {trunc: Math.trunc},
+		debug: true,
+		// no restrictions, for serious (other than team preview)
+		ruleset: ['Team Preview', 'Cancel Mod', 'Max Team Size = 24', 'Max Move Count = 24', 'Max Level = 9999', 'Default Level = 120'],
+	},
+	{
+		name: "[Gen 8] Multi Custom Game",
+		desc: `A Multi Battle variant of the [Gen 8] Custom Game format from the official server.`,
+
+		mod: 'gen8',
+		gameType: 'multi',
+		searchShow: false,
+		battle: {trunc: Math.trunc},
+		debug: true,
+		tournamentShow: false,
+		rated: false,
+		// no restrictions, for serious (other than team preview)
+		ruleset: ['Team Preview', 'Cancel Mod', 'Max Team Size = 24', 'Max Move Count = 24', 'Max Level = 9999', 'Default Level = 120'],
+	},
+	{
+		name: "[Gen 8] FFA Custom Game",
+		desc: `A Free-For-All variant of the [Gen 8] Custom Game format from the official server.`,
+
+		mod: 'gen8',
+		gameType: 'freeforall',
+		searchShow: false,
+		battle: {trunc: Math.trunc},
+		debug: true,
+		tournamentShow: false,
+		rated: false,
+		// no restrictions, for serious (other than team preview)
+		ruleset: ['Team Preview', 'Cancel Mod', 'Max Team Size = 24', 'Max Move Count = 24', 'Max Level = 9999', 'Default Level = 120'],
+	},
+
+
+
+	{
+		section: "Eternamax Overflow Test",
+	},
+	{
+		name: "[Gen 8] OT: normal",
+
+		mod: 'gen8',
+		ruleset: ['Obtainable', 'Team Preview', 'HP Percentage Mod', 'Cancel Mod'],
+	},
+	{
+		name: "[Gen 8] OT: trunc",
+
+		mod: 'gen8',
+		battle: {trunc: Math.trunc},
+		ruleset: ['Obtainable', 'Team Preview', 'HP Percentage Mod', 'Cancel Mod'],
+	},
+	{
+		name: "[Gen 8] OT: overflowstatmod",
+
+		mod: 'gen8',
+		ruleset: ['Obtainable', 'Team Preview', 'HP Percentage Mod', 'Cancel Mod', 'Overflow Stat Mod'],
+	},
+	
+
+	/*
 	// Custom Formats
 	///////////////////////////////////////////////////////////////////
 
@@ -2782,5 +2916,5 @@ export const Formats: FormatList = [
 		// no restrictions, for serious (other than team preview)
 		ruleset: ['Team Preview', 'Cancel Mod', 'Max Team Size = 24', 'Max Move Count = 24', 'Max Level = 9999', 'Default Level = 100'],
 	},
-
+	*/
 ];
