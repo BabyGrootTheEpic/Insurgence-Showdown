@@ -1,4 +1,31 @@
 export const ItemsText: {[k: string]: ItemText} = {
+	blankplate: {
+		name: "Blank Plate",
+		desc: "Holder's Normal-type attacks have 1.2x power.",
+	},
+	legendplate: {
+		name: "Legend Plate",
+		desc: "Not yet implemented!",
+		//desc: "Judgment's type changes to be super-effective on the target. Judgement ignores abilities.",
+	},
+	dugtrinite: {
+		name: "Dugtrinite",
+		desc: "Not yet implemented!",
+		//desc: "If held by a Dugtrio, this item allows it to Mega Evolve in battle.",
+	},
+	sceptilitezo: {
+		name: "Sceptilite ZO",
+		desc: "If held by a Sceptile, this item allows it to Mega Evolve in battle.",
+	},
+	swampertitezo: {
+		name: "Swampertite ZO",
+		desc: "If held by a Swampert, this item allows it to Mega Evolve in battle.",
+	},
+	golurkite: {
+		name: "Golurkite",
+		desc: "Not yet implemented!",
+		//desc: "If held by a Golurk, this item allows it to Mega Evolve in battle.",
+	},
 	abomasite: {
 		name: "Abomasite",
 		desc: "If held by an Abomasnow, this item allows it to Mega Evolve in battle.",
