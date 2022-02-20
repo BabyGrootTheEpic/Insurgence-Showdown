@@ -10,6 +10,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		weightkg: 15,
 		color: "White",
 		eggGroups: ["Undiscovered"],
+		tags: ["Mythical"],
 	},
 	bulbasaur: {
 		num: 1,
