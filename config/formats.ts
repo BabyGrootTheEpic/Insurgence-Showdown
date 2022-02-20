@@ -371,6 +371,18 @@ export const Formats: FormatList = [
 		ruleset: ['Obtainable', 'Draft', '+Unreleased', '+Past', '+PastMove', 'Team Preview', 'Double Item Clause', 'Little Cup', 'Dynamax Clause'],
 		banlist: ['Dragon Rage', 'Sonic Boom'],
 	},
+	{
+    name: "[Gen 8] Draft Multi Battle",
+    mod: 'gen8',
+    gameType: 'multi',
+    searchShow: false,
+    tournamentShow: false,
+    rated: false,
+    ruleset: [
+        'Max Team Size = 4', 'Picked Team Size = 3',
+				'Obtainable', 'Draft', '+Unreleased', '+Past', 'Team Preview', 'Dynamax Clause',
+    ],
+	},
 
 	// Sw/Sh Singles
 	///////////////////////////////////////////////////////////////////
@@ -414,32 +426,6 @@ export const Formats: FormatList = [
 		mod: 'gen8',
 		team: 'random',
 		ruleset: ['[Gen 8] Random Battle', 'Blitz'],
-	},
-	{
-		name: "[Gen 8] Multi Random Battle",
-
-		mod: 'gen8',
-		team: 'random',
-		gameType: 'multi',
-		searchShow: false,
-		tournamentShow: false,
-		rated: false,
-		ruleset: [
-			'Max Team Size = 3',
-			'Obtainable', 'Species Clause', 'HP Percentage Mod', 'Cancel Mod', 'Sleep Clause Mod',
-		],
-	},
-	{
-    name: "[Gen 8] Multi Battle",
-    mod: 'gen8',
-    gameType: 'multi',
-    searchShow: false,
-    tournamentShow: false,
-    rated: false,
-    ruleset: [
-        'Max Team Size = 4', 'Picked Team Size = 3',
-        'Standard NatDex', 'Species Clause', 'Sleep Clause Mod',
-    ],
 	},
 	{
 		name: "[Gen 8] NatDex OU",
@@ -716,6 +702,32 @@ export const Formats: FormatList = [
 		},
 	},
 	{
+		name: "[Gen 8] Multi Random Battle",
+
+		mod: 'gen8',
+		team: 'random',
+		gameType: 'multi',
+		searchShow: false,
+		tournamentShow: false,
+		rated: false,
+		ruleset: [
+			'Max Team Size = 3',
+			'Obtainable', 'Species Clause', 'HP Percentage Mod', 'Cancel Mod', 'Sleep Clause Mod',
+		],
+	},
+	{
+    name: "[Gen 8] Multi Battle",
+    mod: 'gen8',
+    gameType: 'multi',
+    searchShow: false,
+    tournamentShow: false,
+    rated: false,
+    ruleset: [
+        'Max Team Size = 4', 'Picked Team Size = 3',
+        'Standard NatDex', 'Species Clause', 'Sleep Clause Mod', 'Dynamax Clause',
+    ],
+	},
+	{
 		name: "[Gen 8] Doubles Custom Game",
 
 		mod: 'gen8',
@@ -884,8 +896,15 @@ export const Formats: FormatList = [
 			}
 			const irrevokablyRestricted = [
 				'Assist', 'Copycat', 'Metronome', 'Mirror Move', 'Sleep Talk', // Could call another unsafe trademark
+				'Recycle', 'Trace', // Causes endless turns
 				'Skill Swap', // Self-propagates indefinitely
 			];
+			for (const m of set.moves) {
+				const move = dex.moves.get(m);
+				if (irrevokablyRestricted.includes(move.name)) {
+					return [`${move.name} is banned from Trademark, irrespective of custom rules, because it can cause endless turns.`];
+				}
+			}
 			if (irrevokablyRestricted.includes(ability.name)) {
 				return [`${ability.name} cannot safely function as a trademark.`];
 			}
