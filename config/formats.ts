@@ -35,7 +35,7 @@ export const Formats: FormatList = [
 		
 		mod: 'gen8',
 		gameType: 'doubles',
-		ruleset: ['[Gen 8] Singles AG'],
+		ruleset: ['[Gen 8] Doubles AG Dmax', 'Dynamax Clause'],
 	},
 	{
 		name: "[Gen 8] Triples AG",
@@ -43,7 +43,7 @@ export const Formats: FormatList = [
 		
 		mod: 'gen8',
 		gameType: 'triples',
-		ruleset: ['[Gen 8] Singles AG'],
+		ruleset: ['[Gen 8] Triples AG Dmax', 'Dynamax Clause'],
 	},
 	{
 		name: "[Gen 8] Multi AG",
@@ -51,7 +51,7 @@ export const Formats: FormatList = [
 		
 		mod: 'gen8',
 		gameType: 'multi',
-		ruleset: ['[Gen 8] Singles AG'],
+		ruleset: ['[Gen 8] Multi AG Dmax', 'Dynamax Clause'],
 	},
 	{
 		name: "[Gen 8] FFA AG",
@@ -59,7 +59,7 @@ export const Formats: FormatList = [
 		
 		mod: 'gen8',
 		gameType: 'freeforall',
-		ruleset: ['[Gen 8] Singles AG'],
+		ruleset: ['[Gen 8] FFA AG Dmax', 'Dynamax Clause'],
 	},
 
 
@@ -80,7 +80,7 @@ export const Formats: FormatList = [
 		
 		mod: 'gen8',
 		gameType: 'doubles',
-		ruleset: ['[Gen 8] Singles AG Dmax'],
+		ruleset: ['BGTEs Standard', 'Level 120', '!NoFusionDupes', '!Limit One LGPE Starter'],
 	},
 	{
 		name: "[Gen 8] Triples AG Dmax",
@@ -88,7 +88,7 @@ export const Formats: FormatList = [
 		
 		mod: 'gen8',
 		gameType: 'triples',
-		ruleset: ['[Gen 8] Singles AG Dmax'],
+		ruleset: ['BGTEs Standard', 'Level 120', '!NoFusionDupes', '!Limit One LGPE Starter'],
 	},
 	{
 		name: "[Gen 8] Multi AG Dmax",
@@ -96,7 +96,7 @@ export const Formats: FormatList = [
 		
 		mod: 'gen8',
 		gameType: 'multi',
-		ruleset: ['[Gen 8] Singles AG Dmax'],
+		ruleset: ['BGTEs Standard', 'Level 120', '!NoFusionDupes', '!Limit One LGPE Starter'],
 	},
 	{
 		name: "[Gen 8] FFA AG Dmax",
@@ -104,7 +104,7 @@ export const Formats: FormatList = [
 		
 		mod: 'gen8',
 		gameType: 'freeforall',
-		ruleset: ['[Gen 8] Singles AG Dmax'],
+		ruleset: ['BGTEs Standard', 'Level 120', '!NoFusionDupes', '!Limit One LGPE Starter'],
 	},
 
 
@@ -117,8 +117,8 @@ export const Formats: FormatList = [
 		desc: `NatDex Singles with all the clauses and bans from [Gen 8] Ubers.`,
 
 		mod: 'gen8',
-		ruleset: ['[Gen 8] FFA Ubers'],
-		banlist: ['AG', 'Shadow Tag'],
+		ruleset: ['BGTEs Standard', 'Sleep Clause Mod', 'Species Clause', 'OHKO Clause', 'Evasion Moves Clause', 'Dynamax Clause'],
+		banlist: ['AG', 'Shadow Tag','Baton Pass'],
 	},
 	{
 		name: "[Gen 8] Doubles Ubers",
@@ -134,7 +134,7 @@ export const Formats: FormatList = [
 
 		mod: 'gen8',
 		gameType: 'triples',
-		ruleset: ['[Gen 8] Doubles Ubers'],
+		ruleset: ['BGTEs Standard', 'Species Clause', 'OHKO Clause', 'Evasion Moves Clause'],
 	},
 	{
 		name: "[Gen 8] Multi Ubers",
@@ -142,13 +142,14 @@ export const Formats: FormatList = [
 
 		mod: 'gen8',
 		gameType: 'multi',
-		ruleset: ['[Gen 8] Doubles Ubers'],
+		ruleset: ['BGTEs Standard', 'Species Clause', 'OHKO Clause', 'Evasion Moves Clause'],
 	},
 	{
 		name: "[Gen 8] FFA Ubers",
 		desc: `NatDex Free-For-All with all the clauses from [Gen 8] Ubers.`,
 
 		mod: 'gen8',
+		gameType: 'freeforall',
 		ruleset: ['BGTEs Standard', 'Sleep Clause Mod', 'Species Clause', 'OHKO Clause', 'Evasion Moves Clause', 'Dynamax Clause'],
 		banlist: ['Baton Pass'],
 	},
@@ -173,7 +174,8 @@ export const Formats: FormatList = [
 
 		mod: 'gen8',
 		gameType: 'doubles',
-		ruleset: ['[Gen 8] Singles Flat Rules'],
+		ruleset: ['BGTEs Standard', 'Species Clause', 'Item Clause', 'Adjust Level Down = 50', 'Picked Team Size = Auto'],
+		banlist: ['Mythical', 'Restricted Legendary'],
 	},
 	{
 		name: "[Gen 8] Triples Flat Rules",
@@ -181,7 +183,8 @@ export const Formats: FormatList = [
 
 		mod: 'gen8',
 		gameType: 'triples',
-		ruleset: ['[Gen 8] Singles Flat Rules'],
+		ruleset: ['BGTEs Standard', 'Species Clause', 'Item Clause', 'Adjust Level Down = 50', 'Picked Team Size = Auto'],
+		banlist: ['Mythical', 'Restricted Legendary'],
 	},
 	{
 		name: "[Gen 8] Multi Flat Rules",
@@ -189,14 +192,17 @@ export const Formats: FormatList = [
 
 		mod: 'gen8',
 		gameType: 'multi',
-		ruleset: ['[Gen 8] Singles Flat Rules'],
+		ruleset: ['BGTEs Standard', 'Species Clause', 'Item Clause', 'Adjust Level Down = 50', 'Picked Team Size = Auto'],
+		banlist: ['Mythical', 'Restricted Legendary'],
 	},
 	{
 		name: "[Gen 8] FFA Flat Rules",
 		desc: `NatDex Free-For-All with Flat Rules.`,
 
 		mod: 'gen8',
-		ruleset: ['[Gen 8] Singles Flat Rules'],
+		gameType: 'freeforall',
+		ruleset: ['BGTEs Standard', 'Species Clause', 'Item Clause', 'Adjust Level Down = 50', 'Picked Team Size = Auto'],
+		banlist: ['Mythical', 'Restricted Legendary'],
 	},
 
 
@@ -219,7 +225,8 @@ export const Formats: FormatList = [
 
 		mod: 'gen8',
 		gameType: 'doubles',
-		ruleset: ['[Gen 8] Singles Flat Rules 2R'],
+		ruleset: ['[Gen 8] Doubles Flat Rules', 'Limit Two Restricted'],
+		restricted: ['Restricted Legendary'],
 	},
 	{
 		name: "[Gen 8] Triples Flat Rules 2R",
@@ -227,7 +234,8 @@ export const Formats: FormatList = [
 
 		mod: 'gen8',
 		gameType: 'triples',
-		ruleset: ['[Gen 8] Singles Flat Rules 2R'],
+		ruleset: ['[Gen 8] Triples Flat Rules', 'Limit Two Restricted'],
+		restricted: ['Restricted Legendary'],
 	},
 	{
 		name: "[Gen 8] Multi Flat Rules 2R",
@@ -235,14 +243,17 @@ export const Formats: FormatList = [
 
 		mod: 'gen8',
 		gameType: 'multi',
-		ruleset: ['[Gen 8] Singles Flat Rules 2R'],
+		ruleset: ['[Gen 8] Multi Flat Rules', 'Limit Two Restricted'],
+		restricted: ['Restricted Legendary'],
 	},
 	{
 		name: "[Gen 8] FFA Flat Rules 2R",
 		desc: `NatDex Free-For-All with Flat Rules. 2 Restricted Legendaries are allowed.`,
 
 		mod: 'gen8',
-		ruleset: ['[Gen 8] Singles Flat Rules 2R'],
+		gameType: 'freeforall',
+		ruleset: ['[Gen 8] FFA Flat Rules', 'Limit Two Restricted'],
+		restricted: ['Restricted Legendary'],
 	},
 
 
