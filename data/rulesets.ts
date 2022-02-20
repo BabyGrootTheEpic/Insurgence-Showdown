@@ -15,9 +15,9 @@ export const Rulesets: {[k: string]: FormatData} = {
 		//ruleset: ['Obtainable', 'Sketch Gen 8 Moves', 'Team Preview', 'Nickname Clause', 'HP Percentage Mod', 'Cancel Mod', 'Endless Battle Clause'],
 		ruleset: [
 			'Obtainable', '+Unobtainable', '+Past', 'Sketch Gen 8 Moves', '+PastMove', 'Team Preview', 'Nickname Clause', 'HP Percentage Mod', 'Cancel Mod', 'Endless Battle Clause',
-			'Zoroark-Mega Illusion Thing'
+			'Zoroark-Mega Illusion Thing', '+LGPE',
 		],
-		banlist: ['Eternatus-Eternamax'],
+		banlist: ['Eternatus-Eternamax', 'Veevee Volley', 'Pika Papow'],
 		onValidateSet(set) {
 			// Items other than Z-Crystals, Pokémon-specific items, and gems should be illegal
 			if (!set.item) return;

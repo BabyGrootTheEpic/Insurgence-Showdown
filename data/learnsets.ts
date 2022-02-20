@@ -4758,7 +4758,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			irontail: ["8V", "7M"],
 			lightscreen: ["8V", "7M", "7L18"],
 			payday: ["8V", "7M"],
-			pikapapow: ["8V", "7T"],
+			//pikapapow: ["8V", "7T"],
 			protect: ["8V", "7M"],
 			quickattack: ["8V", "7L6"],
 			reflect: ["8V", "7M"],
@@ -22870,7 +22870,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			tailwhip: ["8V", "7L3", "7S0"],
 			takedown: ["8V", "7L24"],
 			toxic: ["8V", "7M"],
-			veeveevolley: ["8V", "7T"],
+			//veeveevolley: ["8V", "7T"],
 		},
 		eventData: [
 			{generation: 7, level: 5, perfectIVs: 6, moves: ["tackle", "tailwhip", "growl"], pokeball: "pokeball"},
