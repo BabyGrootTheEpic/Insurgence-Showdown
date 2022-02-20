@@ -13,7 +13,10 @@ export const Rulesets: {[k: string]: FormatData} = {
 		name: 'BGTEs Standard',
 		desc: "In addition to normal NatDex AG, allows Cosplay Pikachu, Let's GO Starters, Spiky Eared Pichu, Eternal Flower Floette, Gems, and everything added by this fork and the Insurgence fork.",
 		//ruleset: ['Obtainable', 'Sketch Gen 8 Moves', 'Team Preview', 'Nickname Clause', 'HP Percentage Mod', 'Cancel Mod', 'Endless Battle Clause'],
-		ruleset: ['Obtainable', '+Unobtainable', '+Past', 'Sketch Gen 8 Moves', '+PastMove', 'Team Preview', 'Nickname Clause', 'HP Percentage Mod', 'Cancel Mod', 'Endless Battle Clause'],
+		ruleset: [
+			'Obtainable', '+Unobtainable', '+Past', 'Sketch Gen 8 Moves', '+PastMove', 'Team Preview', 'Nickname Clause', 'HP Percentage Mod', 'Cancel Mod', 'Endless Battle Clause',
+			'Zoroark-Mega Illusion Thing'
+		],
 		banlist: ['Eternatus-Eternamax'],
 		onValidateSet(set) {
 			// Items other than Z-Crystals, Pokémon-specific items, and gems should be illegal
@@ -26,19 +29,6 @@ export const Rulesets: {[k: string]: FormatData} = {
 				if (this.ruleTable.has(`+item:${item.id}`)) return;
 				return [`${set.name}'s item ${item.name} does not exist in Gen ${this.dex.gen}.`];
 			}
-		},
-		onDamagingHit(damage, target, source, move) {
-			if (target.illusion) {
-				this.debug('illusion cleared');
-				target.illusion = null;
-				const details = target.species.name + (target.level === 100 ? '' : ', L' + target.level) +
-				(target.gender === '' ? '' : ', ' + target.gender) + (target.set.shiny ? ', shiny' : '');
-				this.add('replace', target, details);
-				this.add('-end', target, 'Illusion');
-			}
-		},
-		onFaint(pokemon) {
-			pokemon.illusion = null;
 		},
 	},
 	nofusiondupes: {
@@ -106,6 +96,24 @@ export const Rulesets: {[k: string]: FormatData} = {
 				}
 			}
 			return [];
+		},
+	},
+	zoroarkmegaillusionthing: {
+		effectType: 'ValidatorRule',
+		name: 'Zoroark-Mega Illusion Thing',
+		desc: "Probably needed for Zoroark-Mega's Illusion to work.",
+		onDamagingHit(damage, target, source, move) {
+			if (target.illusion) {
+				this.debug('illusion cleared');
+				target.illusion = null;
+				const details = target.species.name + (target.level === 100 ? '' : ', L' + target.level) +
+				(target.gender === '' ? '' : ', ' + target.gender) + (target.set.shiny ? ', shiny' : '');
+				this.add('replace', target, details);
+				this.add('-end', target, 'Illusion');
+			}
+		},
+		onFaint(pokemon) {
+			pokemon.illusion = null;
 		},
 	},
 	
