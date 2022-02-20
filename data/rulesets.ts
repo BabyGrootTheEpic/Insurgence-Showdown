@@ -12,9 +12,21 @@ export const Rulesets: {[k: string]: FormatData} = {
 		effectType: 'ValidatorRule',
 		name: 'BGTEs Standard',
 		desc: "In addition to normal NatDex AG, allows Cosplay Pikachu, Let's GO Starters, Spiky Eared Pichu, Eternal Flower Floette, Gems, and everything added by this fork and the Insurgence fork.",
-		ruleset: ['Obtainable', 'Sketch Gen 8 Moves', 'Team Preview', 'Nickname Clause', 'HP Percentage Mod', 'Cancel Mod', 'Endless Battle Clause'],
+		//ruleset: ['Obtainable', 'Sketch Gen 8 Moves', 'Team Preview', 'Nickname Clause', 'HP Percentage Mod', 'Cancel Mod', 'Endless Battle Clause'],
+		ruleset: ['Obtainable', '+Unobtainable', '+Past', 'Sketch Gen 8 Moves', '+PastMove', 'Team Preview', 'Nickname Clause', 'HP Percentage Mod', 'Cancel Mod', 'Endless Battle Clause'],
 		banlist: ['Eternatus-Eternamax'],
-		//This servers' formats are all natdex, so most instances of isNonstandard in data/formats-data.ts, data/item.ts, and data/moves.ts have been commented out.
+		onValidateSet(set) {
+			// Items other than Z-Crystals, Pokémon-specific items, and gems should be illegal
+			if (!set.item) return;
+			const item = this.dex.items.get(set.item);
+			if (!item.isNonstandard) return;
+			if ([
+				'Past', 'PastMove', 'Unobtainable',
+			].includes(item.isNonstandard) && !item.zMove && !item.itemUser && !item.forcedForme && !item.isGem) {
+				if (this.ruleTable.has(`+item:${item.id}`)) return;
+				return [`${set.name}'s item ${item.name} does not exist in Gen ${this.dex.gen}.`];
+			}
+		},
 		onDamagingHit(damage, target, source, move) {
 			if (target.illusion) {
 				this.debug('illusion cleared');
