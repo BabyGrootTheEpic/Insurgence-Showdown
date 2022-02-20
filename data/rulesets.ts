@@ -18,18 +18,7 @@ export const Rulesets: {[k: string]: FormatData} = {
 			'Zoroark-Mega Illusion Thing', '+LGPE',
 		],
 		banlist: ['Eternatus-Eternamax', 'Veevee Volley', 'Pika Papow'],
-		onValidateSet(set) {
-			// Items other than Z-Crystals, Pokémon-specific items, and gems should be illegal
-			if (!set.item) return;
-			const item = this.dex.items.get(set.item);
-			if (!item.isNonstandard) return;
-			if ([
-				'Past', 'PastMove', 'Unobtainable',
-			].includes(item.isNonstandard) && !item.zMove && !item.itemUser && !item.forcedForme && !item.isGem) {
-				if (this.ruleTable.has(`+item:${item.id}`)) return;
-				return [`${set.name}'s item ${item.name} does not exist in Gen ${this.dex.gen}.`];
-			}
-		},
+		//This servers' formats are all natdex, so most instances of isNonstandard in data/formats-data.ts, data/item.ts, and data/moves.ts have been commented out.
 	},
 	nofusiondupes: {
 		effectType: 'ValidatorRule',
