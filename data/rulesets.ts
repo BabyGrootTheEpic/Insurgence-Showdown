@@ -8,9 +8,9 @@ export const Rulesets: {[k: string]: FormatData} = {
 	// Custom Rulesets
 	///////////////////////////////////////////////////////////////////
 
-	standardnatdex: {
+	bgtesstandard: {
 		effectType: 'ValidatorRule',
-		name: 'Standard NatDex',
+		name: 'BGTEs Standard',
 		desc: "In addition to normal NatDex AG, allows Cosplay Pikachu, Let's GO Starters, Spiky Eared Pichu, Eternal Flower Floette, Gems, and everything added by this fork and the Insurgence fork.",
 		ruleset: ['Obtainable', 'Sketch Gen 8 Moves', 'Team Preview', 'Nickname Clause', 'HP Percentage Mod', 'Cancel Mod', 'Endless Battle Clause'],
 		banlist: ['Eternatus-Eternamax'],
@@ -205,7 +205,7 @@ export const Rulesets: {[k: string]: FormatData} = {
 		banlist: ['Permafrost', 'Livewire'],
 		// banlist: ['Permafrost', 'Livewire', 'Achilles Heel', 'Brush Fire'],
 	},
-	/*standardnatdex: {
+	standardnatdex: {
 		effectType: 'ValidatorRule',
 		name: 'Standard NatDex',
 		desc: "The standard ruleset for all National Dex tiers",
@@ -254,7 +254,7 @@ export const Rulesets: {[k: string]: FormatData} = {
 		onFaint(pokemon) {
 			pokemon.illusion = null;
 		},
-	},*/
+	},
 	obtainable: {
 		effectType: 'ValidatorRule',
 		name: 'Obtainable',
