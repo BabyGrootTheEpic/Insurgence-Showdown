@@ -35,8 +35,7 @@ export const Formats: FormatList = [
 		
 		mod: 'gen8leaks',
 		gameType: 'doubles',
-		//ruleset: ['[Gen 8] Singles AG'],
-		ruleset: ['Standard NatDex', 'Dynamax Clause'],
+		ruleset: ['[Gen 8] Singles AG'],
 	},
 	{
 		name: "[Gen 8] Triples AG",
