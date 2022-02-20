@@ -259,7 +259,7 @@ export const Formats: FormatList = [
 		debug: true,
 		battle: {trunc: Math.trunc},
 		// no restrictions, for serious (other than team preview)
-		ruleset: ['HP Percentage Mod', 'Team Preview', 'Cancel Mod', 'Max Team Size = 24', 'Max Move Count = 24', 'Max Level = 9999', 'Default Level = 120'],
+		ruleset: ['HP Percentage Mod', 'Team Preview', 'Cancel Mod', 'Max Team Size = 24', 'Max Move Count = 24', 'Max Level = 9999', 'Default Level = 120', 'Zoroark-Mega Illusion Thing'],
 	},
 	{
 		name: "[Gen 8] Doubles Custom Game",
@@ -270,7 +270,7 @@ export const Formats: FormatList = [
 		battle: {trunc: Math.trunc},
 		debug: true,
 		// no restrictions, for serious (other than team preview)
-		ruleset: ['HP Percentage Mod', 'Team Preview', 'Cancel Mod', 'Max Team Size = 24', 'Max Move Count = 24', 'Max Level = 9999', 'Default Level = 120'],
+		ruleset: ['HP Percentage Mod', 'Team Preview', 'Cancel Mod', 'Max Team Size = 24', 'Max Move Count = 24', 'Max Level = 9999', 'Default Level = 120', 'Zoroark-Mega Illusion Thing'],
 	},
 	{
 		name: "[Gen 8] Triples Custom Game",
@@ -281,7 +281,7 @@ export const Formats: FormatList = [
 		battle: {trunc: Math.trunc},
 		debug: true,
 		// no restrictions, for serious (other than team preview)
-		ruleset: ['HP Percentage Mod', 'Team Preview', 'Cancel Mod', 'Max Team Size = 24', 'Max Move Count = 24', 'Max Level = 9999', 'Default Level = 120'],
+		ruleset: ['HP Percentage Mod', 'Team Preview', 'Cancel Mod', 'Max Team Size = 24', 'Max Move Count = 24', 'Max Level = 9999', 'Default Level = 120', 'Zoroark-Mega Illusion Thing'],
 	},
 	{
 		name: "[Gen 8] Multi Custom Game",
@@ -294,7 +294,7 @@ export const Formats: FormatList = [
 		tournamentShow: false,
 		rated: false,
 		// no restrictions, for serious (other than team preview)
-		ruleset: ['HP Percentage Mod', 'Team Preview', 'Cancel Mod', 'Max Team Size = 24', 'Max Move Count = 24', 'Max Level = 9999', 'Default Level = 120'],
+		ruleset: ['HP Percentage Mod', 'Team Preview', 'Cancel Mod', 'Max Team Size = 24', 'Max Move Count = 24', 'Max Level = 9999', 'Default Level = 120', 'Zoroark-Mega Illusion Thing'],
 	},
 	{
 		name: "[Gen 8] FFA Custom Game",
@@ -307,7 +307,7 @@ export const Formats: FormatList = [
 		tournamentShow: false,
 		rated: false,
 		// no restrictions, for serious (other than team preview)
-		ruleset: ['HP Percentage Mod', 'Team Preview', 'Cancel Mod', 'Max Team Size = 24', 'Max Move Count = 24', 'Max Level = 9999', 'Default Level = 120'],
+		ruleset: ['HP Percentage Mod', 'Team Preview', 'Cancel Mod', 'Max Team Size = 24', 'Max Move Count = 24', 'Max Level = 9999', 'Default Level = 120', 'Zoroark-Mega Illusion Thing'],
 	},
 	
 	
