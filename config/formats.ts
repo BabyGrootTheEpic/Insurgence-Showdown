@@ -72,7 +72,7 @@ export const Formats: FormatList = [
 		desc: `Singles NatDex AG with Dynamaxing, up to level 120 Pokémon, duplicates fusions, and duplicate LGPE starters.`,
 
 		mod: 'gen8leaks',
-		ruleset: ['BGTE\'s Standard Ruleset', 'Level 120', '!NoFusionDupes', '!Limit One LGPE Starter'],
+		ruleset: ['BGTEs Standard', 'Level 120', '!NoFusionDupes', '!Limit One LGPE Starter'],
 	},
 	{
 		name: "[Gen 8] Doubles AG Dmax",
@@ -126,7 +126,7 @@ export const Formats: FormatList = [
 
 		mod: 'gen8leaks',
 		gameType: 'doubles',
-		ruleset: ['BGTE\'s Standard Ruleset', 'Species Clause', 'OHKO Clause', 'Evasion Moves Clause'],
+		ruleset: ['BGTEs Standard', 'Species Clause', 'OHKO Clause', 'Evasion Moves Clause'],
 	},
 	{
 		name: "[Gen 8] Triples Ubers",
@@ -149,7 +149,7 @@ export const Formats: FormatList = [
 		desc: `NatDex Free-For-All with all the clauses from [Gen 8] Ubers.`,
 
 		mod: 'gen8leaks',
-		ruleset: ['BGTE\'s Standard Ruleset', 'Sleep Clause Mod', 'Species Clause', 'OHKO Clause', 'Evasion Moves Clause', 'Dynamax Clause'],
+		ruleset: ['BGTEs Standard', 'Sleep Clause Mod', 'Species Clause', 'OHKO Clause', 'Evasion Moves Clause', 'Dynamax Clause'],
 		banlist: ['Baton Pass'],
 	},
 
@@ -164,7 +164,7 @@ export const Formats: FormatList = [
 		desc: `NatDex Singles with Flat Rules.`,
 
 		mod: 'gen8leaks',
-		ruleset: ['BGTE\'s Standard Ruleset', 'Species Clause', 'Item Clause', 'Adjust Level Down = 50', 'Picked Team Size = Auto'],
+		ruleset: ['BGTEs Standard', 'Species Clause', 'Item Clause', 'Adjust Level Down = 50', 'Picked Team Size = Auto'],
 		banlist: ['Mythical', 'Restricted Legendary'],
 	},
 	{
