@@ -10,9 +10,8 @@ export const Rulesets: {[k: string]: FormatData} = {
 
 	bgtesstandard: {
 		effectType: 'ValidatorRule',
-		name: 'BGTEs Standard',
+		name: 'BGTE\'s Standard Ruleset',
 		desc: "In addition to normal NatDex AG, allows Cosplay Pikachu, Let's GO Starters, Spiky Eared Pichu, Eternal Flower Floette, Gems, and everything added by this fork and the Insurgence fork.",
-		//ruleset: ['Obtainable', 'Sketch Gen 8 Moves', 'Team Preview', 'Nickname Clause', 'HP Percentage Mod', 'Cancel Mod', 'Endless Battle Clause'],
 		ruleset: [
 			'Obtainable', '+Unobtainable', '+Past', 'Sketch Gen 8 Moves', '+PastMove', 'Team Preview', 'Nickname Clause', 'HP Percentage Mod', 'Cancel Mod', 'Endless Battle Clause',
 			'Zoroark-Mega Illusion Thing', '+LGPE',
