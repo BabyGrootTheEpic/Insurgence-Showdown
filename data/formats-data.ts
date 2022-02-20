@@ -581,7 +581,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "LC",
 	},
 	growlithehisui: {
-		isNonstandard: "Future",
+		//isNonstandard: "Future",
 		tier: "NFE",
 	},
 	arcanine: {
@@ -596,7 +596,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "OU",
 	},
 	arcaninehisui: {
-		isNonstandard: "Future",
+		//isNonstandard: "Future",
 		tier: "(PU)",
 	},
 	poliwag: {
@@ -976,7 +976,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "LC",
 	},
 	voltorbhisui: {
-		isNonstandard: "Future",
+		//isNonstandard: "Future",
 		tier: "NFE",
 	},
 	electrode: {
@@ -984,7 +984,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "PU",
 	},
 	electrodehisui: {
-		isNonstandard: "Future",
+		//isNonstandard: "Future",
 		tier: "(PU)",
 	},
 	exeggcute: {
@@ -1692,7 +1692,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "OU",
 	},
 	typhlosionhisui: {
-		isNonstandard: "Future",
+		//isNonstandard: "Future",
 		tier: "(PU)",
 	},
 	totodile: {
@@ -2024,7 +2024,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		doublesTier: "(DUU)",
 	},
 	qwilfishhisui: {
-		isNonstandard: "Future",
+		//isNonstandard: "Future",
 		tier: "NFE",
 	},
 	shuckle: {
@@ -2054,7 +2054,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "NFE",
 	},
 	sneaselhisui: {
-		isNonstandard: "Future",
+		//isNonstandard: "Future",
 		tier: "NFE",
 	},
 	weavile: {
@@ -3819,7 +3819,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		doublesTier: "DUber",
 	},
 	dialgaorigin: {
-		isNonstandard: "Future",
+		//isNonstandard: "Future",
 		tier: "Uber",
 		doublesTier: "DUber",
 	},
@@ -3832,7 +3832,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		doublesTier: "DUber",
 	},
 	palkiaorigin: {
-		isNonstandard: "Future",
+		//isNonstandard: "Future",
 		tier: "Uber",
 		doublesTier: "DUber",
 	},
@@ -4032,7 +4032,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "PU",
 	},
 	samurotthisui: {
-		isNonstandard: "Future",
+		//isNonstandard: "Future",
 		tier: "(PU)",
 	},
 	patrat: {
@@ -4303,7 +4303,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "NU",
 	},
 	lilliganthisui: {
-		isNonstandard: "Future",
+		//isNonstandard: "Future",
 		tier: "(PU)",
 	},
 	basculin: {
@@ -4323,7 +4323,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		doublesTier: "(DUU)",
 	},
 	basculinwhitestriped: {
-		isNonstandard: "Future",
+		//isNonstandard: "Future",
 		tier: "NFE",
 	},
 	sandile: {
@@ -4501,7 +4501,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "LC",
 	},
 	zoruahisui: {
-		isNonstandard: "Future",
+		//isNonstandard: "Future",
 		tier: "NFE",
 	},
 	zoroark: {
@@ -4515,7 +4515,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "UU",
 	},
 	zoroarkhisui: {
-		isNonstandard: "Future",
+		//isNonstandard: "Future",
 		tier: "(PU)",
 	},
 	minccino: {
@@ -4910,7 +4910,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		doublesTier: "(DUU)",
 	},
 	braviaryhisui: {
-		isNonstandard: "Future",
+		//isNonstandard: "Future",
 		tier: "(PU)",
 	},
 	vullaby: {
@@ -5479,7 +5479,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "NFE",
 	},
 	sliggoohisui: {
-		isNonstandard: "Future",
+		//isNonstandard: "Future",
 		tier: "NFE",
 	},
 	goodra: {
@@ -5494,7 +5494,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "UU",
 	},
 	goodrahisui: {
-		isNonstandard: "Future",
+		//isNonstandard: "Future",
 		tier: "(PU)",
 	},
 	klefki: {
@@ -5584,7 +5584,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "UU",
 	},
 	avalugghisui: {
-		isNonstandard: "Future",
+		//isNonstandard: "Future",
 		tier: "(PU)",
 	},
 	noibat: {
@@ -5694,7 +5694,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		doublesTier: "(DUU)",
 	},
 	decidueyehisui: {
-		isNonstandard: "Future",
+		//isNonstandard: "Future",
 		tier: "(PU)",
 	},
 	litten: {
@@ -7146,39 +7146,39 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		doublesTier: "DUber",
 	},
 	wyrdeer: {
-		isNonstandard: "Future",
+		//isNonstandard: "Future",
 		tier: "PU",
 	},
 	kleavor: {
-		isNonstandard: "Future",
+		//isNonstandard: "Future",
 		tier: "PU",
 	},
 	ursaluna: {
-		isNonstandard: "Future",
+		//isNonstandard: "Future",
 		tier: "PU",
 	},
 	basculegion: {
-		isNonstandard: "Future",
+		//isNonstandard: "Future",
 		tier: "(PU)",
 	},
 	basculegionf: {
-		isNonstandard: "Future",
+		//isNonstandard: "Future",
 		tier: "(PU)",
 	},
 	sneasler: {
-		isNonstandard: "Future",
+		//isNonstandard: "Future",
 		tier: "(PU)",
 	},
 	overqwil: {
-		isNonstandard: "Future",
+		//isNonstandard: "Future",
 		tier: "(PU)",
 	},
 	enamorus: {
-		isNonstandard: "Future",
+		//isNonstandard: "Future",
 		tier: "(PU)",
 	},
 	enamorustherian: {
-		isNonstandard: "Future",
+		//isNonstandard: "Future",
 		tier: "(PU)",
 	},
 	missingno: {
