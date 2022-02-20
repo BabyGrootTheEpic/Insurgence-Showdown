@@ -26,14 +26,14 @@ export const Formats: FormatList = [
 		name: "[Gen 8] Singles AG",
 		desc: `Singles NatDex AG with Dynamax Clause, up to level 120 Pokémon, duplicates fusions, and duplicate LGPE starters.`,
 
-		mod: 'gen8leaks',
+		mod: 'gen8',
 		ruleset: ['[Gen 8] Singles AG Dmax', 'Dynamax Clause'],
 	},
 	{
 		name: "[Gen 8] Doubles AG",
 		desc: `Doubles NatDex AG with Dynamax Clause, up to level 120 Pokémon, duplicates fusions, and duplicate LGPE starters.`,
 		
-		mod: 'gen8leaks',
+		mod: 'gen8',
 		gameType: 'doubles',
 		ruleset: ['[Gen 8] Singles AG'],
 	},
@@ -41,7 +41,7 @@ export const Formats: FormatList = [
 		name: "[Gen 8] Triples AG",
 		desc: `Triples NatDex AG with Dynamax Clause, up to level 120 Pokémon, duplicates fusions, and duplicate LGPE starters.`,
 		
-		mod: 'gen8leaks',
+		mod: 'gen8',
 		gameType: 'triples',
 		ruleset: ['[Gen 8] Singles AG'],
 	},
@@ -49,7 +49,7 @@ export const Formats: FormatList = [
 		name: "[Gen 8] Multi AG",
 		desc: `Multi Battle NatDex AG with Dynamax Clause, up to level 120 Pokémon, duplicates fusions, and duplicate LGPE starters.`,
 		
-		mod: 'gen8leaks',
+		mod: 'gen8',
 		gameType: 'multi',
 		ruleset: ['[Gen 8] Singles AG'],
 	},
@@ -57,7 +57,7 @@ export const Formats: FormatList = [
 		name: "[Gen 8] FFA AG",
 		desc: `Free-For-All NatDex AG with Dynamax Clause, up to level 120 Pokémon, duplicates fusions, and duplicate LGPE starters.`,
 		
-		mod: 'gen8leaks',
+		mod: 'gen8',
 		gameType: 'freeforall',
 		ruleset: ['[Gen 8] Singles AG'],
 	},
@@ -71,14 +71,14 @@ export const Formats: FormatList = [
 		name: "[Gen 8] Singles AG Dmax",
 		desc: `Singles NatDex AG with Dynamaxing, up to level 120 Pokémon, duplicates fusions, and duplicate LGPE starters.`,
 
-		mod: 'gen8leaks',
+		mod: 'gen8',
 		ruleset: ['BGTEs Standard', 'Level 120', '!NoFusionDupes', '!Limit One LGPE Starter'],
 	},
 	{
 		name: "[Gen 8] Doubles AG Dmax",
 		desc: `Doubles NatDex AG with Dynamaxing, up to level 120 Pokémon, duplicates fusions, and duplicate LGPE starters.`,
 		
-		mod: 'gen8leaks',
+		mod: 'gen8',
 		gameType: 'doubles',
 		ruleset: ['[Gen 8] Singles AG Dmax'],
 	},
@@ -86,7 +86,7 @@ export const Formats: FormatList = [
 		name: "[Gen 8] Triples AG Dmax",
 		desc: `Triples NatDex AG with Dynamaxing, up to level 120 Pokémon, duplicates fusions, and duplicate LGPE starters.`,
 		
-		mod: 'gen8leaks',
+		mod: 'gen8',
 		gameType: 'triples',
 		ruleset: ['[Gen 8] Singles AG Dmax'],
 	},
@@ -94,7 +94,7 @@ export const Formats: FormatList = [
 		name: "[Gen 8] Multi AG Dmax",
 		desc: `Multi Battle NatDex AG with Dynamaxing, up to level 120 Pokémon, duplicates fusions, and duplicate LGPE starters.`,
 		
-		mod: 'gen8leaks',
+		mod: 'gen8',
 		gameType: 'multi',
 		ruleset: ['[Gen 8] Singles AG Dmax'],
 	},
@@ -102,7 +102,7 @@ export const Formats: FormatList = [
 		name: "[Gen 8] FFA AG Dmax",
 		desc: `Free-For-All NatDex AG with Dynamaxing, up to level 120 Pokémon, duplicates fusions, and duplicate LGPE starters.`,
 		
-		mod: 'gen8leaks',
+		mod: 'gen8',
 		gameType: 'freeforall',
 		ruleset: ['[Gen 8] Singles AG Dmax'],
 	},
@@ -116,7 +116,7 @@ export const Formats: FormatList = [
 		name: "[Gen 8] Singles Ubers",
 		desc: `NatDex Singles with all the clauses and bans from [Gen 8] Ubers.`,
 
-		mod: 'gen8leaks',
+		mod: 'gen8',
 		ruleset: ['[Gen 8] FFA Ubers'],
 		banlist: ['AG', 'Shadow Tag'],
 	},
@@ -124,7 +124,7 @@ export const Formats: FormatList = [
 		name: "[Gen 8] Doubles Ubers",
 		desc: `NatDex Doubles with all the clauses from [Gen 8] Doubles Ubers.`,
 
-		mod: 'gen8leaks',
+		mod: 'gen8',
 		gameType: 'doubles',
 		ruleset: ['BGTEs Standard', 'Species Clause', 'OHKO Clause', 'Evasion Moves Clause'],
 	},
@@ -132,7 +132,7 @@ export const Formats: FormatList = [
 		name: "[Gen 8] Triples Ubers",
 		desc: `NatDex Triples with all the clauses from [Gen 8] Doubles Ubers.`,
 
-		mod: 'gen8leaks',
+		mod: 'gen8',
 		gameType: 'triples',
 		ruleset: ['[Gen 8] Doubles Ubers'],
 	},
@@ -140,7 +140,7 @@ export const Formats: FormatList = [
 		name: "[Gen 8] Multi Ubers",
 		desc: `NatDex Multi Battle with all the clauses from [Gen 8] Doubles Ubers as well as Dynamax Clause.`,
 
-		mod: 'gen8leaks',
+		mod: 'gen8',
 		gameType: 'multi',
 		ruleset: ['[Gen 8] Doubles Ubers'],
 	},
@@ -148,7 +148,7 @@ export const Formats: FormatList = [
 		name: "[Gen 8] FFA Ubers",
 		desc: `NatDex Free-For-All with all the clauses from [Gen 8] Ubers.`,
 
-		mod: 'gen8leaks',
+		mod: 'gen8',
 		ruleset: ['BGTEs Standard', 'Sleep Clause Mod', 'Species Clause', 'OHKO Clause', 'Evasion Moves Clause', 'Dynamax Clause'],
 		banlist: ['Baton Pass'],
 	},
@@ -163,7 +163,7 @@ export const Formats: FormatList = [
 		name: "[Gen 8] Singles Flat Rules",
 		desc: `NatDex Singles with Flat Rules.`,
 
-		mod: 'gen8leaks',
+		mod: 'gen8',
 		ruleset: ['BGTEs Standard', 'Species Clause', 'Item Clause', 'Adjust Level Down = 50', 'Picked Team Size = Auto'],
 		banlist: ['Mythical', 'Restricted Legendary'],
 	},
@@ -171,7 +171,7 @@ export const Formats: FormatList = [
 		name: "[Gen 8] Doubles Flat Rules",
 		desc: `NatDex Doubles with Flat Rules.`,
 
-		mod: 'gen8leaks',
+		mod: 'gen8',
 		gameType: 'doubles',
 		ruleset: ['[Gen 8] Singles Flat Rules'],
 	},
@@ -179,7 +179,7 @@ export const Formats: FormatList = [
 		name: "[Gen 8] Triples Flat Rules",
 		desc: `NatDex Triples with Flat Rules.`,
 
-		mod: 'gen8leaks',
+		mod: 'gen8',
 		gameType: 'triples',
 		ruleset: ['[Gen 8] Singles Flat Rules'],
 	},
@@ -187,7 +187,7 @@ export const Formats: FormatList = [
 		name: "[Gen 8] Multi Flat Rules",
 		desc: `NatDex Multi Battle with Flat Rules.`,
 
-		mod: 'gen8leaks',
+		mod: 'gen8',
 		gameType: 'multi',
 		ruleset: ['[Gen 8] Singles Flat Rules'],
 	},
@@ -195,7 +195,7 @@ export const Formats: FormatList = [
 		name: "[Gen 8] FFA Flat Rules",
 		desc: `NatDex Free-For-All with Flat Rules.`,
 
-		mod: 'gen8leaks',
+		mod: 'gen8',
 		ruleset: ['[Gen 8] Singles Flat Rules'],
 	},
 
@@ -209,7 +209,7 @@ export const Formats: FormatList = [
 		name: "[Gen 8] Singles Flat Rules 2R",
 		desc: `NatDex Singles with Flat Rules. 2 Restricted Legendaries are allowed.`,
 
-		mod: 'gen8leaks',
+		mod: 'gen8',
 		ruleset: ['[Gen 8] Singles Flat Rules', 'Limit Two Restricted'],
 		restricted: ['Restricted Legendary'],
 	},
@@ -217,7 +217,7 @@ export const Formats: FormatList = [
 		name: "[Gen 8] Doubles Flat Rules 2R",
 		desc: `NatDex Doubles with Flat Rules. 2 Restricted Legendaries are allowed.`,
 
-		mod: 'gen8leaks',
+		mod: 'gen8',
 		gameType: 'doubles',
 		ruleset: ['[Gen 8] Singles Flat Rules 2R'],
 	},
@@ -225,7 +225,7 @@ export const Formats: FormatList = [
 		name: "[Gen 8] Triples Flat Rules 2R",
 		desc: `NatDex Triples with Flat Rules. 2 Restricted Legendaries are allowed.`,
 
-		mod: 'gen8leaks',
+		mod: 'gen8',
 		gameType: 'triples',
 		ruleset: ['[Gen 8] Singles Flat Rules 2R'],
 	},
@@ -233,7 +233,7 @@ export const Formats: FormatList = [
 		name: "[Gen 8] Multi Flat Rules 2R",
 		desc: `NatDex Multi Battle with Flat Rules. 2 Restricted Legendaries are allowed.`,
 
-		mod: 'gen8leaks',
+		mod: 'gen8',
 		gameType: 'multi',
 		ruleset: ['[Gen 8] Singles Flat Rules 2R'],
 	},
@@ -241,7 +241,7 @@ export const Formats: FormatList = [
 		name: "[Gen 8] FFA Flat Rules 2R",
 		desc: `NatDex Free-For-All with Flat Rules. 2 Restricted Legendaries are allowed.`,
 
-		mod: 'gen8leaks',
+		mod: 'gen8',
 		ruleset: ['[Gen 8] Singles Flat Rules 2R'],
 	},
 
@@ -334,13 +334,13 @@ export const Formats: FormatList = [
 	{
 		name: "[Gen 8] National Dex Leaks Draft",
 
-		mod: 'gen8leaks',
+		mod: 'gen8',
 		ruleset: ['Obtainable', 'Draft', '+Unreleased', '+Past', 'Team Preview', 'Dynamax Clause'],
 	},
 	{
 		name: "[Gen 8] National Dex Leaks Legacy",
 
-		mod: 'gen8leaks',
+		mod: 'gen8',
 		ruleset: ['Obtainable', 'Draft', '+Unreleased', '+Past', '+PastMove', 'Team Preview', 'Dynamax Clause'],
 	},
 	{
@@ -360,14 +360,14 @@ export const Formats: FormatList = [
 	{
 		name: "[Gen 8] NatDex LC National Dex Leaks Draft",
 
-		mod: 'gen8leaks',
+		mod: 'gen8',
 		ruleset: ['Obtainable', 'Draft', '+Unreleased', '+Past', 'Team Preview', 'Double Item Clause', 'Little Cup', 'Dynamax Clause'],
 		banlist: ['Dragon Rage', 'Sonic Boom'],
 	},
 	{
 		name: "[Gen 8] NatDex LC National Dex Leaks Legacy",
 
-		mod: 'gen8leaks',
+		mod: 'gen8',
 		ruleset: ['Obtainable', 'Draft', '+Unreleased', '+Past', '+PastMove', 'Team Preview', 'Double Item Clause', 'Little Cup', 'Dynamax Clause'],
 		banlist: ['Dragon Rage', 'Sonic Boom'],
 	},
