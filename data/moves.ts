@@ -27,10 +27,10 @@ sound: Has no effect on Pokemon with the Soundproof Ability.
 */
 
 export const Moves: {[moveid: string]: MoveData} = {
-	//Custom:
-	//Legends Arceus:
+	//Custom (num: 9000+):
+	//Legends Arceus (num: 6000-6999):
 	mysticalpower: {
-		num: 9001,
+		num: 6011,
 		accuracy: 90,
 		basePower: 70,
 		category: "Special",
@@ -57,9 +57,9 @@ export const Moves: {[moveid: string]: MoveData} = {
 		target: "normal",
 		type: "Psychic",
 	},
-	//Shadow:
+	//Shadow (num: 7000-7999):
 	shadowblast: {
-		num: 9000,
+		num: 7000,
 		accuracy: 100,
 		basePower: 80,
 		category: "Special",
@@ -73,8 +73,25 @@ export const Moves: {[moveid: string]: MoveData} = {
 		target: "any",
 		type: "Shadow",
 	},
-	//Zeta & Omicron:
-	//Normal & Insurgence:
+	//Zeta & Omicron (num: 8000-8999):
+	tesseract: {
+		num: 8031,
+		accuracy: 100,
+		basePower: 100,
+		category: "Special",
+		name: "Tesseract",
+		pp: 5,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		onEffectiveness(typeMod, target, type) {
+			//20% chance of being super effective.
+			if (this.random(5) === 0) return 1;
+		},
+		secondary: null,
+		target: "normal",
+		type: "?",
+	},
+	//Normal & Insurgence (num: 5999-):
 	"10000000voltthunderbolt": {
 		num: 719,
 		accuracy: true,
