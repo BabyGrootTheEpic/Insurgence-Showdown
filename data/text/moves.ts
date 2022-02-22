@@ -22,7 +22,7 @@ export const MovesText: {[k: string]: MoveText} = {
 	//Zeta & Omicron:
 	tesseract: {
 		name: "Tesseract",
-		desc: "20% chance of being super-effective.",
+		shortDesc: "20% chance of being super-effective.",
 	},
 	//Normal & Insurgence:
 	"10000000voltthunderbolt": {
