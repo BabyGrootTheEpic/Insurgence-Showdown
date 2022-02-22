@@ -26,8 +26,6 @@ sound: Has no effect on Pokemon with the Soundproof Ability.
 
 */
 
-import { toUnicode } from "punycode";
-
 export const Moves: {[moveid: string]: MoveData} = {
 	//Custom (num: 9000+):
 	giveballoon: {
@@ -51,6 +49,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		type: "Ghost",
 		zMove: {effect: 'clearnegativeboost'},
 	},
+	//Legends Arceus (num: 6000-6999):
 	mysticalpower: {
 		num: 6011,
 		accuracy: 90,
