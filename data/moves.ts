@@ -26,9 +26,31 @@ sound: Has no effect on Pokemon with the Soundproof Ability.
 
 */
 
+import { toUnicode } from "punycode";
+
 export const Moves: {[moveid: string]: MoveData} = {
 	//Custom (num: 9000+):
-	//Legends Arceus (num: 6000-6999):
+	giveballoon: {
+		num: 9000,
+		accuracy: 100,
+		basePower: 0,
+		category: "Status",
+		name: "Give Balloon",
+		pp: 10,
+		priority: 0,
+		flags: {snatch: 1, gravity: 1, allyanim: 1, reflectable: 1},
+		onHit(pokemon) {
+			if (pokemon.item) return false;
+			const item = 'airballoon';
+			pokemon.lastItem = '';
+			this.add('-item', pokemon, this.dex.items.get(item), '[from] move: Give Balloon');
+			pokemon.setItem(item);
+		},
+		secondary: null,
+		target: "normal",
+		type: "Ghost",
+		zMove: {effect: 'clearnegativeboost'},
+	},
 	mysticalpower: {
 		num: 6011,
 		accuracy: 90,

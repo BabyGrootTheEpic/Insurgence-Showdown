@@ -1,5 +1,12 @@
 export const MovesText: {[k: string]: MoveText} = {
 	//Custom:
+	giveballoon: {
+		name: "Give Balloon",
+		desc: "Gives the target an Air Balloon. Fails if the user already has an item.",
+		shortDesc: "Gives the target an Air Balloon.",
+
+		addItem: "  [POKEMON] was given an [ITEM]!",
+	},
 	//Legends Arceus:
 	mysticalpower: {
 		name: "Mystical Power",
