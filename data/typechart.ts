@@ -1,7 +1,7 @@
 export const TypeChart: {[k: string]: TypeData} = {
-	"?": {
+	qmark: {
 		damageTaken: {
-			"?": 1,
+			Qmark: 1,
 			Bug: 0,
 			Crystal: 0,
 			Dark: 0,
@@ -26,7 +26,7 @@ export const TypeChart: {[k: string]: TypeData} = {
 	},
 	bug: {
 		damageTaken: {
-			"?": 0,
+			Qmark: 0,
 			Bug: 0,
 			Crystal: 0,
 			Dark: 0,
@@ -53,7 +53,7 @@ export const TypeChart: {[k: string]: TypeData} = {
 	},
 	crystal: {
 		damageTaken: {
-			"?": 0,
+			Qmark: 0,
 			Bug: 0,
 			Crystal: 0,
 			Dark: 0,
@@ -79,7 +79,7 @@ export const TypeChart: {[k: string]: TypeData} = {
 	dark: {
 		damageTaken: {
 			prankster: 3,
-			"?": 0,
+			Qmark: 0,
 			Bug: 1,
 			Crystal: 0,
 			Dark: 2,
@@ -105,7 +105,7 @@ export const TypeChart: {[k: string]: TypeData} = {
 	},
 	dragon: {
 		damageTaken: {
-			"?": 0,
+			Qmark: 0,
 			Bug: 0,
 			Crystal: 0,
 			Dark: 0,
@@ -133,7 +133,7 @@ export const TypeChart: {[k: string]: TypeData} = {
 	electric: {
 		damageTaken: {
 			par: 3,
-			"?": 0,
+			Qmark: 0,
 			Bug: 0,
 			Crystal: 0,
 			Dark: 0,
@@ -160,7 +160,7 @@ export const TypeChart: {[k: string]: TypeData} = {
 	},
 	fairy: {
 		damageTaken: {
-			"?": 0,
+			Qmark: 0,
 			Bug: 2,
 			Crystal: 0,
 			Dark: 2,
@@ -185,7 +185,7 @@ export const TypeChart: {[k: string]: TypeData} = {
 	},
 	fighting: {
 		damageTaken: {
-			"?": 0,
+			Qmark: 0,
 			Bug: 2,
 			Crystal: 0,
 			Dark: 2,
@@ -213,7 +213,7 @@ export const TypeChart: {[k: string]: TypeData} = {
 	fire: {
 		damageTaken: {
 			brn: 3,
-			"?": 0,
+			Qmark: 0,
 			Bug: 2,
 			Crystal: 0,
 			Dark: 0,
@@ -240,7 +240,7 @@ export const TypeChart: {[k: string]: TypeData} = {
 	},
 	flying: {
 		damageTaken: {
-			"?": 0,
+			Qmark: 0,
 			Bug: 2,
 			Crystal: 0,
 			Dark: 0,
@@ -268,7 +268,7 @@ export const TypeChart: {[k: string]: TypeData} = {
 	ghost: {
 		damageTaken: {
 			trapped: 3,
-			"?": 0,
+			Qmark: 0,
 			Bug: 2,
 			Crystal: 0,
 			Dark: 1,
@@ -296,7 +296,7 @@ export const TypeChart: {[k: string]: TypeData} = {
 	grass: {
 		damageTaken: {
 			powder: 3,
-			"?": 0,
+			Qmark: 0,
 			Bug: 1,
 			Crystal: 0,
 			Dark: 0,
@@ -324,7 +324,7 @@ export const TypeChart: {[k: string]: TypeData} = {
 	ground: {
 		damageTaken: {
 			sandstorm: 3,
-			"?": 0,
+			Qmark: 0,
 			Bug: 0,
 			Crystal: 0,
 			Dark: 0,
@@ -353,7 +353,7 @@ export const TypeChart: {[k: string]: TypeData} = {
 		damageTaken: {
 			hail: 3,
 			frz: 3,
-			"?": 0,
+			Qmark: 0,
 			Bug: 0,
 			Crystal: 0,
 			Dark: 0,
@@ -380,7 +380,7 @@ export const TypeChart: {[k: string]: TypeData} = {
 	},
 	normal: {
 		damageTaken: {
-			"?": 0,
+			Qmark: 0,
 			Bug: 0,
 			Crystal: 0,
 			Dark: 0,
@@ -407,7 +407,7 @@ export const TypeChart: {[k: string]: TypeData} = {
 		damageTaken: {
 			psn: 3,
 			tox: 3,
-			"?": 0,
+			Qmark: 0,
 			Bug: 2,
 			Crystal: 0,
 			Dark: 0,
@@ -434,7 +434,7 @@ export const TypeChart: {[k: string]: TypeData} = {
 	},
 	psychic: {
 		damageTaken: {
-			"?": 0,
+			Qmark: 0,
 			Bug: 1,
 			Crystal: 0,
 			Dark: 1,
@@ -462,7 +462,7 @@ export const TypeChart: {[k: string]: TypeData} = {
 	rock: {
 		damageTaken: {
 			sandstorm: 3,
-			"?": 0,
+			Qmark: 0,
 			Bug: 0,
 			Crystal: 0,
 			Dark: 0,
@@ -489,7 +489,7 @@ export const TypeChart: {[k: string]: TypeData} = {
 	},
 	shadow: {
 		damageTaken: {
-			"?": 2,
+			Qmark: 2,
 			Bug: 2,
 			Crystal: 2,
 			Dark: 2,
@@ -517,7 +517,7 @@ export const TypeChart: {[k: string]: TypeData} = {
 			psn: 3,
 			tox: 3,
 			sandstorm: 3,
-			"?": 0,
+			Qmark: 0,
 			Bug: 2,
 			Crystal: 0,
 			Dark: 0,
@@ -544,7 +544,7 @@ export const TypeChart: {[k: string]: TypeData} = {
 	},
 	water: {
 		damageTaken: {
-			"?": 0,
+			Qmark: 0,
 			Bug: 0,
 			Crystal: 0,
 			Dark: 0,

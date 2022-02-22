@@ -89,7 +89,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "?",
+		type: "Qmark",
 	},
 	//Normal & Insurgence (num: 5999-):
 	"10000000voltthunderbolt": {

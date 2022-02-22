@@ -2,7 +2,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 	testmon: {
 		num: 9000,
 		name: "Testmon",
-		types: ["Shadow", "?"],
+		types: ["Shadow", "Qmark"],
 		gender: "N",
 		baseStats: {hp: 200, atk: 200, def: 200, spa: 200, spd: 200, spe: 200},
 		abilities: {0: "Beast Boost"},
