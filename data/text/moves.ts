@@ -13,6 +13,10 @@ export const MovesText: {[k: string]: MoveText} = {
 		shortDesc: "High critical hit ratio.",
 	},
 	//Zeta & Omicron:
+	tesseract: {
+		name: "Tesseract",
+		desc: "20% chance of being super-effective.",
+	},
 	//Normal & Insurgence:
 	"10000000voltthunderbolt": {
 		name: "10,000,000 Volt Thunderbolt",
