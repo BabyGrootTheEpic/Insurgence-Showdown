@@ -28,6 +28,7 @@ export const Formats: FormatList = [
 
 		mod: 'gen8',
 		rated: false,
+		battle: {trunc: Math.trunc}, //Disables the overflow 'glitch' without capping the stats like Overflow Stat Mod does.
 		ruleset: ['[Gen 8] Singles AG Dmax', 'Dynamax Clause'],
 	},
 	{
@@ -36,6 +37,7 @@ export const Formats: FormatList = [
 		
 		mod: 'gen8',
 		rated: false,
+		battle: {trunc: Math.trunc},
 		gameType: 'doubles',
 		ruleset: ['[Gen 8] Doubles AG Dmax', 'Dynamax Clause'],
 	},
@@ -45,6 +47,7 @@ export const Formats: FormatList = [
 		
 		mod: 'gen8',
 		rated: false,
+		battle: {trunc: Math.trunc},
 		gameType: 'triples',
 		ruleset: ['[Gen 8] Triples AG Dmax', 'Dynamax Clause'],
 	},
@@ -54,6 +57,7 @@ export const Formats: FormatList = [
 		
 		mod: 'gen8',
 		rated: false,
+		battle: {trunc: Math.trunc},
 		gameType: 'multi',
 		ruleset: ['[Gen 8] Multi AG Dmax', 'Dynamax Clause'],
 	},
@@ -63,6 +67,7 @@ export const Formats: FormatList = [
 		
 		mod: 'gen8',
 		rated: false,
+		battle: {trunc: Math.trunc},
 		gameType: 'freeforall',
 		ruleset: ['[Gen 8] FFA AG Dmax', 'Dynamax Clause'],
 	},
@@ -78,6 +83,7 @@ export const Formats: FormatList = [
 
 		mod: 'gen8',
 		rated: false,
+		battle: {trunc: Math.trunc},
 		ruleset: ['BGTEs Standard', 'Level 120', '!NoFusionDupes', '!Limit One LGPE Starter'],
 	},
 	{
@@ -86,6 +92,7 @@ export const Formats: FormatList = [
 		
 		mod: 'gen8',
 		rated: false,
+		battle: {trunc: Math.trunc},
 		gameType: 'doubles',
 		ruleset: ['BGTEs Standard', 'Level 120', '!NoFusionDupes', '!Limit One LGPE Starter'],
 	},
@@ -95,6 +102,7 @@ export const Formats: FormatList = [
 		
 		mod: 'gen8',
 		rated: false,
+		battle: {trunc: Math.trunc},
 		gameType: 'triples',
 		ruleset: ['BGTEs Standard', 'Level 120', '!NoFusionDupes', '!Limit One LGPE Starter'],
 	},
@@ -104,6 +112,7 @@ export const Formats: FormatList = [
 		
 		mod: 'gen8',
 		rated: false,
+		battle: {trunc: Math.trunc},
 		gameType: 'multi',
 		ruleset: ['BGTEs Standard', 'Level 120', '!NoFusionDupes', '!Limit One LGPE Starter'],
 	},
@@ -113,6 +122,7 @@ export const Formats: FormatList = [
 		
 		mod: 'gen8',
 		rated: false,
+		battle: {trunc: Math.trunc},
 		gameType: 'freeforall',
 		ruleset: ['BGTEs Standard', 'Level 120', '!NoFusionDupes', '!Limit One LGPE Starter'],
 	},
@@ -128,6 +138,7 @@ export const Formats: FormatList = [
 
 		mod: 'gen8',
 		rated: false,
+		battle: {trunc: Math.trunc},
 		ruleset: ['BGTEs Standard', 'Sleep Clause Mod', 'Species Clause', 'OHKO Clause', 'Evasion Moves Clause', 'Dynamax Clause'],
 		banlist: ['AG', 'Shadow Tag','Baton Pass'],
 	},
@@ -137,6 +148,7 @@ export const Formats: FormatList = [
 
 		mod: 'gen8',
 		rated: false,
+		battle: {trunc: Math.trunc},
 		gameType: 'doubles',
 		ruleset: ['BGTEs Standard', 'Species Clause', 'OHKO Clause', 'Evasion Moves Clause'],
 	},
@@ -146,6 +158,7 @@ export const Formats: FormatList = [
 
 		mod: 'gen8',
 		rated: false,
+		battle: {trunc: Math.trunc},
 		gameType: 'triples',
 		ruleset: ['BGTEs Standard', 'Species Clause', 'OHKO Clause', 'Evasion Moves Clause'],
 	},
@@ -155,6 +168,7 @@ export const Formats: FormatList = [
 
 		mod: 'gen8',
 		rated: false,
+		battle: {trunc: Math.trunc},
 		gameType: 'multi',
 		ruleset: ['BGTEs Standard', 'Species Clause', 'OHKO Clause', 'Evasion Moves Clause'],
 	},
@@ -164,6 +178,7 @@ export const Formats: FormatList = [
 
 		mod: 'gen8',
 		rated: false,
+		battle: {trunc: Math.trunc},
 		gameType: 'freeforall',
 		ruleset: ['BGTEs Standard', 'Sleep Clause Mod', 'Species Clause', 'OHKO Clause', 'Evasion Moves Clause', 'Dynamax Clause'],
 		banlist: ['Baton Pass'],
@@ -181,6 +196,7 @@ export const Formats: FormatList = [
 
 		mod: 'gen8',
 		rated: false,
+		battle: {trunc: Math.trunc},
 		ruleset: ['BGTEs Standard', 'Species Clause', 'Item Clause', 'Adjust Level Down = 50', 'Picked Team Size = Auto'],
 		banlist: ['Mythical', 'Restricted Legendary'],
 	},
@@ -190,6 +206,7 @@ export const Formats: FormatList = [
 
 		mod: 'gen8',
 		rated: false,
+		battle: {trunc: Math.trunc},
 		gameType: 'doubles',
 		ruleset: ['BGTEs Standard', 'Species Clause', 'Item Clause', 'Adjust Level Down = 50', 'Picked Team Size = Auto'],
 		banlist: ['Mythical', 'Restricted Legendary'],
@@ -200,6 +217,7 @@ export const Formats: FormatList = [
 
 		mod: 'gen8',
 		rated: false,
+		battle: {trunc: Math.trunc},
 		gameType: 'triples',
 		ruleset: ['BGTEs Standard', 'Species Clause', 'Item Clause', 'Adjust Level Down = 50', 'Picked Team Size = Auto'],
 		banlist: ['Mythical', 'Restricted Legendary'],
@@ -210,6 +228,7 @@ export const Formats: FormatList = [
 
 		mod: 'gen8',
 		rated: false,
+		battle: {trunc: Math.trunc},
 		gameType: 'multi',
 		ruleset: ['BGTEs Standard', 'Species Clause', 'Item Clause', 'Adjust Level Down = 50', 'Picked Team Size = Auto'],
 		banlist: ['Mythical', 'Restricted Legendary'],
@@ -220,6 +239,7 @@ export const Formats: FormatList = [
 
 		mod: 'gen8',
 		rated: false,
+		battle: {trunc: Math.trunc},
 		gameType: 'freeforall',
 		ruleset: ['BGTEs Standard', 'Species Clause', 'Item Clause', 'Adjust Level Down = 50', 'Picked Team Size = Auto'],
 		banlist: ['Mythical', 'Restricted Legendary'],
@@ -237,6 +257,7 @@ export const Formats: FormatList = [
 
 		mod: 'gen8',
 		rated: false,
+		battle: {trunc: Math.trunc},
 		ruleset: ['[Gen 8] Singles Flat Rules', 'Limit Two Restricted'],
 		restricted: ['Restricted Legendary'],
 	},
@@ -246,6 +267,7 @@ export const Formats: FormatList = [
 
 		mod: 'gen8',
 		rated: false,
+		battle: {trunc: Math.trunc},
 		gameType: 'doubles',
 		ruleset: ['[Gen 8] Doubles Flat Rules', 'Limit Two Restricted'],
 		restricted: ['Restricted Legendary'],
@@ -256,6 +278,7 @@ export const Formats: FormatList = [
 
 		mod: 'gen8',
 		rated: false,
+		battle: {trunc: Math.trunc},
 		gameType: 'triples',
 		ruleset: ['[Gen 8] Triples Flat Rules', 'Limit Two Restricted'],
 		restricted: ['Restricted Legendary'],
@@ -266,6 +289,7 @@ export const Formats: FormatList = [
 
 		mod: 'gen8',
 		rated: false,
+		battle: {trunc: Math.trunc},
 		gameType: 'multi',
 		ruleset: ['[Gen 8] Multi Flat Rules', 'Limit Two Restricted'],
 		restricted: ['Restricted Legendary'],
@@ -276,6 +300,7 @@ export const Formats: FormatList = [
 
 		mod: 'gen8',
 		rated: false,
+		battle: {trunc: Math.trunc},
 		gameType: 'freeforall',
 		ruleset: ['[Gen 8] FFA Flat Rules', 'Limit Two Restricted'],
 		restricted: ['Restricted Legendary'],

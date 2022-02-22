@@ -602,7 +602,6 @@ export const Rulesets: {[k: string]: FormatData} = {
 		effectType: 'ValidatorRule',
 		name: 'Level 120',
 		desc: "Allows Pokémon up to Level 120.",
-		battle: {trunc: Math.trunc}, //Disables the overflow 'glitch' without capping the stats like Overflow Stat Mod does.
 		ruleset: ['Max Level = 120', 'Default Level = 120'],
 	},
 	blitz: {
