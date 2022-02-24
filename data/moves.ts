@@ -106,7 +106,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		flags: {protect: 1, mirror: 1},
 		onEffectiveness(typeMod, target, type) {
 			//20% chance of being super effective.
-			if (this.random(5) === 0) return 1;
+			if (this.random(2) === 0) return 1;
 		},
 		secondary: null,
 		target: "normal",
