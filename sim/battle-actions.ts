@@ -28,7 +28,6 @@ export class BattleActions {
 		Dragon: 'Max Wyrmwind',
 		Crystal: 'Max Strike',
 		Shadow: 'Max Darkness',
-		'?': 'Max Strike',
 	};
 
 	readonly Z_MOVES: {readonly [k: string]: string} = {
@@ -52,7 +51,6 @@ export class BattleActions {
 		Fairy: "Twinkle Tackle",
 		Crystal: "Breakneck Blitz",
 		Shadow: "Black Hole Eclipse",
-		'?': "Breakneck Blitz",
 	};
 
 	constructor(battle: Battle) {
@@ -1666,11 +1664,8 @@ export class BattleActions {
 		baseDamage = this.battle.randomizer(baseDamage);
 
 		// STAB
-		if (move.forceSTAB || (type !== '???' && pokemon.hasType(type))) {
-			// The "???" type never gets STAB
-			// Not even if you Roost in Gen 4 and somehow manage to use
-			// Struggle in the same turn.
-			// (On second thought, it might be easier to get a MissingNo.)
+		if (move.forceSTAB || (move.id !== 'struggle' && pokemon.hasType(type))) {
+			//Instead of ???-type moves never having STAB, now just Struggle never has STAB
 			baseDamage = this.battle.modify(baseDamage, move.stab || 1.5);
 		}
 		// types

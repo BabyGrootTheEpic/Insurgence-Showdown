@@ -3,10 +3,10 @@ export const Items: {[itemid: string]: ItemData} = {
 	/*divineplate: {
 		name: "Divine Plate",
 		spritenum: 146,
-		onPlate: '?',
+		onPlate: '???',
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
-			if (move && move.type === '?') {
+			if (move && move.type === '???') {
 				return this.chainModify([4915, 4096]);
 			}
 		},

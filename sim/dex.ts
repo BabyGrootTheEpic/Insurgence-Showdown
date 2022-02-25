@@ -260,6 +260,14 @@ export class ModdedDex {
 			return totalTypeMod;
 		}
 		const typeData = this.types.get(targetTyping);
+		
+		if (sourceType === '???')
+		{ //I can't seem to modify this type in data/typechart.ts, so it is hardcoded here:
+			if(targetTyping === '???') return 1;
+			else if(targetTyping === 'Shadow') return -1;
+		}
+		else if(sourceType === 'Shadow' && targetTyping === '???') return 1;
+
 		if (!typeData) return 0;
 		switch (typeData.damageTaken[sourceType]) {
 		case 1: return 1; // super-effective

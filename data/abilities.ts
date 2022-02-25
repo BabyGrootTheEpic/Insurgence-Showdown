@@ -595,7 +595,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			const type = move.type;
 			if (
 				target.isActive && move.effectType === 'Move' && move.category !== 'Status' &&
-				type !== '???' && !target.hasType(type)
+				/*type !== '???' &&*/ !target.hasType(type)
 			) {
 				if (!target.setType(type)) return false;
 				this.add('-start', target, 'typechange', type, '[from] ability: Color Change');
@@ -2236,7 +2236,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		onPrepareHit(source, target, move) {
 			if (move.hasBounced || move.sourceEffect === 'snatch') return;
 			const type = move.type;
-			if (type && type !== '???' && source.getTypes().join() !== type) {
+			if (type && /*type !== '???' &&*/ source.getTypes().join() !== type) {
 				if (!source.setType(type)) return;
 				this.add('-start', source, 'typechange', type, '[from] ability: Libero');
 			}
@@ -3477,7 +3477,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		onPrepareHit(source, target, move) {
 			if (move.hasBounced || move.sourceEffect === 'snatch') return;
 			const type = move.type;
-			if (type && type !== '???' && source.getTypes().join() !== type) {
+			if (type && /*type !== '???' &&*/ source.getTypes().join() !== type) {
 				if (!source.setType(type)) return;
 				this.add('-start', source, 'typechange', type, '[from] ability: Protean');
 			}
@@ -5476,7 +5476,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	},
 	wonderguard: {
 		onTryHit(target, source, move) {
-			if (target === source || move.category === 'Status' || move.type === '???' || move.id === 'struggle') return;
+			if (target === source || move.category === 'Status' || /*move.type === '???' ||*/ move.id === 'struggle') return;
 			if (move.id === 'skydrop' && !source.volatiles['skydrop']) return;
 			this.debug('Wonder Guard immunity: ' + move.id);
 			if (target.runEffectiveness(move) <= 0) {

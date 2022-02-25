@@ -107,7 +107,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		//Has a 20% chance of being super-effective, implemented in sim/battle-actions.ts
 		secondary: null,
 		target: "normal",
-		type: "?",
+		type: "???",
 	},
 	//Normal & Insurgence (num: 5999-):
 	"10000000voltthunderbolt": {
@@ -14604,7 +14604,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		flags: {protect: 1, bypasssub: 1, allyanim: 1},
 		onHit(target, source) {
 			if (source.species && (source.species.num === 493 || source.species.num === 773)) return false;
-			let newBaseTypes = target.getTypes(true).filter(type => type !== '???');
+			let newBaseTypes = target.getTypes(true);//.filter(type => type !== '???');
 			if (!newBaseTypes.length) {
 				if (target.addedType) {
 					newBaseTypes = ['Normal'];
@@ -17941,6 +17941,9 @@ export const Moves: {[moveid: string]: MoveData} = {
 		onModifyMove(move, pokemon, target) {
 			move.type = '???';
 			this.add('-activate', pokemon, 'move: Struggle');
+		},
+		onEffectiveness(typeMod, target, type) {
+			return 0;
 		},
 		struggleRecoil: true,
 		secondary: null,
