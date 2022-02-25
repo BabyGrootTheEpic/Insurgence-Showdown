@@ -2376,7 +2376,7 @@ export const Chat = new class {
 		buf += '<span class="col typecol">';
 		if (species.types) {
 			for (const type of species.types) {
-				buf += `<img src="https://raw.githubusercontent.com/BabyGrootTheEpic/Sprites/main/play.pokemonshowdown.com/sprites/types/${type}.png" alt="${type}" height="14" width="32">`;
+				buf += `<img src="https://raw.githubusercontent.com/BabyGrootTheEpic/Sprites/main/play.pokemonshowdown.com/sprites/types/${type.replace(/\?/g, '%3f')}.png" alt="${type}" height="14" width="32">`;
 			}
 		}
 		buf += '</span> ';
