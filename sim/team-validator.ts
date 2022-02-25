@@ -511,7 +511,7 @@ export class TeamValidator {
 		}
 
 		if (ruleTable.has('obtainableformes')) {
-			const canMegaEvo = dex.gen <= 7 || ruleTable.has('standardnatdex');
+			const canMegaEvo = true; //dex.gen <= 7 || ruleTable.has('standardnatdex');
 			if (item.megaEvolves === species.name) {
 				if (!item.megaStone) throw new Error(`Item ${item.name} has no base form for mega evolution`);
 				tierSpecies = dex.species.get(item.megaStone);

@@ -27,6 +27,8 @@ export class BattleActions {
 		Normal: 'Max Strike',
 		Dragon: 'Max Wyrmwind',
 		Crystal: 'Max Strike',
+		Shadow: 'Max Darkness',
+		Qmark: 'Max Strike',
 	};
 
 	readonly Z_MOVES: {readonly [k: string]: string} = {
@@ -49,6 +51,8 @@ export class BattleActions {
 		Ground: "Tectonic Rage",
 		Fairy: "Twinkle Tackle",
 		Crystal: "Breakneck Blitz",
+		Shadow: "Black Hole Eclipse",
+		Qmark: "Breakneck Blitz",
 	};
 
 	constructor(battle: Battle) {
@@ -1671,6 +1675,18 @@ export class BattleActions {
 		}
 		// types
 		let typeMod = target.runEffectiveness(move);
+
+		if(move.id === 'tesseract')
+		{
+			//20% chance of being super-effective
+			if(this.battle.random(5) === 0 && typeMod < 1) typeMod = 1;
+		}
+		else if(move.id === 'achillesheel')
+		{
+			//Always supper-effective (unless target is immune)
+			if (typeMod < 1)  typeMod = 1;
+		}
+
 		typeMod = this.battle.clampIntRange(typeMod, -6, 6);
 		target.getMoveHitData(move).typeMod = typeMod;
 		if (typeMod > 0) {
@@ -1744,7 +1760,7 @@ export class BattleActions {
 		const altForme = species.otherFormes && this.dex.species.get(species.otherFormes[0]);
 		const item = pokemon.getItem();
 		// Mega Rayquaza
-		if ((this.battle.gen <= 7 || this.battle.ruleTable.has('standardnatdex')) &&
+		if (/*(this.battle.gen <= 7 || this.battle.ruleTable.has('standardnatdex')) &&*/
 			altForme?.isMega && altForme?.requiredMove &&
 			pokemon.baseMoves.includes(toID(altForme.requiredMove)) && !item.zMove) {
 			return altForme.name;

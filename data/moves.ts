@@ -104,10 +104,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 5,
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
-		onEffectiveness(typeMod, target, type) {
-			//20% chance of being super effective.
-			if (this.random(2) === 0) return 1;
-		},
+		//Has a 20% chance of being super-effective, implemented in sim/battle-actions.ts
 		secondary: null,
 		target: "normal",
 		type: "Qmark",
@@ -168,12 +165,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 15,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1},
-		onBasePower(basePower, pokemon, target, move) {
-			if (target.types.length === 2) return this.chainModify(0.5);
-		},
-		onEffectiveness(typeMod, target, type) {
-			if (type !== 'Ghost') return 1;
-		},
+		//Super-effective unless target is immune, implemented in sim/battle-actions.ts
 		secondary: null,
 		target: "normal",
 		type: "Normal",
