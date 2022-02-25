@@ -1,4 +1,28 @@
 export const Items: {[itemid: string]: ItemData} = {
+	//Custom:
+	/*divineplate: {
+		name: "Divine Plate",
+		spritenum: 146,
+		onPlate: 'Qmark',
+		onBasePowerPriority: 15,
+		onBasePower(basePower, user, target, move) {
+			if (move && move.type === 'Qmark') {
+				return this.chainModify([4915, 4096]);
+			}
+		},
+		onTakeItem(item, pokemon, source) {
+			if ((source && source.baseSpecies.num === 493) || pokemon.baseSpecies.num === 493) {
+				return false;
+			}
+			return true;
+		},
+		forcedForme: "Arceus-Qmark",
+		num: 298,
+		gen: 4,
+		//isNonstandard: "Past",
+	},*/
+
+	//Legends Arceus:
 	blankplate: {
 		name: "Blank Plate",
 		spritenum: 752 - 1,
@@ -29,6 +53,8 @@ export const Items: {[itemid: string]: ItemData} = {
 		num: 9001,
 		gen: 8,
 	},
+
+	//Zeta & Omicron:
 	dugtrinite: {
 		name: "Dugtrinite",
 		//The Zeta/Omicron wiki doesn't the sprite, and I'm not far enough into my Omicron save to see the item, so this will use Typhlosionite's sprite for now.
@@ -88,6 +114,8 @@ export const Items: {[itemid: string]: ItemData} = {
 		gen: 6,
 		//isNonstandard: "Past",
 	},
+
+	//Gen 3+ & Insurgence:
 	abomasite: {
 		name: "Abomasite",
 		spritenum: 575,

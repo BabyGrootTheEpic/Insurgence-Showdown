@@ -1,4 +1,9 @@
 export const ItemsText: {[k: string]: ItemText} = {
+	divineplate: {
+		name: "Divine Plate",
+		desc: "Not yet implemented!",
+		//desc: "Holder's ?-type attacks have 1.2x power. Judgment is ? type.",
+	},
 	blankplate: {
 		name: "Blank Plate",
 		desc: "Holder's Normal-type attacks have 1.2x power.",

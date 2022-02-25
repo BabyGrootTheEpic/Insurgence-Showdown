@@ -2,7 +2,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 	testmon: {
 		num: 9000,
 		name: "Testmon",
-		types: ["Shadow", "Qmark"],
+		types: ["Shadow", "???"],
 		gender: "N",
 		baseStats: {hp: 200, atk: 200, def: 200, spa: 200, spd: 200, spe: 200},
 		abilities: {0: "Beast Boost"},
@@ -175,7 +175,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		abilities: {0: "Spirit Call", H: "Dark Aura"},
 		heightm: 0.6,
 		weightkg: 8.5,
-		color: "Grey",
+		color: "Gray",
 		evos: ["Charmeleon-Delta"],
 		eggGroups: ["Undiscovered"],
 	},
