@@ -3,10 +3,10 @@ export const Items: {[itemid: string]: ItemData} = {
 	/*divineplate: {
 		name: "Divine Plate",
 		spritenum: 146,
-		onPlate: 'Qmark',
+		onPlate: '?',
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
-			if (move && move.type === 'Qmark') {
+			if (move && move.type === '?') {
 				return this.chainModify([4915, 4096]);
 			}
 		},
@@ -16,7 +16,7 @@ export const Items: {[itemid: string]: ItemData} = {
 			}
 			return true;
 		},
-		forcedForme: "Arceus-Qmark",
+		forcedForme: "Arceus-Divine",
 		num: 298,
 		gen: 4,
 		//isNonstandard: "Past",

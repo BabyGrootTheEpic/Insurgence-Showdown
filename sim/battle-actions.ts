@@ -28,7 +28,7 @@ export class BattleActions {
 		Dragon: 'Max Wyrmwind',
 		Crystal: 'Max Strike',
 		Shadow: 'Max Darkness',
-		Qmark: 'Max Strike',
+		'?': 'Max Strike',
 	};
 
 	readonly Z_MOVES: {readonly [k: string]: string} = {
@@ -52,7 +52,7 @@ export class BattleActions {
 		Fairy: "Twinkle Tackle",
 		Crystal: "Breakneck Blitz",
 		Shadow: "Black Hole Eclipse",
-		Qmark: "Breakneck Blitz",
+		'?': "Breakneck Blitz",
 	};
 
 	constructor(battle: Battle) {

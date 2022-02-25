@@ -107,7 +107,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		//Has a 20% chance of being super-effective, implemented in sim/battle-actions.ts
 		secondary: null,
 		target: "normal",
-		type: "Qmark",
+		type: "?",
 	},
 	//Normal & Insurgence (num: 5999-):
 	"10000000voltthunderbolt": {
