@@ -11804,7 +11804,8 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		weightkg: 850,
 		color: "White",
 		eggGroups: ["Undiscovered"],
-		gen: 8,
+		requiredItem: "Adamant Orb",
+		changesFrom: "Dialga",
 	},
 	palkia: {
 		num: 484,
@@ -11834,7 +11835,8 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		weightkg: 660,
 		color: "Purple",
 		eggGroups: ["Undiscovered"],
-		gen: 8,
+		requiredItem: "Lustrous Orb",
+		changesFrom: "Palkia",
 	},
 	heatran: {
 		num: 485,

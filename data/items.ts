@@ -2,7 +2,7 @@ export const Items: {[itemid: string]: ItemData} = {
 	//Custom:
 	/*divineplate: {
 		name: "Divine Plate",
-		spritenum: 146,
+		spritenum: 752 - 6,
 		onPlate: '???',
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
@@ -16,7 +16,7 @@ export const Items: {[itemid: string]: ItemData} = {
 			}
 			return true;
 		},
-		forcedForme: "Arceus-Divine",
+		forcedForme: "Arceus-Typeless",
 		num: 298,
 		gen: 4,
 		//isNonstandard: "Past",
@@ -102,7 +102,7 @@ export const Items: {[itemid: string]: ItemData} = {
 	},
 	golurkite: {
 		name: "Golurkite",
-		spritenum: 752 + 3,
+		spritenum: 752 - 3,
 		/*megaStone: "Golurk-Mega",
 		megaEvolves: "Golurk",
 		itemUser: ["Golurk"],
@@ -169,11 +169,18 @@ export const Items: {[itemid: string]: ItemData} = {
 		},
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
-			if (move && user.baseSpecies.name === 'Dialga' && (move.type === 'Steel' || move.type === 'Dragon')) {
+			if (move && user.baseSpecies.num === 483 && (move.type === 'Steel' || move.type === 'Dragon')) {
 				return this.chainModify([4915, 4096]);
 			}
 		},
-		itemUser: ["Dialga"],
+		onTakeItem(item, pokemon, source) {
+			if ((source && source.baseSpecies.num === 483) || pokemon.baseSpecies.num === 483) {
+				return false;
+			}
+			return true;
+		},
+		forcedForme: "Dialga-Origin",
+		itemUser: ["Dialga-Origin"],
 		num: 135,
 		gen: 4,
 	},
@@ -3837,11 +3844,18 @@ export const Items: {[itemid: string]: ItemData} = {
 		},
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
-			if (move && user.baseSpecies.name === 'Palkia' && (move.type === 'Water' || move.type === 'Dragon')) {
+			if (move && user.baseSpecies.num === 484 && (move.type === 'Water' || move.type === 'Dragon')) {
 				return this.chainModify([4915, 4096]);
 			}
 		},
-		itemUser: ["Palkia"],
+		onTakeItem(item, pokemon, source) {
+			if ((source && source.baseSpecies.num === 484) || pokemon.baseSpecies.num === 484) {
+				return false;
+			}
+			return true;
+		},
+		forcedForme: "Palkia-Origin",
+		itemUser: ["Palkia-Origin"],
 		num: 136,
 		gen: 4,
 	},
