@@ -8,22 +8,173 @@ export const Rulesets: {[k: string]: FormatData} = {
 	// Custom Rulesets
 	///////////////////////////////////////////////////////////////////
 
-	bgtesstandard: {
+	//Standards
+	bgtenatdexag: {
 		effectType: 'ValidatorRule',
-		name: 'BGTEs Standard',
-		desc: "In addition to normal NatDex AG, allows Cosplay Pikachu, Let's GO Starters, Spiky Eared Pichu, Eternal Flower Floette, Gems, and everything added by this fork and the Insurgence fork.",
-		//ruleset: ['Obtainable', 'Sketch Gen 8 Moves', 'Team Preview', 'Nickname Clause', 'HP Percentage Mod', 'Cancel Mod', 'Endless Battle Clause'],
+		name: 'BGTE NatDex AG',
+		desc: "In addition to Smogon's [Gen 8] National Dex AG, allows level 120 Pokémon, Cosplay Pikachu, Let's GO Starters, Spiky-eared Pichu, Eternal Flower Floette, Totems, duplicate fusions, duplicate LGPE starters, Gems, everything added by the Insurgence fork, and everything added by this fork. (BGTE stand for BabyGrootTheEpic, the creator of this fork.)",
 		ruleset: [
-			'Obtainable', '+Unobtainable', '+Past', 'Sketch Gen 8 Moves', '+PastMove', 'Team Preview', 'Nickname Clause', 'HP Percentage Mod', 'Cancel Mod', 'Endless Battle Clause',
-			'Zoroark-Mega Illusion Thing', '+LGPE',
+			'Obtainable', '!NoFusionDupes', '!Limit One LGPE Starter', 'Max Level = 120', 'Default Level = 100', 'NatDex Megas', 'Sketch Gen 8 Moves',
+			'Endless Battle Clause', 'Nickname Clause', 'Team Preview', 'HP Percentage Mod', 'Cancel Mod', 'Zoroark-Mega Illusion Thing'
 		],
-		banlist: ['Eternatus-Eternamax', 'Veevee Volley', 'Pika Papow'],
-		//This servers' formats are all natdex, so most instances of isNonstandard in data/formats-data.ts, data/item.ts, and data/moves.ts have been commented out.
+		//This fork's formats are all NatDex, so most instances of isNonstandard in data/formats-data.ts, data/item.ts, and data/moves.ts have been commented out.
 	},
+	bgtestandard: {
+		effectType: 'ValidatorRule',
+		name: 'BGTE Standard',
+		desc: "'BGTE NatDex AG' with a few extra clauses and bans.",
+		//Singles formats should also be given 'Singles Bans'. Free-For-All formats should also be given 'FFA Bans'.
+		ruleset: ['BGTE NatDex AG', 'Species Clause', 'Dynamax Clause', 'Evasion Move Clause', 'OHKO Clause'],
+		banlist: [
+			'Testmon', //Pokémon
+			'Glitch', 'Moody', //Abilities
+			'Permafrost', //Moves
+			'Bright Powder', 'King\'s Rock', 'Razor Fang', 'Lax Incense', //Items
+		],
+	},
+	natdexflatrules: {
+		effectType: 'ValidatorRule',
+		name: 'NatDex Flat Rules',
+		desc: "A National Dex variant of the in-game Flat Rules.",
+		ruleset: ['BGTE NatDex AG', '!Endless Battle Clause', 'Species Clause', 'Item Clause', 'Adjust Level Down = 50', 'Picked Team Size = Auto'],
+		banlist: ['Mythical', 'Restricted Legendary'],
+	},
+	natdexmaxberries: {
+		effectType: 'ValidatorRule',
+		name: 'NatDex Max Berries',
+		desc: "The first two moves in a Pok&eacute;mon's moveset are used simultaneously.", //Requires mod: 'maxberries',
+		ruleset: ['BGTE Standard'],
+		banlist: ['Jaboca Berry', 'Rowap Berry', 'Starf Berry', 'Baton Pass', 'Block', 'Bug Bite', 'Knock Off', 'Mean Look', 'Pluck', 'Substitute'],
+	},
+	natdexpokebilities: {
+		effectType: 'ValidatorRule',
+		name: 'NatDex Pokebilities',
+		desc: "Pok&eacute;mon have all of their released abilities simultaneously.", //Requires mod: 'pokebilities',
+		ruleset: ['BGTE Standard', 'Pokebilities Mod'],
+		banlist: ['Glalie', 'Octillery', 'Remoraid', 'Snorunt', 'Bidoof', 'Bibarel', 'Smeargle'], //Moody
+		//Singles:	banlist: ['Diglett-Base', 'Dugtrio-Base', 'Trapinch', 'Gothita', 'Gothitelle', 'Gothorita', 'Wobbuffet', 'Wynaut'], //Arena Trap & Shadow Tag
+	},
+	natdexlinked: {
+		effectType: 'ValidatorRule',
+		name: 'NatDex Linked',
+		desc: "The first two moves in a Pok&eacute;mon's moveset are used simultaneously.", //Requires mod: 'linked',
+		ruleset: ['BGTE Standard', 'Weather Speed Clause', 'Evasion Abilities Clause'],
+		banlist: ['Speed Boost', 'Surge Surfer', 'Unburden'],
+		restricted: [
+			'Baneful Bunker', 'Bounce', 'Protect', 'Detect', 'Dig', 'Dive', 'Fly', 'King\'s Shield', 'Nature\'s Madness', 'Night Shade',
+			'Obstruct', 'Phantom Force', 'Seismic Toss', 'Shadow Force', 'Sky Drop', 'Spiky Shield', 'Super Fang', 'Trick Room',
+		],
+		onValidateSet(set) {
+			const problems = [];
+			for (const [i, moveid] of set.moves.entries()) {
+				const move = this.dex.moves.get(moveid);
+				if ([0, 1].includes(i) && this.ruleTable.isRestricted(`move:${move.id}`)) {
+					problems.push(`${set.name || set.species}'s move ${move.name} cannot be linked.`);
+				}
+			}
+			return problems;
+		},
+	},
+	natdex350cup: {
+		effectType: 'ValidatorRule',
+		name: 'NatDex 350 Cup',
+		desc: "Pok&eacute;mon with a BST of 350 or lower get their base stats doubled.",
+		ruleset: ['BGTE Standard', '350 Cup Mod'],
+		banlist: ['Deep Sea Tooth', 'Eevium Z', 'Eviolite', 'Light Ball'],
+	},
+	natdexrevelationmons: {
+		effectType: 'ValidatorRule',
+		name: 'NatDex Revelationmons',
+		desc: "The moves in the first slot(s) of a Pok&eacute;mon's set have their types changed to match the Pok&eacute;mon's type(s).",
+		ruleset: ['BGTE Standard', 'Revelationmons Mod'],
+		restricted: ['Bolt Beak', 'Fishious Rend', 'U-turn', 'Volt Switch'],
+		//Singles:	ruleset: ['NatDex Revelationmons', 'Singles Bans', 'Sleep Moves Clause'],
+		//Singles:	banlist: ['Magnet Pull'],
+		//FFA:		ruleset: ['NatDex Revelationmons', 'FFA Bans', 'Sleep Moves Clause'],
+	},
+	natdexalphabet: {
+		effectType: 'ValidatorRule',
+		name: 'NatDex Alphabet',
+		desc: "Pok&eacute;mon may learn almost any move that shares the same first letter as their name or a previous evolution's name.",
+		ruleset: ['BGTE Standard', 'Alphabet Cup Move Legality'],
+		banlist: ['Acupressure'],
+		restricted: [
+			'Astral Barrage', 'Belly Drum', 'Bolt Beak', 'Double Iron Bash', 'Electrify', 'Fishious Rend', 'Geomancy', 'Glacial Lance',
+			'Lovely Kiss', 'Shell Smash', 'Shift Gear', 'Sleep Powder', 'Sketch', 'Spore', 'Surging Strikes', 'Thousand Arrows', //Base Game Moves
+			'Shadow Blast', //Shadow Moves
+		],
+	},
+	natdexstabmons: {
+		effectType: 'ValidatorRule',
+		name: 'NatDex STABmons',
+		desc: "Pok&eacute;mon can use any move of their typing, in addition to the moves they can normally learn.",
+		ruleset: ['BGTE Standard', 'STABmons Move Legality'],
+		banlist: ['Komala', 'Arceus', 'Kangaskhan-Mega'],
+		restricted: [
+			'Acupressure', 'Astral Barrage', 'Belly Drum', 'Bolt Beak', 'Chatter', 'Clangorous Soul', 'Diamond Storm', 'Double Iron Bash', 'Electrify', 'Extreme Speed', 'Fishious Rend',
+			'Geomancy', 'Glacial Lance', 'Lovely Kiss', 'Oblivion Wing', 'Precipice Blades', 'Shell Smash', 'Shift Gear', 'Sketch', 'Spore', 'Thousand Arrows', 'V-create', 'Wicked Blow',
+		],
+		//Singles:	ruleset: ['NatDex STABmons', 'Singles Bans', 'Sleep Moves Clause'],
+		//Singles:	banlist: ['Magnet Pull'],
+		//Singles:	restricted: ['!Diamond Storm'],
+		//FFA:		ruleset: ['NatDex STABmons', 'FFA Bans', 'Sleep Moves Clause'],
+	},
+	natdexaaa: {
+		effectType: 'ValidatorRule',
+		name: 'NatDex AAA',
+		desc: "Pok&eacute;mon can use any ability, barring the few that are restricted.",
+		ruleset: ['BGTE Standard', '!Obtainable Abilities', '2 Ability Clause', 'AAA Restricted Abilities', 'Battle Forme Ability Check', 'Choice Pendulum Clause'],
+		banlist: ['Shedinja', 'Ancient Presence', 'Omnitype'], //Glitch is banned by BGTE Standard.
+		restricted: [
+			'Anger Point', 'Arena Trap', 'Comatose', 'Contrary', 'Fluffy', 'Fur Coat', 'Gorilla Tactics', 'Huge Power', 'Ice Scales', 'Illusion', 'Imposter', 'Innards Out',
+			'Intrepid Sword', 'Justified', 'Libero', 'Magnet Pull', 'Neutralizing Gas', 'Parental Bond', 'Poison Heal', 'Protean', 'Pure Power', 'Simple', 'Shadow Tag',
+			'Speed Boost', 'Stakeout', 'Water Bubble', 'Wonder Guard', //Base Game Abilities
+			'Athenian', 'Fired Up', 'Chlorofury', 'Phototroph', 'Unleafed', 'Winter Joy', //Insurgence Abilities
+		],
+		//Singles:	unbanlist: ['Missingno.'],
+		//Singles:	restricted: ['!Anger Point', '!Justified'],
+		//FFA:		restricted: ['!Anger Point', '!Justified'],
+	},
+	natdexmultibility: {
+		effectType: 'ValidatorRule',
+		name: 'NatDex Multibility',
+		desc: "Run a second ability at the cost of giving up a Pok&eacute;mon's item slot.",
+		ruleset: ['BGTE Standard', 'Multibility Mod', '2 Ability Clause', 'Weather Speed Clause'],
+		banlist: ['Stench', 'Ancient Presence', 'Omnitype'], //Glitch is banned by BGTE Standard.
+		restricted: [
+			'Anger Point', 'Arena Trap', 'Comatose', 'Contrary', 'Fluffy', 'Fur Coat', 'Huge Power', 'Ice Scales', 'Illusion', 'Imposter', 'Innards Out', 'Intrepid Sword',
+			'Justified', 'Libero', 'Magnet Pull', 'Neutralizing Gas', 'Parental Bond', 'Protean', 'Pure Power', 'Simple', 'Shadow Tag', 'Speed Boost', 'Stakeout', 'Tinted Lens',
+			'Unaware', 'Water Bubble', 'Wonder Guard', //Base Game Abilities
+			'Athenian', 'Fired Up', 'Chlorofury', 'Unleafed', 'Winter Joy', //Insurgence Abilities
+		],
+		//Singles:	ruleset: ['NatDex Multibility', 'Singles Bans', 'Sleep Moves Clause'],
+		//Singles:	banlist: ['Magnet Pull'],
+		//Singles:	restricted: ['!Anger Point', '!Justified'],
+		//FFA:		ruleset: ['NatDex Multibility', 'FFA Bans', 'Sleep Moves Clause'],
+		//FFA:		restricted: ['!Anger Point', '!Justified'],
+	},
+	natdexhackmons: {
+		effectType: 'ValidatorRule',
+		name: 'NatDex Hackmons',
+		desc: "Pok&eacute;mon may have any item, ability, and moves (excluding CAP). No 510 EV limit.",
+		ruleset: [
+			'-CAP', 'Max Level = 120', 'Default Level = 100', 'Dynamax Clause', 'NatDex Megas', 'Sketch Gen 8 Moves',
+			'Team Preview', 'HP Percentage Mod', 'Cancel Mod', 'Endless Battle Clause', 'Zoroark-Mega Illusion Thing'
+		],
+	},
+	customgamemegas: {
+		effectType: 'ValidatorRule',
+		name: 'Custom Game Megas',
+		desc: "Custom Game with no Mega Evolution limit.",
+		// no restrictions, for serious (other than team preview)
+		ruleset: ['HP Percentage Mod', 'Team Preview', 'Cancel Mod', 'NatDex Megas', 'Multi Mega', 'Max Team Size = 24', 'Max Move Count = 24', 'Max Level = 9999', 'Default Level = 100', 'Zoroark-Mega Illusion Thing'],
+	},
+
+	//Validator Rules
 	nofusiondupes: {
 		effectType: 'ValidatorRule',
-		name: 'NoFusionDupes',
-		desc: "Restrict illegal fusion quantities (only one of Kyurem-Black or Kyurem-White, etc.)",
+		name: 'No Fusion Dupes',
+		desc: "Restrict illegal fusion quantities (only one of Kyurem-Black/Kyurem-White, only one Necrozma-Dusk-Mane, etc.)",
 		onValidateTeam(team, format) {
 			let kyuremCount = 0;
 			let necrozmaDMCount = 0;
@@ -87,8 +238,124 @@ export const Rulesets: {[k: string]: FormatData} = {
 			return [];
 		},
 	},
-	zoroarkmegaillusionthing: {
+	banCustomEvents: {
 		effectType: 'ValidatorRule',
+		name: 'Ban Custom Events',
+		desc: "Ban custom events for Mawile and the Tapus added by this fork.",
+		banlist: [
+			'Mawile + Double Iron Bash', 'Mawile + Fire Punch',
+			'Tapu Koko + Rising Voltage', 'Tapu Koko + Terrain Pulse', 'Tapu Koko + Play Rough',
+			'Tapu Lele + Expanding Force', 'Tapu Lele + Terrain Pulse',
+			'Tapu Bulu + Grassy Glide', 'Tapu Bulu + Terrain Pulse', 'Tapu Bulu + Play Rough',
+			'Tapu Fini + Misty Explosion', 'Tapu Fini + Terrain Pulse',
+		],
+	},
+	periodicorbitclause: {
+		effectType: 'ValidatorRule',
+		name: 'Periodic Orbit Clause',
+		desc: "Bans Preriodic Orbit in non-singles formats, as the ability only works in singles.",
+		onValidateTeam(team) {
+			const gameType = this.format.gameType;
+			if (gameType !== 'singles') {
+				for (const set of team) {
+					if (this.toID(set.ability) === 'periodicorbit') {
+						return [`${set.name}'s ability Periodic Orbit is banned by Periodic Orbit Clause, because it doesn't work in this gamemode.`];
+					}
+					const species = this.toID(set.species);
+					if (this.toID(set.item) === 'jirachite' && (species === 'jirachi' || species === 'jirachimega')) {
+						return [`${set.name}'s item Jirachite is banned by Periodic Orbit Clause, because Jirachi-Mega's ability Periodic Orbit doesn't work in this gamemode.`];
+					}
+				}
+			}
+		},
+	},
+	singlesbans: {
+		effectType: 'ValidatorRule',
+		name: 'Singles Bans',
+		desc: "Bans for singles formats with BGTE Standard.",
+		ruleset: ['Sleep Clause Mod', 'Mega Rayquaza Clause'],
+		banlist: [
+			'AG', //Pokémon
+			'Arena Trap', 'Shadow Tag', //Abilities
+			'Baton Pass', //Moves
+			'Delta Mawilite + Mawile-Delta', 'Gengarite + Gengar', 'Legend Plate', 'Crystal Piece Arceus + Arceus', 'Crystal Piece Giratina + Giratina' //Items
+		],
+	},
+	ffabans: {
+		effectType: 'ValidatorRule',
+		name: 'FFA Bans',
+		desc: "Bans for free-for-all formats with BGTE Standard.",
+		ruleset: ['Sleep Clause Mod'],
+		banlist: [
+			'Acupressure', 'Aromatic Mist', 'Coaching', 'Court Change', 'Decorate', 'Final Gambit', 'Flatter',
+			'Floral Healing', 'Flower Shield', 'Follow Me', 'Heal Pulse', 'Rage Powder', 'Swagger',
+		],
+	},
+	battleformeabilitycheck: {
+		effectType: 'ValidatorRule',
+		name: 'Battle Forme Ability Check',
+		desc: "Prevents Zacian-Crowned and Zamazenta-Crowned from having an illegal ability, since they are battle-only formes.",
+		onValidateSet(set) {
+			// Temporary fix until battle-only is implemented properly
+			const species = this.toID(set.species);
+			const ability = this.toID(set.ability);
+			const item = this.toID(set.item);
+			if (species === 'zamazentacrowned' && ability !== 'dauntlessshield' && item === 'rustedshield') {
+				return [`Zamazenta-Crowned can only use Dauntless Shield because it is a battle-only forme.`];
+			}
+			if (species === 'zaciancrowned' && ability !== 'intrepidsword' && item === 'rustedsword') {
+				return [`Zacian-Crowned can only use Intrepid Sword because it is a battle-only forme.`];
+			}
+		},
+	},
+	choicependulumclause: {
+		effectType: 'ValidatorRule',
+		name: 'Choice Pendulum Clause',
+		desc: "Prevents any Pokémon from having the ability Pendulum and a Choice item.",
+		banlist: ['Pendulum + Choice Band', 'Pendulum + Choice Scarf', 'Pendulum + Choice Specs'],
+		onBegin() {
+			this.add('rule', 'Choice Pendulum Clause: Pokémon with Pendulum may not hold a choice item.');
+		},
+	},
+	weatherspeedclause: {
+		effectType: 'ValidatorRule',
+		name: 'Weather Speed Clause',
+		desc: "Bans abilities that boost speed in weather.",
+		banlist: ['Chlorophyll', 'Sand Rush', 'Slush Rush', 'Swift Swim', 'Shadow Dance'],
+		onBegin() {
+			this.add('rule', 'Weather Speed Clause: Abilities that boost speed in weather are banned');
+		},
+	},
+
+
+	//Mods
+	natdexmegas: {
+		effectType: 'Rule',
+		name: 'NatDex Megas',
+		desc: "Allows Mega evolutions to be used in Gen 8 formats.",
+		//Hardcoded in sim/battle-actions.ts & sim/team-validator.ts
+	},
+	multimegamod: {
+		effectType: 'Rule',
+		name: 'Multi Mega Mod',
+		desc: "Removes Mega Evolution limit and Ultra Burst limit.",
+		onBegin() {
+			this.add('rule', 'Multi Mega Mod: No limit on Mega Evolutions');
+		},
+		//Hardcoded in sim/battle-actions.ts
+	},
+	stonelessmegamod: {
+		effectType: 'Rule',
+		name: 'Stoneless Mega Mod',
+		desc: "Not yet implemented.",
+		//desc: "Allows Pokémon to Mega Evolve without their Mega Stone, though the Pokémon must still be a species capable of Mega Evolution.\nCharizard, Mewtwo, Sceptile, and Swampert will default to their Y/ORAS mega. To use their X/ZO Mega, give their HP stat 2 useless EVs.",
+		onBegin() {
+			this.add('rule', 'Stoneless Mega Mod is not yet implemented.');
+			//this.add('rule', 'Stoneless Mega Mod: Pokémon don\'t need their Mega Stone to Mega Evolve');
+		},
+	},
+	zoroarkmegaillusionthing: {
+		effectType: 'Rule',
 		name: 'Zoroark-Mega Illusion Thing',
 		desc: "Probably needed for Zoroark-Mega's Illusion to work.",
 		onDamagingHit(damage, target, source, move) {
@@ -105,6 +372,235 @@ export const Rulesets: {[k: string]: FormatData} = {
 			pokemon.illusion = null;
 		},
 	},
+	multibilitymod: {
+		effectType: 'Rule',
+		name: 'Multibility Mod',
+		desc: "Run a second ability at the cost of giving up a Pok&eacute;mon's item slot.",
+		banlist: ['Trace'],
+		restricted: ['Emergency Exit + Regenerator', 'Wimp Out + Regenerator'],
+		validateSet(set, teamHas) {
+			const ability = this.dex.abilities.get(set.ability);
+			const item = this.dex.abilities.get(set.item);
+			if (!item.exists) return this.validateSet(set, teamHas);
+			const problems = [];
+			if (item.isNonstandard && !this.ruleTable.has(`+ability:${item.id}`)) {
+				problems.push(`${item.name} is banned.`);
+			}
+			if (ability.id === item.id) {
+				problems.push(`${set.species} has ${ability.name} as an ability and as an item.`);
+			}
+			if (this.ruleTable.isRestricted(`ability:${item.id}`) || this.ruleTable.isBanned(`ability:${item.id}`)) {
+				problems.push(`${set.species}'s second ability (${item.name}) can only be used as an ability.`);
+			}
+			if ((ability.id === 'regenerator' && ['emergencyexit', 'wimpout'].includes(item.id)) ||
+				(item.id === 'regenerator' && ['emergencyexit', 'wimpout'].includes(ability.id))) {
+				problems.push(`${ability.name} and ${item.name} are banned together.`);
+			}
+			const itemStr = set.item;
+			set.item = '';
+			const problem = this.validateSet(set, teamHas);
+			if (problem?.length) problems.push(...problem);
+			set.item = itemStr;
+			return problems;
+		},
+		onValidateTeam(team) {
+			if (!this.ruleTable.has('2abilityclause')) return;
+			const abilityTable = new Map<string, number>();
+			const base: {[k: string]: string} = {
+				airlock: 'cloudnine',
+				battlearmor: 'shellarmor',
+				clearbody: 'whitesmoke',
+				dazzling: 'queenlymajesty',
+				emergencyexit: 'wimpout',
+				filter: 'solidrock',
+				gooey: 'tanglinghair',
+				insomnia: 'vitalspirit',
+				ironbarbs: 'roughskin',
+				libero: 'protean',
+				minus: 'plus',
+				moxie: 'chillingneigh',
+				powerofalchemy: 'receiver',
+				propellertail: 'stalwart',
+				teravolt: 'moldbreaker',
+				turboblaze: 'moldbreaker',
+			};
+			const abilities: [string, string][] = [];
+			for (const set of team) {
+				abilities.push([set.ability, set.item].map((abil) => {
+					const id = this.toID(abil);
+					return base[id] || id;
+				}) as [string, string]);
+			}
+			for (const [abilityid, itemid] of abilities) {
+				const ability = this.dex.abilities.get(abilityid);
+				const item = this.dex.abilities.get(itemid);
+				if (ability.exists) abilityTable.set(ability.id, (abilityTable.get(ability.id) || 0) + 1);
+				if (item.exists) abilityTable.set(item.id, (abilityTable.get(item.id) || 0) + 1);
+			}
+			for (const [abilityid, size] of abilityTable) {
+				if (size > 2) {
+					return [
+						`You are limited to two of each ability by 2 Ability Clause.`,
+						`(You have more than two ${this.dex.abilities.get(abilityid).name} variants)`,
+					];
+				}
+			}
+		},
+		onSwitchOut(pokemon) {
+			const item = this.dex.abilities.get(pokemon.item);
+			if (item.exists) {
+				this.singleEvent('End', item, pokemon.itemState, pokemon);
+			}
+		},
+		onFaint(pokemon) {
+			const item = this.dex.abilities.get(pokemon.item);
+			if (item.exists) {
+				this.singleEvent('End', item, pokemon.itemState, pokemon);
+			}
+		},
+		field: {
+			suppressingWeather() {
+				for (const pokemon of this.battle.getAllActive()) {
+					const item = this.battle.dex.abilities.get(pokemon.item);
+					if (pokemon && !pokemon.ignoringAbility() &&
+						(pokemon.getAbility().suppressWeather || (item.exists && item.suppressWeather))) {
+						return true;
+					}
+				}
+				return false;
+			},
+		},
+		pokemon: {
+			getItem() {
+				const ability = this.battle.dex.abilities.get(this.item);
+				if (!ability.exists) return Object.getPrototypeOf(this).getItem.call(this);
+				return {...ability, ignoreKlutz: true, onTakeItem: false};
+			},
+			hasItem(item) {
+				const ownItem = this.item;
+				if (this.battle.dex.abilities.get(ownItem).exists) return false;
+				if (this.ignoringItem()) return false;
+				if (!Array.isArray(item)) return ownItem === this.battle.toID(item);
+				return item.map(this.battle.toID).includes(ownItem);
+			},
+			hasAbility(ability) {
+				if (this.ignoringAbility()) return false;
+				if (Array.isArray(ability)) return ability.some(abil => this.hasAbility(abil));
+				const abilityid = this.battle.toID(ability);
+				const item = this.battle.dex.abilities.get(this.item);
+				return this.ability === abilityid || (item.exists && item.id === abilityid);
+			},
+			ignoringAbility() {
+				// Check if any active pokemon have the ability Neutralizing Gas
+				let neutralizinggas = false;
+				for (const pokemon of this.battle.getAllActive()) {
+					// can't use hasAbility because it would lead to infinite recursion
+					if ((pokemon.ability === ('neutralizinggas' as ID) || pokemon.item === ('neutralizinggas' as ID)) &&
+						!pokemon.volatiles['gastroacid'] && !pokemon.abilityState.ending) {
+						neutralizinggas = true;
+						break;
+					}
+				}
+				return !!(
+					(this.battle.gen >= 5 && !this.isActive) ||
+					((this.volatiles['gastroacid'] || (neutralizinggas && this.ability !== ('neutralizinggas' as ID) &&
+						this.item !== ('neutralizinggas' as ID))) && !this.getAbility().isPermanent));
+			},
+			ignoringItem() {
+				let nGas = false;
+				for (const pokemon of this.battle.getAllActive()) {
+					// can't use hasAbility because it would lead to infinite recursion
+					if (((pokemon.ability === ('neutralizinggas' as ID) && !pokemon.abilityState.ending) ||
+						(pokemon.item === ('neutralizinggas' as ID) && !pokemon.itemState.ending)) &&
+						!pokemon.volatiles['gastroacid'] && !pokemon.abilityState.ending) {
+						nGas = true;
+						break;
+					}
+				}
+				const item = this.battle.dex.abilities.get(this.item);
+				return !!((this.battle.gen >= 5 && !this.isActive) ||
+					(this.hasAbility('klutz') && !this.getItem().ignoreKlutz) ||
+					this.volatiles['embargo'] || this.battle.field.pseudoWeather['magicroom'] ||
+					(item.exists && item.id !== 'neutralizinggas' && (nGas || this.volatiles['gastroacid'])));
+			},
+			takeItem(source) {
+				if (!this.isActive) return false;
+				if (!this.item) return false;
+				if (this.battle.dex.abilities.get(this.item).exists) return false;
+				if (!source) source = this;
+				if (this.battle.gen === 4) {
+					if (this.battle.toID(this.ability) === 'multitype') return false;
+					if (source && this.battle.toID(source.ability) === 'multitype') return false;
+				}
+				const item = this.getItem();
+				if (this.battle.runEvent('TakeItem', this, source, null, item)) {
+					this.item = '';
+					this.itemState = {id: '', target: this};
+					this.pendingStaleness = undefined;
+					return item;
+				}
+				return false;
+			},
+		},
+	},
+	pokebilitiesmod: {
+		effectType: 'Rule',
+		name: 'Pokebilities Mod',
+		desc: "Pok&eacute;mon have all of their released abilities simultaneously.", //Requres mod: 'pokebilities',
+		/*banlist: [
+			// Moody:
+			'Glalie', 'Octillery', 'Remoraid', 'Snorunt', 'Bidoof', 'Bibarel', 'Smeargle',
+			//Arena Trap:
+			'Diglett-Base', 'Dugtrio-Base', 'Trapinch',
+			// Shadow Tag:
+			'Gothita', 'Gothitelle', 'Gothorita', 'Wobbuffet', 'Wynaut',
+		],*/
+		onValidateSet(set) {
+			const species = this.dex.species.get(set.species);
+			const unSeenAbilities = Object.keys(species.abilities)
+				.filter(key => key !== 'S' && (key !== 'H' || !species.unreleasedHidden))
+				.map(key => species.abilities[key as "0" | "1" | "H" | "S"])
+				.filter(ability => ability !== set.ability);
+			if (unSeenAbilities.length && this.toID(set.ability) !== this.toID(species.abilities['S'])) {
+				for (const abilityName of unSeenAbilities) {
+					const banReason = this.ruleTable.check('ability:' + this.toID(abilityName));
+					if (banReason) {
+						return [`${set.name}'s ability ${abilityName} is ${banReason}.`];
+					}
+				}
+			}
+		},
+		onBegin() {
+			for (const pokemon of this.getAllPokemon()) {
+				if (pokemon.ability === this.toID(pokemon.species.abilities['S'])) {
+					continue;
+				}
+				pokemon.m.innates = Object.keys(pokemon.species.abilities)
+					.filter(key => key !== 'S' && (key !== 'H' || !pokemon.species.unreleasedHidden))
+					.map(key => this.toID(pokemon.species.abilities[key as "0" | "1" | "H" | "S"]))
+					.filter(ability => ability !== pokemon.ability);
+			}
+		},
+		onSwitchInPriority: 2,
+		onSwitchIn(pokemon) {
+			if (pokemon.m.innates) {
+				for (const innate of pokemon.m.innates) {
+					pokemon.addVolatile("ability:" + innate, pokemon);
+				}
+			}
+		},
+		onAfterMega(pokemon) {
+			for (const innate of Object.keys(pokemon.volatiles).filter(i => i.startsWith('ability:'))) {
+				pokemon.removeVolatile(innate);
+			}
+			pokemon.m.innates = undefined;
+		},
+	},
+
+
+
+
+
 	
 	// Rulesets
 	///////////////////////////////////////////////////////////////////
@@ -219,7 +715,7 @@ export const Rulesets: {[k: string]: FormatData} = {
 		name: 'Standard NatDex',
 		desc: "The standard ruleset for all National Dex tiers",
 		ruleset: [
-			'Obtainable', '+Unobtainable', '+Past', 'Sketch Gen 8 Moves', '+PastMove', 'Team Preview', 'Nickname Clause', 'HP Percentage Mod', 'Cancel Mod', 'Endless Battle Clause',
+			'Obtainable', '+Unobtainable', '+Past', 'Sketch Gen 8 Moves', '+PastMove', 'NatDex Megas', 'Team Preview', 'Nickname Clause', 'HP Percentage Mod', 'Cancel Mod', 'Endless Battle Clause',
 		],
 		onValidateSet(set) {
 			// These Pokemon are still unobtainable
@@ -602,7 +1098,7 @@ export const Rulesets: {[k: string]: FormatData} = {
 		effectType: 'ValidatorRule',
 		name: 'Level 120',
 		desc: "Allows Pokémon up to Level 120.",
-		ruleset: ['Max Level = 120', 'Default Level = 120'],
+		ruleset: ['Max Level = 120', 'Default Level = 120', 'Overflow Stat Mod'],
 	},
 	blitz: {
 		effectType: 'Rule',
@@ -774,7 +1270,7 @@ export const Rulesets: {[k: string]: FormatData} = {
 		effectType: 'ValidatorRule',
 		name: 'Evasion Abilities Clause',
 		desc: "Bans abilities that boost Evasion under certain weather conditions",
-		banlist: ['Sand Veil', 'Snow Cloak'],
+		banlist: ['Sand Veil', 'Snow Cloak', 'Illuminate'],
 		onBegin() {
 			this.add('rule', 'Evasion Abilities Clause: Evasion abilities are banned');
 		},
@@ -803,6 +1299,7 @@ export const Rulesets: {[k: string]: FormatData} = {
 		effectType: 'ValidatorRule',
 		name: 'Sleep Moves Clause',
 		desc: "Bans all moves that induce sleep, such as Hypnosis",
+		ruleset: ['!Sleep Clause Mod'],
 		banlist: ['Yawn'],
 		onBegin() {
 			this.add('rule', 'Sleep Clause: Sleep-inducing moves are banned');
@@ -1249,8 +1746,10 @@ export const Rulesets: {[k: string]: FormatData} = {
 		},
 		onEffectivenessPriority: 1,
 		onEffectiveness(typeMod, target, type, move) {
-			// The effectiveness of Freeze Dry on Water isn't reverted
+			// The effectiveness of Achilles Heel, Freeze Dry on Water, and Corrode on Steel aren't reverted. Tesseract's Inverse Battle functionality is in sim/battle-actions.ts
+			if (move && move.id === 'achillesheel') return;
 			if (move && move.id === 'freezedry' && type === 'Water') return;
+			if (move && move.id === 'corrode' && type === 'Steel') return;
 			if (move && !this.dex.getImmunity(move, type)) return 1;
 			return -typeMod;
 		},
@@ -1806,7 +2305,12 @@ export const Rulesets: {[k: string]: FormatData} = {
 	bonustyperule: {
 		name: "Bonus Type Rule",
 		effectType: "Rule",
-		desc: `Pok&eacute;mon can be nicknamed the name of a type to have that type added onto their current ones.`,
+		desc: `Pok&eacute;mon can be nicknamed the name of a type to have that type added onto their current ones. Gaining the Shadow type in this way is banned.`,
+		onValidateTeam(team) {
+			for (const set of team) {
+				if (set.name === 'Shadow' || set.name === 'shadow') return [`${set.name}'s nickname is banned by Bonus Type Rule.`];
+			}
+		},
 		onBegin() {
 			this.add('rule', 'Bonus Type Rule: Pok\u00e9mon can be nicknamed the name of a type to have that type added onto their current ones.');
 		},
@@ -1816,7 +2320,7 @@ export const Rulesets: {[k: string]: FormatData} = {
 			if (effect && ['imposter', 'transform'].includes(effect.id)) return;
 			const typesSet = new Set(species.types);
 			const bonusType = this.dex.types.get(target.set.name);
-			if (bonusType.exists) typesSet.add(bonusType.name);
+			if (bonusType.exists && bonusType.name !== 'Shadow') typesSet.add(bonusType.name);
 			return {...species, types: [...typesSet]};
 		},
 		onSwitchIn(pokemon) {

@@ -20,358 +20,1596 @@ The column value will be ignored for repeat sections.
 export const Formats: FormatList = [
 
 	{
-		section: "Anything Goes (Dynamax Clause)",
+		section: "Single Battles",
 	},
 	{
-		name: "[Gen 8] Singles AG",
-		desc: `Singles NatDex AG with Dynamax Clause, up to level 120 Pokémon, duplicates fusions, and duplicate LGPE starters.`,
-
+		name: "[Gen 8] Anything Goes",
+		desc: `Singles NatDex AG with Dynamax Clause.`,
+		
 		mod: 'gen8',
-		rated: false,
 		battle: {trunc: Math.trunc}, //Disables the overflow 'glitch' without capping the stats like Overflow Stat Mod does.
-		ruleset: ['[Gen 8] Singles AG Dmax', 'Dynamax Clause'],
+		rated: false,
+		ruleset: ['BGTE NatDex AG', 'Dynamax Clause'],
 	},
 	{
-		name: "[Gen 8] Doubles AG",
-		desc: `Doubles NatDex AG with Dynamax Clause, up to level 120 Pokémon, duplicates fusions, and duplicate LGPE starters.`,
+		name: "[Gen 8] Anything Goes Dmax",
+		desc: `Singles NatDex AG with Dynamaxing.`,
 		
 		mod: 'gen8',
-		rated: false,
 		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['BGTE NatDex AG'],
+	},
+	{
+		name: "[Gen 8] Ubers",
+		desc: `Singles NatDex Ubers with Dynamax Clause.`,
+
+		mod: 'gen8',
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['BGTE Standard', 'Singles Bans'],
+	},
+	{
+		name: "[Gen 8] Monotype Ubers",
+		desc: `All the Pok&eacute;mon on a team must share a type.`,
+
+		mod: 'gen8',
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['BGTE Standard', 'Singles Bans', 'Same Type Clause'],
+	},
+	{
+		name: "[Gen 8] Flat Rules",
+		desc: `NatDex Singles with the in-game Flat Rules.`,
+
+		mod: 'gen8',
+		rated: false,
+		ruleset: ['NatDex Flat Rules'],
+	},
+	{
+		name: "[Gen 8] Flat Rules 2R",
+		desc: `NatDex Singles with the in-game Flat Rules. Up to two Restricted Legendaries are allowed per team.`,
+
+		mod: 'gen8',
+		rated: false,
+		ruleset: ['NatDex Flat Rules', 'Limit Two Restricted'],
+		restricted: ['Restricted Legendary'],
+	},
+	{
+		name: "[Gen 8] Inverse AG",
+		desc: `The type matchup chart is inverted: weaknesses become resistances, while resistances and immunities become weaknesses.`,
+		
+		mod: 'gen8',
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['BGTE NatDex AG', 'Dynamax Clause', 'Inverse Mod'],
+	},
+	{
+		name: "[Gen 8] Inverse AG Dmax",
+		desc: `The type matchup chart is inverted: weaknesses become resistances, while resistances and immunities become weaknesses. This format allows Dynamaxing.`,
+		
+		mod: 'gen8',
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['BGTE NatDex AG', 'Inverse Mod'],
+	},
+	{
+		name: "[Gen 8] Max Berries",
+		desc: `All berries have their effects maximized.`,
+
+		mod: 'maxberries',
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['NatDex Max Berries', 'Singles Bans'],
+	},
+	{
+		name: "[Gen 8] Multi Mega",
+		desc: `Removes Mega Evolution limit and Ultra Burst limit.`,
+		
+		mod: 'gen8',
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['BGTE Standard', 'Singles Bans', 'Multi Mega Mod'],
+	},
+	{
+		name: "[Gen 8] Stoneless Multi Mega",
+		desc: `A variant of the [Gen 8] Multi Mega format that allows Mega Evolution-capable Pok&eacute;mon to Mega evolve without their Mega Stone.`,
+		
+		mod: 'gen8',
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['[Gen 8] Multi Mega', 'Stoneless Mega Mod'],
+	},
+	{
+		name: "[Gen 8] 12-mon Multi Mega",
+		desc: `A variant of the [Gen 8] Multi Mega format that allows up to 12 Pok&eacute;mon on a team. To make a team that large in the teambuilder, either add the Pok&eacute;mon via the 'Import/Export' button, or make the team in a box.`,
+		
+		mod: 'gen8',
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['[Gen 8] Multi Mega', 'Max Team Size = 12'],
+	},
+	{
+		name: "[Gen 8] 12 'mons",
+		desc: `Each player may have up to 12 Pok&eacute;mon on their team. To make a team that large in the teambuilder, either add the Pok&eacute;mon via the 'Import/Export' button, or make the team in a box.`,
+		
+		mod: 'gen8',
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['BGTE Standard', 'Singles Bans', 'Max Team Size = 12'],
+	},
+	{
+		name: "[Gen 8] 24 moves",
+		desc: `Each Pok&eacute;mon may have up to 24 moves. Use the 'Import/Export' feature of the teambuilder to give a Pok&eacute;mon more than 4 moves.`,
+		
+		mod: 'gen8',
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['BGTE Standard', 'Singles Bans', 'Max Move Count = 24'],
+	},
+	{
+		name: "[Gen 8] Pokebilities",
+		desc: `Pok&eacute;mon have all of their released abilities simultaneously.`,
+		
+		mod: 'pokebilities',
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['NatDex Pokebilities', 'Singles Bans'],
+		banlist: ['Diglett-Base', 'Dugtrio-Base', 'Trapinch', 'Gothita', 'Gothitelle', 'Gothorita', 'Wobbuffet', 'Wynaut'], //Arena Trap & Shadow Tag
+	},
+	{
+		name: "[Gen 8] Linked",
+		desc: `The first two moves in a Pok&eacute;mon's moveset are used simultaneously.`,
+
+		mod: 'linked',
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['NatDex Linked', 'Singles Bans'],
+	},
+	{
+		name: "[Gen 8] 350 Cup",
+		desc: `Pok&eacute;mon with a BST of 350 or lower get their base stats doubled.`,
+		
+		mod: 'gen8',
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['NatDex 350 Cup', 'Singles Bans'],
+	},
+	{
+		name: "[Gen 8] Revelationmons",
+		desc: `The moves in the first slot(s) of a Pok&eacute;mon's set have their types changed to match the Pok&eacute;mon's type(s).`,
+
+		mod: 'gen8',
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['NatDex Revelationmons', 'Singles Bans', 'Sleep Moves Clause'],
+		banlist: ['Magnet Pull'],
+	},
+	{
+		name: "[Gen 8] Bonus Type Ubers",
+		desc: `Pok&eacute;mon can be nicknamed the name of a type to have that type added onto their current ones.`,
+		
+		mod: 'gen8',
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['BGTE Standard', 'Singles Bans', 'Bonus Type Rule', '!Nickname Clause'],
+	},
+	{
+		name: "[Gen 8] Alphabet Cup",
+		desc: `Pok&eacute;mon may learn almost any move that shares the same first letter as their name or a previous evolution's name.`,
+		
+		mod: 'gen8',
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['NatDex Alphabet', 'Singles Bans'],
+	},
+	{
+		name: "[Gen 8] Alphabet Cup AG",
+		desc: `Pok&eacute;mon may learn any move, except Sketch, that shares the same first letter as their name or a previous evolution's name. This format has no attempt at balance.`,
+		
+		mod: 'gen8',
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['BGTE NatDex AG', 'Dynamax Clause', 'Alphabet Cup Move Legality'],
+		restricted: ['Sketch'],
+	},
+	{
+		name: "[Gen 8] STABmons",
+		desc: `Pok&eacute;mon can use almost any move of their typing, in addition to the moves they can normally learn.`,
+
+		mod: 'gen8',
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['NatDex STABmons', 'Singles Bans', 'Sleep Moves Clause'],
+		banlist: ['Magnet Pull'],
+		restricted: ['!Diamond Storm'],
+	},
+	{
+		name: "[Gen 8] STABmons AG",
+		desc: `Pok&eacute;mon can use any move of their typing, except Sketch, in addition to the moves they can normally learn. This format has no attempt at balance.`,
+
+		mod: 'gen8',
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['BGTE NatDex AG', 'Dynamax Clause', 'STABmons Move Legality'],
+		restricted: ['Sketch'],
+	},
+	{
+		name: "[Gen 8] Almost Any Ability",
+		desc: `Pok&eacute;mon can use any ability, barring the few that are restricted.`,
+		
+		mod: 'gen8',
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['NatDex AAA', 'Singles Bans'],
+		unbanlist: ['Missingno.'],
+		restricted: ['!Anger Point', '!Justified'],
+	},
+	{
+		name: "[Gen 8] Any Ability Goes",
+		desc: `Pok&eacute;mon can use any ability, with no attempt at balance.`,
+		
+		mod: 'gen8',
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['BGTE NatDex AG', 'Dynamax Clause', '!Obtainable Abilities', 'Battle Forme Ability Check'],
+	},
+	{
+		name: "[Gen 8] Multibility",
+		desc: `Run a second ability at the cost of giving up a Pok&eacute;mon's item slot.`,
+
+		mod: 'gen8',
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['NatDex Multibility', 'Singles Bans', 'Sleep Moves Clause'],
+		banlist: ['Magnet Pull'],
+		restricted: ['!Anger Point', '!Justified'],
+	},
+	{
+		name: "[Gen 8] Pure Hackmons",
+		desc: `A National Dex variant of Pure Hackmons. Pok&eacute;mon may have any item, ability, and moves (excluding CAP). No 510 EV limit.`,
+
+		mod: 'gen8',
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['NatDex Hackmons', 'Dynamax Clause'],
+	},
+	{
+		name: "[Gen 8] Hackmons Cup",
+		desc: `Randomized teams of level-balanced Pok&eacute;mon with absolutely any ability, moves, and item (excluding CAP).`,
+
+		mod: 'gen8',
+		team: 'randomHC',
+		rated: false,
+		ruleset: ['HP Percentage Mod', 'Cancel Mod', 'Dynamax Clause'],
+		banlist: ['CAP'],
+	},
+	{
+		name: "[Gen 8] Custom Game",
+
+		mod: 'gen8',
+		battle: {trunc: Math.trunc},
+		debug: true,
+		rated: false,
+		// no restrictions, for serious (other than team preview)
+		ruleset: ['Custom Game Megas'],
+	},
+	{
+		name: "[Gen 8] Stoneless Custom",
+		mod: 'gen8',
+		battle: {trunc: Math.trunc},
+		debug: true,
+		rated: false,
+		// no restrictions, for serious (other than team preview)
+		ruleset: ['Custom Game Megas', 'Stoneless Mega Mod'],
+	},
+
+
+
+	{
+		section: "Double Battles",
+		column: 2,
+	},
+	{
+		name: "[Gen 8] (D)Anything Goes",
+		desc: `Doubles NatDex AG with Dynamax Clause.`,
+		
+		mod: 'gen8',
 		gameType: 'doubles',
-		ruleset: ['[Gen 8] Doubles AG Dmax', 'Dynamax Clause'],
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['BGTE NatDex AG', 'Dynamax Clause'],
 	},
 	{
-		name: "[Gen 8] Triples AG",
-		desc: `Triples NatDex AG with Dynamax Clause, up to level 120 Pokémon, duplicates fusions, and duplicate LGPE starters.`,
+		name: "[Gen 8] (D)Anything Goes Dmax",
+		desc: `Doubles NatDex AG with Dynamaxing.`,
 		
 		mod: 'gen8',
-		rated: false,
+		gameType: 'doubles',
 		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['BGTE NatDex AG'],
+	},
+	{
+		name: "[Gen 8] (D)Ubers",
+		desc: `Doubles NatDex Ubers with Dynamaxing.`,
+
+		mod: 'gen8',
+		gameType: 'doubles',
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['BGTE Standard', '!Dynamax Clause'],
+	},
+	{
+		name: "[Gen 8] (D)Monotype Ubers",
+		desc: `All the Pok&eacute;mon on a team must share a type. This format allows Dynamaxing.`,
+
+		mod: 'gen8',
+		gameType: 'doubles',
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['BGTE Standard', 'Same Type Clause', '!Dynamax Clause'],
+	},
+	{
+		name: "[Gen 8] (D)Flat Rules",
+		desc: `NatDex Doubles with the in-game Flat Rules.`,
+
+		mod: 'gen8',
+		gameType: 'doubles',
+		rated: false,
+		ruleset: ['NatDex Flat Rules'],
+	},
+	{
+		name: "[Gen 8] (D)Flat Rules 2R",
+		desc: `NatDex Doubles with the in-game Flat Rules. Up to two Restricted Legendaries are allowed per team.`,
+
+		mod: 'gen8',
+		gameType: 'doubles',
+		rated: false,
+		ruleset: ['NatDex Flat Rules', 'Limit Two Restricted'],
+		restricted: ['Restricted Legendary'],
+	},
+	{
+		name: "[Gen 8] (D)Inverse AG",
+		desc: `The type matchup chart is inverted: weaknesses become resistances, while resistances and immunities become weaknesses.`,
+		
+		mod: 'gen8',
+		gameType: 'doubles',
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['BGTE NatDex AG', 'Dynamax Clause', 'Inverse Mod'],
+	},
+	{
+		name: "[Gen 8] (D)Inverse AG Dmax",
+		desc: `The type matchup chart is inverted: weaknesses become resistances, while resistances and immunities become weaknesses. This format allows Dynamaxing.`,
+		
+		mod: 'gen8',
+		gameType: 'doubles',
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['BGTE NatDex AG', 'Inverse Mod'],
+	},
+	{
+		name: "[Gen 8] (D)Max Berries",
+		desc: `All berries have their effects maximized. This format allows Dynamaxing.`,
+
+		mod: 'maxberries',
+		gameType: 'doubles',
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['NatDex Max Berries', '!Dynamax Clause'],
+	},
+	{
+		name: "[Gen 8] (D)Multi Mega",
+		desc: `Removes Mega Evolution limit and Ultra Burst limit.`,
+		
+		mod: 'gen8',
+		gameType: 'doubles',
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['BGTE Standard', 'Multi Mega Mod'],
+	},
+	{
+		name: "[Gen 8] (D)Stoneless Multi Mega",
+		desc: `A variant of the [Gen 8] (D)Multi Mega format that allows Mega Evolution-capable Pok&eacute;mon to Mega evolve without their Mega Stone.`,
+		
+		mod: 'gen8',
+		gameType: 'doubles',
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['[Gen 8] (D)Multi Mega', 'Stoneless Mega Mod'],
+	},
+	{
+		name: "[Gen 8] (D)12-mon Multi Mega",
+		desc: `A variant of the [Gen 8] (D)Multi Mega format that allows up to 12 Pok&eacute;mon on a team. To make a team that large in the teambuilder, either add the Pok&eacute;mon via the 'Import/Export' button, or make the team in a box.`,
+		
+		mod: 'gen8',
+		gameType: 'doubles',
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['[Gen 8] (D)Multi Mega', 'Max Team Size = 12'],
+	},
+	{
+		name: "[Gen 8] (D)12 'mons",
+		desc: `Each player may have up to 12 Pok&eacute;mon on their team. To make a team that large in the teambuilder, either add the Pok&eacute;mon via the 'Import/Export' button, or make the team in a box.`,
+		
+		mod: 'gen8',
+		gameType: 'doubles',
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['BGTE Standard', 'Max Team Size = 12'],
+	},
+	{
+		name: "[Gen 8] (D)24 moves",
+		desc: `Each Pok&eacute;mon may have up to 24 moves. Use the 'Import/Export' feature of the teambuilder to give a Pok&eacute;mon more than 4 moves. This format allows Dynamaxing.`,
+		
+		mod: 'gen8',
+		gameType: 'doubles',
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['BGTE Standard', '!Dynamax Clause', 'Max Move Count = 24'],
+	},
+	{
+		name: "[Gen 8] (D)Pokebilities",
+		desc: `Pok&eacute;mon have all of their released abilities simultaneously. This format allows Dynamaxing.`,
+		
+		mod: 'pokebilities',
+		gameType: 'doubles',
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['NatDex Pokebilities', '!Dynamax Clause'],
+	},
+	{
+		name: "[Gen 8] (D)Linked",
+		desc: `The first two moves in a Pok&eacute;mon's moveset are used simultaneously. This format allows Dynamaxing.`,
+
+		mod: 'linked',
+		gameType: 'doubles',
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['NatDex Linked', '!Dynamax Clause'],
+	},
+	{
+		name: "[Gen 8] (D)350 Cup",
+		desc: `Pok&eacute;mon with a BST of 350 or lower get their base stats doubled. This format allows Dynamaxing.`,
+		
+		mod: 'gen8',
+		gameType: 'doubles',
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['NatDex 350 Cup', '!Dynamax Clause'],
+	},
+	{
+		name: "[Gen 8] (D)Revelationmons",
+		desc: `The moves in the first slot(s) of a Pok&eacute;mon's set have their types changed to match the Pok&eacute;mon's type(s). This format allows Dynamaxing.`,
+
+		mod: 'gen8',
+		gameType: 'doubles',
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['NatDex Revelationmons', '!Dynamax Clause'],
+	},
+	{
+		name: "[Gen 8] (D)Bonus Type Ubers",
+		desc: `Pok&eacute;mon can be nicknamed the name of a type to have that type added onto their current ones. This format allows Dynamaxing.`,
+		
+		mod: 'gen8',
+		gameType: 'doubles',
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['BGTE Standard', '!Dynamax Clause', 'Bonus Type Rule', '!Nickname Clause'],
+	},
+	{
+		name: "[Gen 8] (D)Alphabet Cup",
+		desc: `Pok&eacute;mon may learn almost any move that shares the same first letter as their name or a previous evolution's name. This format allows Dynamaxing.`,
+		
+		mod: 'gen8',
+		gameType: 'doubles',
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['NatDex Alphabet', '!Dynamax Clause'],
+	},
+	{
+		name: "[Gen 8] (D)Alphabet Cup AG",
+		desc: `Pok&eacute;mon may learn any move, except Sketch, that shares the same first letter as their name or a previous evolution's name. This format has neither Dynamax Clause nor any balance.`,
+		
+		mod: 'gen8',
+		gameType: 'doubles',
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['BGTE NatDex AG', 'Alphabet Cup Move Legality'],
+		restricted: ['Sketch'],
+	},
+	{
+		name: "[Gen 8] (D)STABmons",
+		desc: `Pok&eacute;mon can use almost any move of their typing, in addition to the moves they can normally learn. This format allows Dynamaxing.`,
+
+		mod: 'gen8',
+		gameType: 'doubles',
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['NatDex STABmons', '!Dynamax Clause'],
+	},
+	{
+		name: "[Gen 8] (D)STABmons AG",
+		desc: `Pok&eacute;mon can use any move of their typing, except Sketch, in addition to the moves they can normally learn. This format has neither Dynamax Clause nor any balance.`,
+
+		mod: 'gen8',
+		gameType: 'doubles',
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['BGTE NatDex AG', 'STABmons Move Legality'],
+		restricted: ['Sketch'],
+	},
+	{
+		name: "[Gen 8] (D)Almost Any Ability",
+		desc: `Pok&eacute;mon can use any ability, barring the few that are restricted. This format allows Dynamaxing.`,
+		
+		mod: 'gen8',
+		gameType: 'doubles',
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['NatDex AAA', '!Dynamax Clause'],
+	},
+	{
+		name: "[Gen 8] (D)Any Ability Goes",
+		desc: `Pok&eacute;mon can use any ability, with no attempt at balance. This format allows Dynamaxing.`,
+		
+		mod: 'gen8',
+		gameType: 'doubles',
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['BGTE NatDex AG', '!Obtainable Abilities', 'Battle Forme Ability Check'],
+	},
+	{
+		name: "[Gen 8] (D)Multibility",
+		desc: `Run a second ability at the cost of giving up a Pok&eacute;mon's item slot. This format allows Dynamaxing.`,
+
+		mod: 'gen8',
+		gameType: 'doubles',
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['NatDex Multibility', '!Dynamax Clause'],
+	},
+	{
+		name: "[Gen 8] (D)Pure Hackmons",
+		desc: `A National Dex variant of Pure Hackmons. Allows any Pok&eacute;mon may have any item, ability, and moves (excluding CAP). No 510 EV limit. This format allows Dynamaxing.`,
+
+		mod: 'gen8',
+		gameType: 'doubles',
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['NatDex Hackmons', '!Dynamax Clause'],
+	},
+	{
+		name: "[Gen 8] (D)Hackmons Cup",
+		desc: `Randomized teams of level-balanced Pok&eacute;mon with absolutely any ability, moves, and item. This format allows Dynamaxing.`,
+
+		mod: 'gen8',
+		gameType: 'doubles',
+		team: 'randomHC',
+		rated: false,
+		ruleset: ['HP Percentage Mod', 'Cancel Mod'],
+		banlist: ['CAP'],
+	},
+	{
+		name: "[Gen 8] (D)Custom Game",
+
+		mod: 'gen8',
+		gameType: 'doubles',
+		battle: {trunc: Math.trunc},
+		debug: true,
+		rated: false,
+		ruleset: ['Custom Game Megas'],
+	},
+	{
+		name: "[Gen 8] (D)Stoneless Custom",
+
+		mod: 'gen8',
+		gameType: 'doubles',
+		battle: {trunc: Math.trunc},
+		debug: true,
+		rated: false,
+		// no restrictions, for serious (other than team preview)
+		ruleset: ['Custom Game Megas', 'Stoneless Mega Mod'],
+	},
+
+
+
+	{
+		section: "Triple Battles",
+		column: 3,
+	},
+	{
+		name: "[Gen 8] (T)Anything Goes",
+		desc: `Triples NatDex AG with Dynamax Clause.`,
+		
+		mod: 'gen8',
 		gameType: 'triples',
-		ruleset: ['[Gen 8] Triples AG Dmax', 'Dynamax Clause'],
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['BGTE NatDex AG', 'Dynamax Clause'],
 	},
 	{
-		name: "[Gen 8] Multi AG",
-		desc: `Multi Battle NatDex AG with Dynamax Clause, up to level 120 Pokémon, duplicates fusions, and duplicate LGPE starters.`,
+		name: "[Gen 8] (T)Anything Goes Dmax",
+		desc: `Triples NatDex AG with Dynamaxing.`,
 		
 		mod: 'gen8',
-		rated: false,
+		gameType: 'triples',
 		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['BGTE NatDex AG'],
+	},
+	{
+		name: "[Gen 8] (T)Ubers",
+		desc: `Triples NatDex Ubers with Dynamax Clause.`,
+
+		mod: 'gen8',
+		gameType: 'triples',
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['BGTE Standard'],
+	},
+	{
+		name: "[Gen 8] (T)Monotype Ubers",
+		desc: `All the Pok&eacute;mon on a team must share a type.`,
+
+		mod: 'gen8',
+		gameType: 'triples',
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['BGTE Standard', 'Same Type Clause'],
+	},
+	{
+		name: "[Gen 8] (T)Flat Rules",
+		desc: `NatDex Triples with the in-game Flat Rules.`,
+
+		mod: 'gen8',
+		gameType: 'triples',
+		rated: false,
+		ruleset: ['NatDex Flat Rules'],
+	},
+	{
+		name: "[Gen 8] (T)Flat Rules 2R",
+		desc: `NatDex Triples with the in-game Flat Rules. Up to two Restricted Legendaries are allowed per team.`,
+
+		mod: 'gen8',
+		gameType: 'triples',
+		rated: false,
+		ruleset: ['NatDex Flat Rules', 'Limit Two Restricted'],
+		restricted: ['Restricted Legendary'],
+	},
+	{
+		name: "[Gen 8] (T)Inverse AG",
+		desc: `The type matchup chart is inverted: weaknesses become resistances, while resistances and immunities become weaknesses.`,
+		
+		mod: 'gen8',
+		gameType: 'triples',
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['BGTE NatDex AG', 'Dynamax Clause', 'Inverse Mod'],
+	},
+	{
+		name: "[Gen 8] (T)Inverse AG Dmax",
+		desc: `The type matchup chart is inverted: weaknesses become resistances, while resistances and immunities become weaknesses. This format allows Dynamaxing.`,
+		
+		mod: 'gen8',
+		gameType: 'triples',
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['BGTE NatDex AG', 'Inverse Mod'],
+	},
+	{
+		name: "[Gen 8] (T)Max Berries",
+		desc: `All berries have their effects maximized.`,
+
+		mod: 'maxberries',
+		gameType: 'triples',
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['NatDex Max Berries'],
+	},
+	{
+		name: "[Gen 8] (T)Multi Mega",
+		desc: `Removes Mega Evolution limit and Ultra Burst limit.`,
+		
+		mod: 'gen8',
+		gameType: 'triples',
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['BGTE Standard', 'Multi Mega Mod'],
+	},
+	{
+		name: "[Gen 8] (T)Stoneless Multi Mega",
+		desc: `A variant of the [Gen 8] (T)Multi Mega format that allows Mega Evolution-capable Pok&eacute;mon to Mega evolve without their Mega Stone.`,
+		
+		mod: 'gen8',
+		gameType: 'triples',
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['[Gen 8] (T)Multi Mega', 'Stoneless Mega Mod'],
+	},
+	{
+		name: "[Gen 8] (T)12-mon Multi Mega",
+		desc: `A variant of the [Gen 8] (T)Multi Mega format that allows up to 12 Pok&eacute;mon on a team. To make a team that large in the teambuilder, either add the Pok&eacute;mon via the 'Import/Export' button, or make the team in a box.`,
+		
+		mod: 'gen8',
+		gameType: 'triples',
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['[Gen 8] (T)Multi Mega', 'Max Team Size = 12'],
+	},
+	{
+		name: "[Gen 8] (T)12 'mons",
+		desc: `Each player may have up to 12 Pok&eacute;mon on their team. To make a team that large in the teambuilder, either add the Pok&eacute;mon via the 'Import/Export' button, or make the team in a box.`,
+		
+		mod: 'gen8',
+		gameType: 'triples',
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['BGTE Standard', 'Max Team Size = 12'],
+	},
+	{
+		name: "[Gen 8] (T)24 moves",
+		desc: `Each Pok&eacute;mon may have up to 24 moves. Use the 'Import/Export' feature of the teambuilder to give a Pok&eacute;mon more than 4 moves.`,
+		
+		mod: 'gen8',
+		gameType: 'triples',
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['BGTE Standard', 'Max Move Count = 24'],
+	},
+	{
+		name: "[Gen 8] (T)Pokebilities",
+		desc: `Pok&eacute;mon have all of their released abilities simultaneously.`,
+		
+		mod: 'pokebilities',
+		gameType: 'triples',
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['NatDex Pokebilities'],
+	},
+	{
+		name: "[Gen 8] (T)Linked",
+		desc: `The first two moves in a Pok&eacute;mon's moveset are used simultaneously.`,
+
+		mod: 'linked',
+		gameType: 'triples',
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['NatDex Linked'],
+	},
+	{
+		name: "[Gen 8] (T)350 Cup",
+		desc: `Pok&eacute;mon with a BST of 350 or lower get their base stats doubled.`,
+		
+		mod: 'gen8',
+		gameType: 'triples',
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['NatDex 350 Cup'],
+	},
+	{
+		name: "[Gen 8] (T)Revelationmons",
+		desc: `The moves in the first slot(s) of a Pok&eacute;mon's set have their types changed to match the Pok&eacute;mon's type(s).`,
+
+		mod: 'gen8',
+		gameType: 'triples',
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['NatDex Revelationmons'],
+	},
+	{
+		name: "[Gen 8] (T)Bonus Type Ubers",
+		desc: `Pok&eacute;mon can be nicknamed the name of a type to have that type added onto their current ones.`,
+		
+		mod: 'gen8',
+		gameType: 'triples',
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['BGTE Standard', 'Bonus Type Rule', '!Nickname Clause'],
+	},
+	{
+		name: "[Gen 8] (T)Alphabet Cup",
+		desc: `Pok&eacute;mon may learn almost any move that shares the same first letter as their name or a previous evolution's name.`,
+		
+		mod: 'gen8',
+		gameType: 'triples',
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['NatDex Alphabet'],
+	},
+	{
+		name: "[Gen 8] (T)Alphabet Cup AG",
+		desc: `Pok&eacute;mon may learn any move, except Sketch, that shares the same first letter as their name or a previous evolution's name. This format has no attempt at balance.`,
+		
+		mod: 'gen8',
+		gameType: 'triples',
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['BGTE NatDex AG', 'Dynamax Clause', 'Alphabet Cup Move Legality'],
+		restricted: ['Sketch'],
+	},
+	{
+		name: "[Gen 8] (T)STABmons",
+		desc: `Pok&eacute;mon can use almost any move of their typing, in addition to the moves they can normally learn.`,
+
+		mod: 'gen8',
+		gameType: 'triples',
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['NatDex STABmons'],
+	},
+	{
+		name: "[Gen 8] (T)STABmons AG",
+		desc: `Pok&eacute;mon can use any move of their typing, except Sketch, in addition to the moves they can normally learn. This format has no attempt at balance.`,
+
+		mod: 'gen8',
+		gameType: 'triples',
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['BGTE NatDex AG', 'Dynamax Clause', 'STABmons Move Legality'],
+		restricted: ['Sketch'],
+	},
+	{
+		name: "[Gen 8] (T)Almost Any Ability",
+		desc: `Pok&eacute;mon can use any ability, barring the few that are restricted.`,
+		
+		mod: 'gen8',
+		gameType: 'triples',
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['NatDex AAA'],
+	},
+	{
+		name: "[Gen 8] (T)Any Ability Goes",
+		desc: `Pok&eacute;mon can use any ability, with no attempt at balance.`,
+		
+		mod: 'gen8',
+		gameType: 'triples',
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['BGTE NatDex AG', 'Dynamax Clause', '!Obtainable Abilities', 'Battle Forme Ability Check'],
+	},
+	{
+		name: "[Gen 8] (T)Multibility",
+		desc: `Run a second ability at the cost of giving up a Pok&eacute;mon's item slot.`,
+
+		mod: 'gen8',
+		gameType: 'triples',
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['NatDex Multibility'],
+	},
+	{
+		name: "[Gen 8] (T)Pure Hackmons",
+		desc: `A National Dex variant of Pure Hackmons. Allows any Pok&eacute;mon may have any item, ability, and moves (excluding CAP). No 510 EV limit.`,
+
+		mod: 'gen8',
+		gameType: 'triples',
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['NatDex Hackmons'],
+	},
+	{
+		name: "[Gen 8] (T)Hackmons Cup",
+		desc: `Randomized teams of level-balanced Pok&eacute;mon with absolutely any ability, moves, and item.`,
+
+		mod: 'gen8',
+		gameType: 'triples',
+		team: 'randomHC',
+		rated: false,
+		ruleset: ['HP Percentage Mod', 'Cancel Mod', 'Dynamax Clause'],
+		banlist: ['CAP'],
+	},
+	{
+		name: "[Gen 8] (T)Custom Game",
+
+		mod: 'gen8',
+		gameType: 'triples',
+		battle: {trunc: Math.trunc},
+		debug: true,
+		rated: false,
+		ruleset: ['Custom Game Megas'],
+	},
+	{
+		name: "[Gen 8] (T)Stoneless Custom",
+
+		mod: 'gen8',
+		gameType: 'triples',
+		battle: {trunc: Math.trunc},
+		debug: true,
+		rated: false,
+		// no restrictions, for serious (other than team preview)
+		ruleset: ['Custom Game Megas', 'Stoneless Mega Mod'],
+	},//tournamentShow: false,
+
+
+
+
+
+
+	{
+		section: "Multi Battles",
+		column: 3,
+	},
+	{
+		name: "[Gen 8] (M)Anything Goes",
+		desc: `Multi Battle NatDex AG with Dynamax Clause.`,
+		
+		mod: 'gen8',
 		gameType: 'multi',
-		ruleset: ['[Gen 8] Multi AG Dmax', 'Dynamax Clause'],
+		tournamentShow: false,
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['BGTE NatDex AG', 'Dynamax Clause'],
 	},
 	{
-		name: "[Gen 8] FFA AG",
-		desc: `Free-For-All NatDex AG with Dynamax Clause, up to level 120 Pokémon, duplicates fusions, and duplicate LGPE starters.`,
+		name: "[Gen 8] (M)Anything Goes Dmax",
+		desc: `Multi Battle NatDex AG with Dynamaxing.`,
 		
 		mod: 'gen8',
-		rated: false,
+		gameType: 'multi',
+		tournamentShow: false,
 		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['BGTE NatDex AG'],
+	},
+	{
+		name: "[Gen 8] (M)Ubers",
+		desc: `Multi Battle NatDex Ubers with Dynamax Clause.`,
+
+		mod: 'gen8',
+		gameType: 'multi',
+		tournamentShow: false,
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['BGTE Standard'],
+	},
+	{
+		name: "[Gen 8] (M)Monotype Ubers",
+		desc: `All the Pok&eacute;mon on a team must share a type.`,
+
+		mod: 'gen8',
+		gameType: 'multi',
+		tournamentShow: false,
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['BGTE Standard', 'Same Type Clause'],
+	},
+	{
+		name: "[Gen 8] (M)Flat Rules",
+		desc: `NatDex Multi Battle with the in-game Flat Rules.`,
+
+		mod: 'gen8',
+		gameType: 'multi',
+		tournamentShow: false,
+		rated: false,
+		ruleset: ['NatDex Flat Rules'],
+	},
+	{
+		name: "[Gen 8] (M)Flat Rules 2R",
+		desc: `NatDex Multi Battle with the in-game Flat Rules. Up to two Restricted Legendaries are allowed per team.`,
+
+		mod: 'gen8',
+		gameType: 'multi',
+		tournamentShow: false,
+		rated: false,
+		ruleset: ['NatDex Flat Rules', 'Limit Two Restricted'],
+		restricted: ['Restricted Legendary'],
+	},
+	{
+		name: "[Gen 8] (M)Inverse AG",
+		desc: `The type matchup chart is inverted: weaknesses become resistances, while resistances and immunities become weaknesses.`,
+		
+		mod: 'gen8',
+		gameType: 'multi',
+		tournamentShow: false,
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['BGTE NatDex AG', 'Dynamax Clause', 'Inverse Mod'],
+	},
+	{
+		name: "[Gen 8] (M)Inverse AG Dmax",
+		desc: `The type matchup chart is inverted: weaknesses become resistances, while resistances and immunities become weaknesses. This format allows Dynamaxing.`,
+		
+		mod: 'gen8',
+		gameType: 'multi',
+		tournamentShow: false,
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['BGTE NatDex AG', 'Inverse Mod'],
+	},
+	{
+		name: "[Gen 8] (M)Max Berries",
+		desc: `All berries have their effects maximized.`,
+
+		mod: 'maxberries',
+		gameType: 'multi',
+		tournamentShow: false,
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['NatDex Max Berries'],
+	},
+	{
+		name: "[Gen 8] (M)Multi Mega",
+		desc: `Removes Mega Evolution limit and Ultra Burst limit.`,
+		
+		mod: 'gen8',
+		gameType: 'multi',
+		tournamentShow: false,
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['BGTE Standard', 'Multi Mega Mod'],
+	},
+	{
+		name: "[Gen 8] (M)Stoneless Multi Mega",
+		desc: `A variant of the [Gen 8] (M)Multi Mega format that allows Mega Evolution-capable Pok&eacute;mon to Mega evolve without their Mega Stone.`,
+		
+		mod: 'gen8',
+		gameType: 'multi',
+		tournamentShow: false,
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['[Gen 8] (M)Multi Mega', 'Stoneless Mega Mod'],
+	},
+	{
+		name: "[Gen 8] (M)12-mon Multi Mega",
+		desc: `A variant of the [Gen 8] (M)Multi Mega format that allows up to 12 Pok&eacute;mon on a team. To make a team that large in the teambuilder, either add the Pok&eacute;mon via the 'Import/Export' button, or make the team in a box.`,
+		
+		mod: 'gen8',
+		gameType: 'multi',
+		tournamentShow: false,
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['[Gen 8] (M)Multi Mega', 'Max Team Size = 12'],
+	},
+	{
+		name: "[Gen 8] (M)12 'mons",
+		desc: `Each player may have up to 12 Pok&eacute;mon on their team. To make a team that large in the teambuilder, either add the Pok&eacute;mon via the 'Import/Export' button, or make the team in a box.`,
+		
+		mod: 'gen8',
+		gameType: 'multi',
+		tournamentShow: false,
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['BGTE Standard', 'Max Team Size = 12'],
+	},
+	{
+		name: "[Gen 8] (M)24 moves",
+		desc: `Each Pok&eacute;mon may have up to 24 moves. Use the 'Import/Export' feature of the teambuilder to give a Pok&eacute;mon more than 4 moves.`,
+		
+		mod: 'gen8',
+		gameType: 'multi',
+		tournamentShow: false,
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['BGTE Standard', 'Max Move Count = 24'],
+	},
+	{
+		name: "[Gen 8] (M)Pokebilities",
+		desc: `Pok&eacute;mon have all of their released abilities simultaneously.`,
+		
+		mod: 'pokebilities',
+		gameType: 'multi',
+		tournamentShow: false,
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['NatDex Pokebilities'],
+	},
+	{
+		name: "[Gen 8] (M)Linked",
+		desc: `The first two moves in a Pok&eacute;mon's moveset are used simultaneously.`,
+
+		mod: 'linked',
+		gameType: 'multi',
+		tournamentShow: false,
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['NatDex Linked'],
+	},
+	{
+		name: "[Gen 8] (M)350 Cup",
+		desc: `Pok&eacute;mon with a BST of 350 or lower get their base stats doubled.`,
+		
+		mod: 'gen8',
+		gameType: 'multi',
+		tournamentShow: false,
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['NatDex 350 Cup'],
+	},
+	{
+		name: "[Gen 8] (M)Revelationmons",
+		desc: `The moves in the first slot(s) of a Pok&eacute;mon's set have their types changed to match the Pok&eacute;mon's type(s).`,
+
+		mod: 'gen8',
+		gameType: 'multi',
+		tournamentShow: false,
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['NatDex Revelationmons'],
+	},
+	{
+		name: "[Gen 8] (M)Bonus Type Ubers",
+		desc: `Pok&eacute;mon can be nicknamed the name of a type to have that type added onto their current ones.`,
+		
+		mod: 'gen8',
+		gameType: 'multi',
+		tournamentShow: false,
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['BGTE Standard', 'Bonus Type Rule', '!Nickname Clause'],
+	},
+	{
+		name: "[Gen 8] (M)Alphabet Cup",
+		desc: `Pok&eacute;mon may learn almost any move that shares the same first letter as their name or a previous evolution's name.`,
+		
+		mod: 'gen8',
+		gameType: 'multi',
+		tournamentShow: false,
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['NatDex Alphabet'],
+	},
+	{
+		name: "[Gen 8] (M)Alphabet Cup AG",
+		desc: `Pok&eacute;mon may learn any move, except Sketch, that shares the same first letter as their name or a previous evolution's name. This format has no attempt at balance.`,
+		
+		mod: 'gen8',
+		gameType: 'multi',
+		tournamentShow: false,
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['BGTE NatDex AG', 'Dynamax Clause', 'Alphabet Cup Move Legality'],
+		restricted: ['Sketch'],
+	},
+	{
+		name: "[Gen 8] (M)STABmons",
+		desc: `Pok&eacute;mon can use almost any move of their typing, in addition to the moves they can normally learn.`,
+
+		mod: 'gen8',
+		gameType: 'multi',
+		tournamentShow: false,
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['NatDex STABmons'],
+	},
+	{
+		name: "[Gen 8] (M)STABmons AG",
+		desc: `Pok&eacute;mon can use any move of their typing, except Sketch, in addition to the moves they can normally learn. This format has no attempt at balance.`,
+
+		mod: 'gen8',
+		gameType: 'multi',
+		tournamentShow: false,
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['BGTE NatDex AG', 'Dynamax Clause', 'STABmons Move Legality'],
+		restricted: ['Sketch'],
+	},
+	{
+		name: "[Gen 8] (M)Almost Any Ability",
+		desc: `Pok&eacute;mon can use any ability, barring the few that are restricted.`,
+		
+		mod: 'gen8',
+		gameType: 'multi',
+		tournamentShow: false,
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['NatDex AAA'],
+	},
+	{
+		name: "[Gen 8] (M)Any Ability Goes",
+		desc: `Pok&eacute;mon can use any ability, with no attempt at balance.`,
+		
+		mod: 'gen8',
+		gameType: 'multi',
+		tournamentShow: false,
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['BGTE NatDex AG', 'Dynamax Clause', '!Obtainable Abilities', 'Battle Forme Ability Check'],
+	},
+	{
+		name: "[Gen 8] (M)Multibility",
+		desc: `Run a second ability at the cost of giving up a Pok&eacute;mon's item slot.`,
+
+		mod: 'gen8',
+		gameType: 'multi',
+		tournamentShow: false,
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['NatDex Multibility'],
+	},
+	{
+		name: "[Gen 8] (M)Pure Hackmons",
+		desc: `A National Dex variant of Pure Hackmons. Allows any Pok&eacute;mon may have any item, ability, and moves (excluding CAP). No 510 EV limit.`,
+
+		mod: 'gen8',
+		gameType: 'multi',
+		tournamentShow: false,
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['NatDex Hackmons'],
+	},
+	{
+		name: "[Gen 8] (M)Hackmons Cup",
+		desc: `Randomized teams of level-balanced Pok&eacute;mon with absolutely any ability, moves, and item.`,
+
+		mod: 'gen8',
+		gameType: 'multi',
+		tournamentShow: false,
+		team: 'randomHC',
+		rated: false,
+		ruleset: ['HP Percentage Mod', 'Cancel Mod', 'Dynamax Clause'],
+		banlist: ['CAP'],
+	},
+	{
+		name: "[Gen 8] (M)Custom Game",
+
+		mod: 'gen8',
+		gameType: 'multi',
+		tournamentShow: false,
+		battle: {trunc: Math.trunc},
+		debug: true,
+		rated: false,
+		ruleset: ['Custom Game Megas'],
+	},
+	{
+		name: "[Gen 8] (M)Stoneless Custom",
+
+		mod: 'gen8',
+		gameType: 'multi',
+		tournamentShow: false,
+		battle: {trunc: Math.trunc},
+		debug: true,
+		rated: false,
+		// no restrictions, for serious (other than team preview)
+		ruleset: ['Custom Game Megas', 'Stoneless Mega Mod'],
+	},
+
+
+
+	{
+		section: "Free-For-Alls",
+		column: 3,
+	},
+	{
+		name: "[Gen 8] FFA Anything Goes",
+		desc: `FFA NatDex AG with Dynamax Clause.`,
+		
+		mod: 'gen8',
 		gameType: 'freeforall',
-		ruleset: ['[Gen 8] FFA AG Dmax', 'Dynamax Clause'],
-	},
-
-
-
-	{
-		section: "Anything Goes (Dynamax legal)",
-	},
-	{
-		name: "[Gen 8] Singles AG Dmax",
-		desc: `Singles NatDex AG with Dynamaxing, up to level 120 Pokémon, duplicates fusions, and duplicate LGPE starters.`,
-
-		mod: 'gen8',
-		rated: false,
+		tournamentShow: false,
 		battle: {trunc: Math.trunc},
-		ruleset: ['BGTEs Standard', 'Level 120', '!NoFusionDupes', '!Limit One LGPE Starter'],
+		rated: false,
+		ruleset: ['BGTE NatDex AG', 'Dynamax Clause'],
 	},
 	{
-		name: "[Gen 8] Doubles AG Dmax",
-		desc: `Doubles NatDex AG with Dynamaxing, up to level 120 Pokémon, duplicates fusions, and duplicate LGPE starters.`,
+		name: "[Gen 8] FFA Anything Goes Dmax",
+		desc: `FFA NatDex AG with Dynamaxing.`,
 		
 		mod: 'gen8',
-		rated: false,
-		battle: {trunc: Math.trunc},
-		gameType: 'doubles',
-		ruleset: ['BGTEs Standard', 'Level 120', '!NoFusionDupes', '!Limit One LGPE Starter'],
-	},
-	{
-		name: "[Gen 8] Triples AG Dmax",
-		desc: `Triples NatDex AG with Dynamaxing, up to level 120 Pokémon, duplicates fusions, and duplicate LGPE starters.`,
-		
-		mod: 'gen8',
-		rated: false,
-		battle: {trunc: Math.trunc},
-		gameType: 'triples',
-		ruleset: ['BGTEs Standard', 'Level 120', '!NoFusionDupes', '!Limit One LGPE Starter'],
-	},
-	{
-		name: "[Gen 8] Multi AG Dmax",
-		desc: `Multi Battle NatDex AG with Dynamaxing, up to level 120 Pokémon, duplicates fusions, and duplicate LGPE starters.`,
-		
-		mod: 'gen8',
-		rated: false,
-		battle: {trunc: Math.trunc},
-		gameType: 'multi',
-		ruleset: ['BGTEs Standard', 'Level 120', '!NoFusionDupes', '!Limit One LGPE Starter'],
-	},
-	{
-		name: "[Gen 8] FFA AG Dmax",
-		desc: `Free-For-All NatDex AG with Dynamaxing, up to level 120 Pokémon, duplicates fusions, and duplicate LGPE starters.`,
-		
-		mod: 'gen8',
-		rated: false,
-		battle: {trunc: Math.trunc},
 		gameType: 'freeforall',
-		ruleset: ['BGTEs Standard', 'Level 120', '!NoFusionDupes', '!Limit One LGPE Starter'],
-	},
-
-
-
-	{
-		section: "Ubers",
-	},
-	{
-		name: "[Gen 8] Singles Ubers",
-		desc: `NatDex Singles with all the clauses and bans from [Gen 8] Ubers.`,
-
-		mod: 'gen8',
-		rated: false,
+		tournamentShow: false,
 		battle: {trunc: Math.trunc},
-		ruleset: ['BGTEs Standard', 'Sleep Clause Mod', 'Species Clause', 'OHKO Clause', 'Evasion Moves Clause', 'Dynamax Clause'],
-		banlist: ['AG', 'Shadow Tag','Baton Pass'],
-	},
-	{
-		name: "[Gen 8] Doubles Ubers",
-		desc: `NatDex Doubles with all the clauses from [Gen 8] Doubles Ubers.`,
-
-		mod: 'gen8',
 		rated: false,
-		battle: {trunc: Math.trunc},
-		gameType: 'doubles',
-		ruleset: ['BGTEs Standard', 'Species Clause', 'OHKO Clause', 'Evasion Moves Clause'],
-	},
-	{
-		name: "[Gen 8] Triples Ubers",
-		desc: `NatDex Triples with all the clauses from [Gen 8] Doubles Ubers.`,
-
-		mod: 'gen8',
-		rated: false,
-		battle: {trunc: Math.trunc},
-		gameType: 'triples',
-		ruleset: ['BGTEs Standard', 'Species Clause', 'OHKO Clause', 'Evasion Moves Clause'],
-	},
-	{
-		name: "[Gen 8] Multi Ubers",
-		desc: `NatDex Multi Battle with all the clauses from [Gen 8] Doubles Ubers as well as Dynamax Clause.`,
-
-		mod: 'gen8',
-		rated: false,
-		battle: {trunc: Math.trunc},
-		gameType: 'multi',
-		ruleset: ['BGTEs Standard', 'Species Clause', 'OHKO Clause', 'Evasion Moves Clause'],
+		ruleset: ['BGTE NatDex AG'],
 	},
 	{
 		name: "[Gen 8] FFA Ubers",
-		desc: `NatDex Free-For-All with all the clauses from [Gen 8] Ubers.`,
+		desc: `FFA NatDex Ubers with Dynamax Clause.`,
 
 		mod: 'gen8',
-		rated: false,
-		battle: {trunc: Math.trunc},
 		gameType: 'freeforall',
-		ruleset: ['BGTEs Standard', 'Sleep Clause Mod', 'Species Clause', 'OHKO Clause', 'Evasion Moves Clause', 'Dynamax Clause'],
-		banlist: ['Baton Pass'],
-	},
-
-
-
-	{
-		section: "Flat Rules",
-		column: 2,
+		tournamentShow: false,
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['BGTE Standard', 'FFA Bans'],
 	},
 	{
-		name: "[Gen 8] Singles Flat Rules",
-		desc: `NatDex Singles with Flat Rules.`,
+		name: "[Gen 8] FFA Monotype Ubers",
+		desc: `All the Pok&eacute;mon on a team must share a type.`,
 
 		mod: 'gen8',
-		rated: false,
+		gameType: 'freeforall',
+		tournamentShow: false,
 		battle: {trunc: Math.trunc},
-		ruleset: ['BGTEs Standard', 'Species Clause', 'Item Clause', 'Adjust Level Down = 50', 'Picked Team Size = Auto'],
-		banlist: ['Mythical', 'Restricted Legendary'],
-	},
-	{
-		name: "[Gen 8] Doubles Flat Rules",
-		desc: `NatDex Doubles with Flat Rules.`,
-
-		mod: 'gen8',
 		rated: false,
-		battle: {trunc: Math.trunc},
-		gameType: 'doubles',
-		ruleset: ['BGTEs Standard', 'Species Clause', 'Item Clause', 'Adjust Level Down = 50', 'Picked Team Size = Auto'],
-		banlist: ['Mythical', 'Restricted Legendary'],
-	},
-	{
-		name: "[Gen 8] Triples Flat Rules",
-		desc: `NatDex Triples with Flat Rules.`,
-
-		mod: 'gen8',
-		rated: false,
-		battle: {trunc: Math.trunc},
-		gameType: 'triples',
-		ruleset: ['BGTEs Standard', 'Species Clause', 'Item Clause', 'Adjust Level Down = 50', 'Picked Team Size = Auto'],
-		banlist: ['Mythical', 'Restricted Legendary'],
-	},
-	{
-		name: "[Gen 8] Multi Flat Rules",
-		desc: `NatDex Multi Battle with Flat Rules.`,
-
-		mod: 'gen8',
-		rated: false,
-		battle: {trunc: Math.trunc},
-		gameType: 'multi',
-		ruleset: ['BGTEs Standard', 'Species Clause', 'Item Clause', 'Adjust Level Down = 50', 'Picked Team Size = Auto'],
-		banlist: ['Mythical', 'Restricted Legendary'],
+		ruleset: ['BGTE Standard', 'FFA Bans', 'Same Type Clause'],
 	},
 	{
 		name: "[Gen 8] FFA Flat Rules",
-		desc: `NatDex Free-For-All with Flat Rules.`,
+		desc: `NatDex FFA with the in-game Flat Rules.`,
 
 		mod: 'gen8',
-		rated: false,
-		battle: {trunc: Math.trunc},
 		gameType: 'freeforall',
-		ruleset: ['BGTEs Standard', 'Species Clause', 'Item Clause', 'Adjust Level Down = 50', 'Picked Team Size = Auto'],
-		banlist: ['Mythical', 'Restricted Legendary'],
-	},
-
-
-
-	{
-		section: "Flat Rules Two Restricted",
-		column: 2,
-	},
-	{
-		name: "[Gen 8] Singles Flat Rules 2R",
-		desc: `NatDex Singles with Flat Rules. 2 Restricted Legendaries are allowed.`,
-
-		mod: 'gen8',
+		tournamentShow: false,
 		rated: false,
-		battle: {trunc: Math.trunc},
-		ruleset: ['[Gen 8] Singles Flat Rules', 'Limit Two Restricted'],
-		restricted: ['Restricted Legendary'],
-	},
-	{
-		name: "[Gen 8] Doubles Flat Rules 2R",
-		desc: `NatDex Doubles with Flat Rules. 2 Restricted Legendaries are allowed.`,
-
-		mod: 'gen8',
-		rated: false,
-		battle: {trunc: Math.trunc},
-		gameType: 'doubles',
-		ruleset: ['[Gen 8] Doubles Flat Rules', 'Limit Two Restricted'],
-		restricted: ['Restricted Legendary'],
-	},
-	{
-		name: "[Gen 8] Triples Flat Rules 2R",
-		desc: `NatDex Triples with Flat Rules. 2 Restricted Legendaries are allowed.`,
-
-		mod: 'gen8',
-		rated: false,
-		battle: {trunc: Math.trunc},
-		gameType: 'triples',
-		ruleset: ['[Gen 8] Triples Flat Rules', 'Limit Two Restricted'],
-		restricted: ['Restricted Legendary'],
-	},
-	{
-		name: "[Gen 8] Multi Flat Rules 2R",
-		desc: `NatDex Multi Battle with Flat Rules. 2 Restricted Legendaries are allowed.`,
-
-		mod: 'gen8',
-		rated: false,
-		battle: {trunc: Math.trunc},
-		gameType: 'multi',
-		ruleset: ['[Gen 8] Multi Flat Rules', 'Limit Two Restricted'],
-		restricted: ['Restricted Legendary'],
+		ruleset: ['NatDex Flat Rules'],
 	},
 	{
 		name: "[Gen 8] FFA Flat Rules 2R",
-		desc: `NatDex Free-For-All with Flat Rules. 2 Restricted Legendaries are allowed.`,
+		desc: `NatDex FFA with the in-game Flat Rules. Up to two Restricted Legendaries are allowed per team.`,
 
 		mod: 'gen8',
-		rated: false,
-		battle: {trunc: Math.trunc},
 		gameType: 'freeforall',
-		ruleset: ['[Gen 8] FFA Flat Rules', 'Limit Two Restricted'],
-		restricted: ['Restricted Legendary'],
-	},
-
-
-
-	{
-		section: "Custom Game",
-		column: 2,
-	},
-	{
-		name: "[Gen 8] Singles Custom Game",
-
-		mod: 'gen8',
-		searchShow: false,
-		debug: true,
-		battle: {trunc: Math.trunc},
-		// no restrictions, for serious (other than team preview)
-		ruleset: ['HP Percentage Mod', 'Team Preview', 'Cancel Mod', 'Max Team Size = 24', 'Max Move Count = 24', 'Max Level = 9999', 'Default Level = 120', 'Zoroark-Mega Illusion Thing'],
-	},
-	{
-		name: "[Gen 8] Doubles Custom Game",
-
-		mod: 'gen8',
-		gameType: 'doubles',
-		searchShow: false,
-		battle: {trunc: Math.trunc},
-		debug: true,
-		// no restrictions, for serious (other than team preview)
-		ruleset: ['HP Percentage Mod', 'Team Preview', 'Cancel Mod', 'Max Team Size = 24', 'Max Move Count = 24', 'Max Level = 9999', 'Default Level = 120', 'Zoroark-Mega Illusion Thing'],
-	},
-	{
-		name: "[Gen 8] Triples Custom Game",
-
-		mod: 'gen8',
-		gameType: 'triples',
-		searchShow: false,
-		battle: {trunc: Math.trunc},
-		debug: true,
-		// no restrictions, for serious (other than team preview)
-		ruleset: ['HP Percentage Mod', 'Team Preview', 'Cancel Mod', 'Max Team Size = 24', 'Max Move Count = 24', 'Max Level = 9999', 'Default Level = 120', 'Zoroark-Mega Illusion Thing'],
-	},
-	{
-		name: "[Gen 8] Multi Custom Game",
-
-		mod: 'gen8',
-		gameType: 'multi',
-		searchShow: false,
-		battle: {trunc: Math.trunc},
-		debug: true,
 		tournamentShow: false,
 		rated: false,
-		// no restrictions, for serious (other than team preview)
-		ruleset: ['HP Percentage Mod', 'Team Preview', 'Cancel Mod', 'Max Team Size = 24', 'Max Move Count = 24', 'Max Level = 9999', 'Default Level = 120', 'Zoroark-Mega Illusion Thing'],
+		ruleset: ['NatDex Flat Rules', 'Limit Two Restricted'],
+		restricted: ['Restricted Legendary'],
+	},
+	{
+		name: "[Gen 8] FFA Inverse AG",
+		desc: `The type matchup chart is inverted: weaknesses become resistances, while resistances and immunities become weaknesses.`,
+		
+		mod: 'gen8',
+		gameType: 'freeforall',
+		tournamentShow: false,
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['BGTE NatDex AG', 'Dynamax Clause', 'Inverse Mod'],
+	},
+	{
+		name: "[Gen 8] FFA Inverse AG Dmax",
+		desc: `The type matchup chart is inverted: weaknesses become resistances, while resistances and immunities become weaknesses. This format allows Dynamaxing.`,
+		
+		mod: 'gen8',
+		gameType: 'freeforall',
+		tournamentShow: false,
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['BGTE NatDex AG', 'Inverse Mod'],
+	},
+	{
+		name: "[Gen 8] FFA Max Berries",
+		desc: `All berries have their effects maximized.`,
+
+		mod: 'maxberries',
+		gameType: 'freeforall',
+		tournamentShow: false,
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['NatDex Max Berries', 'FFA Bans'],
+	},
+	{
+		name: "[Gen 8] FFA Multi Mega",
+		desc: `Removes Mega Evolution limit and Ultra Burst limit.`,
+		
+		mod: 'gen8',
+		gameType: 'freeforall',
+		tournamentShow: false,
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['BGTE Standard', 'FFA Bans', 'Multi Mega Mod'],
+	},
+	{
+		name: "[Gen 8] FFA Stoneless Multi Mega",
+		desc: `A variant of the [Gen 8] FFA Multi Mega format that allows Mega Evolution-capable Pok&eacute;mon to Mega evolve without their Mega Stone.`,
+		
+		mod: 'gen8',
+		gameType: 'freeforall',
+		tournamentShow: false,
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['[Gen 8] FFA Multi Mega', 'Stoneless Mega Mod'],
+	},
+	{
+		name: "[Gen 8] FFA 12-mon Multi Mega",
+		desc: `A variant of the [Gen 8] FFA Multi Mega format that allows up to 12 Pok&eacute;mon on a team. To make a team that large in the teambuilder, either add the Pok&eacute;mon via the 'Import/Export' button, or make the team in a box.`,
+		
+		mod: 'gen8',
+		gameType: 'freeforall',
+		tournamentShow: false,
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['[Gen 8] FFA Multi Mega', 'Max Team Size = 12'],
+	},
+	{
+		name: "[Gen 8] FFA 12 'mons",
+		desc: `Each player may have up to 12 Pok&eacute;mon on their team. To make a team that large in the teambuilder, either add the Pok&eacute;mon via the 'Import/Export' button, or make the team in a box.`,
+		
+		mod: 'gen8',
+		gameType: 'freeforall',
+		tournamentShow: false,
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['BGTE Standard', 'FFA Bans', 'Max Team Size = 12'],
+	},
+	{
+		name: "[Gen 8] FFA 24 moves",
+		desc: `Each Pok&eacute;mon may have up to 24 moves. Use the 'Import/Export' feature of the teambuilder to give a Pok&eacute;mon more than 4 moves.`,
+		
+		mod: 'gen8',
+		gameType: 'freeforall',
+		tournamentShow: false,
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['BGTE Standard', 'FFA Bans', 'Max Move Count = 24'],
+	},
+	{
+		name: "[Gen 8] FFA Pokebilities",
+		desc: `Pok&eacute;mon have all of their released abilities simultaneously.`,
+		
+		mod: 'pokebilities',
+		gameType: 'freeforall',
+		tournamentShow: false,
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['NatDex Pokebilities', 'FFA Bans'],
+	},
+	{
+		name: "[Gen 8] FFA Linked",
+		desc: `The first two moves in a Pok&eacute;mon's moveset are used simultaneously.`,
+
+		mod: 'linked',
+		gameType: 'freeforall',
+		tournamentShow: false,
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['NatDex Linked', 'FFA Bans'],
+	},
+	{
+		name: "[Gen 8] FFA 350 Cup",
+		desc: `Pok&eacute;mon with a BST of 350 or lower get their base stats doubled.`,
+		
+		mod: 'gen8',
+		gameType: 'freeforall',
+		tournamentShow: false,
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['NatDex 350 Cup', 'FFA Bans'],
+	},
+	{
+		name: "[Gen 8] FFA Revelationmons",
+		desc: `The moves in the first slot(s) of a Pok&eacute;mon's set have their types changed to match the Pok&eacute;mon's type(s).`,
+
+		mod: 'gen8',
+		gameType: 'freeforall',
+		tournamentShow: false,
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['NatDex Revelationmons', 'FFA Bans', 'Sleep Moves Clause'],
+	},
+	{
+		name: "[Gen 8] FFA Bonus Type Ubers",
+		desc: `Pok&eacute;mon can be nicknamed the name of a type to have that type added onto their current ones.`,
+		
+		mod: 'gen8',
+		gameType: 'freeforall',
+		tournamentShow: false,
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['BGTE Standard', 'FFA Bans', 'Bonus Type Rule', '!Nickname Clause'],
+	},
+	{
+		name: "[Gen 8] FFA Alphabet Cup",
+		desc: `Pok&eacute;mon may learn almost any move that shares the same first letter as their name or a previous evolution's name.`,
+		
+		mod: 'gen8',
+		gameType: 'freeforall',
+		tournamentShow: false,
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['NatDex Alphabet', 'FFA Bans'],
+	},
+	{
+		name: "[Gen 8] FFA Alphabet Cup AG",
+		desc: `Pok&eacute;mon may learn any move, except Sketch, that shares the same first letter as their name or a previous evolution's name. This format has no attempt at balance.`,
+		
+		mod: 'gen8',
+		gameType: 'freeforall',
+		tournamentShow: false,
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['BGTE NatDex AG', 'Dynamax Clause', 'Alphabet Cup Move Legality'],
+		restricted: ['Sketch'],
+	},
+	{
+		name: "[Gen 8] FFA STABmons",
+		desc: `Pok&eacute;mon can use almost any move of their typing, in addition to the moves they can normally learn.`,
+
+		mod: 'gen8',
+		gameType: 'freeforall',
+		tournamentShow: false,
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['NatDex STABmons', 'FFA Bans', 'Sleep Moves Clause'],
+	},
+	{
+		name: "[Gen 8] FFA STABmons AG",
+		desc: `Pok&eacute;mon can use any move of their typing, except Sketch, in addition to the moves they can normally learn. This format has no attempt at balance.`,
+
+		mod: 'gen8',
+		gameType: 'freeforall',
+		tournamentShow: false,
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['BGTE NatDex AG', 'Dynamax Clause', 'STABmons Move Legality'],
+		restricted: ['Sketch'],
+	},
+	{
+		name: "[Gen 8] FFA Almost Any Ability",
+		desc: `Pok&eacute;mon can use any ability, barring the few that are restricted.`,
+		
+		mod: 'gen8',
+		gameType: 'freeforall',
+		tournamentShow: false,
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['NatDex AAA', 'FFA Bans'],
+		restricted: ['!Anger Point', '!Justified'],
+	},
+	{
+		name: "[Gen 8] FFA Any Ability Goes",
+		desc: `Pok&eacute;mon can use any ability, with no attempt at balance.`,
+		
+		mod: 'gen8',
+		gameType: 'freeforall',
+		tournamentShow: false,
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['BGTE NatDex AG', 'Dynamax Clause', '!Obtainable Abilities', 'Battle Forme Ability Check'],
+	},
+	{
+		name: "[Gen 8] FFA Multibility",
+		desc: `Run a second ability at the cost of giving up a Pok&eacute;mon's item slot.`,
+
+		mod: 'gen8',
+		gameType: 'freeforall',
+		tournamentShow: false,
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['NatDex Multibility', 'FFA Bans', 'Sleep Moves Clause'],
+		restricted: ['!Anger Point', '!Justified'],
+	},
+	{
+		name: "[Gen 8] FFA Pure Hackmons",
+		desc: `A National Dex variant of Pure Hackmons. Allows any Pok&eacute;mon may have any item, ability, and moves (excluding CAP). No 510 EV limit.`,
+
+		mod: 'gen8',
+		gameType: 'freeforall',
+		tournamentShow: false,
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['NatDex Hackmons'],
+	},
+	{
+		name: "[Gen 8] FFA Hackmons Cup",
+		desc: `Randomized teams of level-balanced Pok&eacute;mon with absolutely any ability, moves, and item.`,
+
+		mod: 'gen8',
+		gameType: 'freeforall',
+		tournamentShow: false,
+		team: 'randomHC',
+		rated: false,
+		ruleset: ['HP Percentage Mod', 'Cancel Mod', 'Dynamax Clause'],
+		banlist: ['CAP'],
 	},
 	{
 		name: "[Gen 8] FFA Custom Game",
 
 		mod: 'gen8',
 		gameType: 'freeforall',
-		searchShow: false,
+		tournamentShow: false,
 		battle: {trunc: Math.trunc},
 		debug: true,
+		rated: false,
+		ruleset: ['Custom Game Megas'],
+	},
+	{
+		name: "[Gen 8] FFA Stoneless Custom",
+
+		mod: 'gen8',
+		gameType: 'freeforall',
 		tournamentShow: false,
+		battle: {trunc: Math.trunc},
+		debug: true,
 		rated: false,
 		// no restrictions, for serious (other than team preview)
-		ruleset: ['HP Percentage Mod', 'Team Preview', 'Cancel Mod', 'Max Team Size = 24', 'Max Move Count = 24', 'Max Level = 9999', 'Default Level = 120', 'Zoroark-Mega Illusion Thing'],
+		ruleset: ['Custom Game Megas', 'Stoneless Mega Mod'],
 	},
-	
-	
+
+
 
 	/*
 	// Custom Formats

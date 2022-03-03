@@ -1674,7 +1674,12 @@ export class BattleActions {
 		if(move.id === 'tesseract')
 		{
 			//20% chance of being super-effective
-			if(this.battle.random(5) === 0 && typeMod < 1) typeMod = 1;
+			if(this.battle.random(5) === 0)
+			{
+				//This should make it work properly in Inverse Battles (meaning it will still be super-effective in Inverse Battles, not resisted)
+				if(this.battle.ruleTable.has('Inverse Mod')) typeMod = -1;
+				else typeMod = 1;
+			}
 		}
 		else if(move.id === 'achillesheel')
 		{
@@ -1755,7 +1760,7 @@ export class BattleActions {
 		const altForme = species.otherFormes && this.dex.species.get(species.otherFormes[0]);
 		const item = pokemon.getItem();
 		// Mega Rayquaza
-		if (/*(this.battle.gen <= 7 || this.battle.ruleTable.has('standardnatdex')) &&*/
+		if ((this.battle.gen <= 7 || this.battle.ruleTable.has('natdexmegas')) &&
 			altForme?.isMega && altForme?.requiredMove &&
 			pokemon.baseMoves.includes(toID(altForme.requiredMove)) && !item.zMove) {
 			return altForme.name;
@@ -1804,13 +1809,16 @@ export class BattleActions {
 		}
 		pokemon.formeChange(speciesid, pokemon.getItem(), true);
 
-		// Limit one mega evolution
-		const wasMega = pokemon.canMegaEvo;
-		for (const ally of pokemon.side.pokemon) {
-			if (wasMega) {
-				ally.canMegaEvo = null;
-			} else {
-				ally.canUltraBurst = null;
+		if(!this.battle.ruleTable.has('multimega'))
+		{
+			// Limit one mega evolution
+			const wasMega = pokemon.canMegaEvo;
+			for (const ally of pokemon.side.pokemon) {
+				if (wasMega) {
+					ally.canMegaEvo = null;
+				} else {
+					ally.canUltraBurst = null;
+				}
 			}
 		}
 

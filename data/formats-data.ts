@@ -915,7 +915,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	},
 	gengarmega: {
 		//isNonstandard: "Past",
-		tier: "Uber",
+		tier: "AG", //Its only ability is banned in Ubers
 	},
 	gengargmax: {
 		randomBattleMoves: ["focusblast", "nastyplot", "shadowball", "sludgewave", "trick"],
@@ -2646,7 +2646,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	},
 	mawiledeltamega: {
 		//isNonstandard: "Past",
-		tier: "RU",
+		tier: "AG", //Its only ability is banned in Ubers
 	},
 	aron: {
 		tier: "LC",
@@ -7175,11 +7175,11 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	},
 	enamorus: {
 		//isNonstandard: "Future",
-		tier: "(PU)",
+		tier: "OU",
 	},
 	enamorustherian: {
 		//isNonstandard: "Future",
-		tier: "(PU)",
+		tier: "OU",
 	},
 	missingno: {
 		tier: "AG",

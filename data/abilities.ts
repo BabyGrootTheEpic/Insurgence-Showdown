@@ -2876,7 +2876,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		onEffectiveness(typeMod, target, type, move) {
 			if (target?.species.id !== 'giratinaprimal') return;
 			let octupleEffective = ['None'];
-			let superEffective = ['Rock'];
+			let superEffective = ['Rock', 'Shadow', '???'];
 			let neutral = ['Crystal', 'Fairy', 'Fire', 'Flying', 'Ice', 'Water'];
 			let resisted = ['Dark', 'Steel'];
 			let quadResisted = ['None'];
