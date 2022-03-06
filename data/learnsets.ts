@@ -46684,7 +46684,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			{generation: 6, level: 50, abilities: ["intimidate"], moves: ["ironhead", "playrough", "firefang", "suckerpunch"], pokeball: "cherishball"},
 			{generation: 6, level: 100, abilities: ["intimidate"], moves: ["suckerpunch", "protect", "playrough", "ironhead"], pokeball: "cherishball"},
 			//7S4: custom event for to give Mawile Double Iron Bash and Fire Punch
-			{generation: 7, level: 120, abilities: ["intimidate"], moves: ["doubleironbash", "playrough", "crunch", "firepunch"], pokeball: "luxuryball"},
+			{generation: 7, level: 120, shiny: 1, abilities: ["intimidate"], moves: ["doubleironbash", "playrough", "crunch", "firepunch"], pokeball: "luxuryball"},
 		],
 	},
 	mawiledelta: {
