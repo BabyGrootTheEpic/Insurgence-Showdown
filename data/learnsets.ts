@@ -91617,7 +91617,6 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			toxic: ["7M", "6M"],
 			acid: ["6M"],
 			zenheadbutt: ["8M", "7T", "6T"],
-			lightofruin: ["6S10"],
 		},
 		eventData: [
 			{generation: 6, level: 70, moves: ["crunch", "earthquake", "camouflage", "dragonpulse"]},
