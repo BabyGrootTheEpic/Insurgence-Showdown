@@ -1,8 +1,7 @@
 export const ItemsText: {[k: string]: ItemText} = {
 	divineplate: {
 		name: "Divine Plate",
-		desc: "Not yet implemented!",
-		//desc: "Holder's ?-type attacks have 1.2x power. Judgment is ? type.",
+		desc: "Holder's ???-type attacks have 1.2x power. Judgment is ??? type.",
 	},
 	blankplate: {
 		name: "Blank Plate",
@@ -11,7 +10,7 @@ export const ItemsText: {[k: string]: ItemText} = {
 	legendplate: {
 		name: "Legend Plate",
 		desc: "Not yet implemented!",
-		//desc: "Judgment's type changes to be super-effective on the target. Judgement ignores abilities.",
+		//desc: "Judgment's type changes to be super-effective on the target. Judgment ignores abilities.",
 	},
 	dugtrinite: {
 		name: "Dugtrinite",
@@ -30,6 +29,10 @@ export const ItemsText: {[k: string]: ItemText} = {
 		name: "Golurkite",
 		desc: "Not yet implemented!",
 		//desc: "If held by a Golurk, this item allows it to Mega Evolve in battle.",
+	},
+	strangemachine: {
+		name: "Strange Machine",
+		desc: "If held by a Mewtwo it changes to its Strange Machine forme.",
 	},
 	abomasite: {
 		name: "Abomasite",

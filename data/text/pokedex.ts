@@ -404,11 +404,20 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	bellsprout: {
 		name: "Bellsprout",
 	},
+	bellsproutzo: {
+		name: "Bellsprout-ZO",
+	},
 	weepinbell: {
 		name: "Weepinbell",
 	},
+	weepinbellzo: {
+		name: "Weepinbell-ZO",
+	},
 	victreebel: {
 		name: "Victreebel",
+	},
+	victreebelzo: {
+		name: "Victreebel-ZO",
 	},
 	tentacool: {
 		name: "Tentacool",
@@ -659,8 +668,14 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	horsea: {
 		name: "Horsea",
 	},
+	horseazo: {
+		name: "Horsea-ZO",
+	},
 	seadra: {
 		name: "Seadra",
+	},
+	seadrazo: {
+		name: "Seadra-ZO",
 	},
 	goldeen: {
 		name: "Goldeen",
@@ -697,6 +712,9 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	},
 	magmar: {
 		name: "Magmar",
+	},
+	magmarzo: {
+		name: "Magmar-ZO",
 	},
 	magmardelta: {
 		name: "Magmar-Delta",
@@ -838,6 +856,9 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	},
 	mewtwoarmor: {
 		name: "Mewtwo-Armor",
+	},
+	mewtwostrangemachine: {
+		name: "Mewtwo-Strange-Machine",
 	},
 	mewtwoshadow: {
 		name: "Mewtwo-Shadow",
@@ -1220,6 +1241,9 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	kingdra: {
 		name: "Kingdra",
 	},
+	kingdrazo: {
+		name: "Kingdra-ZO",
+	},
 	phanpy: {
 		name: "Phanpy",
 	},
@@ -1255,6 +1279,9 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	},
 	magby: {
 		name: "Magby",
+	},
+	magbyzo: {
+		name: "Magby-ZO",
 	},
 	magbydelta: {
 		name: "Magby-Delta",
@@ -2327,6 +2354,9 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	magmortar: {
 		name: "Magmortar",
 	},
+	magmortarzo: {
+		name: "Magmortar-ZO",
+	},
 	magmortardelta: {
 		name: "Magmortar-Delta",
 	},
@@ -2509,6 +2539,9 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	},
 	arceussteel: {
 		name: "Arceus-Steel",
+	},
+	arceustypeless: {
+		name: "Arceus-Typeless",
 	},
 	arceuswater: {
 		name: "Arceus-Water",
@@ -3212,8 +3245,8 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	meloettapirouette: {
 		name: "Meloetta-Pirouette",
 	},
-	meloettadeltamime: {
-		name: "Meloetta-Delta-Mime",
+	meloettadelta: {
+		name: "Meloetta-Delta",
 	},
 	meloettadeltamagician: {
 		name: "Meloetta-Delta-Magician",

@@ -12072,7 +12072,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 			if (deltaPokemon.includes(pkmn)) {
 				opponentID = pkmn + 'delta';
 			} else if (pkmn === 'meloetta') {
-				opponentID = 'meloettadeltamime';
+				opponentID = 'meloettadelta';
 			} else if (pkmn === 'metagross') {
 				opponentID = ['metagrossdeltas', 'metagrossdeltar'][Math.floor(Math.random() * 2)];
 			} else if (pkmn === 'metagrossmega') {
@@ -14661,7 +14661,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 			if (pokemon.baseSpecies.baseSpecies === 'Meloetta' && !pokemon.transformed) {
 				move.willChangeForme = true;
 			}
-			if (pokemon.baseSpecies.baseSpecies === 'Meloetta-Delta-Mime' && !pokemon.transformed) {
+			if (pokemon.baseSpecies.baseSpecies === 'Meloetta-Delta' && !pokemon.transformed) {
 				move.willChangeFormeDelta = true;
 			}
 		},

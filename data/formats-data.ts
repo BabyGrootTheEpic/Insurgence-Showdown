@@ -670,11 +670,23 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		//isNonstandard: "Past",
 		tier: "LC",
 	},
+	bellsproutzo: {
+		//isNonstandard: "Past",
+		tier: "LC",
+	},
 	weepinbell: {
 		//isNonstandard: "Past",
 		tier: "NFE",
 	},
+	weepinbellzo: {
+		//isNonstandard: "Past",
+		tier: "NFE",
+	},
 	victreebel: {
+		//isNonstandard: "Past",
+		tier: "PU",
+	},
+	victreebelzo: {
 		//isNonstandard: "Past",
 		tier: "PU",
 	},
@@ -1162,7 +1174,15 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	horsea: {
 		tier: "LC",
 	},
+	horseazo: {
+		//isNonstandard: "Past",
+		tier: "LC",
+	},
 	seadra: {
+		tier: "NFE",
+	},
+	seadrazo: {
+		//isNonstandard: "Past",
 		tier: "NFE",
 	},
 	kingdra: {
@@ -1171,6 +1191,11 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		randomDoubleBattleMoves: ["dracometeor", "hurricane", "hydropump", "icebeam", "muddywater", "raindance"],
 		randomDoubleBattleLevel: 82,
 		randomBattleNoDynamaxMoves: ["dracometeor", "flipturn", "hydropump", "icebeam", "raindance"],
+		tier: "PUBL",
+		doublesTier: "DUU",
+	},
+	kingdrazo: {
+		//isNonstandard: "Past",
 		tier: "PUBL",
 		doublesTier: "DUU",
 	},
@@ -1290,10 +1315,18 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	magby: {
 		tier: "LC",
 	},
+	magbyzo: {
+		//isNonstandard: "Past",
+		tier: "LC",
+	},
 	magbydelta: {
 		tier: "LC",
 	},
 	magmar: {
+		tier: "NFE",
+	},
+	magmarzo: {
+		//isNonstandard: "Past",
 		tier: "NFE",
 	},
 	magmardelta: {
@@ -1304,6 +1337,11 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		randomBattleLevel: 86,
 		randomDoubleBattleMoves: ["fireblast", "focusblast", "heatwave", "protect", "thunderbolt"],
 		randomDoubleBattleLevel: 88,
+		tier: "(PU)",
+		doublesTier: "(DUU)",
+	},
+	magmortarzo: {
+		//isNonstandard: "Past",
 		tier: "(PU)",
 		doublesTier: "(DUU)",
 	},
@@ -1620,6 +1658,9 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		doublesTier: "DUber",
 	},
 	mewtwoarmor: {
+		tier: "Uber",
+	},
+	mewtwostrangemachine: {
 		tier: "Uber",
 	},
 	mewtwoshadow: {
@@ -5124,7 +5165,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	meloettapirouette: {
 		//isNonstandard: "Past",
 	},
-	meloettadeltamime: {
+	meloettadelta: {
 		tier: "OU",
 	},
 	meloettadeltamagician: {

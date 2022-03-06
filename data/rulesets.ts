@@ -24,11 +24,11 @@ export const Rulesets: {[k: string]: FormatData} = {
 		name: 'BGTE Standard',
 		desc: "'BGTE NatDex AG' with a few extra clauses and bans.",
 		//Singles formats should also be given 'Singles Bans'. Free-For-All formats should also be given 'FFA Bans'.
-		ruleset: ['BGTE NatDex AG', 'Species Clause', 'Dynamax Clause', 'Evasion Move Clause', 'OHKO Clause'],
+		ruleset: ['BGTE NatDex AG', 'Species Clause', 'Dynamax Clause', 'Evasion MoveS Clause', 'OHKO Clause', 'Planet Series Clause'],
 		banlist: [
 			'Testmon', //Pokémon
 			'Glitch', 'Moody', //Abilities
-			'Permafrost', //Moves
+			'Permafrost', //'Dark Sonata', //Moves
 			'Bright Powder', 'King\'s Rock', 'Razor Fang', 'Lax Incense', //Items
 		],
 	},
@@ -88,9 +88,9 @@ export const Rulesets: {[k: string]: FormatData} = {
 		desc: "The moves in the first slot(s) of a Pok&eacute;mon's set have their types changed to match the Pok&eacute;mon's type(s).",
 		ruleset: ['BGTE Standard', 'Revelationmons Mod'],
 		restricted: ['Bolt Beak', 'Fishious Rend', 'U-turn', 'Volt Switch'],
-		//Singles:	ruleset: ['NatDex Revelationmons', 'Singles Bans', 'Sleep Moves Clause'],
+		//Singles:	ruleset: ['NatDex Revelationmons', 'Singles Bans', '!Sleep Clause Mod', 'Sleep Moves Clause'],
 		//Singles:	banlist: ['Magnet Pull'],
-		//FFA:		ruleset: ['NatDex Revelationmons', 'FFA Bans', 'Sleep Moves Clause'],
+		//FFA:		ruleset: ['NatDex Revelationmons', 'FFA Bans', '!Sleep Clause Mod', 'Sleep Moves Clause'],
 	},
 	natdexalphabet: {
 		effectType: 'ValidatorRule',
@@ -111,13 +111,13 @@ export const Rulesets: {[k: string]: FormatData} = {
 		ruleset: ['BGTE Standard', 'STABmons Move Legality'],
 		banlist: ['Komala', 'Arceus', 'Kangaskhan-Mega'],
 		restricted: [
-			'Acupressure', 'Astral Barrage', 'Belly Drum', 'Bolt Beak', 'Chatter', 'Clangorous Soul', 'Diamond Storm', 'Double Iron Bash', 'Electrify', 'Extreme Speed', 'Fishious Rend',
+			'Acupressure', 'Astral Barrage', 'Belly Drum', 'Bolt Beak', 'Chatter', 'Clangorous Soul', 'Double Iron Bash', 'Electrify', 'Extreme Speed', 'Fishious Rend',
 			'Geomancy', 'Glacial Lance', 'Lovely Kiss', 'Oblivion Wing', 'Precipice Blades', 'Shell Smash', 'Shift Gear', 'Sketch', 'Spore', 'Thousand Arrows', 'V-create', 'Wicked Blow',
 		],
-		//Singles:	ruleset: ['NatDex STABmons', 'Singles Bans', 'Sleep Moves Clause'],
-		//Singles:	banlist: ['Magnet Pull'],
-		//Singles:	restricted: ['!Diamond Storm'],
-		//FFA:		ruleset: ['NatDex STABmons', 'FFA Bans', 'Sleep Moves Clause'],
+		//Singles:		ruleset: ['NatDex STABmons', 'Singles Bans', '!Sleep Clause Mod', 'Sleep Moves Clause'],
+		//Singles:		banlist: ['Magnet Pull'],
+		//Not singles:	restricted: ['Diamond Storm'],
+		//FFA:			ruleset: ['NatDex STABmons', 'FFA Bans', '!Sleep Clause Mod', 'Sleep Moves Clause'],
 	},
 	natdexaaa: {
 		effectType: 'ValidatorRule',
@@ -126,14 +126,13 @@ export const Rulesets: {[k: string]: FormatData} = {
 		ruleset: ['BGTE Standard', '!Obtainable Abilities', '2 Ability Clause', 'AAA Restricted Abilities', 'Battle Forme Ability Check', 'Choice Pendulum Clause'],
 		banlist: ['Shedinja', 'Ancient Presence', 'Omnitype'], //Glitch is banned by BGTE Standard.
 		restricted: [
-			'Anger Point', 'Arena Trap', 'Comatose', 'Contrary', 'Fluffy', 'Fur Coat', 'Gorilla Tactics', 'Huge Power', 'Ice Scales', 'Illusion', 'Imposter', 'Innards Out',
-			'Intrepid Sword', 'Justified', 'Libero', 'Magnet Pull', 'Neutralizing Gas', 'Parental Bond', 'Poison Heal', 'Protean', 'Pure Power', 'Simple', 'Shadow Tag',
+			'Arena Trap', 'Comatose', 'Contrary', 'Fluffy', 'Fur Coat', 'Gorilla Tactics', 'Huge Power', 'Ice Scales', 'Illusion', 'Imposter', 'Innards Out',
+			'Intrepid Sword', 'Libero', 'Magnet Pull', 'Neutralizing Gas', 'Parental Bond', 'Poison Heal', 'Protean', 'Pure Power', 'Simple', 'Shadow Tag',
 			'Speed Boost', 'Stakeout', 'Water Bubble', 'Wonder Guard', //Base Game Abilities
 			'Athenian', 'Fired Up', 'Chlorofury', 'Phototroph', 'Unleafed', 'Winter Joy', //Insurgence Abilities
 		],
-		//Singles:	unbanlist: ['Missingno.'],
-		//Singles:	restricted: ['!Anger Point', '!Justified'],
-		//FFA:		restricted: ['!Anger Point', '!Justified'],
+		//Singles:					unbanlist: ['Missingno.'],
+		//Doubles, Triples, Multi:	restricted: ['Anger Point', 'Justified'],
 	},
 	natdexmultibility: {
 		effectType: 'ValidatorRule',
@@ -142,23 +141,22 @@ export const Rulesets: {[k: string]: FormatData} = {
 		ruleset: ['BGTE Standard', 'Multibility Mod', '2 Ability Clause', 'Weather Speed Clause'],
 		banlist: ['Stench', 'Ancient Presence', 'Omnitype'], //Glitch is banned by BGTE Standard.
 		restricted: [
-			'Anger Point', 'Arena Trap', 'Comatose', 'Contrary', 'Fluffy', 'Fur Coat', 'Huge Power', 'Ice Scales', 'Illusion', 'Imposter', 'Innards Out', 'Intrepid Sword',
-			'Justified', 'Libero', 'Magnet Pull', 'Neutralizing Gas', 'Parental Bond', 'Protean', 'Pure Power', 'Simple', 'Shadow Tag', 'Speed Boost', 'Stakeout', 'Tinted Lens',
+			'Arena Trap', 'Comatose', 'Contrary', 'Fluffy', 'Fur Coat', 'Huge Power', 'Ice Scales', 'Illusion', 'Imposter', 'Innards Out', 'Intrepid Sword',
+			'Libero', 'Magnet Pull', 'Neutralizing Gas', 'Parental Bond', 'Protean', 'Pure Power', 'Simple', 'Shadow Tag', 'Speed Boost', 'Stakeout', 'Tinted Lens',
 			'Unaware', 'Water Bubble', 'Wonder Guard', //Base Game Abilities
 			'Athenian', 'Fired Up', 'Chlorofury', 'Unleafed', 'Winter Joy', //Insurgence Abilities
 		],
-		//Singles:	ruleset: ['NatDex Multibility', 'Singles Bans', 'Sleep Moves Clause'],
+		//Singles:	ruleset: ['NatDex Multibility', 'Singles Bans', '!Sleep Clause Mod', 'Sleep Moves Clause'],
 		//Singles:	banlist: ['Magnet Pull'],
-		//Singles:	restricted: ['!Anger Point', '!Justified'],
-		//FFA:		ruleset: ['NatDex Multibility', 'FFA Bans', 'Sleep Moves Clause'],
-		//FFA:		restricted: ['!Anger Point', '!Justified'],
+		//Doubles, Triples, Multi:	restricted: ['Anger Point', 'Justified'],
+		//FFA:		ruleset: ['NatDex Multibility', 'FFA Bans', '!Sleep Clause Mod', 'Sleep Moves Clause'],
 	},
 	natdexhackmons: {
 		effectType: 'ValidatorRule',
 		name: 'NatDex Hackmons',
-		desc: "Pok&eacute;mon may have any item, ability, and moves (excluding CAP). No 510 EV limit.",
+		desc: "Pok&eacute;mon may have any item, ability, and moves (excluding CAP). No 510 EV limit. Allows Dynamaxing.",
 		ruleset: [
-			'-CAP', 'Max Level = 120', 'Default Level = 100', 'Dynamax Clause', 'NatDex Megas', 'Sketch Gen 8 Moves',
+			'-CAP', 'Max Level = 120', 'Default Level = 100', 'NatDex Megas', 'Sketch Gen 8 Moves',
 			'Team Preview', 'HP Percentage Mod', 'Cancel Mod', 'Endless Battle Clause', 'Zoroark-Mega Illusion Thing'
 		],
 	},
@@ -167,7 +165,7 @@ export const Rulesets: {[k: string]: FormatData} = {
 		name: 'Custom Game Megas',
 		desc: "Custom Game with no Mega Evolution limit.",
 		// no restrictions, for serious (other than team preview)
-		ruleset: ['HP Percentage Mod', 'Team Preview', 'Cancel Mod', 'NatDex Megas', 'Multi Mega', 'Max Team Size = 24', 'Max Move Count = 24', 'Max Level = 9999', 'Default Level = 100', 'Zoroark-Mega Illusion Thing'],
+		ruleset: ['HP Percentage Mod', 'Team Preview', 'Cancel Mod', 'NatDex Megas', 'Multi Mega Mod', 'Max Team Size = 24', 'Max Move Count = 24', 'Max Level = 9999', 'Default Level = 100', 'Zoroark-Mega Illusion Thing'],
 	},
 
 	//Validator Rules
@@ -238,37 +236,6 @@ export const Rulesets: {[k: string]: FormatData} = {
 			return [];
 		},
 	},
-	banCustomEvents: {
-		effectType: 'ValidatorRule',
-		name: 'Ban Custom Events',
-		desc: "Ban custom events for Mawile and the Tapus added by this fork.",
-		banlist: [
-			'Mawile + Double Iron Bash', 'Mawile + Fire Punch',
-			'Tapu Koko + Rising Voltage', 'Tapu Koko + Terrain Pulse', 'Tapu Koko + Play Rough',
-			'Tapu Lele + Expanding Force', 'Tapu Lele + Terrain Pulse',
-			'Tapu Bulu + Grassy Glide', 'Tapu Bulu + Terrain Pulse', 'Tapu Bulu + Play Rough',
-			'Tapu Fini + Misty Explosion', 'Tapu Fini + Terrain Pulse',
-		],
-	},
-	periodicorbitclause: {
-		effectType: 'ValidatorRule',
-		name: 'Periodic Orbit Clause',
-		desc: "Bans Preriodic Orbit in non-singles formats, as the ability only works in singles.",
-		onValidateTeam(team) {
-			const gameType = this.format.gameType;
-			if (gameType !== 'singles') {
-				for (const set of team) {
-					if (this.toID(set.ability) === 'periodicorbit') {
-						return [`${set.name}'s ability Periodic Orbit is banned by Periodic Orbit Clause, because it doesn't work in this gamemode.`];
-					}
-					const species = this.toID(set.species);
-					if (this.toID(set.item) === 'jirachite' && (species === 'jirachi' || species === 'jirachimega')) {
-						return [`${set.name}'s item Jirachite is banned by Periodic Orbit Clause, because Jirachi-Mega's ability Periodic Orbit doesn't work in this gamemode.`];
-					}
-				}
-			}
-		},
-	},
 	singlesbans: {
 		effectType: 'ValidatorRule',
 		name: 'Singles Bans',
@@ -290,6 +257,40 @@ export const Rulesets: {[k: string]: FormatData} = {
 			'Acupressure', 'Aromatic Mist', 'Coaching', 'Court Change', 'Decorate', 'Final Gambit', 'Flatter',
 			'Floral Healing', 'Flower Shield', 'Follow Me', 'Heal Pulse', 'Rage Powder', 'Swagger',
 		],
+	},
+	customeventsclause: {
+		effectType: 'ValidatorRule',
+		name: 'Custom Events Clause',
+		desc: "Ban custom events for Mawile and the Tapus added by this fork.",
+		banlist: [
+			'Mawile + Double Iron Bash', 'Mawile + Fire Punch',
+			'Tapu Koko + Rising Voltage', 'Tapu Koko + Terrain Pulse', 'Tapu Koko + Play Rough',
+			'Tapu Lele + Expanding Force', 'Tapu Lele + Terrain Pulse',
+			'Tapu Bulu + Grassy Glide', 'Tapu Bulu + Terrain Pulse', 'Tapu Bulu + Play Rough',
+			'Tapu Fini + Misty Explosion', 'Tapu Fini + Terrain Pulse',
+		],
+		onBegin() {
+			this.add('rule', 'Custom Events Clause: Custom events for Mawile and the Tapus are banned');
+		},
+	},
+	periodicorbitclause: {
+		effectType: 'ValidatorRule',
+		name: 'Periodic Orbit Clause',
+		desc: "Bans Preriodic Orbit in non-singles formats, as the ability only works in singles.",
+		onValidateTeam(team) {
+			const gameType = this.format.gameType;
+			if (gameType !== 'singles') {
+				for (const set of team) {
+					if (this.toID(set.ability) === 'periodicorbit') {
+						return [`${set.name}'s ability Periodic Orbit is banned by Periodic Orbit Clause, because it doesn't work in this gamemode.`];
+					}
+					const species = this.toID(set.species);
+					if (this.toID(set.item) === 'jirachite' && (species === 'jirachi' || species === 'jirachimega')) {
+						return [`${set.name}'s item Jirachite is banned by Periodic Orbit Clause, because Jirachi-Mega's ability Periodic Orbit doesn't work in this gamemode.`];
+					}
+				}
+			}
+		},
 	},
 	battleformeabilitycheck: {
 		effectType: 'ValidatorRule',
@@ -314,7 +315,7 @@ export const Rulesets: {[k: string]: FormatData} = {
 		desc: "Prevents any Pokémon from having the ability Pendulum and a Choice item.",
 		banlist: ['Pendulum + Choice Band', 'Pendulum + Choice Scarf', 'Pendulum + Choice Specs'],
 		onBegin() {
-			this.add('rule', 'Choice Pendulum Clause: Pokémon with Pendulum may not hold a choice item.');
+			this.add('rule', 'Choice Pendulum Clause: Pokémon with Pendulum may not hold a choice item');
 		},
 	},
 	weatherspeedclause: {
@@ -324,6 +325,15 @@ export const Rulesets: {[k: string]: FormatData} = {
 		banlist: ['Chlorophyll', 'Sand Rush', 'Slush Rush', 'Swift Swim', 'Shadow Dance'],
 		onBegin() {
 			this.add('rule', 'Weather Speed Clause: Abilities that boost speed in weather are banned');
+		},
+	},
+	planetseriesclause: {
+		effectType: 'ValidatorRule',
+		name: 'Planet Series Clause',
+		desc: "Bans Planet Series moves (Silverforce, Venusforce, etc.).",
+		//banlist: ['Silverforce', 'Venusforce', 'Earthforce', 'Marsforce', 'Zeusforce', 'Saturnforce', 'Cloudforce', 'Plutoforce', 'Lunaforce', 'Graviforce'],
+		onBegin() {
+			this.add('rule', 'Planet Series Clause: Planet Series move are not yet implemented, so this clause has no effect');
 		},
 	},
 
@@ -350,30 +360,12 @@ export const Rulesets: {[k: string]: FormatData} = {
 		desc: "Not yet implemented.",
 		//desc: "Allows Pokémon to Mega Evolve without their Mega Stone, though the Pokémon must still be a species capable of Mega Evolution.\nCharizard, Mewtwo, Sceptile, and Swampert will default to their Y/ORAS mega. To use their X/ZO Mega, give their HP stat 2 useless EVs.",
 		onBegin() {
-			this.add('rule', 'Stoneless Mega Mod is not yet implemented.');
+			this.add('rule', 'Stoneless Mega Mod is not yet implemented');
 			//this.add('rule', 'Stoneless Mega Mod: Pokémon don\'t need their Mega Stone to Mega Evolve');
 		},
 	},
-	zoroarkmegaillusionthing: {
-		effectType: 'Rule',
-		name: 'Zoroark-Mega Illusion Thing',
-		desc: "Probably needed for Zoroark-Mega's Illusion to work.",
-		onDamagingHit(damage, target, source, move) {
-			if (target.illusion) {
-				this.debug('illusion cleared');
-				target.illusion = null;
-				const details = target.species.name + (target.level === 100 ? '' : ', L' + target.level) +
-				(target.gender === '' ? '' : ', ' + target.gender) + (target.set.shiny ? ', shiny' : '');
-				this.add('replace', target, details);
-				this.add('-end', target, 'Illusion');
-			}
-		},
-		onFaint(pokemon) {
-			pokemon.illusion = null;
-		},
-	},
 	multibilitymod: {
-		effectType: 'Rule',
+		effectType: 'ValidatorRule',
 		name: 'Multibility Mod',
 		desc: "Run a second ability at the cost of giving up a Pok&eacute;mon's item slot.",
 		banlist: ['Trace'],
@@ -544,7 +536,7 @@ export const Rulesets: {[k: string]: FormatData} = {
 		},
 	},
 	pokebilitiesmod: {
-		effectType: 'Rule',
+		effectType: 'ValidatorRule',
 		name: 'Pokebilities Mod',
 		desc: "Pok&eacute;mon have all of their released abilities simultaneously.", //Requres mod: 'pokebilities',
 		/*banlist: [
@@ -594,6 +586,24 @@ export const Rulesets: {[k: string]: FormatData} = {
 				pokemon.removeVolatile(innate);
 			}
 			pokemon.m.innates = undefined;
+		},
+	},
+	zoroarkmegaillusionthing: {
+		effectType: 'Rule',
+		name: 'Zoroark-Mega Illusion Thing',
+		desc: "Probably needed for Zoroark-Mega's Illusion to work.",
+		onDamagingHit(damage, target, source, move) {
+			if (target.illusion) {
+				this.debug('illusion cleared');
+				target.illusion = null;
+				const details = target.species.name + (target.level === 100 ? '' : ', L' + target.level) +
+				(target.gender === '' ? '' : ', ' + target.gender) + (target.set.shiny ? ', shiny' : '');
+				this.add('replace', target, details);
+				this.add('-end', target, 'Illusion');
+			}
+		},
+		onFaint(pokemon) {
+			pokemon.illusion = null;
 		},
 	},
 
@@ -1299,7 +1309,6 @@ export const Rulesets: {[k: string]: FormatData} = {
 		effectType: 'ValidatorRule',
 		name: 'Sleep Moves Clause',
 		desc: "Bans all moves that induce sleep, such as Hypnosis",
-		ruleset: ['!Sleep Clause Mod'],
 		banlist: ['Yawn'],
 		onBegin() {
 			this.add('rule', 'Sleep Clause: Sleep-inducing moves are banned');

@@ -1766,13 +1766,15 @@ export class TeamValidator {
 				}
 			}
 			if (species.abilities['H']) {
+				const canUseDreamMist = dex.gen >= 6 && eventData.generation <= 6; // https://wiki.p-insurgence.com/Dream_Mist
+				
 				const isHidden = (set.ability === species.abilities['H']);
-				if (!isHidden && eventData.isHidden) {
+				if (!isHidden && eventData.isHidden && !canUseDreamMist) {
 					if (fastReturn) return true;
 					problems.push(`${name} must have its Hidden Ability${etc}.`);
 				}
 
-				const canUseAbilityPatch = dex.gen >= 8 && this.format.mod !== 'gen8dlc1';
+				const canUseAbilityPatch = (dex.gen >= 8 && this.format.mod !== 'gen8dlc1') || canUseDreamMist;
 				if (isHidden && !eventData.isHidden && !canUseAbilityPatch) {
 					if (fastReturn) return true;
 					problems.push(`${name} must not have its Hidden Ability${etc}.`);

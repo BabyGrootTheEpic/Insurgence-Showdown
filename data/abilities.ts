@@ -2806,7 +2806,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			if (move && (source === this.effectState.target || target === this.effectState.target)) return 0;
 		},
 		onAnyAccuracy(accuracy, target, source, move) {
-			if (move && (source === this.effectState.target || target === this.effectState.target)) {
+			if (move && (source === this.effectState.target || target === this.effectState.target) && !move.ohko) {
 				return true;
 			}
 			return accuracy;
@@ -3973,6 +3973,9 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		num: 245,
 	},
 	sandstream: {
+		onImmunity(type, pokemon) {
+			if (type === 'sandstorm') return false;
+		},
 		onStart(source) {
 			this.field.setWeather('sandstorm');
 		},

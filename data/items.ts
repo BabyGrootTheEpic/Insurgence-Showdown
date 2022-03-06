@@ -1,6 +1,6 @@
 export const Items: {[itemid: string]: ItemData} = {
 	//Custom:
-	/*divineplate: {
+	divineplate: {
 		name: "Divine Plate",
 		spritenum: 752 - 6,
 		onPlate: '???',
@@ -17,10 +17,10 @@ export const Items: {[itemid: string]: ItemData} = {
 			return true;
 		},
 		forcedForme: "Arceus-Typeless",
-		num: 298,
-		gen: 4,
+		num: 9006,
+		gen: 5,
 		//isNonstandard: "Past",
-	},*/
+	},
 
 	//Legends Arceus:
 	blankplate: {
@@ -113,6 +113,23 @@ export const Items: {[itemid: string]: ItemData} = {
 		num: 9005,
 		gen: 6,
 		//isNonstandard: "Past",
+	},
+	strangemachine: {
+		name: "Strange Machine",
+		spritenum: 752 + 48,
+		fling: {
+			basePower: 60,
+		},
+		onTakeItem(item, pokemon, source) {
+			if ((source && source.baseSpecies.num === 150) || pokemon.baseSpecies.num === 150) {
+				return false;
+			}
+			return true;
+		},
+		forcedForme: "Mewtwo-Strange-Machine",
+		itemUser: ["Mewtwo-Strange-Machine"],
+		num: 9007,
+		gen: 5,
 	},
 
 	//Gen 3+ & Insurgence:
@@ -7611,7 +7628,8 @@ export const Items: {[itemid: string]: ItemData} = {
 			basePower: 60,
 		},
 		onTakeItem(item, pokemon, source) {
-			if ((source && source.baseSpecies.num === -101) || pokemon.baseSpecies.num === -101) {
+			if ((source && (source.species.id === 'volcaronadelta' || source.species.id === 'volcaronadeltaarmor'))
+			|| pokemon.species.id === 'volcaronadelta' || pokemon.species.id === 'volcaronadeltaarmor') {
 				return false;
 			}
 			return true;

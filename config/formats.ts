@@ -182,7 +182,7 @@ export const Formats: FormatList = [
 		mod: 'gen8',
 		battle: {trunc: Math.trunc},
 		rated: false,
-		ruleset: ['NatDex Revelationmons', 'Singles Bans', 'Sleep Moves Clause'],
+		ruleset: ['NatDex Revelationmons', 'Singles Bans', '!Sleep Clause Mod', 'Sleep Moves Clause'],
 		banlist: ['Magnet Pull'],
 	},
 	{
@@ -220,9 +220,8 @@ export const Formats: FormatList = [
 		mod: 'gen8',
 		battle: {trunc: Math.trunc},
 		rated: false,
-		ruleset: ['NatDex STABmons', 'Singles Bans', 'Sleep Moves Clause'],
+		ruleset: ['NatDex STABmons', 'Singles Bans', '!Sleep Clause Mod', 'Sleep Moves Clause'],
 		banlist: ['Magnet Pull'],
-		restricted: ['!Diamond Storm'],
 	},
 	{
 		name: "[Gen 8] STABmons AG",
@@ -243,7 +242,6 @@ export const Formats: FormatList = [
 		rated: false,
 		ruleset: ['NatDex AAA', 'Singles Bans'],
 		unbanlist: ['Missingno.'],
-		restricted: ['!Anger Point', '!Justified'],
 	},
 	{
 		name: "[Gen 8] Any Ability Goes",
@@ -261,27 +259,26 @@ export const Formats: FormatList = [
 		mod: 'gen8',
 		battle: {trunc: Math.trunc},
 		rated: false,
-		ruleset: ['NatDex Multibility', 'Singles Bans', 'Sleep Moves Clause'],
+		ruleset: ['NatDex Multibility', 'Singles Bans', '!Sleep Clause Mod', 'Sleep Moves Clause'],
 		banlist: ['Magnet Pull'],
-		restricted: ['!Anger Point', '!Justified'],
 	},
 	{
 		name: "[Gen 8] Pure Hackmons",
-		desc: `A National Dex variant of Pure Hackmons. Pok&eacute;mon may have any item, ability, and moves (excluding CAP). No 510 EV limit.`,
+		desc: `A National Dex variant of Pure Hackmons. Pok&eacute;mon may have any item, ability, and moves (excluding CAP). No 510 EV limit. This format allows Dynamaxing.`,
 
 		mod: 'gen8',
 		battle: {trunc: Math.trunc},
 		rated: false,
-		ruleset: ['NatDex Hackmons', 'Dynamax Clause'],
+		ruleset: ['NatDex Hackmons'],
 	},
 	{
 		name: "[Gen 8] Hackmons Cup",
-		desc: `Randomized teams of level-balanced Pok&eacute;mon with absolutely any ability, moves, and item (excluding CAP).`,
+		desc: `Randomized teams of level-balanced Pok&eacute;mon with absolutely any ability, moves, and item (excluding CAP). This format allows Dynamaxing.`,
 
 		mod: 'gen8',
 		team: 'randomHC',
 		rated: false,
-		ruleset: ['HP Percentage Mod', 'Cancel Mod', 'Dynamax Clause'],
+		ruleset: ['HP Percentage Mod', 'Cancel Mod'],
 		banlist: ['CAP'],
 	},
 	{
@@ -529,6 +526,7 @@ export const Formats: FormatList = [
 		battle: {trunc: Math.trunc},
 		rated: false,
 		ruleset: ['NatDex STABmons', '!Dynamax Clause'],
+		restricted: ['Diamond Storm'],
 	},
 	{
 		name: "[Gen 8] (D)STABmons AG",
@@ -550,6 +548,7 @@ export const Formats: FormatList = [
 		battle: {trunc: Math.trunc},
 		rated: false,
 		ruleset: ['NatDex AAA', '!Dynamax Clause'],
+		restricted: ['Anger Point', 'Justified'],
 	},
 	{
 		name: "[Gen 8] (D)Any Ability Goes",
@@ -570,6 +569,7 @@ export const Formats: FormatList = [
 		battle: {trunc: Math.trunc},
 		rated: false,
 		ruleset: ['NatDex Multibility', '!Dynamax Clause'],
+		restricted: ['Anger Point', 'Justified'],
 	},
 	{
 		name: "[Gen 8] (D)Pure Hackmons",
@@ -579,11 +579,11 @@ export const Formats: FormatList = [
 		gameType: 'doubles',
 		battle: {trunc: Math.trunc},
 		rated: false,
-		ruleset: ['NatDex Hackmons', '!Dynamax Clause'],
+		ruleset: ['NatDex Hackmons'],
 	},
 	{
 		name: "[Gen 8] (D)Hackmons Cup",
-		desc: `Randomized teams of level-balanced Pok&eacute;mon with absolutely any ability, moves, and item. This format allows Dynamaxing.`,
+		desc: `Randomized teams of level-balanced Pok&eacute;mon with absolutely any ability, moves, and item (excluding CAP). This format allows Dynamaxing.`,
 
 		mod: 'gen8',
 		gameType: 'doubles',
@@ -839,6 +839,7 @@ export const Formats: FormatList = [
 		battle: {trunc: Math.trunc},
 		rated: false,
 		ruleset: ['NatDex STABmons'],
+		restricted: ['Diamond Storm'],
 	},
 	{
 		name: "[Gen 8] (T)STABmons AG",
@@ -860,6 +861,7 @@ export const Formats: FormatList = [
 		battle: {trunc: Math.trunc},
 		rated: false,
 		ruleset: ['NatDex AAA'],
+		restricted: ['Anger Point', 'Justified'],
 	},
 	{
 		name: "[Gen 8] (T)Any Ability Goes",
@@ -880,10 +882,11 @@ export const Formats: FormatList = [
 		battle: {trunc: Math.trunc},
 		rated: false,
 		ruleset: ['NatDex Multibility'],
+		restricted: ['Anger Point', 'Justified'],
 	},
 	{
 		name: "[Gen 8] (T)Pure Hackmons",
-		desc: `A National Dex variant of Pure Hackmons. Allows any Pok&eacute;mon may have any item, ability, and moves (excluding CAP). No 510 EV limit.`,
+		desc: `A National Dex variant of Pure Hackmons. Allows any Pok&eacute;mon may have any item, ability, and moves (excluding CAP). No 510 EV limit. This format allows Dynamaxing.`,
 
 		mod: 'gen8',
 		gameType: 'triples',
@@ -893,13 +896,13 @@ export const Formats: FormatList = [
 	},
 	{
 		name: "[Gen 8] (T)Hackmons Cup",
-		desc: `Randomized teams of level-balanced Pok&eacute;mon with absolutely any ability, moves, and item.`,
+		desc: `Randomized teams of level-balanced Pok&eacute;mon with absolutely any ability, moves, and item (excluding CAP). This format allows Dynamaxing.`,
 
 		mod: 'gen8',
 		gameType: 'triples',
 		team: 'randomHC',
 		rated: false,
-		ruleset: ['HP Percentage Mod', 'Cancel Mod', 'Dynamax Clause'],
+		ruleset: ['HP Percentage Mod', 'Cancel Mod'],
 		banlist: ['CAP'],
 	},
 	{
@@ -931,7 +934,7 @@ export const Formats: FormatList = [
 
 	{
 		section: "Multi Battles",
-		column: 3,
+		column: 4,
 	},
 	{
 		name: "[Gen 8] (M)Anything Goes",
@@ -1174,6 +1177,7 @@ export const Formats: FormatList = [
 		battle: {trunc: Math.trunc},
 		rated: false,
 		ruleset: ['NatDex STABmons'],
+		restricted: ['Diamond Storm'],
 	},
 	{
 		name: "[Gen 8] (M)STABmons AG",
@@ -1197,6 +1201,7 @@ export const Formats: FormatList = [
 		battle: {trunc: Math.trunc},
 		rated: false,
 		ruleset: ['NatDex AAA'],
+		restricted: ['Anger Point', 'Justified'],
 	},
 	{
 		name: "[Gen 8] (M)Any Ability Goes",
@@ -1219,10 +1224,11 @@ export const Formats: FormatList = [
 		battle: {trunc: Math.trunc},
 		rated: false,
 		ruleset: ['NatDex Multibility'],
+		restricted: ['Anger Point', 'Justified'],
 	},
 	{
 		name: "[Gen 8] (M)Pure Hackmons",
-		desc: `A National Dex variant of Pure Hackmons. Allows any Pok&eacute;mon may have any item, ability, and moves (excluding CAP). No 510 EV limit.`,
+		desc: `A National Dex variant of Pure Hackmons. Allows any Pok&eacute;mon may have any item, ability, and moves (excluding CAP). No 510 EV limit. This format allows Dynamaxing.`,
 
 		mod: 'gen8',
 		gameType: 'multi',
@@ -1233,14 +1239,14 @@ export const Formats: FormatList = [
 	},
 	{
 		name: "[Gen 8] (M)Hackmons Cup",
-		desc: `Randomized teams of level-balanced Pok&eacute;mon with absolutely any ability, moves, and item.`,
+		desc: `Randomized teams of level-balanced Pok&eacute;mon with absolutely any ability, moves, and item (excluding CAP). This format allows Dynamaxing.`,
 
 		mod: 'gen8',
 		gameType: 'multi',
 		tournamentShow: false,
 		team: 'randomHC',
 		rated: false,
-		ruleset: ['HP Percentage Mod', 'Cancel Mod', 'Dynamax Clause'],
+		ruleset: ['HP Percentage Mod', 'Cancel Mod'],
 		banlist: ['CAP'],
 	},
 	{
@@ -1271,7 +1277,7 @@ export const Formats: FormatList = [
 
 	{
 		section: "Free-For-Alls",
-		column: 3,
+		column: 5,
 	},
 	{
 		name: "[Gen 8] FFA Anything Goes",
@@ -1468,7 +1474,7 @@ export const Formats: FormatList = [
 		tournamentShow: false,
 		battle: {trunc: Math.trunc},
 		rated: false,
-		ruleset: ['NatDex Revelationmons', 'FFA Bans', 'Sleep Moves Clause'],
+		ruleset: ['NatDex Revelationmons', 'FFA Bans', '!Sleep Clause Mod', 'Sleep Moves Clause'],
 	},
 	{
 		name: "[Gen 8] FFA Bonus Type Ubers",
@@ -1513,7 +1519,8 @@ export const Formats: FormatList = [
 		tournamentShow: false,
 		battle: {trunc: Math.trunc},
 		rated: false,
-		ruleset: ['NatDex STABmons', 'FFA Bans', 'Sleep Moves Clause'],
+		ruleset: ['NatDex STABmons', 'FFA Bans', '!Sleep Clause Mod', 'Sleep Moves Clause'],
+		restricted: ['Diamond Storm'],
 	},
 	{
 		name: "[Gen 8] FFA STABmons AG",
@@ -1537,7 +1544,6 @@ export const Formats: FormatList = [
 		battle: {trunc: Math.trunc},
 		rated: false,
 		ruleset: ['NatDex AAA', 'FFA Bans'],
-		restricted: ['!Anger Point', '!Justified'],
 	},
 	{
 		name: "[Gen 8] FFA Any Ability Goes",
@@ -1559,12 +1565,11 @@ export const Formats: FormatList = [
 		tournamentShow: false,
 		battle: {trunc: Math.trunc},
 		rated: false,
-		ruleset: ['NatDex Multibility', 'FFA Bans', 'Sleep Moves Clause'],
-		restricted: ['!Anger Point', '!Justified'],
+		ruleset: ['NatDex Multibility', 'FFA Bans', '!Sleep Clause Mod', 'Sleep Moves Clause'],
 	},
 	{
 		name: "[Gen 8] FFA Pure Hackmons",
-		desc: `A National Dex variant of Pure Hackmons. Allows any Pok&eacute;mon may have any item, ability, and moves (excluding CAP). No 510 EV limit.`,
+		desc: `A National Dex variant of Pure Hackmons. Allows any Pok&eacute;mon may have any item, ability, and moves (excluding CAP). No 510 EV limit. This format allows Dynamaxing.`,
 
 		mod: 'gen8',
 		gameType: 'freeforall',
@@ -1575,14 +1580,14 @@ export const Formats: FormatList = [
 	},
 	{
 		name: "[Gen 8] FFA Hackmons Cup",
-		desc: `Randomized teams of level-balanced Pok&eacute;mon with absolutely any ability, moves, and item.`,
+		desc: `Randomized teams of level-balanced Pok&eacute;mon with absolutely any ability, moves, and item (excluding CAP). This format allows Dynamaxing.`,
 
 		mod: 'gen8',
 		gameType: 'freeforall',
 		tournamentShow: false,
 		team: 'randomHC',
 		rated: false,
-		ruleset: ['HP Percentage Mod', 'Cancel Mod', 'Dynamax Clause'],
+		ruleset: ['HP Percentage Mod', 'Cancel Mod'],
 		banlist: ['CAP'],
 	},
 	{
