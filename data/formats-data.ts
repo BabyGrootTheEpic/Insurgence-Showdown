@@ -1444,27 +1444,35 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	},
 	eeveemegav: {
 		//isNonstandard: "Past",
+		tier: "OU",
 	},
 	eeveemegaj: {
 		//isNonstandard: "Past",
+		tier: "OU",
 	},
 	eeveemegaf: {
 		//isNonstandard: "Past",
+		tier: "OU",
 	},
 	eeveemegae: {
 		//isNonstandard: "Past",
+		tier: "OU",
 	},
 	eeveemegau: {
 		//isNonstandard: "Past",
+		tier: "OU",
 	},
 	eeveemegal: {
 		//isNonstandard: "Past",
+		tier: "OU",
 	},
 	eeveemegag: {
 		//isNonstandard: "Past",
+		tier: "OU",
 	},
 	eeveemegas: {
 		//isNonstandard: "Past",
+		tier: "OU",
 	},
 	vaporeon: {
 		randomBattleMoves: ["healbell", "icebeam", "protect", "scald", "toxic", "wish"],
