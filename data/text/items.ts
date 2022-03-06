@@ -593,7 +593,7 @@ export const ItemsText: {[k: string]: ItemText} = {
 	},
 	eevite: {
 		name: "Eevite",
-		desc: "If held by a Eevee-Pre-Mega, this item allows it to Mega Evolve in battle.",
+		desc: "If held by an Eevee-Tutored, this item allows it to Mega Evolve in battle.",
 	},
 	eeviumz: {
 		name: "Eevium Z",

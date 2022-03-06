@@ -309,6 +309,11 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "AG",
 		doublesTier: "(DUber)",
 	},
+	pikachustartergmax: {
+		isNonstandard: "Gigantamax",
+		tier: "AG",
+		doublesTier: "(DUber)",
+	},
 	pikachuworld: {
 		tier: "(PU)",
 		doublesTier: "(DUU)",
@@ -1410,21 +1415,56 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	eevee: {
 		tier: "LC",
 	},
-	eeveestarter: {
-		//isNonstandard: "LGPE",
-		tier: "OU",
-		doublesTier: "DOU",
-	},
 	eeveegmax: {
 		isNonstandard: "Gigantamax",
 		tier: "AG",
 		doublesTier: "(DUber)",
 	},
-	eeveepremega: {
+	eeveestarter: {
+		//isNonstandard: "LGPE",
+		tier: "OU",
+		doublesTier: "DOU",
+	},
+	eeveestartergmax: {
+		isNonstandard: "Gigantamax",
+		tier: "AG",
+		doublesTier: "(DUber)",
+	},
+	eeveetutored: {
 		tier: "PU",
 	},
+	eeveetutoredgmax: {
+		isNonstandard: "Gigantamax",
+		tier: "AG",
+		doublesTier: "(DUber)",
+	},
 	eeveemegabase: {
-		tier: "UU",
+		//isNonstandard: "Past",
+		tier: "OU",
+	},
+	eeveemegav: {
+		//isNonstandard: "Past",
+	},
+	eeveemegaj: {
+		//isNonstandard: "Past",
+	},
+	eeveemegaf: {
+		//isNonstandard: "Past",
+	},
+	eeveemegae: {
+		//isNonstandard: "Past",
+	},
+	eeveemegau: {
+		//isNonstandard: "Past",
+	},
+	eeveemegal: {
+		//isNonstandard: "Past",
+	},
+	eeveemegag: {
+		//isNonstandard: "Past",
+	},
+	eeveemegas: {
+		//isNonstandard: "Past",
 	},
 	vaporeon: {
 		randomBattleMoves: ["healbell", "icebeam", "protect", "scald", "toxic", "wish"],
@@ -3052,8 +3092,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		//isNonstandard: "Past",
 	},
 	castformnewmoon: {
+		//isNonstandard: "Past",
 	},
 	castformsandstorm: {
+		//isNonstandard: "Past",
 	},
 	kecleon: {
 		//isNonstandard: "Past",
