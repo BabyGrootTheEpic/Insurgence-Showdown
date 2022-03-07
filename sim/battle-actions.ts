@@ -1809,8 +1809,7 @@ export class BattleActions {
 		}
 		pokemon.formeChange(speciesid, pokemon.getItem(), true);
 
-		if(!this.battle.ruleTable.has('multimega'))
-		{
+		if(!this.battle.ruleTable.has('multimegamod')) {
 			// Limit one mega evolution
 			const wasMega = pokemon.canMegaEvo;
 			for (const ally of pokemon.side.pokemon) {
@@ -1821,6 +1820,7 @@ export class BattleActions {
 				}
 			}
 		}
+		else pokemon.canMegaEvo = null;
 
 		this.battle.runEvent('AfterMega', pokemon);
 		return true;

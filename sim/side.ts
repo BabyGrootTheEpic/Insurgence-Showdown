@@ -622,7 +622,7 @@ export class Side {
 			this.choice.cantUndo = this.choice.cantUndo || pokemon.isLastActive();
 		}
 
-		if (mega) this.choice.mega = true;
+		if (mega && !this.battle.ruleTable.has('multimegamod')) this.choice.mega = true;
 		if (ultra) this.choice.ultra = true;
 		if (zMove) this.choice.zMove = true;
 		if (dynamax) this.choice.dynamax = true;
