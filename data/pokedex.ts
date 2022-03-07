@@ -2060,6 +2060,8 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 	bellsproutzo: {
 		num: 69,
 		name: "Bellsprout-ZO",
+		baseSpecies: "Bellsprout",
+		forme: "ZO",
 		types: ["Grass", "Poison"],
 		baseStats: {hp: 62, atk: 77, def: 37, spa: 57, spd: 32, spe: 42},
 		abilities: {0: "Chlorophyll", H: "Gluttony"},
@@ -2089,6 +2091,8 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 	weepinbellzo: {
 		num: 70,
 		name: "Weepinbell-ZO",
+		baseSpecies: "Weepinbell",
+		forme: "ZO",
 		types: ["Grass", "Poison"],
 		baseStats: {hp: 68, atk: 93, def: 53, spa: 88, spd: 48, spe: 58},
 		abilities: {0: "Chlorophyll", H: "Gluttony"},
@@ -2120,6 +2124,8 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 	victreebelzo: {
 		num: 71,
 		name: "Victreebel-ZO",
+		baseSpecies: "Victreebel",
+		forme: "ZO",
 		types: ["Grass", "Poison"],
 		baseStats: {hp: 88, atk: 113, def: 73, spa: 108, spd: 68, spe: 78},
 		abilities: {0: "Chlorophyll", H: "Gluttony"},
@@ -3376,6 +3382,8 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 	horseazo: {
 		num: 116,
 		name: "Horsea-ZO",
+		baseSpecies: "Horsea",
+		forme: "ZO",
 		types: ["Water"],
 		baseStats: {hp: 40, atk: 49, def: 70, spa: 70, spd: 35, spe: 60},
 		abilities: {0: "Swift Swim", 1: "Sniper", H: "Damp"},
@@ -3405,6 +3413,8 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 	seadrazo: {
 		num: 117,
 		name: "Seadra-ZO",
+		baseSpecies: "Seadra",
+		forme: "ZO",
 		types: ["Water"],
 		baseStats: {hp: 50, atk: 60, def: 90, spa: 90, spd: 40, spe: 80},
 		abilities: {0: "Poison Point", 1: "Sniper", H: "Damp"},
@@ -3603,6 +3613,8 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 	magmarzo: {
 		num: 126,
 		name: "Magmar-ZO",
+		baseSpecies: "Magmar",
+		forme: "ZO",
 		types: ["Fire"],
 		genderRatio: {M: 0.75, F: 0.25},
 		baseStats: {hp: 50, atk: 80, def: 62, spa: 85, spd: 60, spe: 78},
@@ -6356,6 +6368,8 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 	kingdrazo: {
 		num: 230,
 		name: "Kingdra-ZO",
+		baseSpecies: "Kingdra",
+		forme: "ZO",
 		types: ["Water", "Dragon"],
 		baseStats: {hp: 74, atk: 94, def: 94, spa: 94, spd: 94, spe: 84},
 		abilities: {0: "Swift Swim", 1: "Sniper", H: "Damp"},
@@ -6542,6 +6556,8 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 	magbyzo: {
 		num: 240,
 		name: "Magby-ZO",
+		baseSpecies: "Magby",
+		forme: "ZO",
 		types: ["Fire"],
 		genderRatio: {M: 0.75, F: 0.25},
 		baseStats: {hp: 50, atk: 65, def: 64, spa: 44, spd: 48, spe: 43},
@@ -11747,6 +11763,8 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 	magmortarzo: {
 		num: 467,
 		name: "Magmortar-ZO",
+		baseSpecies: "Magmortar",
+		forme: "ZO",
 		types: ["Fire"],
 		genderRatio: {M: 0.75, F: 0.25},
 		baseStats: {hp: 74, atk: 94, def: 66, spa: 124, spd: 94, spe: 82},
