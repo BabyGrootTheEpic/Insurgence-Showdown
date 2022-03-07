@@ -87,6 +87,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		name: "Shadow Blast",
 		pp: 999,
 		noPPBoosts: true,
+		noSketch: true,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, distance: 1},
 		critRatio: 2,

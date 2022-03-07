@@ -11,9 +11,7 @@ export const Items: {[itemid: string]: ItemData} = {
 			}
 		},
 		onTakeItem(item, pokemon, source) {
-			if ((source && source.baseSpecies.num === 493) || pokemon.baseSpecies.num === 493) {
-				return false;
-			}
+			if (pokemon.baseSpecies.num === 493) return false;
 			return true;
 		},
 		forcedForme: "Arceus-Typeless",

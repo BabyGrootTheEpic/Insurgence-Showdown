@@ -68,6 +68,26 @@ export function findFormats(targetId: string, isOMSearch = false) {
 }
 
 export const commands: Chat.ChatCommands = {
+	addedfeatures(target, room, user) {
+		if (!this.runBroadcast()) return;
+		this.sendReplyBox(
+			`<p><strong>Formats:</strong> All of this server's formats are National Dex formats. Additionally they will allow MissingNo, Cosplay Pikachu, Let's GO Starters, Spiky-eared Pichu, Eternal Flower Floette, Totems, and Gems. The maximum Pok&eacute;mon level has been increased to 120. The limit on Let's GO Starters and fusions have been removed (meaning a team of Pikachu-Starter, Eevee-Starter, Kyurem-White, Kyurem-Black, Calyrex-Ice, &amp; Calyrex-Shadow is legal in formats without species clause).</p>` +
+			`<p><strong>Pok&eacute;mon:</strong></p>` +
+			`<ul><li>Legends Arceus: <a href="https://serebii.net/legendsarceus/pokemon.shtml">Pok&eacute;mon</a>, <a href="https://serebii.net/legendsarceus/newforms.shtml">Forms</a>, &amp; <a href="https://serebii.net/legendsarceus/hisuianforms.shtml">Hisui Regional Variants</a></li>` +
+			`<li>Insurgence: <a href="https://wiki.p-insurgence.com/Delta_Pok%C3%A9mon">Delta Pok&eacute;mon</a>, <a href="https://wiki.p-insurgence.com/Mega_Evolution#Unofficial">Mega Evolutions</a>, <a href="https://wiki.p-insurgence.com/Armor">Armored Forms</a>, <a href="https://wiki.p-insurgence.com/Crystal_Piece">Primal Reversions</a>, &amp; <a href="https://wiki.p-insurgence.com/UFI_(Pok%C3%A9mon)">UFI</a></li>` +
+			`<li>Zeta &amp; Omicron: <a href="https://pokemonzetaomicron.fandom.com/wiki/Starter_Pok%C3%A9mon#Stat_Modifications">Starters</a>, <a href="https://pokemonzetaomicron.fandom.com/wiki/Special_Pokemon#Obtainable_Delta_Pok.C3.A9mon">Delta Pok&eacute;mon (NYI)</a>, <a href="https://pokemonzetaomicron.fandom.com/wiki/Fakemon">Fakemon (NYI)</a>, <a href="https://pokemonzetaomicron.fandom.com/wiki/Special_Pokemon#Shadow_Pok.C3.A9mon">Shadow Pok&eacute;mon (NYI)</a>, <a href="https://pokemonzetaomicron.fandom.com/wiki/Strange_Machine">Strange Machine Mewtwo</a>, Mega Dugtrio (WIP), Mega Golurk (WIP), &amp; an additional Mega Evolution for Sceptile and Swampert (WIP).</li></ul>` +
+			`<p><strong>Moves:</strong> All new moves from <a href="https://serebii.net/legendsarceus/newattacks.shtml">Legends: Arceus (WIP)</a>, <a href="https://wiki.p-insurgence.com/Category:Moves">Insurgence</a>, &amp; <a href="https://pokemonzetaomicron.fandom.com/wiki/Category:Exclusive_Moves">Zeta/Omicron (WIP)</a> have been added. A custom move, Give Balloon, has also been added.</p>` +
+			`<p><strong>Abilities:</strong> All new abilities from <a href="https://wiki.p-insurgence.com/Category:Abilities">Insurgence</a> have been added. (Periodic Orbit might not work properly outside of singles formats)</p>` +
+			`<p><strong>Items:</strong> Blank Plate (Silk Scarf clone), <a href="https://www.serebii.net/itemdex/legendplate.shtml">Legend Plate (NYI)</a>, and items required by new forms have been added</p>` +
+			`<p><strong>Learnsets:</strong> Added learnsets and events from Legends: Arceus, Brilliant Diamond/Shining Pearl, Insurgence, &amp; Zeta/Omicron. Also added custom events for Mawile, the Tapus, and Mime Jr.</p>` +
+			`<p><strong>Other:</strong> Shininess is no longer validated.</p>`
+		);
+	},
+	serveradditionshelp: [
+		`/addedfeatures - Lists what has been added by this server.`
+	],
+
+
 	ip: 'whois',
 	rooms: 'whois',
 	alt: 'whois',

@@ -4468,6 +4468,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		eggGroups: ["Undiscovered"],
 		requiredItem: "Mewtwo Armor",
 		changesFrom: "Mewtwo",
+		gen: 6,
 	},
 	mewtwostrangemachine: {
 		num: 150,
@@ -4484,6 +4485,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		eggGroups: ["Undiscovered"],
 		requiredItem: "Strange Machine",
 		changesFrom: "Mewtwo",
+		gen: 5,
 	},
 	mewtwoshadow: {
 		num: 150,
@@ -4498,6 +4500,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		eggGroups: ["Undiscovered"],
 		otherFormes: ["Mewtwo-Shadow-Mega"],
 		formeOrder: ["Mewtwo-Shadow", "Mewtwo-Shadow-Mega"],
+		gen: 6,
 	},
 	mewtwoshadowmega: {
 		num: 150,
@@ -4513,6 +4516,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		color: "Purple",
 		eggGroups: ["Undiscovered"],
 		requiredItem: "Shadow Mewtwonite",
+		gen: 6,
 	},
 	mew: {
 		num: 151,
@@ -6718,6 +6722,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		eggGroups: ["Undiscovered"],
 		requiredItem: "Tyranitar Armor",
 		changesFrom: "Tyranitar",
+		gen: 6,
 	},
 	lugia: {
 		num: 249,
@@ -8616,6 +8621,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		eggGroups: ["Undiscovered"],
 		requiredItem: "Flygon Armor",
 		changesFrom: "Flygon",
+		gen: 6,
 	},
 	cacnea: {
 		num: 331,
@@ -13542,6 +13548,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		eggGroups: ["Undiscovered"],
 		requiredItem: "Leavanny Armor",
 		changesFrom: "Leavanny",
+		gen: 6,
 	},
 	venipede: {
 		num: 543,
@@ -16074,6 +16081,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		eggGroups: ["Undiscovered"],
 		requiredItem: "Zekrom Armor",
 		changesFrom: "Zekrom",
+		gen: 6,
 	},
 	landorus: {
 		num: 645,

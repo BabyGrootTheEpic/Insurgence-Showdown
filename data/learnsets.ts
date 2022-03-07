@@ -21385,6 +21385,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			zenheadbutt: ["8T", "8L18"],
 		},
 		eventData: [
+			//8S0: Gives the Mr. Mime evolution line access to Give Balloon
 			{generation: 8, level: 1, moves: ["pound", "copycat", "celebrate", "giveballoon"]},
 		],
 	},

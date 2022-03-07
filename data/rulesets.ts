@@ -12,7 +12,7 @@ export const Rulesets: {[k: string]: FormatData} = {
 	bgtenatdexag: {
 		effectType: 'ValidatorRule',
 		name: 'BGTE NatDex AG',
-		desc: "In addition to Smogon's [Gen 8] National Dex AG, allows level 120 Pokémon, Cosplay Pikachu, Let's GO Starters, Spiky-eared Pichu, Eternal Flower Floette, Totems, duplicate fusions, duplicate LGPE starters, Gems, everything added by the Insurgence fork, and everything added by this fork. (BGTE stand for BabyGrootTheEpic, the creator of this fork.)",
+		desc: "In addition to Smogon's [Gen 8] National Dex AG, allows level 120 Pokémon, Cosplay Pikachu, Let's GO Starters, Spiky-eared Pichu, Eternal Flower Floette, Totems, duplicate fusions, duplicate LGPE starters, Gems, everything added by the Insurgence fork, and everything added by this fork. (BGTE stands for BabyGrootTheEpic, the creator of this fork.)",
 		ruleset: [
 			'Obtainable', '!NoFusionDupes', '!Limit One LGPE Starter', 'Max Level = 120', 'Default Level = 100', 'NatDex Megas', 'Sketch Gen 8 Moves',
 			'Endless Battle Clause', 'Nickname Clause', 'Team Preview', 'HP Percentage Mod', 'Cancel Mod', 'Zoroark-Mega Illusion Thing'
@@ -22,11 +22,10 @@ export const Rulesets: {[k: string]: FormatData} = {
 	bgtestandard: {
 		effectType: 'ValidatorRule',
 		name: 'BGTE Standard',
-		desc: "'BGTE NatDex AG' with a few extra clauses and bans.",
+		desc: "BGTE NatDex AG with a few extra clauses and bans.",
 		//Singles formats should also be given 'Singles Bans'. Free-For-All formats should also be given 'FFA Bans'.
-		ruleset: ['BGTE NatDex AG', 'Species Clause', 'Dynamax Clause', 'Evasion MoveS Clause', 'OHKO Clause', 'Planet Series Clause'],
+		ruleset: ['BGTE NatDex AG', 'Species Clause', 'Dynamax Clause', 'Evasion Moves Clause', 'OHKO Clause', 'Planet Series Clause', 'Shadow Clause'],
 		banlist: [
-			'Testmon', //Pokémon
 			'Glitch', 'Moody', //Abilities
 			'Permafrost', //'Dark Sonata', //Moves
 			'Bright Powder', 'King\'s Rock', 'Razor Fang', 'Lax Incense', //Items
@@ -335,6 +334,12 @@ export const Rulesets: {[k: string]: FormatData} = {
 		onBegin() {
 			this.add('rule', 'Planet Series Clause: Planet Series move are not yet implemented, so this clause has no effect');
 		},
+	},
+	shadowclause: {
+		effectType: 'ValidatorRule',
+		name: 'Shadow Clause',
+		desc: "Bans Shadow-type Pokémon and moves.",
+		banlist: ['Testmon', 'Shadow Blast'],
 	},
 
 
