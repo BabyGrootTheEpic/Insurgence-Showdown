@@ -3813,6 +3813,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		weightkg: 6.5,
 		color: "Brown",
 		eggGroups: ["Undiscovered"],
+		canGigantamax: "G-Max Cuddle",
 	},
 	eeveestartergmax: {
 		num: 133,
