@@ -842,7 +842,8 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 	},
 	magmaarmor: {
 		name: "Magma Armor",
-		shortDesc: "This Pokemon cannot be frozen. Gaining this Ability while frozen cures it.",
+		desc: "This Pokemon cannot be frozen or frostbitten. Gaining this Ability while frozen or frostbitten cures it.",
+		shortDesc: "This Pokemon cannot be frostbitten. Gaining this Ability while frostbitten cures it.",
 	},
 	magnetpull: {
 		name: "Magnet Pull",
@@ -1663,10 +1664,11 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 	},
 	synchronize: {
 		name: "Synchronize",
-		desc: "If another Pokemon burns, paralyzes, poisons, or badly poisons this Pokemon, that Pokemon receives the same non-volatile status condition.",
-		shortDesc: "If another Pokemon burns/poisons/paralyzes this Pokemon, it also gets that status.",
+		desc: "If another Pokemon burns, paralyzes, poisons, badly poisons, or frostbites this Pokemon, that Pokemon receives the same non-volatile status condition.",
+		shortDesc: "If another Pokemon gives this Pokémon brn/par/psn/tox/fsb, it also gets that status.",
 		gen4: {
 			desc: "If another Pokemon burns, paralyzes, or poisons this Pokemon, that Pokemon receives the same non-volatile status condition. If another Pokemon badly poisons this Pokemon, that Pokemon becomes poisoned.",
+			shortDesc: "If another Pokemon burns/poisons/paralyzes this Pokemon, it also gets that status.",
 		},
 	},
 	tangledfeet: {

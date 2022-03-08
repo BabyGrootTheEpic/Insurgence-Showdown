@@ -109,7 +109,7 @@ export const ItemsText: {[k: string]: ItemText} = {
 	},
 	aspearberry: {
 		name: "Aspear Berry",
-		desc: "Holder is cured if it is frozen. Single use.",
+		desc: "Holder is cured if it is frozen or has frostbite. Single use.",
 	},
 	assaultvest: {
 		name: "Assault Vest",
@@ -2616,7 +2616,7 @@ export const ItemsText: {[k: string]: ItemText} = {
 	},
 	burntberry: {
 		name: "Burnt Berry",
-		desc: "(Gen 2) Holder is cured if it is frozen. Single use.",
+		desc: "(Gen 2) Holder is cured if it is frozen or has frostbite. Single use.",
 	},
 	goldberry: {
 		name: "Gold Berry",

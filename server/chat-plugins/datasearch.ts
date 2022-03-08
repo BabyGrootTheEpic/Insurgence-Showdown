@@ -1565,6 +1565,7 @@ function runMovesearch(target: string, cmd: string, canAll: boolean, message: st
 			case 'burn': target = 'brn'; break;
 			case 'paralyze': target = 'par'; break;
 			case 'freeze': target = 'frz'; break;
+			case 'frostbite': target = 'fsb'; break;
 			case 'sleep': target = 'slp'; break;
 			case 'confuse': target = 'confusion'; break;
 			case 'trap': target = 'partiallytrapped'; break;
@@ -2023,6 +2024,7 @@ function runItemsearch(target: string, cmd: string, canAll: boolean, message: st
 			break;
 		case 'burns': newWord = 'burn'; break;
 		case 'poisons': newWord = 'poison'; break;
+		case 'frostbites': newWord = 'frostbite'; break;
 		default:
 			if (/x[\d.]+/.test(newWord)) {
 				newWord = newWord.substr(1) + 'x';
@@ -2255,6 +2257,8 @@ function runAbilitysearch(target: string, cmd: string, canAll: boolean, message:
 		case 'burns': newWord = 'burned'; break;
 		case 'poison':
 		case 'poisons': newWord = 'poisoned'; break;
+		case 'frostbites': case 'frostbit':
+		case 'frostbitten': newWord = 'frostbite'; break;
 		default:
 			if (/x[\d.]+/.test(newWord)) {
 				newWord = newWord.substr(1) + 'x';

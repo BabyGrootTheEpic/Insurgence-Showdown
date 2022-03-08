@@ -406,12 +406,12 @@ export const Items: {[itemid: string]: ItemData} = {
 			type: "Ice",
 		},
 		onUpdate(pokemon) {
-			if (pokemon.status === 'frz') {
+			if (pokemon.status === 'frz' || pokemon.status === 'fsb') {
 				pokemon.eatItem();
 			}
 		},
 		onEat(pokemon) {
-			if (pokemon.status === 'frz') {
+			if (pokemon.status === 'frz' || pokemon.status === 'fsb') {
 				pokemon.cureStatus();
 			}
 		},
@@ -8050,12 +8050,12 @@ export const Items: {[itemid: string]: ItemData} = {
 			type: "Ice",
 		},
 		onUpdate(pokemon) {
-			if (pokemon.status === 'frz') {
+			if (pokemon.status === 'frz' || pokemon.status === 'fsb') {
 				pokemon.eatItem();
 			}
 		},
 		onEat(pokemon) {
-			if (pokemon.status === 'frz') {
+			if (pokemon.status === 'frz' || pokemon.status === 'fsb') {
 				pokemon.cureStatus();
 			}
 		},

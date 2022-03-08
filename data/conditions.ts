@@ -75,6 +75,36 @@ export const Conditions: {[k: string]: ConditionData} = {
 			return false;
 		},
 	},
+	fsb: {
+		name: 'fsb',
+		effectType: 'Status',
+		onStart(target, source, sourceEffect) {
+			if (sourceEffect && sourceEffect.effectType === 'Ability') {
+				this.add('-status', target, 'fsb', '[from] ability: ' + sourceEffect.name, '[of] ' + source);
+			} else {
+				this.add('-status', target, 'fsb');
+			}
+			if (target.species.name === 'Shaymin-Sky' && target.baseSpecies.baseSpecies === 'Shaymin') {
+				target.formeChange('Shaymin', this.effect, true);
+			}
+		},
+		// Damage reduction is handled directly in the sim/battle.js damage function
+		onResidualOrder: 10,
+		onResidual(pokemon) {
+			this.damage(pokemon.baseMaxhp / 16);
+		},
+		onModifyMove(move, pokemon) {
+			if (move.flags['defrost']) {
+				this.add('-curestatus', pokemon, 'fsb', '[from] move: ' + move);
+				pokemon.setStatus('');
+			}
+		},
+		onAfterMoveSecondary(target, source, move) {
+			if (move.flags['defrost']) {
+				target.cureStatus();
+			}
+		},
+	},
 	frz: {
 		name: 'frz',
 		effectType: 'Status',

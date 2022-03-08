@@ -8,7 +8,7 @@ bullet: Has no effect on Pokemon with the Bulletproof Ability.
 charge: The user is unable to make a move between turns.
 contact: Makes contact.
 dance: When used by a Pokemon, other Pokemon with the Dancer Ability can attempt to execute the same move.
-defrost: Thaws the user if executed successfully while the user is frozen.
+defrost: Cures user's freeze and frostbite. Also cures targets' frostbite.
 distance: Can target a Pokemon positioned anywhere in a Triple Battle.
 gravity: Prevented from being executed or selected during Gravity's effect.
 heal: Prevented from being executed or selected during Heal Block's effect.
@@ -48,6 +48,21 @@ export const Moves: {[moveid: string]: MoveData} = {
 		target: "normal",
 		type: "Ghost",
 		zMove: {effect: 'clearnegativeboost'},
+	},
+	frigidwind: {
+		num: 9001,
+		accuracy: 85,
+		basePower: 0,
+		category: "Status",
+		name: "Frigid Wind",
+		pp: 15,
+		priority: 0,
+		flags: {protect: 1, reflectable: 1, mirror: 1},
+		status: 'fsb',
+		secondary: null,
+		target: "normal",
+		type: "Ice",
+		zMove: {boost: {spa: 1}},
 	},
 	//Legends Arceus (num: 6000-6999):
 	mysticalpower: {
@@ -20297,7 +20312,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 					if (this.clampIntRange(pokemon.runEffectiveness(fire), -6, 6) > 0) {
 						if (pokemon.position !== target.position) {
 							const immune = ['comatose', 'waterveil', 'waterbubble'];
-							const status = ['par', 'psn', 'tox', 'slp', 'frz'];
+							const status = ['par', 'psn', 'tox', 'slp', 'frz', 'fsb'];
 							if (!immune.includes(pokemon.ability) && !status.includes(pokemon.status)) {
 								pokemon.status = 'brn';
 							}

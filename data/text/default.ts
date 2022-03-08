@@ -175,6 +175,15 @@ export const DefaultText: {[k: string]: DefaultText} = {
 		endFromItem: "  [POKEMON]'s [ITEM] healed its burn!",
 		damage: "  [POKEMON] was hurt by its burn!",
 	},
+	fsb: {
+		//The exact terminology from Legends: Arceus is "got frostbite!", "was hurt by its frostbite!", and "This may also leave the target with frosbite."
+		//In some descs and shortDescs I may use frostbitten, frostbit, or frostbites instead.
+		start: "  [POKEMON] got frosbite!",
+		alreadyStarted: "  [POKEMON] already has frostbite!",
+		end: "  [POKEMON]'s frostbite was healed!",
+		endFromItem: "  [POKEMON]'s [ITEM] healed its frostbite!",
+		damage: "  [POKEMON] was hurt by its frostbite!",
+	},
 	frz: {
 		start: "  [POKEMON] was frozen solid!",
 		alreadyStarted: "  [POKEMON] is already frozen solid!",

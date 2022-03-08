@@ -292,6 +292,7 @@ export const TypeChart: {[k: string]: TypeData} = {
 		damageTaken: {
 			hail: 3,
 			frz: 3,
+			fsb: 3,
 			'???': 0,
 			Bug: 0,
 			Crystal: 0,

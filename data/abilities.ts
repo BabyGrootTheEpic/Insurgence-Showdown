@@ -2391,13 +2391,13 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	},
 	magmaarmor: {
 		onUpdate(pokemon) {
-			if (pokemon.status === 'frz') {
+			if (pokemon.status === 'frz' || pokemon.status === 'fsb') {
 				this.add('-activate', pokemon, 'ability: Magma Armor');
 				pokemon.cureStatus();
 			}
 		},
 		onImmunity(type, pokemon) {
-			if (type === 'frz') return false;
+			if (type === 'frz' || type === 'fsb') return false;
 		},
 		isBreakable: true,
 		name: "Magma Armor",
@@ -2999,7 +2999,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		},
 		onSetStatus(status, target, source, effect) {
 			if (target.species.id !== 'giratinaprimal') return;
-			const statusImmune = ['par', 'frz', 'brn', 'psn', 'tox'];
+			const statusImmune = ['par', 'frz', 'brn', 'psn', 'tox', 'fsb'];
 			if (!statusImmune.includes(status.id)) return;
 			if ((effect as Move)?.status) {
 				this.add('-immune', target, '[from] ability: Omnitype');

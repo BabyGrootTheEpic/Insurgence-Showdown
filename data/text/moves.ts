@@ -7,6 +7,10 @@ export const MovesText: {[k: string]: MoveText} = {
 
 		addItem: "  [POKEMON] was given an [ITEM]!",
 	},
+	frigidwind: {
+		name: "Frigid Wind",
+		shortDesc: "Gives the target frostbite.",
+	},
 	//Legends Arceus:
 	mysticalpower: {
 		name: "Mystical Power",
