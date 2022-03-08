@@ -1,6 +1,6 @@
 export const Pokedex: {[speciesid: string]: SpeciesData} = {
 	testmon: {
-		num: 9000,
+		num: 9001,
 		name: "Testmon",
 		types: ["Shadow", "???"],
 		gender: "N",
