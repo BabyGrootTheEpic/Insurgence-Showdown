@@ -9,7 +9,8 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	frigidwind: {
 		name: "Frigid Wind",
-		shortDesc: "Gives the target frostbite.",
+		desc: "Gives the target frostbite. If the weather is Hail, this move does not check accuracy.",
+		shortDesc: "Gives the target frostbite. Can't miss in hail.",
 	},
 	//Legends Arceus:
 	mysticalpower: {
@@ -493,8 +494,12 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	blizzard: {
 		name: "Blizzard",
-		desc: "Has a 10% chance to freeze the target. If the weather is Hail, this move does not check accuracy.",
-		shortDesc: "10% chance to freeze foe(s). Can't miss in hail.",
+		desc: "Has a 10% chance to give the target(s) frostibte. If the weather is Hail, this move does not check accuracy and the chance of giving frostbite is doubled.",
+		shortDesc: "10% chance to give frostbite. Can't miss in hail.",
+		gen7: {
+			desc: "Has a 10% chance to freeze the target. If the weather is Hail, this move does not check accuracy.",
+			shortDesc: "10% chance to freeze foe(s). Can't miss in hail.",
+		},
 		gen3: {
 			desc: "Has a 10% chance to freeze the target.",
 			shortDesc: "10% chance to freeze foe(s).",
@@ -2127,8 +2132,12 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	freezedry: {
 		name: "Freeze-Dry",
-		desc: "Has a 10% chance to freeze the target. This move's type effectiveness against Water is changed to be super effective no matter what this move's type is.",
-		shortDesc: "10% chance to freeze. Super effective on Water.",
+		desc: "Has a 10% chance to give the target frostbite. Chance is doubled in hail. This move's type effectiveness against Water is changed to be super effective no matter what this move's type is.",
+		shortDesc: "10% chance to give fsb. Super effective on Water.",
+		gen7: {
+			desc: "Has a 10% chance to freeze the target. This move's type effectiveness against Water is changed to be super effective no matter what this move's type is.",
+			shortDesc: "10% chance to freeze. Super effective on Water.",
+		}
 	},
 	freezeshock: {
 		name: "Freeze Shock",
@@ -2139,8 +2148,12 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	freezingglare: {
 		name: "Freezing Glare",
-		desc: "Has a 10% chance to freeze the target.",
-		shortDesc: "10% chance to freeze the target.",
+		desc: "Has a 30% chance to give the target frostbite.",
+		shortDesc: "30% chance to give the target frostbite.",
+		gen7: {
+			desc: "Has a 10% chance to freeze the target.",
+			shortDesc: "10% chance to freeze the target.",
+		}
 	},
 	freezyfrost: {
 		name: "Freezy Frost",
@@ -3007,8 +3020,12 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	icebeam: {
 		name: "Ice Beam",
-		desc: "Has a 10% chance to freeze the target.",
-		shortDesc: "10% chance to freeze the target.",
+		desc: "Has a 10% chance to give the target frostbite.",
+		shortDesc: "10% chance to give the target frostbite.",
+		gen7: {
+			desc: "Has a 10% chance to freeze the target.",
+			shortDesc: "10% chance to freeze the target.",
+		}
 	},
 	iceburn: {
 		name: "Ice Burn",
@@ -3019,8 +3036,12 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	icefang: {
 		name: "Ice Fang",
-		desc: "Has a 10% chance to freeze the target and a 10% chance to make it flinch.",
-		shortDesc: "10% chance to freeze. 10% chance to flinch.",
+		desc: "Has a 10% chance to give the target frostbite and a 10% chance to make it flinch.",
+		shortDesc: "10% chance to give frostbite. 10% chance to flinch.",
+		gen7: {
+			desc: "Has a 10% chance to freeze the target and a 10% chance to make it flinch.",
+			shortDesc: "10% chance to freeze. 10% chance to flinch.",
+		}
 	},
 	icehammer: {
 		name: "Ice Hammer",
@@ -3029,8 +3050,12 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	icepunch: {
 		name: "Ice Punch",
-		desc: "Has a 10% chance to freeze the target.",
-		shortDesc: "10% chance to freeze the target.",
+		desc: "Has a 10% chance to give the target frostbite.",
+		shortDesc: "10% chance to give the target frostbite.",
+		gen7: {
+			desc: "Has a 10% chance to freeze the target.",
+			shortDesc: "10% chance to freeze the target.",
+		}
 	},
 	iceshard: {
 		name: "Ice Shard",
@@ -4311,7 +4336,7 @@ export const MovesText: {[k: string]: MoveText} = {
 	permafrost: {
 		name: "Permafrost",
 		desc: "Sets up a hazard on the opposing side of the field, having a chance to freeze each opposing Pokemon that switches in, unless it is a Flying-type Pokemon or has the Levitate Ability. Can be used up to five times before failing. The chance to paralyze increases with 10% per layer and is doubled in Hail. Can be removed from the opposing side if any opposing Pokemon uses Rapid Spin or Defog successfully, is hit by Defog, or a grounded Ice-type or Fire-type Pokemon switches in. Safeguard prevents the opposing party from being poisoned on switch-in, but a substitute does not.",
-		shortDesc: "Chance to freeze grounded foes on switch-in. Max 5 layers, 10% chance per layer; doubled in Hail.",
+		shortDesc: "Chance to freeze grounded foes on switch-in.",
 		start: "  Permafrost was scattered on the ground all around [TEAM]!",
 		end: "  The permafrost disappeared from the ground around [TEAM]!",
 	},
@@ -4470,8 +4495,12 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	powdersnow: {
 		name: "Powder Snow",
-		desc: "Has a 10% chance to freeze the target.",
-		shortDesc: "10% chance to freeze the foe(s).",
+		desc: "Has a 10% chance to give the target(s) frostbite.",
+		shortDesc: "10% chance to give the foe(s) frostbite.",
+		gen7: {
+			desc: "Has a 10% chance to freeze the target.",
+			shortDesc: "10% chance to freeze the foe(s).",
+		},
 		gen2: {
 			shortDesc: "10% chance to freeze the target.",
 		},
@@ -6522,8 +6551,12 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	triattack: {
 		name: "Tri Attack",
-		desc: "Has a 20% chance to either burn, freeze, or paralyze the target.",
-		shortDesc: "20% chance to paralyze or burn or freeze target.",
+		desc: "Has a 20% chance to give the target either paralysis, a burn, or frostbite.",
+		shortDesc: "20% chance to give the target par/brn/fsb.",
+		gen7: {
+			desc: "Has a 20% chance to either burn, freeze, or paralyze the target.",
+			shortDesc: "20% chance to paralyze or burn or freeze target.",
+		},
 		gen2: {
 			desc: "This move selects burn, freeze, or paralysis at random, and has a 20% chance to inflict the target with that status. If the target is frozen and burn was selected, it thaws out.",
 		},

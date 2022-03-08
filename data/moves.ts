@@ -58,6 +58,9 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 15,
 		priority: 0,
 		flags: {protect: 1, reflectable: 1, mirror: 1},
+		onModifyMove(move) {
+			if (this.field.isWeather('hail')) move.accuracy = true;
+		},
 		status: 'fsb',
 		secondary: null,
 		target: "normal",
@@ -1479,7 +1482,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		},
 		secondary: {
 			chance: 10,
-			status: 'frz',
+			status: 'fsb',
 		},
 		target: "allAdjacentFoes",
 		type: "Ice",
@@ -5917,7 +5920,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		},
 		secondary: {
 			chance: 10,
-			status: 'frz',
+			status: 'fsb',
 		},
 		target: "normal",
 		type: "Ice",
@@ -5961,8 +5964,8 @@ export const Moves: {[moveid: string]: MoveData} = {
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
 		secondary: {
-			chance: 10,
-			status: 'frz',
+			chance: 30,
+			status: 'fsb',
 		},
 		target: "normal",
 		type: "Psychic",
@@ -9063,7 +9066,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 10,
-			status: 'frz',
+			status: 'fsb',
 		},
 		target: "normal",
 		type: "Ice",
@@ -9109,7 +9112,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		secondaries: [
 			{
 				chance: 10,
-				status: 'frz',
+				status: 'fsb',
 			}, {
 				chance: 10,
 				volatileStatus: 'flinch',
@@ -9150,7 +9153,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		flags: {contact: 1, protect: 1, mirror: 1, punch: 1},
 		secondary: {
 			chance: 10,
-			status: 'frz',
+			status: 'fsb',
 		},
 		target: "normal",
 		type: "Ice",
@@ -13545,7 +13548,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 10,
-			status: 'frz',
+			status: 'fsb',
 		},
 		target: "allAdjacentFoes",
 		type: "Ice",
@@ -19394,7 +19397,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 				} else if (result === 1) {
 					target.trySetStatus('par', source);
 				} else {
-					target.trySetStatus('frz', source);
+					target.trySetStatus('fsb', source);
 				}
 			},
 		},
@@ -20312,9 +20315,8 @@ export const Moves: {[moveid: string]: MoveData} = {
 					if (this.clampIntRange(pokemon.runEffectiveness(fire), -6, 6) > 0) {
 						if (pokemon.position !== target.position) {
 							const immune = ['comatose', 'waterveil', 'waterbubble'];
-							const status = ['par', 'psn', 'tox', 'slp', 'frz', 'fsb'];
-							if (!immune.includes(pokemon.ability) && !status.includes(pokemon.status)) {
-								pokemon.status = 'brn';
+							if (!immune.includes(pokemon.ability) && pokemon.status === '') {
+								pokemon.status = 'brn' as ID;
 							}
 						}
 					}

@@ -823,6 +823,16 @@ export const Conditions: {[k: string]: ConditionData} = {
 				this.damage(target.baseMaxhp / 16);
 			}
 		},
+		onModifyMove(move, pokemon) {
+			if (move.secondaries) {
+				for (const secondary of move.secondaries) {
+					if (secondary.chance && secondary.status === 'fsb') {
+						this.debug('doubling frostbite chance');
+						secondary.chance *= 2;
+					}
+				}
+			}
+		},
 		onFieldEnd() {
 			this.add('-weather', 'none');
 		},

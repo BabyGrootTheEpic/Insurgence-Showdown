@@ -639,7 +639,8 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 	},
 	illuminate: {
 		name: "Illuminate",
-		shortDesc: "Increases evasion in Darkness",
+		desc: "If Darkness is active, this Pokemon's evasiveness is multiplied by 1.25.",
+		shortDesc: "If Darkness is active, this Pokemon's evasiveness is 1.25x.",
 	},
 	illusion: {
 		name: "Illusion",
@@ -1053,7 +1054,7 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 	},
 	periodicorbit: {
 		name: "Periodic Orbit",
-		desc: "Wish happens after one and three turns, Future Sight and Doom Desire happen after two and five turns.",
+		desc: "Wish happens after one and three turns, Future Sight and Doom Desire happen after two and five turns. Might not work properly outside of singles.",
 		shortDesc: "Wish, Future Sight and Doom Desire happen twice.",
 	},
 	perishbody: {
@@ -1337,7 +1338,8 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 	},
 	sandstream: {
 		name: "Sand Stream",
-		shortDesc: "On switch-in, this Pokemon summons Sandstorm.",
+		desc: "On switch-in, this Pokemon summons Sandstorm. This Pokemon takes no damage from Sandstorm.",
+		shortDesc: "On switch-in, this Pokemon summons Sandstorm; immunity to Sandstorm.",
 	},
 	sandveil: {
 		name: "Sand Veil",
@@ -1476,7 +1478,8 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 	},
 	snowwarning: {
 		name: "Snow Warning",
-		shortDesc: "On switch-in, this Pokemon summons Hail.",
+		desc: "On switch-in, this Pokemon summons Hail. This Pokemon takes no damage from Hail.",
+		shortDesc: "On switch-in, this Pokemon summons Hail; immunity to Hail.",
 	},
 	solarpower: {
 		name: "Solar Power",
@@ -1664,10 +1667,13 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 	},
 	synchronize: {
 		name: "Synchronize",
-		desc: "If another Pokemon burns, paralyzes, poisons, badly poisons, or frostbites this Pokemon, that Pokemon receives the same non-volatile status condition.",
+		desc: "If another Pokemon burns, paralyzes, poisons, badly poisons, or gives frostbite to this Pokemon, that Pokemon receives the same non-volatile status condition.",
 		shortDesc: "If another Pokemon gives this Pokémon brn/par/psn/tox/fsb, it also gets that status.",
+		gen7: {
+			desc: "If another Pokemon burns, paralyzes, poisons, or badly poisons this Pokemon, that Pokemon receives the same non-volatile status condition.",
+			shortDesc: "If another Pokemon burns/poisons/paralyzes this Pokemon, it also gets that status.",
+		},
 		gen4: {
-			desc: "If another Pokemon burns, paralyzes, or poisons this Pokemon, that Pokemon receives the same non-volatile status condition. If another Pokemon badly poisons this Pokemon, that Pokemon becomes poisoned.",
 			shortDesc: "If another Pokemon burns/poisons/paralyzes this Pokemon, it also gets that status.",
 		},
 	},
