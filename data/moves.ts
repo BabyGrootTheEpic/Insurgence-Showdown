@@ -68,6 +68,69 @@ export const Moves: {[moveid: string]: MoveData} = {
 		zMove: {boost: {spa: 1}},
 	},
 	//Legends Arceus (num: 6000-6999):
+	barbbarrage: {
+		num: 6000,
+		accuracy: 100,
+		basePower: 60,
+		category: "Physical",
+		name: "Barb Barage",
+		pp: 15,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1},
+		onBasePower(basePower, pokemon) {
+			if (pokemon.status && pokemon.status !== 'slp') {
+				return this.chainModify(2);
+			}
+		},
+		secondary: {
+			chance: 30,
+			status: 'psn',
+		},
+		target: "normal",
+		type: "Poison",
+	},
+	bittermalice: {
+		num: 6001,
+		accuracy: 100,
+		basePower: 60,
+		category: "Special",
+		name: "Bitter Malice",
+		pp: 15,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		onBasePower(basePower, pokemon) {
+			if (pokemon.status && pokemon.status !== 'slp') {
+				return this.chainModify(2);
+			}
+		},
+		secondary: {
+			chance: 30,
+			status: 'fsb',
+		},
+		target: "normal",
+		type: "Ghost",
+	},
+	infernalparade: {
+		num: 6008,
+		accuracy: 100,
+		basePower: 60,
+		category: "Special",
+		name: "Infernal Parade",
+		pp: 15,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		onBasePower(basePower, pokemon) {
+			if (pokemon.status && pokemon.status !== 'slp') {
+				return this.chainModify(2);
+			}
+		},
+		secondary: {
+			chance: 30,
+			status: 'brn',
+		},
+		target: "normal",
+		type: "Ghost",
+	},
 	mysticalpower: {
 		num: 6011,
 		accuracy: 90,

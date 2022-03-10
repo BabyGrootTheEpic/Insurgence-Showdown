@@ -5215,6 +5215,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	meloettapirouette: {
 		//isNonstandard: "Past",
 	},
+	meloettadark: {
+		//isNonstandard: "Past",
+		tier: "RU",
+	},
 	meloettadelta: {
 		tier: "OU",
 	},

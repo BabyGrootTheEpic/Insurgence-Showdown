@@ -3245,6 +3245,9 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	meloettapirouette: {
 		name: "Meloetta-Pirouette",
 	},
+	meloettadark: {
+		name: "Meloetta-Dark",
+	},
 	meloettadelta: {
 		name: "Meloetta-Delta",
 	},
