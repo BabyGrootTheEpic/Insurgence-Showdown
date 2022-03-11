@@ -282,7 +282,7 @@ export const Formats: FormatList = [
 		team: 'randomHC',
 		rated: false,
 		ruleset: ['HP Percentage Mod', 'Cancel Mod'],
-		banlist: ['CAP'],
+		banlist: ['Nonexistent'],
 	},
 	{
 		name: "[Gen 8] Custom Game",
@@ -599,7 +599,7 @@ export const Formats: FormatList = [
 		team: 'randomHC',
 		rated: false,
 		ruleset: ['HP Percentage Mod', 'Cancel Mod'],
-		banlist: ['CAP'],
+		banlist: ['Nonexistent'],
 	},
 	{
 		name: "[Gen 8] (D)Custom Game",
@@ -918,7 +918,7 @@ export const Formats: FormatList = [
 		team: 'randomHC',
 		rated: false,
 		ruleset: ['HP Percentage Mod', 'Cancel Mod'],
-		banlist: ['CAP'],
+		banlist: ['Nonexistent'],
 	},
 	{
 		name: "[Gen 8] (T)Custom Game",
@@ -1264,7 +1264,7 @@ export const Formats: FormatList = [
 		team: 'randomHC',
 		rated: false,
 		ruleset: ['HP Percentage Mod', 'Cancel Mod'],
-		banlist: ['CAP'],
+		banlist: ['Nonexistent'],
 	},
 	{
 		name: "[Gen 8] (M)Custom Game",
@@ -1609,7 +1609,7 @@ export const Formats: FormatList = [
 		team: 'randomHC',
 		rated: false,
 		ruleset: ['HP Percentage Mod', 'Cancel Mod'],
-		banlist: ['CAP'],
+		banlist: ['Nonexistent'],
 	},
 	{
 		name: "[Gen 8] FFA Custom Game",

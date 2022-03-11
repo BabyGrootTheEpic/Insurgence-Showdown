@@ -21670,6 +21670,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		eggGroups: ["Undiscovered"],
 		gen: 1,
 	},
+	//Pokémon below this line usually won't be included in randbats.
 	syclar: {
 		num: -1,
 		name: "Syclar",
