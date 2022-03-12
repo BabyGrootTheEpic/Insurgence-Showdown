@@ -625,30 +625,30 @@ export class RandomTeams {
 		const doItemsExist = this.gen > 1;
 		let itemPool: Item[] = [];
 		if (doItemsExist) {
-			if (!hasCustomBans) {
-				itemPool = [...this.dex.items.all()].filter(item => (item.gen <= this.gen && !item.isNonstandard));
-			} else {
-				const hasAllItemsBan = ruleTable.check('pokemontag:allitems');
-				for (const item of this.dex.items.all()) {
-					let banReason = ruleTable.check('item:' + item.id);
-					if (banReason) continue;
-					if (banReason !== '' && item.id) {
-						if (hasAllItemsBan) continue;
-						if (item.isNonstandard) {
-							banReason = ruleTable.check('pokemontag:' + toID(item.isNonstandard));
-							if (banReason) continue;
-							if (banReason !== '' && item.isNonstandard !== 'Unobtainable') {
-								if (hasNonexistentBan) continue;
-								if (!hasNonexistentWhitelist) continue;
-							}
+			//if (!hasCustomBans) {
+			//	itemPool = [...this.dex.items.all()].filter(item => (item.gen <= this.gen && !item.isNonstandard));
+			//} else {
+			const hasAllItemsBan = ruleTable.check('pokemontag:allitems');
+			for (const item of this.dex.items.all()) {
+				let banReason = ruleTable.check('item:' + item.id);
+				if (banReason) continue;
+				if (banReason !== '' && item.id) {
+					if (hasAllItemsBan) continue;
+					if (item.isNonstandard) {
+						banReason = ruleTable.check('pokemontag:' + toID(item.isNonstandard));
+						if (banReason) continue;
+						if (banReason !== '' && item.isNonstandard !== 'Unobtainable') {
+							if (hasNonexistentBan) continue;
+							if (!hasNonexistentWhitelist) continue;
 						}
 					}
-					itemPool.push(item);
 				}
-				if (ruleTable.check('item:noitem')) {
-					this.enforceCustomPoolSizeNoComplexBans('item', itemPool, this.maxTeamSize, 'Max Team Size');
-				}
+				itemPool.push(item);
 			}
+			if (ruleTable.check('item:noitem')) {
+				this.enforceCustomPoolSizeNoComplexBans('item', itemPool, this.maxTeamSize, 'Max Team Size');
+			}
+			//}
 		}
 
 		// Ability Pool
