@@ -521,6 +521,12 @@ export class TeamValidator {
 				tierSpecies = dex.species.get('Kyogre-Primal');
 			} else if (canMegaEvo && species.id === 'rayquaza' && set.moves.map(toID).includes('dragonascent' as ID)) {
 				tierSpecies = dex.species.get('Rayquaza-Mega');
+			} else if (item.id === 'crystalpiecearceus' && species.id === 'arceus') {
+				tierSpecies = dex.species.get('Arceus-Primal');
+			} else if (item.id === 'crystalpiecegiratina' && species.id === 'giratina') {
+				tierSpecies = dex.species.get('Giratina-Primal');
+			} else if (item.id === 'crystalpieceregigigas' && species.id === 'regigigas') {
+				tierSpecies = dex.species.get('Regigigas-Primal');
 			}
 		}
 
@@ -577,6 +583,9 @@ export class TeamValidator {
 						}
 						set.gender = 'M';
 						setSources.sources = ['5D'];
+					}
+					if (species.baseSpecies === 'Arceus' && species.name !== 'Arceus') {
+						problems.push(`${name} will not be ${species.types[0]}-type if it doesn't have the ability Multitype.`);
 					}
 				} else {
 					setSources.isHidden = false;

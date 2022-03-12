@@ -67,6 +67,53 @@ export const Moves: {[moveid: string]: MoveData} = {
 		type: "Ice",
 		zMove: {boost: {spa: 1}},
 	},
+	maxcrystal: {
+		num: 9002,
+		accuracy: true,
+		basePower: 10,
+		category: "Physical",
+		name: "Max Crystal",
+		pp: 10,
+		priority: 1,
+		flags: {},
+		isMax: true,
+		target: "adjacentFoe",
+		type: "Crystal",
+	},
+	maxtesseract: {
+		num: 9003,
+		accuracy: true,
+		basePower: 10,
+		category: "Physical",
+		name: "Max Tesseract",
+		pp: 10,
+		priority: 0,
+		flags: {},
+		isMax: true,
+		//Always super-effective, implemented in sim/battle-actions.ts
+		target: "adjacentFoe",
+		type: "???",
+	},
+	maxshade: {
+		num: 9004,
+		accuracy: true,
+		basePower: 10,
+		category: "Physical",
+		name: "Max Shade",
+		pp: 10,
+		priority: 0,
+		flags: {},
+		isMax: true,
+		self: {
+			onHit(source) {
+				if (!source.volatiles['dynamax']) return;
+				//this.field.setWeather('shadowsky');
+			},
+		},
+		target: "adjacentFoe",
+		type: "Shadow",
+	},
+
 	//Legends Arceus (num: 6000-6999):
 	barbbarrage: {
 		num: 6000,
@@ -110,6 +157,103 @@ export const Moves: {[moveid: string]: MoveData} = {
 		target: "normal",
 		type: "Ghost",
 	},
+	bleakwindstorm: {
+		num: 6002,
+		accuracy: 80,
+		basePower: 95,
+		category: "Special",
+		name: "Bleakwind Storm",
+		pp: 5,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, distance: 1},
+		secondary: {
+			chance: 30,
+			status: 'fsb',
+		},
+		target: "any",
+		type: "Flying",
+	},
+	chloroblast: {
+		num: 6004,
+		accuracy: 95,
+		basePower: 120,
+		category: "Special",
+		name: "Chloroblast",
+		pp: 5,
+		priority: 0,
+		flags: {recharge: 1, protect: 1, mirror: 1},
+		mindBlownRecoil: true,
+		onAfterMove(pokemon, target, move) {
+			if (move.mindBlownRecoil && !move.multihit) {
+				this.damage(Math.round(pokemon.maxhp / 2), pokemon, pokemon, this.dex.conditions.get('Mind Blown'), true);
+			}
+		},
+		self: {
+			volatileStatus: 'mustrecharge',
+		},
+		secondary: null,
+		target: "allAdjacent",
+		type: "Grass",
+	},
+	direclaw: {
+		num: 6005,
+		accuracy: 100,
+		basePower: 60,
+		category: "Physical",
+		name: "Dire Claw",
+		pp: 15,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1},
+		critRatio: 2,
+		secondary: {
+			chance: 20,
+			onHit(target, source) {
+				const result = this.random(3);
+				if (result === 0) {
+					target.trySetStatus('psn', source);
+				} else if (result === 1) {
+					target.trySetStatus('par', source);
+				} else {
+					target.trySetStatus('slp', source);
+				}
+			},
+		},
+		target: "normal",
+		type: "Poison",
+	},
+	esperwing: {
+		num: 6006,
+		accuracy: 90,
+		basePower: 75,
+		category: "Special",
+		name: "Esper Wing",
+		pp: 10,
+		priority: 1,
+		flags: {protect: 1, mirror: 1},
+		critRatio: 2,
+		secondary: null,
+		target: "normal",
+		type: "Psychic",
+	},
+	headlongrush: {
+		num: 6007,
+		accuracy: 100,
+		basePower: 100,
+		category: "Physical",
+		name: "Headlong Rush",
+		pp: 5,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1},
+		self: {
+			boosts: {
+				def: -1,
+				spd: -1,
+			},
+		},
+		secondary: null,
+		target: "normal",
+		type: "Ground",
+	},
 	infernalparade: {
 		num: 6008,
 		accuracy: 100,
@@ -130,6 +274,45 @@ export const Moves: {[moveid: string]: MoveData} = {
 		},
 		target: "normal",
 		type: "Ghost",
+	},
+	lunarblessing: {
+		num: 6009,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Lunar Blessing",
+		pp: 10,
+		priority: 0,
+		flags: {snatch: 1, heal: 1},
+		heal: [1, 2],
+		onHit(pokemon) {
+			pokemon.cureStatus();
+		},
+		boosts: {
+			evasion: 1,
+		},
+		secondary: null,
+		target: "self",
+		type: "Psychic",
+	},
+	mountaingale: {
+		num: 6010,
+		accuracy: 85,
+		basePower: 100,
+		category: "Physical",
+		name: "Mountain Gale",
+		pp: 5,
+		priority: 0,
+		flags: {recharge: 1, protect: 1, mirror: 1},
+		self: {
+			volatileStatus: 'mustrecharge',
+		},
+		secondary: {
+			chance: 30,
+			volatileStatus: 'flinch',
+		},
+		target: "normal",
+		type: "Ice",
 	},
 	mysticalpower: {
 		num: 6011,
@@ -159,6 +342,256 @@ export const Moves: {[moveid: string]: MoveData} = {
 		target: "normal",
 		type: "Psychic",
 	},
+	powershift: {
+		num: 6012,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Power Shift",
+		pp: 10,
+		priority: 0,
+		flags: {snatch: 1},
+		onHit(pokemon) {
+			if(!pokemon?.volatiles['powertrick']) pokemon.addVolatile('powershift');
+		},
+		condition: {
+			onStart(pokemon) {
+				this.add('-start', pokemon, 'Power Shift');
+				const newatk = pokemon.storedStats.def;
+				const newdef = pokemon.storedStats.atk;
+				const newspa = pokemon.storedStats.spd;
+				const newspd = pokemon.storedStats.spa;
+				pokemon.storedStats.atk = newatk;
+				pokemon.storedStats.def = newdef;
+				pokemon.storedStats.spa = newspa;
+				pokemon.storedStats.spd = newspd;
+			},
+			onCopy(pokemon) {
+				const newatk = pokemon.storedStats.def;
+				const newdef = pokemon.storedStats.atk;
+				const newspa = pokemon.storedStats.spd;
+				const newspd = pokemon.storedStats.spa;
+				pokemon.storedStats.atk = newatk;
+				pokemon.storedStats.def = newdef;
+				pokemon.storedStats.spa = newspa;
+				pokemon.storedStats.spd = newspd;
+			},
+			onEnd(pokemon) {
+				this.add('-end', pokemon, 'Power Shift');
+				const newatk = pokemon.storedStats.def;
+				const newdef = pokemon.storedStats.atk;
+				const newspa = pokemon.storedStats.spd;
+				const newspd = pokemon.storedStats.spa;
+				pokemon.storedStats.atk = newatk;
+				pokemon.storedStats.def = newdef;
+				pokemon.storedStats.spa = newspa;
+				pokemon.storedStats.spd = newspd;
+			},
+			onRestart(pokemon) {
+				pokemon.removeVolatile('Power Shift');
+			},
+		},
+		secondary: null,
+		target: "self",
+		type: "Normal",
+	},
+	psyshieldbash: {
+		num: 6013,
+		accuracy: 90,
+		basePower: 70,
+		category: "Physical",
+		name: "Psyshield Bash",
+		pp: 10,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1},
+		secondary: {
+			chance: 30,
+			self: {
+				boosts: {
+					def: 1,
+					spd: 1,
+				},
+			},
+		},
+		target: "normal",
+		type: "Psychic",
+	},
+	ragingfury: {
+		num: 6014,
+		accuracy: 85,
+		basePower: 90,
+		category: "Physical",
+		name: "Raging Fury",
+		pp: 10,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1},
+		self: {
+			volatileStatus: 'lockedmove',
+		},
+		onAfterMove(pokemon) {
+			if (pokemon.volatiles['lockedmove'] && pokemon.volatiles['lockedmove'].duration === 1) {
+				pokemon.removeVolatile('lockedmove');
+			}
+		},
+		secondary: null,
+		target: "randomNormal",
+		type: "Fire",
+	},
+	sandsearstorm: {
+		num: 6015,
+		accuracy: 80,
+		basePower: 95,
+		category: "Special",
+		name: "Sandsear Storm",
+		pp: 5,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, distance: 1},
+		secondary: {
+			chance: 30,
+			status: 'brn',
+		},
+		target: "any",
+		type: "Ground",
+	},
+	shelter: {
+		num: 6016,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Shelter",
+		pp: 10,
+		priority: 0,
+		flags: {snatch: 1},
+		boosts: {
+			def: 1,
+			spd: 1,
+			accuracy: 1,
+		},
+		secondary: null,
+		target: "self",
+		type: "Steel",
+	},
+	springtidestorm: {
+		num: 6017,
+		accuracy: 80,
+		basePower: 95,
+		category: "Special",
+		name: "Springtide Storm",
+		pp: 5,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, distance: 1},
+		secondary: {
+			chance: 30,
+			onHit(target, source, move) {
+				if (source.species.forme === 'Therian') {
+					this.boost({spd: -1}, target, source);
+				} else {
+					this.boost({spa: 1, spd: 1}, target);
+				}
+			},
+		},
+		target: "any",
+		type: "Fairy",
+	},
+	takeheart: {
+		num: 6019,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Take Heart",
+		pp: 10,
+		priority: 0,
+		flags: {snatch: 1},
+		onHit(pokemon) {
+			pokemon.cureStatus();
+		},
+		boosts: {
+			atk: 1,
+			def: 1,
+			spa: 1,
+			spd: 1,
+		},
+		secondary: null,
+		target: "self",
+		type: "Psychic",
+	},
+	triplearrows: {
+		num: 6020,
+		accuracy: 100,
+		basePower: 50,
+		category: "Physical",
+		name: "Triple Arrows",
+		pp: 15,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1},
+		secondary: {
+			chance: 100,
+			boosts: {
+				def: -1,
+			},
+			volatileStatus: 'focusenergy',
+		},
+		target: "normal",
+		type: "Fighting",
+	},
+	victorydance: {
+		num: 6021,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Victory Dance",
+		pp: 10,
+		priority: 0,
+		flags: {snatch: 1, dance: 1},
+		volatileStatus: 'victorydance',
+		onHit(pokemon) {
+			this.add('-activate', pokemon, 'move: Victory Dance');
+		},
+		condition: {
+			onBasePowerPriority: 11,
+			onBasePower(basePower, attacker, defender, move) {
+				this.debug('victorydance boost');
+				return this.chainModify(1.5);
+			},
+		},
+		boosts: {
+			atk: 1,
+			def: 1,
+		},
+		secondary: null,
+		target: "self",
+		type: "Fighting",
+	},
+	wavecrash: {
+		num: 6022,
+		accuracy: 100,
+		basePower: 75,
+		category: "Physical",
+		name: "Wave Crash",
+		pp: 10,
+		priority: 1,
+		flags: {contact: 1, protect: 1, mirror: 1},
+		recoil: [33, 100],
+		target: "normal",
+		type: "Water",
+	},
+	wildboltstorm: {
+		num: 6023,
+		accuracy: 80,
+		basePower: 95,
+		category: "Special",
+		name: "Wildbolt Storm",
+		pp: 5,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, distance: 1},
+		secondary: {
+			chance: 30,
+			status: 'par',
+		},
+		target: "any",
+		type: "Electric",
+	},
+
 	//Shadow (num: 7000-7999):
 	shadowblast: {
 		num: 7000,
@@ -176,6 +609,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		target: "any",
 		type: "Shadow",
 	},
+
 	//Zeta & Omicron (num: 8000-8999):
 	tesseract: {
 		num: 8031,
@@ -191,6 +625,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		target: "normal",
 		type: "???",
 	},
+
 	//Normal & Insurgence (num: 5999-):
 	"10000000voltthunderbolt": {
 		num: 719,
@@ -10939,7 +11374,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 			onTryHitPriority: 3,
 			onTryHit(target, source, move) {
 				const bypassesMaxGuard = [
-					'acupressure', 'afteryou', 'allyswitch', 'aromatherapy', 'aromaticmist', 'coaching', 'confide', 'copycat', 'curse', 'decorate', 'doomdesire', 'feint', 'futuresight', 'gmaxoneblow', 'gmaxrapidflow', 'healbell', 'holdhands', 'howl', 'junglehealing', 'lifedew', 'meanlook', 'perishsong', 'playnice', 'powertrick', 'roar', 'roleplay', 'tearfullook',
+					'acupressure', 'afteryou', 'allyswitch', 'aromatherapy', 'aromaticmist', 'coaching', 'confide', 'copycat', 'curse', 'decorate', 'doomdesire', 'feint', 'futuresight', 'gmaxoneblow', 'gmaxrapidflow', 'healbell', 'holdhands', 'howl', 'junglehealing', 'lifedew', 'meanlook', 'perishsong', 'playnice', 'powertrick', 'roar', 'roleplay', 'tearfullook', 'powershift',
 				];
 				if (bypassesMaxGuard.includes(move.id)) return;
 				if (move.smartTarget) {
@@ -13694,7 +14129,9 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 10,
 		priority: 0,
 		flags: {snatch: 1},
-		volatileStatus: 'powertrick',
+		onHit(pokemon) {
+			if(!pokemon?.volatiles['powershift']) pokemon.addVolatile('powertrick');
+		},
 		condition: {
 			onStart(pokemon) {
 				this.add('-start', pokemon, 'Power Trick');

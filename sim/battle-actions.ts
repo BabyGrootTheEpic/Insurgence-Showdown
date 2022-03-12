@@ -1693,7 +1693,7 @@ export class BattleActions {
 				else if (typeMod < 1) typeMod = 1;
 			}
 		}
-		else if(move.id === 'achillesheel')
+		else if(move.id === 'achillesheel' || move.id === 'maxtesseract')
 		{
 			//Always supper-effective (unless target is immune)
 			if (typeMod < 1) typeMod = 1;

@@ -979,7 +979,7 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 	},
 	noguard: {
 		name: "No Guard",
-		shortDesc: "Every move used by or against this Pokemon will always hit.",
+		shortDesc: "Every non-OHKO move used by or against this Pokemon will always hit.",
 	},
 	normalize: {
 		name: "Normalize",

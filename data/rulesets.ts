@@ -14,7 +14,7 @@ export const Rulesets: {[k: string]: FormatData} = {
 		name: 'BGTE NatDex AG',
 		desc: "In addition to Smogon's [Gen 8] National Dex AG, allows level 120 Pokémon, Cosplay Pikachu, Let's GO Starters, Spiky-eared Pichu, Eternal Flower Floette, Totems, duplicate fusions, duplicate LGPE starters, Gems, everything added by the Insurgence fork, and everything added by this fork. (BGTE stands for BabyGrootTheEpic, the creator of this fork.)",
 		ruleset: [
-			'Obtainable', '!NoFusionDupes', '!Limit One LGPE Starter', 'Max Level = 120', 'Default Level = 100', 'NatDex Megas', 'Sketch Gen 8 Moves',
+			'Obtainable', '!NoFusionDupes', '!Limit One LGPE Starter', 'Max Level = 120', 'Default Level = 120', 'NatDex Megas', 'Sketch Gen 8 Moves',
 			'Endless Battle Clause', 'Nickname Clause', 'Team Preview', 'HP Percentage Mod', 'Cancel Mod', 'Zoroark-Mega Illusion Thing'
 		],
 		//This fork's formats are all NatDex, so most instances of isNonstandard in data/formats-data.ts, data/item.ts, and data/moves.ts have been commented out.
@@ -155,7 +155,7 @@ export const Rulesets: {[k: string]: FormatData} = {
 		name: 'NatDex Hackmons',
 		desc: "Pok&eacute;mon may have any item, ability, and moves (excluding CAP). No 510 EV limit. Allows Dynamaxing.",
 		ruleset: [
-			'-CAP', 'Max Level = 120', 'Default Level = 100', 'NatDex Megas', 'Sketch Gen 8 Moves',
+			'-CAP', 'Max Level = 120', 'Default Level = 120', 'NatDex Megas', 'Sketch Gen 8 Moves',
 			'Team Preview', 'HP Percentage Mod', 'Cancel Mod', 'Endless Battle Clause', 'Zoroark-Mega Illusion Thing'
 		],
 	},
@@ -164,7 +164,7 @@ export const Rulesets: {[k: string]: FormatData} = {
 		name: 'Custom Game Megas',
 		desc: "Custom Game with no Mega Evolution limit.",
 		// no restrictions, for serious (other than team preview)
-		ruleset: ['HP Percentage Mod', 'Team Preview', 'Cancel Mod', 'NatDex Megas', 'Multi Mega Mod', 'Max Team Size = 24', 'Max Move Count = 24', 'Max Level = 9999', 'Default Level = 100', 'Zoroark-Mega Illusion Thing'],
+		ruleset: ['HP Percentage Mod', 'Team Preview', 'Cancel Mod', 'NatDex Megas', 'Multi Mega Mod', 'Max Team Size = 24', 'Max Move Count = 24', 'Max Level = 9999', 'Default Level = 120', 'Zoroark-Mega Illusion Thing'],
 	},
 
 	//Validator Rules

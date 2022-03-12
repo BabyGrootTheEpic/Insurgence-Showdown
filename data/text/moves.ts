@@ -12,6 +12,24 @@ export const MovesText: {[k: string]: MoveText} = {
 		desc: "Gives the target frostbite. If the weather is Hail, this move does not check accuracy.",
 		shortDesc: "Gives the target frostbite. Can't miss in hail.",
 	},
+	maxcrystal: {
+		name: "Max Crustal",
+		desc: "Power is equal to the base move's Max Move power. If this move is used as a base move, it deals damage with a power of 0.",
+		shortDesc: "Base move affects power. Usually goes first.",
+	},
+	maxtesseract: {
+		name: "Max Tesseract",
+		desc: "Power is equal to the base move's Max Move power. If this move is used as a base move, it deals damage with a power of 0. Always super effective.",
+		shortDesc: "Base move affects power. Always super effective.",
+	},
+	maxshade: {
+		name: "Max Shade",
+		desc: "Power is equal to the base move's Max Move power. If this move is used as a base move, it deals damage with a power of 0. Not very effective on Shadow Pokémon, super effective against everthing else.",
+		shortDesc: "Base move affects power.",
+		//desc: "Power is equal to the base move's Max Move power. If this move is successful, the effect of Shadow Sky begins. This effect does not happen if the user is not Dynamaxed. If this move is used as a base move, it deals damage with a power of 0. Not very effective on Shadow Pokémon, super effective against everthing else.",
+		//shortDesc: "Base move affects power. Starts Shadow Sky.",
+	},
+
 	//Legends Arceus:
 	barbbarrage: {
 		name: "Barb Barage",
@@ -23,28 +41,128 @@ export const MovesText: {[k: string]: MoveText} = {
 		desc: "Has a 30% chance of giving the target forstbite. Power doubles if the user is burned, paralyzed, poisoned, badly poisoned, or has frostbite. The special damage halving effect from the user's frostbite is ignored.",
 		shortDesc: "30% chance of giving frostbite. Has facade's effect.",
 	},
+	bleakwindstorm: {
+		name: "Bleakwind Storm",
+		desc: "Has a 30% chance to give the target frostbite.",
+		shortDesc: "30% chance to give the target frostbite.",
+	},
+	chloroblast: {
+		name: "Chloroblast",
+		desc: "If this move is successful, the user must recharge on the following turn and cannot select a move. Whether or not this move is successful and even if it would cause fainting, the user loses 1/2 of its maximum HP, rounded up, unless the user has the Magic Guard Ability. This move is prevented from executing and the user does not lose HP if any active Pokemon has the Damp Ability.",
+		shortDesc: "User cannot move next turn and loses 50% max HP.",
+
+		damage: "  ([POKEMON] cut its own HP to power up its move!)",
+	},
+	direclaw: {
+		name: "Dire Claw",
+		desc: "Has a 20% chance to poison the target, paralyze the target, or put the target to sleep.",
+		shortDesc: "20% chance to give the target psn/par/slp.",
+	},
+	esperwing: {
+		name: "Esper Wing",
+		desc: "Has a higher chance for a critical hit.",
+		shortDesc: "High critical hit ratio. Usually goes first.",
+	},
+	headlongrush: {
+		name: "Headlong Rush",
+		desc: "Lowers the user's Defense and Special Defense by 1 stage.",
+		shortDesc: "Lowers the user's Defense and Sp. Def by 1.",
+	},
 	infernalparade: {
 		name: "Infernal Parade",
 		desc: "Has a 30% chance of burning the target. Power doubles if the user is burned, paralyzed, poisoned, badly poisoned, or has frostbite. The special damage halving effect from the user's frostbite is ignored.",
 		shortDesc: "30% chance to burn the target. Has facade's effect.",
+	},
+	lunarblessing: {
+		name: "Lunar Blessing",
+		desc: "Raises the user's evasiveness by 1 stage. The user restores 1/2 of its maximum HP and is cured of its non-volatile status condition.",
+		shortDesc: "User: healed by 50%, status cured, +1 evasion.",
+	},
+	mountaingale: {
+		name: "Mountain Gale",
+		desc: "Has a 30% chance to make the target flinch. If this move is successful, the user must recharge on the following turn and cannot select a move.",
+		shortDesc: "30% chance to flinch the target. User must recharge.",
 	},
 	mysticalpower: {
 		name: "Mystical Power",
 		desc: "This Pokemon's highest stat is raised by 1 stage if this move does damage.",
 		shortDesc: "Beast Boost on hit.",
 	},
+	powershift: {
+		name: "Power Shift",
+		desc: "The user swaps its Attack and Defense stats, as well as its Special Attack and Special Defense stats. Any stat stage changes remain on their respective stats. This move can be used again to swap the stats back. Fails if Power Trick is active. If the user uses Baton Pass, the replacement will have its Attack and Defense stats swapped and its Special Attack and Special Defense stats swapped if the effect is active. If the user has its stats recalculated by changing forme while its stats are swapped, this effect is ignored but is still active for the purposes of Baton Pass.",
+		shortDesc: "Switches user's offensive and defensive stats.",
+
+		start: "  [POKEMON] switched its offensive and defensive stats!",
+		end: "#.start",
+	},
+	psyshieldbash: {
+		name: "Psyshield Bash",
+		desc: "Has a 30% chance to raise the user's Defense and Special Defense by 1 stage.",
+		shortDesc: "30% chance to raise the user's defenses by 1.",
+	},
+	ragingfury: {
+		name: "Raging Fury",
+		desc: "The user spends two or three turns locked into this move and becomes confused immediately after its move on the last turn of the effect if it is not already. This move targets an opposing Pokemon at random on each turn. If the user is prevented from moving, is asleep at the beginning of a turn, or the attack is not successful against the target on the first turn of the effect or the second turn of a three-turn effect, the effect ends without causing confusion. If this move is called by Sleep Talk and the user is asleep, the move is used for one turn and does not confuse the user.",
+		shortDesc: "Lasts 2-3 turns. Confuses the user afterwards.",
+	},
+	sandsearstorm: {
+		name: "Sandsear Storm",
+		desc: "Has a 30% chance to burn the target.",
+		shortDesc: "30% chance to burn the target.",
+	},
+	shelter: {
+		name: "Shelter",
+		desc: "Raises the user's Defense, Special Defense, and accuracy by 1 stage.",
+		shortDesc: "Raises the user's defenses and accuracy by 1.",
+	},
+	springtidestorm: {
+		name: "Springtide Storm",
+		desc: "If Therian forme: Has a 30% chance to lower the target's Special Defense by 1 stage. If not Therian Forme: Has a 30% chance to raise the user's Special Attack and Special Defense by 1 stage.",
+		shortDesc: "Effect depends on the user's forme.",
+	},
+	takeheart: {
+		name: "Take Heart",
+		desc: "Raises the user's Attack, Defense, Special Attack, and Special Defense by 1 stage and cures the user of its non-volatile status condition.",
+		shortDesc: "User's status is cured. +1 to all stats except speed.",
+	},
+	triplearrows: {
+		name: "Triple Arrows",
+		desc: "Has a 100% chance to lower the target's Defense by 1 stage. Raises the user's chance for a critical hit by 2 stages. Fails if the user already has the effect. Baton Pass can be used to transfer this effect to an ally.",
+		shortDesc: "Lowers the target's Defense by 1. Crit Ratio +2.",
+	},
+	victorydance: {
+		name: "Victory Dance",
+		desc: "Raises the user's Attack and Defense by 1 stage. All of the user's moves have their power doubled.",
+		shortDesc: "+1 Atk and Def. All of user's moves get 2x power.",
+
+		start: "  [POKEMON] adopted a hard-hitting stance!",
+	},
+	wavecrash: {
+		name: "Wave Crash",
+		desc: "If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
+		shortDesc: "Has 33% recoil. Usually goes first.",
+	},
+	wildboltstorm: {
+		name: "Wildbolt Storm",
+		desc: "Has a 30% chance to paralyze the target.",
+		shortDesc: "30% chance to paralyze the target.",
+	},
+
 	//Shadow:
 	shadowblast: {
 		name: "Shadow Blast",
-		desc: "Has a higher chance for a critical hit.",
+		desc: "Has a higher chance for a critical hit. Not very effective on Shadow Pokémon, super effective against everthing else.",
 		shortDesc: "High critical hit ratio.",
 	},
+
 	//Zeta & Omicron:
 	tesseract: {
 		name: "Tesseract",
-		desc: "Has a 20% chance of being super-effective, regardless of the target's type.",
-		shortDesc: "20% chance of being super-effective.",
+		desc: "Has a 20% chance of being super effective.",
+		shortDesc: "20% chance of being super effective.",
 	},
+
 	//Normal & Insurgence:
 	"10000000voltthunderbolt": {
 		name: "10,000,000 Volt Thunderbolt",
@@ -4543,7 +4661,7 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	powertrick: {
 		name: "Power Trick",
-		desc: "The user swaps its Attack and Defense stats, and stat stage changes remain on their respective stats. This move can be used again to swap the stats back. If the user uses Baton Pass, the replacement will have its Attack and Defense stats swapped if the effect is active. If the user has its stats recalculated by changing forme while its stats are swapped, this effect is ignored but is still active for the purposes of Baton Pass.",
+		desc: "The user swaps its Attack and Defense stats, and stat stage changes remain on their respective stats. This move can be used again to swap the stats back. Fails if Power Shift is active. If the user uses Baton Pass, the replacement will have its Attack and Defense stats swapped if the effect is active. If the user has its stats recalculated by changing forme while its stats are swapped, this effect is ignored but is still active for the purposes of Baton Pass.",
 		shortDesc: "Switches user's Attack and Defense stats.",
 
 		start: "  [POKEMON] switched its Attack and Defense!",
