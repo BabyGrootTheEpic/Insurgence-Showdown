@@ -380,7 +380,7 @@ export const Rulesets: {[k: string]: FormatData} = {
 			'Primarium Z', 'Snorlium Z', 'Solganium Z', 'Tapunium Z', 'Ultranecrozium Z', //Z-Crystals
 			'Bug Memory', 'Dark Memory', 'Dragon Memory', 'Electric Memory', 'Fairy Memory', 'Fighting Memory', 'Fire Memory', 'Flying Memory', 'Ghost Memory', 'Grass Memory',
 			'Ground Memory', 'Ice Memory', 'Poison Memory', 'Psychic Memory', 'Rock Memory', 'Steel Memory', 'Water Memory', //Memories
-			'Flygon Armor', 'Leavanny Armor', 'Mewtwo Armor', 'Strange Machine', 'Tyranitar Armor', 'Volcarona-Delta Armor', 'Zekrom Armor', //Armors
+			'item:Flygon Armor', 'item:Leavanny Armor', 'item:Mewtwo Armor', 'item:Strange Machine', 'item:Tyranitar Armor', 'item:Volcarona-Delta Armor', 'item:Zekrom Armor', //Armors
 			'Blue Orb', 'Crystal Piece Arceus', 'Crystal Piece Giratina', 'Crystal Piece Regigigas', 'Red Orb', //Primal formes' items
 			'Burn Drive', 'Chill Drive', 'Douse Drive', 'Shock Drive', //Drives
 			'Adamant Orb', 'Griseous Orb', 'Lustrous Orb', //Origin formes' items

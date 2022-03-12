@@ -1177,7 +1177,7 @@ export class Pokemon {
 			this.boosts[boostName] = pokemon.boosts[boostName]!;
 		}
 		if (this.battle.gen >= 6) {
-			const volatilesToCopy = ['focusenergy', 'gmaxchistrike', 'laserfocus'];
+			const volatilesToCopy = ['focusenergy', 'gmaxchistrike', 'laserfocus', 'victorydance'];
 			for (const volatile of volatilesToCopy) {
 				if (pokemon.volatiles[volatile]) {
 					this.addVolatile(volatile);

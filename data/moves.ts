@@ -544,10 +544,16 @@ export const Moves: {[moveid: string]: MoveData} = {
 		priority: 0,
 		flags: {snatch: 1, dance: 1},
 		volatileStatus: 'victorydance',
-		onHit(pokemon) {
-			this.add('-activate', pokemon, 'move: Victory Dance');
-		},
 		condition: {
+			onStart(target, source, effect) {
+				if (effect?.id === 'zpower') {
+					this.add('-start', target, 'move: Victory Dance', '[zeffect]');
+				} else if (effect && (['imposter', 'psychup', 'transform'].includes(effect.id))) {
+					this.add('-start', target, 'move: Victory Dance', '[silent]');
+				} else {
+					this.add('-start', target, 'move: Victory Dance');
+				}
+			},
 			onBasePowerPriority: 11,
 			onBasePower(basePower, attacker, defender, move) {
 				this.debug('victorydance boost');
@@ -12674,7 +12680,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 			for (i in target.boosts) {
 				pokemon.boosts[i] = target.boosts[i];
 			}
-			const volatilesToCopy = ['focusenergy', 'gmaxchistrike', 'laserfocus'];
+			const volatilesToCopy = ['focusenergy', 'gmaxchistrike', 'laserfocus', 'victorydance'];
 			for (const volatile of volatilesToCopy) {
 				if (target.volatiles[volatile]) {
 					pokemon.addVolatile(volatile);
@@ -14355,7 +14361,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 			for (i in target.boosts) {
 				source.boosts[i] = target.boosts[i];
 			}
-			const volatilesToCopy = ['focusenergy', 'gmaxchistrike', 'laserfocus'];
+			const volatilesToCopy = ['focusenergy', 'gmaxchistrike', 'laserfocus', 'victorydance'];
 			for (const volatile of volatilesToCopy) {
 				if (target.volatiles[volatile]) {
 					source.addVolatile(volatile);
