@@ -340,6 +340,78 @@ export const Rulesets: {[k: string]: FormatData} = {
 		name: 'Shadow Clause',
 		desc: "Bans Shadow-type Pokémon and moves.",
 		banlist: ['Testmon', 'Shadow Blast'],
+		onBegin() {
+			this.add('rule', 'Shadow Clause: Shadow-type is banned');
+		},
+	},
+	uselessitemsclause: {
+		effectType: 'ValidatorRule',
+		name: 'Useless Items Clause',
+		desc: "Bans items with no effect.",
+		banlist: [
+			'Dragon Scale', 'Dugtrinite', 'Golurkite', 'Legend Plate', //NYI
+			'TR00', 'TR01', 'TR02', 'TR03', 'TR04', 'TR05', 'TR06', 'TR07', 'TR08', 'TR09', 'TR10', 'TR11', 'TR12', 'TR13', 'TR14', 'TR15', 'TR16', 'TR17', 'TR18', 'TR19', 'TR20',
+			'TR21', 'TR22', 'TR23', 'TR24', 'TR25', 'TR26', 'TR27', 'TR28', 'TR29', 'TR30', 'TR31', 'TR32', 'TR33', 'TR34', 'TR35', 'TR36', 'TR37', 'TR38', 'TR39', 'TR40', 'TR41',
+			'TR42', 'TR43', 'TR44', 'TR45', 'TR46', 'TR47', 'TR48', 'TR49', 'TR50', 'TR51', 'TR52', 'TR53', 'TR54', 'TR55', 'TR56', 'TR57', 'TR58', 'TR59', 'TR60', 'TR61', 'TR62',
+			'TR63', 'TR64', 'TR65', 'TR66', 'TR67', 'TR68', 'TR69', 'TR70', 'TR71', 'TR72', 'TR73', 'TR74', 'TR75', 'TR76', 'TR77', 'TR78', 'TR79', 'TR80', 'TR81', 'TR82', 'TR83',
+			'TR84', 'TR85', 'TR86', 'TR87', 'TR88', 'TR89', 'TR90', 'TR91', 'TR92', 'TR93', 'TR94', 'TR95', 'TR96', 'TR97', 'TR98', 'TR99', //TRs
+			'Ancient Ball', 'Armor Fossil', 'Beast Ball', 'Berry Sweet', 'Bluk Berry', 'Bottle Cap', 'Belue Berry', 'Cherish Ball', 'Chipped Pot', 'Claw Fossil', 'Clover Sweet',
+			'Cover Fossil', 'Cracked Pot', 'Cornn Berry', 'Dawn Stone', 'Delta Ball', 'Dive Ball', 'Dome Fossil', 'Dream Ball', 'Dubious Disc', 'Dusk Ball', 'Dusk Stone',
+			'Durin Berry', 'Electirizer', 'Fast Ball', 'Fire Stone', 'Flower Sweet', 'Fossilized Bird', 'Fossilized Dino', 'Fossilized Drake', 'Fossilized Fish', 'Friend Ball',
+			'Galarica Cuff', 'Galarica Wreath', 'Gold Bottle Cap', 'Great Ball', 'Grepa Berry', 'Heal Ball', 'Heavy Ball', 'Helix Fossil', 'Hondew Berry', 'Ice Stone', 'Jaw Fossil',
+			'Kelpsy Berry', 'Leaf Stone', 'Level Ball', 'Love Ball', 'Love Sweet', 'Lure Ball', 'Luxury Ball', 'Magmarizer', 'Master Ball', 'Moon Ball', 'Moon Stone', 'Magost Berry',
+			'Nest Ball', 'Net Ball', 'Nocturne Incense', 'Nuzlocke Ball', 'Nanab Berry', 'Nomel Berry', 'Old Amber', 'Oval Stone', 'Park Ball', 'Pinap Berry', 'Plume Fossil',
+			'Poke Ball', 'Pomeg Berry', 'Premier Ball', 'Prism Scale', 'Protector', 'Pamtre Berry', 'Qualot Berry', 'Rare Bone', 'Reaper Cloth', 'Repeat Ball', 'Ribbon Sweet',
+			'Root Fossil', 'Rabuta Berry', 'Razz Berry', 'Sachet', 'Safari Ball', 'Sail Fossil', 'Shiny Ball', 'Shiny Stone', 'Skull Fossil', 'Snore Ball', 'Sport Ball', 'Star Sweet',
+			'Strawberry Sweet', 'Sun Stone', 'Sweet Apple', 'Spelon Berry', 'Tamato Berry', 'Tart Apple', 'Thunder Stone', 'Timer Ball', 'Up-Grade', 'Water Stone', 'Whipped Dream',
+			'Watmel Berry', 'Wepear Berry', 
+		],
+		onBegin() {
+			this.add('rule', 'Useless Items Clause: Items with no effect are banned.');
+		},
+	},
+	signatureitemsclause: {
+		effectType: 'ValidatorRule',
+		name: 'Signature Items Clause',
+		desc: "Bans Memories and items that only work with specific Pokémon. Also prevents Rayquaza from Mega Evolving.",
+		ruleset: ['Mega Stone Clause'],
+		banlist: [
+			'Aloraichium Z', 'Decidium Z', 'Eevium Z', 'Incinium Z', 'Kommonium Z', 'Lunalium Z', 'Lycanium Z', 'Marshadium Z', 'Mewnium Z', 'Mimikium Z', 'Pikanium Z', 'Pikashunium Z',
+			'Primarium Z', 'Snorlium Z', 'Solganium Z', 'Tapunium Z', 'Ultranecrozium Z', //Z-Crystals
+			'Bug Memory', 'Dark Memory', 'Dragon Memory', 'Electric Memory', 'Fairy Memory', 'Fighting Memory', 'Fire Memory', 'Flying Memory', 'Ghost Memory', 'Grass Memory',
+			'Ground Memory', 'Ice Memory', 'Poison Memory', 'Psychic Memory', 'Rock Memory', 'Steel Memory', 'Water Memory', //Memories
+			'Flygon Armor', 'Leavanny Armor', 'Mewtwo Armor', 'Strange Machine', 'Tyranitar Armor', 'Volcarona-Delta Armor', 'Zekrom Armor', //Armors
+			'Blue Orb', 'Crystal Piece Arceus', 'Crystal Piece Giratina', 'Crystal Piece Regigigas', 'Red Orb', //Primal formes' items
+			'Burn Drive', 'Chill Drive', 'Douse Drive', 'Shock Drive', //Drives
+			'Adamant Orb', 'Griseous Orb', 'Lustrous Orb', //Origin formes' items
+			'Deep Sea Scale', 'Deep Sea Tooth', /*'Dragon Scale',*/ 'Leek', /*'Legend Plate',*/ 'Light Ball', 'Lucky Punch', 'Metal Powder', 'Quick Powder', 'Rusted Shield',
+			'Rusted Sword', 'Soul Dew', 'Stick', 'Thick Club', 'Vile Vial', 
+		],
+		onBegin() {
+			this.add('rule', 'Signature Items Clause: Items that only affect specific Pokémon are banned.');
+		},
+	},
+	megastoneclause: {
+		effectType: 'ValidatorRule',
+		name: 'Mega Stone Clause',
+		desc: "Bans Mega Stones. Also prevents Rayquaza from Mega Evolving.",
+		ruleset: ['Mega Rayquaza Clause'],
+		banlist: [
+			'Abomasite', 'Absolite', 'Aerodactylite', 'Aggronite', 'Alakazite', 'Altarianite', 'Ampharosite', 'Audinite', 'Banettite', 'Beedrillite', 'Bisharpite', 'Blastoisinite',
+			'Blazikenite', 'Cacturnite', 'Cameruptite', 'Charizardite X', 'Charizardite Y', 'Chatotite', 'Crawdite', 'Cryogonite', 'Crystal Fragment', 'Crucibellite', 'Delta Bisharpite',
+			'Delta Blastoisinite', 'Delta Cameruptite', 'Delta Charizardite', 'Delta Etigirafarigite', 'Delta Froslassite', 'Delta Galladite', 'Delta Gardevoirite', 'Delta Glalitite',
+			'Delta Lopunnite', 'Delta Lucarionite', 'Delta Mawilite', 'Delta Medichamite', 'Delta Metagrossite Ruin', 'Delta Metagrossite Spider', 'Delta Milotite', 'Delta Pidgeotite',
+			'Delta Sablenite', 'Delta Scizorite', 'Delta Sunflorite', 'Delta Typhlosionite', 'Delta Venusaurite', 'Diancite', 'Donphanite', /*'Dugtrinite',*/ 'Eevite', 'Etigirafarigite',
+			'Feraligatite', 'Flygonite', 'Froslassite', 'Galladite', 'Garchompite', 'Gardevoirite', 'Gengarite', 'Glalitite', /*'Golurkite',*/ 'Gothitite', 'Gyaradosite', 'Haxorite',
+			'Heracronite', 'Houndoominite', 'Hydreigonite', 'Jirachite', 'Kangaskhanite', 'Latiasite', 'Latiosite', 'Lopunnite', 'Lucarionite', 'Magcargonite', 'Manectite', 'Marowite',
+			'Mawilite', 'Medichamite', 'Meganiumite', 'Metagrossite', 'Mewtwonite X', 'Mewtwonite Y', 'Milotite', 'Miltankite', 'Pidgeotite', 'Pinsirite', 'Politoedite', 'Poliwrathite',
+			'Reuniclite', 'Sablenite', 'Salamencite', 'Sceptilite', 'Sceptilite ZO', 'Scizorite', 'Shadow Mewtwonite', 'Sharpedonite', 'Shiftrite', 'Slowbronite', 'Spiritombite',
+			'Steelixite Fire', 'Steelixite Steel', 'Stunfiskite', 'Sudowoodite', 'Sunflorite-F', 'Sunflorite-M', 'Swampertite', 'Swampertite ZO', 'Typhlosionite', 'Tyranitarite',
+			'Venusaurite', 'Zebstrikite', 'Zoronite',
+		],
+		onBegin() {
+			this.add('rule', 'Mega Stone Clause: Mega Stones are banned.');
+		},
 	},
 
 
@@ -1294,7 +1366,7 @@ export const Rulesets: {[k: string]: FormatData} = {
 		effectType: 'ValidatorRule',
 		name: 'Evasion Moves Clause',
 		desc: "Bans moves that consistently raise the user's evasion when used",
-		banlist: ['Minimize', 'Double Team'],
+		banlist: ['Minimize', 'Double Team', 'Lunar Blessing'],
 		onBegin() {
 			this.add('rule', 'Evasion Moves Clause: Evasion moves are banned');
 		},

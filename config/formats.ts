@@ -276,12 +276,12 @@ export const Formats: FormatList = [
 	},
 	{
 		name: "[Gen 8] Hackmons Cup",
-		desc: `Randomized teams of level-balanced Pok&eacute;mon with absolutely any ability, moves, and item (excluding CAP). This format allows Dynamaxing.`,
+		desc: `Randomized teams of level-balanced Pok&eacute;mon with absolutely any ability, moves, and useful item (excluding CAP). This format allows Dynamaxing.`,
 
 		mod: 'gen8',
 		team: 'randomHC',
 		rated: false,
-		ruleset: ['HP Percentage Mod', 'Cancel Mod'],
+		ruleset: ['HP Percentage Mod', 'Cancel Mod', 'Useless Items Clause', 'Signature Items Clause', '!Mega Rayquaza Clause'],
 		banlist: ['Nonexistent'],
 	},
 	{
@@ -592,13 +592,13 @@ export const Formats: FormatList = [
 	},
 	{
 		name: "[Gen 8] (D)Hackmons Cup",
-		desc: `Randomized teams of level-balanced Pok&eacute;mon with absolutely any ability, moves, and item (excluding CAP). This format allows Dynamaxing.`,
+		desc: `Randomized teams of level-balanced Pok&eacute;mon with absolutely any ability, moves, and useful item (excluding CAP). This format allows Dynamaxing.`,
 
 		mod: 'gen8',
 		gameType: 'doubles',
 		team: 'randomHC',
 		rated: false,
-		ruleset: ['HP Percentage Mod', 'Cancel Mod'],
+		ruleset: ['HP Percentage Mod', 'Cancel Mod', 'Useless Items Clause', 'Signature Items Clause', '!Mega Rayquaza Clause'],
 		banlist: ['Nonexistent'],
 	},
 	{
@@ -911,13 +911,13 @@ export const Formats: FormatList = [
 	},
 	{
 		name: "[Gen 8] (T)Hackmons Cup",
-		desc: `Randomized teams of level-balanced Pok&eacute;mon with absolutely any ability, moves, and item (excluding CAP). This format allows Dynamaxing.`,
+		desc: `Randomized teams of level-balanced Pok&eacute;mon with absolutely any ability, moves, and useful item (excluding CAP). This format allows Dynamaxing.`,
 
 		mod: 'gen8',
 		gameType: 'triples',
 		team: 'randomHC',
 		rated: false,
-		ruleset: ['HP Percentage Mod', 'Cancel Mod'],
+		ruleset: ['HP Percentage Mod', 'Cancel Mod', 'Useless Items Clause', 'Signature Items Clause', '!Mega Rayquaza Clause'],
 		banlist: ['Nonexistent'],
 	},
 	{
@@ -1256,14 +1256,14 @@ export const Formats: FormatList = [
 	},
 	{
 		name: "[Gen 8] (M)Hackmons Cup",
-		desc: `Randomized teams of level-balanced Pok&eacute;mon with absolutely any ability, moves, and item (excluding CAP). This format allows Dynamaxing.`,
+		desc: `Randomized teams of level-balanced Pok&eacute;mon with absolutely any ability, moves, and useful item (excluding CAP). This format allows Dynamaxing.`,
 
 		mod: 'gen8',
 		gameType: 'multi',
 		tournamentShow: false,
 		team: 'randomHC',
 		rated: false,
-		ruleset: ['HP Percentage Mod', 'Cancel Mod'],
+		ruleset: ['HP Percentage Mod', 'Cancel Mod', 'Useless Items Clause', 'Signature Items Clause', '!Mega Rayquaza Clause'],
 		banlist: ['Nonexistent'],
 	},
 	{
@@ -1601,14 +1601,14 @@ export const Formats: FormatList = [
 	},
 	{
 		name: "[Gen 8] FFA Hackmons Cup",
-		desc: `Randomized teams of level-balanced Pok&eacute;mon with absolutely any ability, moves, and item (excluding CAP). This format allows Dynamaxing.`,
+		desc: `Randomized teams of level-balanced Pok&eacute;mon with absolutely any ability, moves, and useful item (excluding CAP). This format allows Dynamaxing.`,
 
 		mod: 'gen8',
 		gameType: 'freeforall',
 		tournamentShow: false,
 		team: 'randomHC',
 		rated: false,
-		ruleset: ['HP Percentage Mod', 'Cancel Mod'],
+		ruleset: ['HP Percentage Mod', 'Cancel Mod', 'Useless Items Clause', 'Signature Items Clause', '!Mega Rayquaza Clause'],
 		banlist: ['Nonexistent'],
 	},
 	{
