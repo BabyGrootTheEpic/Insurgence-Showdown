@@ -623,7 +623,7 @@ export class TeamValidator {
 		for (const moveName of set.moves) {
 			if (!moveName) continue;
 			const move = dex.moves.get(Utils.getString(moveName));
-			if (!move.exists) return [`"${move.name}" is an invalid move.`];
+			if (!move.exists || move.id === 'wishperiodic') return [`"${move.name}" is an invalid move.`];
 
 			problem = this.checkMove(set, move, setHas);
 			if (problem) problems.push(problem);

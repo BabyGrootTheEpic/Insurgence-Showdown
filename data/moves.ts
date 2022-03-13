@@ -529,7 +529,9 @@ export const Moves: {[moveid: string]: MoveData} = {
 			boosts: {
 				def: -1,
 			},
-			volatileStatus: 'focusenergy',
+			self: {
+				volatileStatus: 'focusenergy',
+			}
 		},
 		target: "normal",
 		type: "Fighting",
@@ -546,9 +548,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		volatileStatus: 'victorydance',
 		condition: {
 			onStart(target, source, effect) {
-				if (effect?.id === 'zpower') {
-					this.add('-start', target, 'move: Victory Dance', '[zeffect]');
-				} else if (effect && (['imposter', 'psychup', 'transform'].includes(effect.id))) {
+				if (effect && (['imposter', 'psychup', 'transform'].includes(effect.id))) {
 					this.add('-start', target, 'move: Victory Dance', '[silent]');
 				} else {
 					this.add('-start', target, 'move: Victory Dance');
@@ -20928,6 +20928,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 				}
 			},
 		},
+		noSketch: true,
 		secondary: null,
 		target: "self",
 		type: "Normal",
