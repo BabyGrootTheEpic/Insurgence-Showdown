@@ -23,6 +23,15 @@ export const Formats: FormatList = [
 		section: "Single Battles",
 	},
 	{
+		name: "[Gen 8] Random Hackmons",
+		desc: `Randomized teams of level-balanced Pok&eacute;mon with absolutely any ability, moves, and useful item (excluding CAP). This format allows Dynamaxing.`,
+
+		mod: 'gen8',
+		team: 'randomHC',
+		rated: false,
+		ruleset: ['Rndm Hackmons'],
+	},
+	{
 		name: "[Gen 8] Anything Goes",
 		desc: `Singles NatDex AG with Dynamax Clause.`,
 		
@@ -161,6 +170,15 @@ export const Formats: FormatList = [
 		banlist: ['Diglett-Base', 'Dugtrio-Base', 'Trapinch', 'Gothita', 'Gothitelle', 'Gothorita', 'Wobbuffet', 'Wynaut'], //Arena Trap & Shadow Tag
 	},
 	{
+		name: "[Gen 8] Pokebilities AG",
+		desc: `Pok&eacute;mon have all of their released abilities simultaneously. This format has no attempt at balance.`,
+		
+		mod: 'pokebilities',
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['BGTE NatDex AG', 'Pokebilities Mod', 'Dynamax Clause'],
+	},
+	{
 		name: "[Gen 8] Linked",
 		desc: `The first two moves in a Pok&eacute;mon's moveset are used simultaneously.`,
 
@@ -275,16 +293,6 @@ export const Formats: FormatList = [
 		ruleset: ['NatDex Hackmons'],
 	},
 	{
-		name: "[Gen 8] Hackmons Cup",
-		desc: `Randomized teams of level-balanced Pok&eacute;mon with absolutely any ability, moves, and useful item (excluding CAP). This format allows Dynamaxing.`,
-
-		mod: 'gen8',
-		team: 'randomHC',
-		rated: false,
-		ruleset: ['HP Percentage Mod', 'Cancel Mod', 'Useless Items Clause', 'Signature Items Clause', '!Mega Rayquaza Clause'],
-		banlist: ['Nonexistent'],
-	},
-	{
 		name: "[Gen 8] Custom Game",
 
 		mod: 'gen8',
@@ -312,6 +320,16 @@ export const Formats: FormatList = [
 	{
 		section: "Double Battles",
 		column: 2,
+	},
+	{
+		name: "[Gen 8] (D)Random Hackmons",
+		desc: `Randomized teams of level-balanced Pok&eacute;mon with absolutely any ability, moves, and useful item (excluding CAP). This format allows Dynamaxing.`,
+
+		mod: 'gen8',
+		gameType: 'doubles',
+		team: 'randomHC',
+		rated: false,
+		ruleset: ['Rndm Hackmons'],
 	},
 	{
 		name: "[Gen 8] (D)Anything Goes",
@@ -466,6 +484,16 @@ export const Formats: FormatList = [
 		ruleset: ['NatDex Pokebilities', '!Dynamax Clause'],
 	},
 	{
+		name: "[Gen 8] (D)Pokebilities AG",
+		desc: `Pok&eacute;mon have all of their released abilities simultaneously. This format has neither Dynamax Clause nor any attempt at balance.`,
+		
+		mod: 'pokebilities',
+		gameType: 'doubles',
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['BGTE NatDex AG', 'Pokebilities Mod'],
+	},
+	{
 		name: "[Gen 8] (D)Linked",
 		desc: `The first two moves in a Pok&eacute;mon's moveset are used simultaneously. This format allows Dynamaxing.`,
 
@@ -591,17 +619,6 @@ export const Formats: FormatList = [
 		ruleset: ['NatDex Hackmons'],
 	},
 	{
-		name: "[Gen 8] (D)Hackmons Cup",
-		desc: `Randomized teams of level-balanced Pok&eacute;mon with absolutely any ability, moves, and useful item (excluding CAP). This format allows Dynamaxing.`,
-
-		mod: 'gen8',
-		gameType: 'doubles',
-		team: 'randomHC',
-		rated: false,
-		ruleset: ['HP Percentage Mod', 'Cancel Mod', 'Useless Items Clause', 'Signature Items Clause', '!Mega Rayquaza Clause'],
-		banlist: ['Nonexistent'],
-	},
-	{
 		name: "[Gen 8] (D)Custom Game",
 
 		mod: 'gen8',
@@ -631,6 +648,16 @@ export const Formats: FormatList = [
 	{
 		section: "Triple Battles",
 		column: 3,
+	},
+	{
+		name: "[Gen 8] (T)Random Hackmons",
+		desc: `Randomized teams of level-balanced Pok&eacute;mon with absolutely any ability, moves, and useful item (excluding CAP). This format allows Dynamaxing.`,
+
+		mod: 'gen8',
+		gameType: 'triples',
+		team: 'randomHC',
+		rated: false,
+		ruleset: ['Rndm Hackmons'],
 	},
 	{
 		name: "[Gen 8] (T)Anything Goes",
@@ -785,6 +812,16 @@ export const Formats: FormatList = [
 		ruleset: ['NatDex Pokebilities'],
 	},
 	{
+		name: "[Gen 8] (T)Pokebilities AG",
+		desc: `Pok&eacute;mon have all of their released abilities simultaneously. This format has no attempt at balance.`,
+		
+		mod: 'pokebilities',
+		gameType: 'triples',
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['BGTE NatDex AG', 'Pokebilities Mod', 'Dynamax Clause'],
+	},
+	{
 		name: "[Gen 8] (T)Linked",
 		desc: `The first two moves in a Pok&eacute;mon's moveset are used simultaneously.`,
 
@@ -910,17 +947,6 @@ export const Formats: FormatList = [
 		ruleset: ['NatDex Hackmons'],
 	},
 	{
-		name: "[Gen 8] (T)Hackmons Cup",
-		desc: `Randomized teams of level-balanced Pok&eacute;mon with absolutely any ability, moves, and useful item (excluding CAP). This format allows Dynamaxing.`,
-
-		mod: 'gen8',
-		gameType: 'triples',
-		team: 'randomHC',
-		rated: false,
-		ruleset: ['HP Percentage Mod', 'Cancel Mod', 'Useless Items Clause', 'Signature Items Clause', '!Mega Rayquaza Clause'],
-		banlist: ['Nonexistent'],
-	},
-	{
 		name: "[Gen 8] (T)Custom Game",
 
 		mod: 'gen8',
@@ -950,6 +976,17 @@ export const Formats: FormatList = [
 	{
 		section: "Multi Battles",
 		column: 4,
+	},
+	{
+		name: "[Gen 8] (M)Random Hackmons",
+		desc: `Randomized teams of level-balanced Pok&eacute;mon with absolutely any ability, moves, and useful item (excluding CAP). This format allows Dynamaxing.`,
+
+		mod: 'gen8',
+		gameType: 'multi',
+		tournamentShow: false,
+		team: 'randomHC',
+		rated: false,
+		ruleset: ['Rndm Hackmons'],
 	},
 	{
 		name: "[Gen 8] (M)Anything Goes",
@@ -1118,6 +1155,17 @@ export const Formats: FormatList = [
 		ruleset: ['NatDex Pokebilities'],
 	},
 	{
+		name: "[Gen 8] (M)Pokebilities AG",
+		desc: `Pok&eacute;mon have all of their released abilities simultaneously. This format has no attempt at balance.`,
+		
+		mod: 'pokebilities',
+		gameType: 'multi',
+		tournamentShow: false,
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['BGTE NatDex AG', 'Pokebilities Mod', 'Dynamax Clause'],
+	},
+	{
 		name: "[Gen 8] (M)Linked",
 		desc: `The first two moves in a Pok&eacute;mon's moveset are used simultaneously.`,
 
@@ -1255,18 +1303,6 @@ export const Formats: FormatList = [
 		ruleset: ['NatDex Hackmons'],
 	},
 	{
-		name: "[Gen 8] (M)Hackmons Cup",
-		desc: `Randomized teams of level-balanced Pok&eacute;mon with absolutely any ability, moves, and useful item (excluding CAP). This format allows Dynamaxing.`,
-
-		mod: 'gen8',
-		gameType: 'multi',
-		tournamentShow: false,
-		team: 'randomHC',
-		rated: false,
-		ruleset: ['HP Percentage Mod', 'Cancel Mod', 'Useless Items Clause', 'Signature Items Clause', '!Mega Rayquaza Clause'],
-		banlist: ['Nonexistent'],
-	},
-	{
 		name: "[Gen 8] (M)Custom Game",
 
 		mod: 'gen8',
@@ -1297,6 +1333,17 @@ export const Formats: FormatList = [
 	{
 		section: "Free-For-Alls",
 		column: 5,
+	},
+	{
+		name: "[Gen 8] FFA Random Hackmons",
+		desc: `Randomized teams of level-balanced Pok&eacute;mon with absolutely any ability, moves, and useful item (excluding CAP). This format allows Dynamaxing.`,
+
+		mod: 'gen8',
+		gameType: 'freeforall',
+		tournamentShow: false,
+		team: 'randomHC',
+		rated: false,
+		ruleset: ['Rndm Hackmons'],
 	},
 	{
 		name: "[Gen 8] FFA Anything Goes",
@@ -1465,6 +1512,17 @@ export const Formats: FormatList = [
 		ruleset: ['NatDex Pokebilities', 'FFA Bans'],
 	},
 	{
+		name: "[Gen 8] FFA Pokebilities AG",
+		desc: `Pok&eacute;mon have all of their released abilities simultaneously. This format has no attempt at balance.`,
+		
+		mod: 'pokebilities',
+		gameType: 'freeforall',
+		tournamentShow: false,
+		battle: {trunc: Math.trunc},
+		rated: false,
+		ruleset: ['BGTE NatDex AG', 'Pokebilities Mod', 'Dynamax Clause'],
+	},
+	{
 		name: "[Gen 8] FFA Linked",
 		desc: `The first two moves in a Pok&eacute;mon's moveset are used simultaneously.`,
 
@@ -1598,18 +1656,6 @@ export const Formats: FormatList = [
 		battle: {trunc: Math.trunc},
 		rated: false,
 		ruleset: ['NatDex Hackmons'],
-	},
-	{
-		name: "[Gen 8] FFA Hackmons Cup",
-		desc: `Randomized teams of level-balanced Pok&eacute;mon with absolutely any ability, moves, and useful item (excluding CAP). This format allows Dynamaxing.`,
-
-		mod: 'gen8',
-		gameType: 'freeforall',
-		tournamentShow: false,
-		team: 'randomHC',
-		rated: false,
-		ruleset: ['HP Percentage Mod', 'Cancel Mod', 'Useless Items Clause', 'Signature Items Clause', '!Mega Rayquaza Clause'],
-		banlist: ['Nonexistent'],
 	},
 	{
 		name: "[Gen 8] FFA Custom Game",

@@ -4,7 +4,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		name: "Testmon",
 		types: ["Shadow", "???"],
 		gender: "N",
-		baseStats: {hp: 200, atk: 200, def: 200, spa: 200, spd: 200, spe: 200},
+		baseStats: {hp: 100, atk: 100, def: 100, spa: 100, spd: 100, spe: 100},
 		abilities: {0: "Beast Boost"},
 		heightm: 1,
 		weightkg: 15,

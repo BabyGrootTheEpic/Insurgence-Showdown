@@ -935,8 +935,8 @@ export class Pokemon {
 		if (!skipChecks) {
 			if (!this.side.canDynamaxNow()) return;
 			if (
-				this.species.isMega || this.species.isPrimal || this.species.forme === "Ultra" ||
-				this.getItem().zMove || this.canMegaEvo
+				this.canMegaEvo || this.canUltraBurst || (!this.battle.ruleTable.has('dynamegamod') && (this.species.isMega || this.species.isPrimal || this.species.forme === "Ultra")) ||
+				(!this.battle.ruleTable.has('dynazmod') && this.getItem().zMove) || (this.battle.ruleTable.has('dynazmod') && this.battle.actions.canZMove(this))
 			) {
 				return;
 			}

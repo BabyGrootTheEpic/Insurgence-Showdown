@@ -15,7 +15,7 @@ export const Rulesets: {[k: string]: FormatData} = {
 		desc: "In addition to Smogon's [Gen 8] National Dex AG, allows level 120 Pokémon, Cosplay Pikachu, Let's GO Starters, Spiky-eared Pichu, Eternal Flower Floette, Totems, duplicate fusions, duplicate LGPE starters, Gems, everything added by the Insurgence fork, and everything added by this fork. (BGTE stands for BabyGrootTheEpic, the creator of this fork.)",
 		ruleset: [
 			'Obtainable', '!NoFusionDupes', '!Limit One LGPE Starter', 'Max Level = 120', 'Default Level = 120', 'NatDex Megas', 'Sketch Gen 8 Moves',
-			'Endless Battle Clause', 'Nickname Clause', 'Team Preview', 'HP Percentage Mod', 'Cancel Mod', 'Zoroark-Mega Illusion Thing'
+			'DynaMega Mod', 'DynaZ Mod', 'Endless Battle Clause', 'Nickname Clause', 'Team Preview', 'HP Percentage Mod', 'Cancel Mod', 'Zoroark-Mega Illusion Thing',
 		],
 		//This fork's formats are all NatDex, so most instances of isNonstandard in data/formats-data.ts, data/item.ts, and data/moves.ts have been commented out.
 	},
@@ -50,7 +50,10 @@ export const Rulesets: {[k: string]: FormatData} = {
 		name: 'NatDex Pokebilities',
 		desc: "Pok&eacute;mon have all of their released abilities simultaneously.", //Requires mod: 'pokebilities',
 		ruleset: ['BGTE Standard', 'Pokebilities Mod'],
-		banlist: ['Glalie', 'Octillery', 'Remoraid', 'Snorunt', 'Bidoof', 'Bibarel', 'Smeargle'], //Moody
+		banlist: [
+			'AG', 'Uber', 'Power Construct',
+			'Glalie', 'Octillery', 'Remoraid', 'Snorunt', 'Bidoof', 'Bibarel', 'Smeargle', //Moody
+		],
 		//Singles:	banlist: ['Diglett-Base', 'Dugtrio-Base', 'Trapinch', 'Gothita', 'Gothitelle', 'Gothorita', 'Wobbuffet', 'Wynaut'], //Arena Trap & Shadow Tag
 	},
 	natdexlinked: {
@@ -158,6 +161,13 @@ export const Rulesets: {[k: string]: FormatData} = {
 			'-CAP', 'Max Level = 120', 'Default Level = 120', 'NatDex Megas', 'Sketch Gen 8 Moves',
 			'Team Preview', 'HP Percentage Mod', 'Cancel Mod', 'Endless Battle Clause', 'Zoroark-Mega Illusion Thing'
 		],
+	},
+	rndmhackmons: {
+		effectType: 'ValidatorRule',
+		name: 'Rndm Hackmons',
+		desc: "Ruleset for Hackmons Cup formats.", //Requires team: 'randomHC',
+		ruleset: ['HP Percentage Mod', 'Cancel Mod', 'Useless Items Clause', 'Signature Items Clause', '!Mega Rayquaza Clause', 'DynaMega Mod', 'DynaZ Mod'],
+		banlist: ['Nonexistent'],
 	},
 	customgamemegas: {
 		effectType: 'ValidatorRule',
@@ -664,6 +674,24 @@ export const Rulesets: {[k: string]: FormatData} = {
 			}
 			pokemon.m.innates = undefined;
 		},
+	},
+	dynamegamod: {
+		effectType: 'Rule',
+		name: 'DynaMega Mod',
+		desc: "Mega Evolutions can Dynamax (but not on the same turn as when they mega evolved).",
+		onBegin() {
+			if(!this.ruleTable.has('dynamaxclause')) this.add('rule', 'DynaMega Mod: Mega Evolutions can Dynamax');
+		},
+		//Hardcoded in sim/pokemon.ts
+	},
+	dynazmod: {
+		effectType: 'Rule',
+		name: 'DynaZ Mod',
+		desc: "Pok&eacute;mon with Z-Crystals can Dynamax if they are unable to use their Z-moves.",
+		onBegin() {
+			if(!this.ruleTable.has('dynamaxclause')) this.add('rule', 'DynaZ Mod: Z-move users can Dynamax if they are unable to use their Z-moves');
+		},
+		//Hardcoded in sim/pokemon.ts
 	},
 	zoroarkmegaillusionthing: {
 		effectType: 'Rule',
