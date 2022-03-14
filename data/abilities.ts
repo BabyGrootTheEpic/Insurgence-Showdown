@@ -4734,16 +4734,14 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		},
 		onUpdate(pokemon) {
 			if (this.field.isWeather(['darkness', 'raindance', 'primordialsea'])) {
-				if (pokemon.species.name === 'Typhlosion-Delta-Mega-Active') return;
-				pokemon.formeChange('Typhlosion-Delta-Mega-Active', this.effect, false);
+				if (pokemon.species.name === 'Typhlosion-Delta-Mega') pokemon.formeChange('Typhlosion-Delta-Mega-Active', this.effect, false);
 			} else {
-				if (pokemon.species.name === 'Typhlosion-Delta-Mega') return;
-				pokemon.formeChange('Typhlosion-Delta-Mega', this.effect, false);
+				if (pokemon.species.name === 'Typhlosion-Delta-Mega-Active') pokemon.formeChange('Typhlosion-Delta-Mega', this.effect, false);
 			}
 		},
 		onEnd(pokemon) {
 			if (pokemon.species.name === 'Typhlosion-Delta-Mega' || !pokemon.hp) return;
-			pokemon.formeChange('Typhlosion-Delta-Mega', this.effect, false);
+			if (pokemon.species.name === 'Typhlosion-Delta-Mega-Active') pokemon.formeChange('Typhlosion-Delta-Mega', this.effect, false);
 		},
 		name: "Supercell",
 		gen: 6,
