@@ -20,16 +20,31 @@ The column value will be ignored for repeat sections.
 export const Formats: FormatList = [
 
 	{
-		section: "Single Battles",
+		section: "Random Singles",
 	},
 	{
-		name: "[Gen 8] Random Hackmons",
+		name: "[Gen 8] Hackmons Cup",
 		desc: `Randomized teams of level-balanced Pok&eacute;mon with absolutely any ability, moves, and useful item (excluding CAP). This format allows Dynamaxing.`,
 
 		mod: 'gen8',
 		team: 'randomHC',
 		rated: false,
 		ruleset: ['Rndm Hackmons'],
+	},
+	{
+		name: "[Gen 8] Hackmons Cup Linked",
+		desc: `Randomized teams of level-balanced Pok&eacute;mon with absolutely any ability, moves, and useful item (excluding CAP). The first two moves in a Pok&eacute;mon's moveset are used simultaneously. This format allows Dynamaxing.`,
+
+		mod: 'linked',
+		team: 'randomHC',
+		rated: false,
+		ruleset: ['Rndm Hackmons'],
+	},
+	
+	
+	
+	{
+		section: "Single Battles",
 	},
 	{
 		name: "[Gen 8] Anything Goes",
@@ -318,11 +333,11 @@ export const Formats: FormatList = [
 
 
 	{
-		section: "Double Battles",
+		section: "Random Doubles",
 		column: 2,
 	},
 	{
-		name: "[Gen 8] (D)Random Hackmons",
+		name: "[Gen 8] (D)Hackmons Cup",
 		desc: `Randomized teams of level-balanced Pok&eacute;mon with absolutely any ability, moves, and useful item (excluding CAP). This format allows Dynamaxing.`,
 
 		mod: 'gen8',
@@ -330,6 +345,23 @@ export const Formats: FormatList = [
 		team: 'randomHC',
 		rated: false,
 		ruleset: ['Rndm Hackmons'],
+	},
+	{
+		name: "[Gen 8] (D)Hackmons Cup Linked",
+		desc: `Randomized teams of level-balanced Pok&eacute;mon with absolutely any ability, moves, and useful item (excluding CAP). The first two moves in a Pok&eacute;mon's moveset are used simultaneously. This format allows Dynamaxing.`,
+
+		mod: 'linked',
+		gameType: 'doubles',
+		team: 'randomHC',
+		rated: false,
+		ruleset: ['Rndm Hackmons'],
+	},
+	
+	
+	
+	{
+		section: "Double Battles",
+		column: 2,
 	},
 	{
 		name: "[Gen 8] (D)Anything Goes",
@@ -646,11 +678,11 @@ export const Formats: FormatList = [
 
 
 	{
-		section: "Triple Battles",
+		section: "Random Triples",
 		column: 3,
 	},
 	{
-		name: "[Gen 8] (T)Random Hackmons",
+		name: "[Gen 8] (T)Hackmons Cup",
 		desc: `Randomized teams of level-balanced Pok&eacute;mon with absolutely any ability, moves, and useful item (excluding CAP). This format allows Dynamaxing.`,
 
 		mod: 'gen8',
@@ -658,6 +690,23 @@ export const Formats: FormatList = [
 		team: 'randomHC',
 		rated: false,
 		ruleset: ['Rndm Hackmons'],
+	},
+	{
+		name: "[Gen 8] (T)Hackmons Cup Linked",
+		desc: `Randomized teams of level-balanced Pok&eacute;mon with absolutely any ability, moves, and useful item (excluding CAP). The first two moves in a Pok&eacute;mon's moveset are used simultaneously. This format allows Dynamaxing.`,
+
+		mod: 'linked',
+		gameType: 'triples',
+		team: 'randomHC',
+		rated: false,
+		ruleset: ['Rndm Hackmons'],
+	},
+
+
+
+	{
+		section: "Triple Battles",
+		column: 3,
 	},
 	{
 		name: "[Gen 8] (T)Anything Goes",
@@ -974,11 +1023,11 @@ export const Formats: FormatList = [
 
 
 	{
-		section: "Multi Battles",
+		section: "Random Multis",
 		column: 4,
 	},
 	{
-		name: "[Gen 8] (M)Random Hackmons",
+		name: "[Gen 8] (M)Hackmons Cup",
 		desc: `Randomized teams of level-balanced Pok&eacute;mon with absolutely any ability, moves, and useful item (excluding CAP). This format allows Dynamaxing.`,
 
 		mod: 'gen8',
@@ -987,6 +1036,24 @@ export const Formats: FormatList = [
 		team: 'randomHC',
 		rated: false,
 		ruleset: ['Rndm Hackmons'],
+	},
+	{
+		name: "[Gen 8] (M)Hackmons Cup Linked",
+		desc: `Randomized teams of level-balanced Pok&eacute;mon with absolutely any ability, moves, and useful item (excluding CAP). The first two moves in a Pok&eacute;mon's moveset are used simultaneously. This format allows Dynamaxing.`,
+
+		mod: 'linked',
+		gameType: 'multi',
+		tournamentShow: false,
+		team: 'randomHC',
+		rated: false,
+		ruleset: ['Rndm Hackmons'],
+	},
+
+
+
+	{
+		section: "Multi Battles",
+		column: 4,
 	},
 	{
 		name: "[Gen 8] (M)Anything Goes",
@@ -1331,11 +1398,11 @@ export const Formats: FormatList = [
 
 
 	{
-		section: "Free-For-Alls",
+		section: "Random FFAs",
 		column: 5,
 	},
 	{
-		name: "[Gen 8] FFA Random Hackmons",
+		name: "[Gen 8] FFA Hackmons Cup",
 		desc: `Randomized teams of level-balanced Pok&eacute;mon with absolutely any ability, moves, and useful item (excluding CAP). This format allows Dynamaxing.`,
 
 		mod: 'gen8',
@@ -1344,6 +1411,24 @@ export const Formats: FormatList = [
 		team: 'randomHC',
 		rated: false,
 		ruleset: ['Rndm Hackmons'],
+	},
+	{
+		name: "[Gen 8] FFA HackmonsCup Linked",
+		desc: `Randomized teams of level-balanced Pok&eacute;mon with absolutely any ability, moves, and useful item (excluding CAP). The first two moves in a Pok&eacute;mon's moveset are used simultaneously. This format allows Dynamaxing.`,
+
+		mod: 'linked',
+		gameType: 'freeforall',
+		tournamentShow: false,
+		team: 'randomHC',
+		rated: false,
+		ruleset: ['Rndm Hackmons'],
+	},
+
+
+
+	{
+		section: "Free-For-Alls",
+		column: 5,
 	},
 	{
 		name: "[Gen 8] FFA Anything Goes",
