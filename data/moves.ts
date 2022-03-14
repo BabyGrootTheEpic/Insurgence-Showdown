@@ -1429,13 +1429,13 @@ export const Moves: {[moveid: string]: MoveData} = {
 					if (!target.getMoveHitData(move).crit && !move.infiltrates) {
 						this.debug('Aurora Veil weaken');
 						if (this.activePerHalf > 1) {
-							if (this.field.isWeather(['darkness'])) {
+							if (this.field.isWeather(['newmoon'])) {
 								return this.chainModify([8, 15]);
 							} else {
 								return this.chainModify([2732, 4096]);
 							}
 						}
-						if (this.field.isWeather(['darkness'])) {
+						if (this.field.isWeather(['newmoon'])) {
 							return this.chainModify(0.4);
 						} else {
 							return this.chainModify(0.5);
@@ -5928,7 +5928,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		priority: 0,
 		flags: {protect: 1, reflectable: 1, mirror: 1},
 		onModifyMove(move) {
-			if (this.field.isWeather(['darkness'])) move.boosts = {accuracy: -2};
+			if (this.field.isWeather(['newmoon'])) move.boosts = {accuracy: -2};
 		},
 		boosts: {
 			accuracy: -1,
@@ -6838,7 +6838,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 			return null;
 		},
 		onModifyMove(move) {
-			if (this.field.isWeather(['darkness'])) move.boosts = {spa: 1, spd: 1, spe: 1};
+			if (this.field.isWeather(['newmoon'])) move.boosts = {spa: 1, spd: 1, spe: 1};
 		},
 		boosts: {
 			spa: 2,
@@ -9245,7 +9245,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		priority: 0,
 		flags: {snatch: 1},
 		onModifyMove(move) {
-			if (this.field.isWeather(['darkness'])) move.boosts = {atk: 2, accuracy: 2};
+			if (this.field.isWeather(['newmoon'])) move.boosts = {atk: 2, accuracy: 2};
 		},
 		boosts: {
 			atk: 1,
@@ -10554,13 +10554,13 @@ export const Moves: {[moveid: string]: MoveData} = {
 					if (!target.getMoveHitData(move).crit && !move.infiltrates) {
 						this.debug('Light Screen weaken');
 						if (this.activePerHalf > 1) {
-							if (this.field.isWeather(['darkness'])) {
+							if (this.field.isWeather(['newmoon'])) {
 								return this.chainModify([8, 15]);
 							} else {
 								return this.chainModify([2732, 4096]);
 							}
 						}
-						if (this.field.isWeather(['darkness'])) {
+						if (this.field.isWeather(['newmoon'])) {
 							return this.chainModify(0.4);
 						} else {
 							return this.chainModify(0.5);
@@ -10819,7 +10819,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 				return;
 			}
 			this.add('-prepare', attacker, move.name, defender);
-			if (this.field.isWeather(['darkness'])) {
+			if (this.field.isWeather(['newmoon'])) {
 				this.attrLastMove('[still]');
 				this.addMove('-anim', attacker, move.name, defender);
 				return;
@@ -12496,7 +12496,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 			case 'hail':
 				factor = 0.25;
 				break;
-			case 'darkness':
+			case 'newmoon':
 				factor = 0.667;
 				break;
 			}
@@ -12535,7 +12535,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 			case 'hail':
 				factor = 0.25;
 				break;
-			case 'darkness':
+			case 'newmoon':
 				factor = 0.16667;
 				break;
 			}
@@ -13006,7 +13006,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 5,
 		priority: 0,
 		flags: {},
-		weather: 'Darkness',
+		weather: 'NewMoon',
 		secondary: null,
 		target: "all",
 		type: "Dark",
@@ -13053,7 +13053,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 			},
 			onResidualOrder: 11,
 			onResidual(pokemon) {
-				if (this.field.isWeather(['darkness'])) {
+				if (this.field.isWeather(['newmoon'])) {
 					this.damage(pokemon.baseMaxhp / 2);
 				} else {
 					this.damage(pokemon.baseMaxhp / 4);
@@ -13697,7 +13697,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 				return;
 			}
 			this.add('-prepare', attacker, move.name);
-			if (['darkness'].includes(attacker.effectiveWeather())) {
+			if (['newmoon'].includes(attacker.effectiveWeather())) {
 				this.attrLastMove('[still]');
 				this.addMove('-anim', attacker, move.name, defender);
 				return;
@@ -15089,13 +15089,13 @@ export const Moves: {[moveid: string]: MoveData} = {
 					if (!target.getMoveHitData(move).crit && !move.infiltrates) {
 						this.debug('Reflect weaken');
 						if (this.activePerHalf > 1) {
-							if (this.field.isWeather(['darkness'])) {
+							if (this.field.isWeather(['newmoon'])) {
 								return this.chainModify([8, 15]);
 							} else {
 								return this.chainModify([2732, 4096]);
 							}
 						}
-						if (this.field.isWeather(['darkness'])) {
+						if (this.field.isWeather(['newmoon'])) {
 							return this.chainModify(0.4);
 						} else {
 							return this.chainModify(0.5);
@@ -16291,7 +16291,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 				return;
 			}
 			this.add('-prepare', attacker, move.name);
-			if (['darkness'].includes(attacker.effectiveWeather())) {
+			if (['newmoon'].includes(attacker.effectiveWeather())) {
 				this.attrLastMove('[still]');
 				this.addMove('-anim', attacker, move.name, defender);
 				return;
@@ -17424,7 +17424,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 				this.debug('weakened by weather');
 				return this.chainModify(0.5);
 			}
-			if (this.field.isWeather(['darkness'])) {
+			if (this.field.isWeather(['newmoon'])) {
 				this.debug('weakened by weather');
 				return this.chainModify(0.3);
 			}
@@ -18773,7 +18773,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		priority: 0,
 		flags: {protect: 1, mirror: 1, nonsky: 1},
 		onBasePower(basePower, pokemon, target) {
-			if (this.field.isWeather(['darkness'])) {
+			if (this.field.isWeather(['newmoon'])) {
 				this.debug('weakened by weather');
 				return this.chainModify(1.5);
 			}
@@ -18998,7 +18998,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 			case 'hail':
 				factor = 0.25;
 				break;
-			case 'darkness':
+			case 'newmoon':
 				factor = 0.16667;
 				break;
 			}
@@ -20662,7 +20662,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 			case 'hail':
 				move.type = 'Ice';
 				break;
-			case 'darkness':
+			case 'newmoon':
 				move.type = 'Dark';
 				break;
 			}
@@ -20683,7 +20683,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 			case 'hail':
 				move.basePower *= 2;
 				break;
-			case 'darkness':
+			case 'newmoon':
 				move.basePower *= 2;
 				break;
 			}

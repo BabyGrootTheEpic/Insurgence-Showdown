@@ -564,8 +564,8 @@ export const Conditions: {[k: string]: ConditionData} = {
 
 	// weather is implemented here since it's so important to the game
 
-	darkness: {
-		name: 'Darkness',
+	newmoon: {
+		name: 'NewMoon',
 		effectType: 'Weather',
 		duration: 5,
 		durationCallback(source, effect) {
@@ -576,26 +576,26 @@ export const Conditions: {[k: string]: ConditionData} = {
 		},
 		onWeatherModifyDamage(damage, attacker, defender, move) {
 			if (move.type === 'Dark' || move.type === 'Ghost') {
-				this.debug('darkness damage boost');
+				this.debug('newmoon damage boost');
 				return this.chainModify(1.35);
 			}
 			if (move.type === 'Fairy') {
-				this.debug('darkness fairy weaken');
+				this.debug('newmoon fairy weaken');
 				return this.chainModify(0.75);
 			}
 		},
 		onFieldStart(field, source, effect) {
 			if (effect?.effectType === 'Ability') {
 				if (this.gen <= 5) this.effectState.duration = 0;
-				this.add('-weather', 'Darkness', '[from] ability: ' + effect, '[of] ' + source);
+				this.add('-weather', 'NewMoon', '[from] ability: ' + effect, '[of] ' + source);
 			} else {
-				this.add('-weather', 'Darkness');
+				this.add('-weather', 'NewMoon');
 			}
 		},
 		onFieldResidualOrder: 1,
 		onFieldResidual() {
-			this.add('-weather', 'Darkness', '[upkeep]');
-			if (this.field.isWeather('darkness')) this.eachEvent('Weather');
+			this.add('-weather', 'NewMoon', '[upkeep]');
+			if (this.field.isWeather('newmoon')) this.eachEvent('Weather');
 		},
 		onFieldEnd() {
 			this.add('-weather', 'none');

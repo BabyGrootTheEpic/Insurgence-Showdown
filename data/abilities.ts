@@ -44,12 +44,12 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	absolution: {
 		onModifySpAPriority: 5,
 		onModifySpA(spa, pokemon) {
-			if (['darkness'].includes(pokemon.effectiveWeather())) {
+			if (['newmoon'].includes(pokemon.effectiveWeather())) {
 				return this.chainModify(1.5);
 			}
 		},
 		onWeather(target, source, effect) {
-			if (effect.id === 'darkness') {
+			if (effect.id === 'newmoon') {
 				this.damage(target.baseMaxhp / 8, target, target);
 			}
 		},
@@ -318,7 +318,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			if (!pokemon.hp) return;
 			for (const target of pokemon.foes()) {
 				if (target.status === 'slp' || target.hasAbility('comatose')) {
-					if (this.field.isWeather('darkness')) {
+					if (this.field.isWeather('newmoon')) {
 						this.damage(target.baseMaxhp / 4, target, pokemon);
 					} else {
 						this.damage(target.baseMaxhp / 8, target, pokemon);
@@ -769,7 +769,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			if (target === source || move.category === 'Status' || move.type !== 'Dark') return;
 			if (!move.auraBooster) move.auraBooster = this.effectState.target;
 			if (move.auraBooster !== this.effectState.target) return;
-			if (this.field.isWeather('darkness')) {
+			if (this.field.isWeather('newmoon')) {
 				if (move.hasAuraBreak) {
 					return this.chainModify(0.6);
 				} else {
@@ -1127,7 +1127,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		},
 		onAnyBasePowerPriority: 20,
 		onAnyBasePower(basePower, source, target, move) {
-			if (this.field.isWeather('darkness')) return;
+			if (this.field.isWeather('newmoon')) return;
 			if (target === source || move.category === 'Status' || move.type !== 'Fairy') return;
 			if (!move.auraBooster) move.auraBooster = this.effectState.target;
 			if (move.auraBooster !== this.effectState.target) return;
@@ -1317,11 +1317,11 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			case 'hail':
 				if (pokemon.species.id !== 'castformsnowy') forme = 'Castform-Snowy';
 				break;
-			case 'darkness':
-				if (pokemon.species.id !== 'castformdarkness') forme = 'Castform-darkness';
+			case 'newmoon':
+				if (pokemon.species.id !== 'castformcloudy') forme = 'Castform-Cloudy';
 				break;
 			case 'sandstorm':
-				if (pokemon.species.id !== 'castformsandstorm') forme = 'Castform-Sandstorm';
+				if (pokemon.species.id !== 'castformsandy') forme = 'Castform-Sandy';
 				break;
 			default:
 				if (pokemon.species.id !== 'castform') forme = 'Castform';
@@ -1665,7 +1665,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	},
 	heliophobia: {
 		onWeather(target, source, effect) {
-			if (effect.id === 'darkness') {
+			if (effect.id === 'newmoon') {
 				this.heal(target.baseMaxhp / 8);
 			} else if (effect.id === 'sunnyday' || effect.id === 'desolateland') {
 				this.damage(target.baseMaxhp / 8, target, target);
@@ -1842,7 +1842,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		onModifyAccuracyPriority: -1,
 		onModifyAccuracy(accuracy) {
 			if (typeof accuracy !== 'number') return;
-			if (this.field.isWeather('darkness')) {
+			if (this.field.isWeather('newmoon')) {
 				this.debug('Illuminate - decreasing accuracy');
 				return this.chainModify([3277, 4096]);
 			}
@@ -2793,7 +2793,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	},
 	noctem: {
 		onStart(source) {
-			this.field.setWeather('darkness');
+			this.field.setWeather('newmoon');
 		},
 		name: "Noctem",
 		gen: 6,
@@ -3212,7 +3212,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		onResidualOrder: 5,
 		onResidualSubOrder: 5,
 		onResidual(pokemon) {
-			if (['raindance', 'primordialsea', 'darkness'].includes(pokemon.effectiveWeather())) return;
+			if (['raindance', 'primordialsea', 'newmoon'].includes(pokemon.effectiveWeather())) return;
 			if (this.field.isWeather(['sunnyday', 'desolateland'])) {
 				this.heal(pokemon.baseMaxhp / 8);
 			} else {
@@ -3407,7 +3407,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		},
 		onDeductPP(target, source) {
 			if (target.isAlly(source)) return;
-			if (this.field.isWeather('darkness')) {
+			if (this.field.isWeather('newmoon')) {
 				return 2;
 			} else {
 				return 1;
@@ -4130,7 +4130,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	},
 	shadowdance: {
 		onModifySpe(spe, pokemon) {
-			if (this.field.isWeather('darkness')) {
+			if (this.field.isWeather('newmoon')) {
 				return this.chainModify(2);
 			}
 		},
@@ -4720,7 +4720,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	},
 	supercell: {
 		onStart(pokemon) {
-			if (this.field.isWeather(['darkness', 'raindance', 'primordialsea'])) {
+			if (this.field.isWeather(['newmoon', 'raindance', 'primordialsea'])) {
 				if (pokemon.species.name === 'Typhlosion-Delta-Mega') pokemon.formeChange('Typhlosion-Delta-Mega-Active', this.effect, false);
 			} else {
 				if (pokemon.species.name === 'Typhlosion-Delta-Mega-Active') pokemon.formeChange('Typhlosion-Delta-Mega', this.effect, false);
@@ -4728,12 +4728,12 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		},
 		onModifySpAPriority: 5,
 		onModifySpA(spa, pokemon) {
-			if (this.field.isWeather(['darkness', 'raindance', 'primordialsea'])) {
+			if (this.field.isWeather(['newmoon', 'raindance', 'primordialsea'])) {
 				return this.chainModify(1.5);
 			}
 		},
 		onUpdate(pokemon) {
-			if (this.field.isWeather(['darkness', 'raindance', 'primordialsea'])) {
+			if (this.field.isWeather(['newmoon', 'raindance', 'primordialsea'])) {
 				if (pokemon.species.name === 'Typhlosion-Delta-Mega') pokemon.formeChange('Typhlosion-Delta-Mega-Active', this.effect, false);
 			} else {
 				if (pokemon.species.name === 'Typhlosion-Delta-Mega-Active') pokemon.formeChange('Typhlosion-Delta-Mega', this.effect, false);

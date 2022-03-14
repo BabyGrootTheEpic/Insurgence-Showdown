@@ -9016,8 +9016,8 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		weightkg: 0.8,
 		color: "Gray",
 		eggGroups: ["Fairy", "Amorphous"],
-		otherFormes: ["Castform-Sunny", "Castform-Rainy", "Castform-Snowy", "Castform-Sandy", "Castform-Darkness"],
-		formeOrder: ["Castform", "Castform-Sunny", "Castform-Rainy", "Castform-Snowy", "Castform-Sandy", "Castform-Darkness"],
+		otherFormes: ["Castform-Sunny", "Castform-Rainy", "Castform-Snowy", "Castform-Sandy", "Castform-Cloudy"],
+		formeOrder: ["Castform", "Castform-Sunny", "Castform-Rainy", "Castform-Snowy", "Castform-Sandy", "Castform-Cloudy"],
 	},
 	castformsunny: {
 		num: 351,
@@ -9079,11 +9079,11 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		requiredAbility: "Forecast",
 		battleOnly: "Castform",
 	},
-	castformdarkness: {
+	castformcloudy: {
 		num: 351,
-		name: "Castform-Darkness",
+		name: "Castform-Cloudy",
 		baseSpecies: "Castform",
-		forme: "Darkness",
+		forme: "Cloudy",
 		types: ["Dark"],
 		baseStats: {hp: 70, atk: 70, def: 70, spa: 70, spd: 70, spe: 70},
 		abilities: {0: "Forecast"},

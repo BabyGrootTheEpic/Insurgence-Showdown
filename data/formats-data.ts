@@ -2915,10 +2915,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	castformsnowy: {
 		//isNonstandard: "Past",
 	},
-	castformnewmoon: {
+	castformcloudy: {
 		//isNonstandard: "Past",
 	},
-	castformsandstorm: {
+	castformsandy: {
 		//isNonstandard: "Past",
 	},
 	kecleon: {
