@@ -193,7 +193,8 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	achillesheel: {
 		name: "Achilles Heel",
-		shortDesc: "Always deals super effective damage unless the target is immune.",
+		desc: "Always deals super effective damage (unless the target is immune).",
+		shortDesc: "Always deals super effective damage.",
 	},
 	acid: {
 		name: "Acid",
