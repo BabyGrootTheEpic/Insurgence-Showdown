@@ -1852,6 +1852,11 @@ export class Battle {
 			case 'confused':
 				this.add('-damage', target, target.getHealth, '[from] confusion');
 				break;
+			case 'splintersnormal': case 'splintersfire': case 'splinterswater': case 'splinterselectric': case 'splintersgrass': case 'splintersice': case 'splintersfighting':
+			case 'splinterspoison': case 'splintersground': case 'splintersflying': case 'splinterspsychic': case 'splintersbug': case 'splintersrock': case 'splintersghost':
+			case 'splintersdragon': case 'splintersdark': case 'splinterssteel': case 'splintersfairy': case 'splinterscrystal': case 'splintersshadow': case 'splinters':
+				this.add('-damage', target, target.getHealth, '[from] splinters');
+				break;
 			default:
 				if (effect.effectType === 'Move' || !name) {
 					this.add('-damage', target, target.getHealth);

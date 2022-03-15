@@ -6,7 +6,7 @@
  */
 
 import {State} from './state';
-import {toID} from './dex';
+import Dex, {toID} from './dex';
 
 /** A Pokemon's move slot. */
 interface MoveSlot {
@@ -1415,6 +1415,35 @@ export class Pokemon {
 	damage(d: number, source: Pokemon | null = null, effect: Effect | null = null) {
 		if (!this.hp || isNaN(d) || d <= 0) return 0;
 		if (d < 1 && d > 0) d = 1;
+
+		//Splinters type effectiveness:
+		if(effect && effect.id.slice(0, 9) === 'splinters') {
+			let splinterType = (effect.id.slice(9) || '???');
+			if (splinterType !== '???') splinterType = Dex.types.get(splinterType).name;
+			let typeMod = this.battle.dex.getEffectiveness(splinterType, this.types);
+
+			if(splinterType === 'Shadow')
+			{
+				//Shadow-type moves are resisted by Shadow Pokémon and super effective against everything else.
+				if(this.hasType('Shadow') || (this.species.name.includes('-Shadow') && this.species.baseSpecies !== 'Calyrex')) {
+					typeMod = -1;
+				}
+				else typeMod = 1;
+			}
+
+			typeMod = this.battle.clampIntRange(typeMod, -6, 6);
+			if (typeMod > 0) {
+				for (let i = 0; i < typeMod; i++) {
+					d *= 2;
+				}
+			}
+			if (typeMod < 0) {
+				for (let i = 0; i > typeMod; i--) {
+					d = this.battle.trunc(d / 2);
+				}
+			}
+		}
+
 		d = this.battle.trunc(d);
 		this.hp -= d;
 		if (this.hp <= 0) {

@@ -217,6 +217,514 @@ export const Conditions: {[k: string]: ConditionData} = {
 			return false;
 		},
 	},
+
+	
+	splinters: {
+		name: 'splinters',
+		// this is a volatile status
+		onStart(target, source, sourceEffect) {
+			this.add('-start', target, 'splinters');
+			this.effectState.time = 4;
+		},
+		onEnd(target) {
+			this.add('-end', target, 'splinters');
+		},
+		onAfterMove(pokemon) {
+			pokemon.volatiles['splinters'].time--;
+			if (!pokemon.volatiles['splinters'].time) {
+				pokemon.removeVolatile('splinters');
+				return;
+			}
+			//this.add('-activate', pokemon, 'splinters');
+			this.activeTarget = pokemon;
+			const damage = this.actions.getConfusionDamage(pokemon, 25, true);
+			if (typeof damage !== 'number') throw new Error("Splinters (???) damage not dealt");
+			const activeMove = {id: this.toID('splinters'), effectType: 'Move', type: '???'};
+			this.damage(damage, pokemon, pokemon, activeMove as ActiveMove);
+		},
+	},
+	splintersbug: {
+		name: 'splintersbug',
+		// this is a volatile status
+		onStart(target, source, sourceEffect) {
+			this.add('-start', target, 'splintersbug');
+			this.effectState.time = 3;
+		},
+		onEnd(target) {
+			this.add('-end', target, 'splintersbug');
+		},
+		onAfterMove(pokemon) {
+			pokemon.volatiles['splintersbug'].time--;
+			if (!pokemon.volatiles['splintersbug'].time) {
+				pokemon.removeVolatile('splintersbug');
+				return;
+			}
+			//this.add('-activate', pokemon, 'splintersbug');
+			this.activeTarget = pokemon;
+			const damage = this.actions.getConfusionDamage(pokemon, 25, true);
+			if (typeof damage !== 'number') throw new Error("Splinters (Bug) damage not dealt");
+			const activeMove = {id: this.toID('splintersbug'), effectType: 'Move', type: 'Bug'};
+			this.damage(damage, pokemon, pokemon, activeMove as ActiveMove);
+		},
+	},
+	splintersdark: {
+		name: 'splintersdark',
+		// this is a volatile status
+		onStart(target, source, sourceEffect) {
+			this.add('-start', target, 'splintersdark');
+			this.effectState.time = 3;
+		},
+		onEnd(target) {
+			this.add('-end', target, 'splintersdark');
+		},
+		onAfterMove(pokemon) {
+			pokemon.volatiles['splintersdark'].time--;
+			if (!pokemon.volatiles['splintersdark'].time) {
+				pokemon.removeVolatile('splintersdark');
+				return;
+			}
+			//this.add('-activate', pokemon, 'splintersdark');
+			this.activeTarget = pokemon;
+			const damage = this.actions.getConfusionDamage(pokemon, 25, true);
+			if (typeof damage !== 'number') throw new Error("Splinters (dark) damage not dealt");
+			const activeMove = {id: this.toID('splintersdark'), effectType: 'Move', type: 'Dark'};
+			this.damage(damage, pokemon, pokemon, activeMove as ActiveMove);
+		},
+	},
+	splintersdragon: {
+		name: 'splintersdragon',
+		// this is a volatile status
+		onStart(target, source, sourceEffect) {
+			this.add('-start', target, 'splintersdragon');
+			this.effectState.time = 3;
+		},
+		onEnd(target) {
+			this.add('-end', target, 'splintersdragon');
+		},
+		onAfterMove(pokemon) {
+			pokemon.volatiles['splintersdragon'].time--;
+			if (!pokemon.volatiles['splintersdragon'].time) {
+				pokemon.removeVolatile('splintersdragon');
+				return;
+			}
+			//this.add('-activate', pokemon, 'splintersdragon');
+			this.activeTarget = pokemon;
+			const damage = this.actions.getConfusionDamage(pokemon, 25, true);
+			if (typeof damage !== 'number') throw new Error("Splinters (Dragon) damage not dealt");
+			const activeMove = {id: this.toID('splintersdragon'), effectType: 'Move', type: 'Dragon'};
+			this.damage(damage, pokemon, pokemon, activeMove as ActiveMove);
+		},
+	},
+	splinterselectric: {
+		name: 'splinterselectric',
+		// this is a volatile status
+		onStart(target, source, sourceEffect) {
+			this.add('-start', target, 'splinterselectric');
+			this.effectState.time = 3;
+		},
+		onEnd(target) {
+			this.add('-end', target, 'splinterselectric');
+		},
+		onAfterMove(pokemon) {
+			pokemon.volatiles['splinterselectric'].time--;
+			if (!pokemon.volatiles['splinterselectric'].time) {
+				pokemon.removeVolatile('splinterselectric');
+				return;
+			}
+			//this.add('-activate', pokemon, 'splinterselectric');
+			this.activeTarget = pokemon;
+			const damage = this.actions.getConfusionDamage(pokemon, 25, true);
+			if (typeof damage !== 'number') throw new Error("Splinters (Electric) damage not dealt");
+			const activeMove = {id: this.toID('splinterselectric'), effectType: 'Move', type: 'Electric'};
+			this.damage(damage, pokemon, pokemon, activeMove as ActiveMove);
+		},
+	},
+	splintersfairy: {
+		name: 'splintersfairy',
+		// this is a volatile status
+		onStart(target, source, sourceEffect) {
+			this.add('-start', target, 'splintersfairy');
+			this.effectState.time = 3;
+		},
+		onEnd(target) {
+			this.add('-end', target, 'splintersfairy');
+		},
+		onAfterMove(pokemon) {
+			pokemon.volatiles['splintersfairy'].time--;
+			if (!pokemon.volatiles['splintersfairy'].time) {
+				pokemon.removeVolatile('splintersfairy');
+				return;
+			}
+			//this.add('-activate', pokemon, 'splintersfairy');
+			this.activeTarget = pokemon;
+			const damage = this.actions.getConfusionDamage(pokemon, 25, true);
+			if (typeof damage !== 'number') throw new Error("Splinters (Fairy) damage not dealt");
+			const activeMove = {id: this.toID('splintersfairy'), effectType: 'Move', type: 'Fairy'};
+			this.damage(damage, pokemon, pokemon, activeMove as ActiveMove);
+		},
+	},
+	splintersfighting: {
+		name: 'splintersfighting',
+		// this is a volatile status
+		onStart(target, source, sourceEffect) {
+			this.add('-start', target, 'splintersfighting');
+			this.effectState.time = 3;
+		},
+		onEnd(target) {
+			this.add('-end', target, 'splintersfighting');
+		},
+		onAfterMove(pokemon) {
+			pokemon.volatiles['splintersfighting'].time--;
+			if (!pokemon.volatiles['splintersfighting'].time) {
+				pokemon.removeVolatile('splintersfighting');
+				return;
+			}
+			//this.add('-activate', pokemon, 'splintersfighting');
+			this.activeTarget = pokemon;
+			const damage = this.actions.getConfusionDamage(pokemon, 25, true);
+			if (typeof damage !== 'number') throw new Error("Splinters (Fighting) damage not dealt");
+			const activeMove = {id: this.toID('splintersfighting'), effectType: 'Move', type: 'Fighting'};
+			this.damage(damage, pokemon, pokemon, activeMove as ActiveMove);
+		},
+	},
+	splintersfire: {
+		name: 'splintersfire',
+		// this is a volatile status
+		onStart(target, source, sourceEffect) {
+			this.add('-start', target, 'splintersfire');
+			this.effectState.time = 3;
+		},
+		onEnd(target) {
+			this.add('-end', target, 'splintersfire');
+		},
+		onAfterMove(pokemon) {
+			pokemon.volatiles['splintersfire'].time--;
+			if (!pokemon.volatiles['splintersfire'].time) {
+				pokemon.removeVolatile('splintersfire');
+				return;
+			}
+			//this.add('-activate', pokemon, 'splintersfire');
+			this.activeTarget = pokemon;
+			const damage = this.actions.getConfusionDamage(pokemon, 25, true);
+			if (typeof damage !== 'number') throw new Error("Splinters (Fire) damage not dealt");
+			const activeMove = {id: this.toID('splintersfire'), effectType: 'Move', type: 'Fire'};
+			this.damage(damage, pokemon, pokemon, activeMove as ActiveMove);
+		},
+	},
+	splintersflying: {
+		name: 'splintersflying',
+		// this is a volatile status
+		onStart(target, source, sourceEffect) {
+			this.add('-start', target, 'splintersflying');
+			this.effectState.time = 3;
+		},
+		onEnd(target) {
+			this.add('-end', target, 'splintersflying');
+		},
+		onAfterMove(pokemon) {
+			pokemon.volatiles['splintersflying'].time--;
+			if (!pokemon.volatiles['splintersflying'].time) {
+				pokemon.removeVolatile('splintersflying');
+				return;
+			}
+			//this.add('-activate', pokemon, 'splintersflying');
+			this.activeTarget = pokemon;
+			const damage = this.actions.getConfusionDamage(pokemon, 25, true);
+			if (typeof damage !== 'number') throw new Error("Splinters (Flying) damage not dealt");
+			const activeMove = {id: this.toID('splintersflying'), effectType: 'Move', type: 'Flying'};
+			this.damage(damage, pokemon, pokemon, activeMove as ActiveMove);
+		},
+	},
+	splintersghost: {
+		name: 'splintersghost',
+		// this is a volatile status
+		onStart(target, source, sourceEffect) {
+			this.add('-start', target, 'splintersghost');
+			this.effectState.time = 3;
+		},
+		onEnd(target) {
+			this.add('-end', target, 'splintersghost');
+		},
+		onAfterMove(pokemon) {
+			pokemon.volatiles['splintersghost'].time--;
+			if (!pokemon.volatiles['splintersghost'].time) {
+				pokemon.removeVolatile('splintersghost');
+				return;
+			}
+			//this.add('-activate', pokemon, 'splintersghost');
+			this.activeTarget = pokemon;
+			const damage = this.actions.getConfusionDamage(pokemon, 25, true);
+			if (typeof damage !== 'number') throw new Error("Splinters (Ghost) damage not dealt");
+			const activeMove = {id: this.toID('splintersghost'), effectType: 'Move', type: 'Ghost'};
+			this.damage(damage, pokemon, pokemon, activeMove as ActiveMove);
+		},
+	},
+	splintersgrass: {
+		name: 'splintersgrass',
+		// this is a volatile status
+		onStart(target, source, sourceEffect) {
+			this.add('-start', target, 'splintersgrass');
+			this.effectState.time = 3;
+		},
+		onEnd(target) {
+			this.add('-end', target, 'splintersgrass');
+		},
+		onAfterMove(pokemon) {
+			pokemon.volatiles['splintersgrass'].time--;
+			if (!pokemon.volatiles['splintersgrass'].time) {
+				pokemon.removeVolatile('splintersgrass');
+				return;
+			}
+			//this.add('-activate', pokemon, 'splintersgrass');
+			this.activeTarget = pokemon;
+			const damage = this.actions.getConfusionDamage(pokemon, 25, true);
+			if (typeof damage !== 'number') throw new Error("Splinters (Grass) damage not dealt");
+			const activeMove = {id: this.toID('splintersgrass'), effectType: 'Move', type: 'Grass'};
+			this.damage(damage, pokemon, pokemon, activeMove as ActiveMove);
+		},
+	},
+	splintersground: {
+		name: 'splintersground',
+		// this is a volatile status
+		onStart(target, source, sourceEffect) {
+			this.add('-start', target, 'splintersground');
+			this.effectState.time = 3;
+		},
+		onEnd(target) {
+			this.add('-end', target, 'splintersground');
+		},
+		onAfterMove(pokemon) {
+			pokemon.volatiles['splintersground'].time--;
+			if (!pokemon.volatiles['splintersground'].time) {
+				pokemon.removeVolatile('splintersground');
+				return;
+			}
+			//this.add('-activate', pokemon, 'splintersground');
+			this.activeTarget = pokemon;
+			const damage = this.actions.getConfusionDamage(pokemon, 25, true);
+			if (typeof damage !== 'number') throw new Error("Splinters (Ground) damage not dealt");
+			const activeMove = {id: this.toID('splintersground'), effectType: 'Move', type: 'Ground'};
+			this.damage(damage, pokemon, pokemon, activeMove as ActiveMove);
+		},
+	},
+	splintersice: {
+		name: 'splintersice',
+		// this is a volatile status
+		onStart(target, source, sourceEffect) {
+			this.add('-start', target, 'splintersice');
+			this.effectState.time = 3;
+		},
+		onEnd(target) {
+			this.add('-end', target, 'splintersice');
+		},
+		onAfterMove(pokemon) {
+			pokemon.volatiles['splintersice'].time--;
+			if (!pokemon.volatiles['splintersice'].time) {
+				pokemon.removeVolatile('splintersice');
+				return;
+			}
+			//this.add('-activate', pokemon, 'splintersice');
+			this.activeTarget = pokemon;
+			const damage = this.actions.getConfusionDamage(pokemon, 25, true);
+			if (typeof damage !== 'number') throw new Error("Splinters (Ice) damage not dealt");
+			const activeMove = {id: this.toID('splintersice'), effectType: 'Move', type: 'Ice'};
+			this.damage(damage, pokemon, pokemon, activeMove as ActiveMove);
+		},
+	},
+	splintersnormal: {
+		name: 'splintersnormal',
+		// this is a volatile status
+		onStart(target, source, sourceEffect) {
+			this.add('-start', target, 'splintersnormal');
+			this.effectState.time = 3;
+		},
+		onEnd(target) {
+			this.add('-end', target, 'splintersnormal');
+		},
+		onAfterMove(pokemon) {
+			pokemon.volatiles['splintersnormal'].time--;
+			if (!pokemon.volatiles['splintersnormal'].time) {
+				pokemon.removeVolatile('splintersnormal');
+				return;
+			}
+			//this.add('-activate', pokemon, 'splintersnormal');
+			this.activeTarget = pokemon;
+			const damage = this.actions.getConfusionDamage(pokemon, 25, true);
+			if (typeof damage !== 'number') throw new Error("Splinters (Normal) damage not dealt");
+			const activeMove = {id: this.toID('splintersnormal'), effectType: 'Move', type: 'Normal'};
+			this.damage(damage, pokemon, pokemon, activeMove as ActiveMove);
+		},
+	},
+	splinterspoison: {
+		name: 'splinterspoison',
+		// this is a volatile status
+		onStart(target, source, sourceEffect) {
+			this.add('-start', target, 'splinterspoison');
+			this.effectState.time = 3;
+		},
+		onEnd(target) {
+			this.add('-end', target, 'splinterspoison');
+		},
+		onAfterMove(pokemon) {
+			pokemon.volatiles['splinterspoison'].time--;
+			if (!pokemon.volatiles['splinterspoison'].time) {
+				pokemon.removeVolatile('splinterspoison');
+				return;
+			}
+			//this.add('-activate', pokemon, 'splinterspoison');
+			this.activeTarget = pokemon;
+			const damage = this.actions.getConfusionDamage(pokemon, 25, true);
+			if (typeof damage !== 'number') throw new Error("Splinters (Poison) damage not dealt");
+			const activeMove = {id: this.toID('splinterspoison'), effectType: 'Move', type: 'Poison'};
+			this.damage(damage, pokemon, pokemon, activeMove as ActiveMove);
+		},
+	},
+	splinterspsychic: {
+		name: 'splinterspsychic',
+		// this is a volatile status
+		onStart(target, source, sourceEffect) {
+			this.add('-start', target, 'splinterspsychic');
+			this.effectState.time = 3;
+		},
+		onEnd(target) {
+			this.add('-end', target, 'splinterspsychic');
+		},
+		onAfterMove(pokemon) {
+			pokemon.volatiles['splinterspsychic'].time--;
+			if (!pokemon.volatiles['splinterspsychic'].time) {
+				pokemon.removeVolatile('splinterspsychic');
+				return;
+			}
+			//this.add('-activate', pokemon, 'splinterspsychic');
+			this.activeTarget = pokemon;
+			const damage = this.actions.getConfusionDamage(pokemon, 25, true);
+			if (typeof damage !== 'number') throw new Error("Splinters (Psychic) damage not dealt");
+			const activeMove = {id: this.toID('splinterspsychic'), effectType: 'Move', type: 'Psychic'};
+			this.damage(damage, pokemon, pokemon, activeMove as ActiveMove);
+		},
+	},
+	splintersrock: {
+		name: 'splintersrock',
+		// this is a volatile status
+		onStart(target, source, sourceEffect) {
+			this.add('-start', target, 'splintersrock');
+			this.effectState.time = 3;
+		},
+		onEnd(target) {
+			this.add('-end', target, 'splintersrock');
+		},
+		onAfterMove(pokemon) {
+			pokemon.volatiles['splintersrock'].time--;
+			if (!pokemon.volatiles['splintersrock'].time) {
+				pokemon.removeVolatile('splintersrock');
+				return;
+			}
+			//this.add('-activate', pokemon, 'splintersrock');
+			this.activeTarget = pokemon;
+			const damage = this.actions.getConfusionDamage(pokemon, 25, true);
+			if (typeof damage !== 'number') throw new Error("Splinters (Rock) damage not dealt");
+			const activeMove = {id: this.toID('splintersrock'), effectType: 'Move', type: 'Rock'};
+			this.damage(damage, pokemon, pokemon, activeMove as ActiveMove);
+		},
+	},
+	splinterssteel: {
+		name: 'splinterssteel',
+		// this is a volatile status
+		onStart(target, source, sourceEffect) {
+			this.add('-start', target, 'splinterssteel');
+			this.effectState.time = 3;
+		},
+		onEnd(target) {
+			this.add('-end', target, 'splinterssteel');
+		},
+		onAfterMove(pokemon) {
+			pokemon.volatiles['splinterssteel'].time--;
+			if (!pokemon.volatiles['splinterssteel'].time) {
+				pokemon.removeVolatile('splinterssteel');
+				return;
+			}
+			//this.add('-activate', pokemon, 'splinterssteel');
+			this.activeTarget = pokemon;
+			const damage = this.actions.getConfusionDamage(pokemon, 25, true);
+			if (typeof damage !== 'number') throw new Error("Splinters (Steel) damage not dealt");
+			const activeMove = {id: this.toID('splinterssteel'), effectType: 'Move', type: 'Steel'};
+			this.damage(damage, pokemon, pokemon, activeMove as ActiveMove);
+		},
+	},
+	splinterswater: {
+		name: 'splinterswater',
+		// this is a volatile status
+		onStart(target, source, sourceEffect) {
+			this.add('-start', target, 'splinterswater');
+			this.effectState.time = 3;
+		},
+		onEnd(target) {
+			this.add('-end', target, 'splinterswater');
+		},
+		onAfterMove(pokemon) {
+			pokemon.volatiles['splinterswater'].time--;
+			if (!pokemon.volatiles['splinterswater'].time) {
+				pokemon.removeVolatile('splinterswater');
+				return;
+			}
+			//this.add('-activate', pokemon, 'splinterswater');
+			this.activeTarget = pokemon;
+			const damage = this.actions.getConfusionDamage(pokemon, 25, true);
+			if (typeof damage !== 'number') throw new Error("Splinters (Water) damage not dealt");
+			const activeMove = {id: this.toID('splinterswater'), effectType: 'Move', type: 'Water'};
+			this.damage(damage, pokemon, pokemon, activeMove as ActiveMove);
+		},
+	},
+	splinterscrystal: {
+		name: 'splinterscrystal',
+		// this is a volatile status
+		onStart(target, source, sourceEffect) {
+			this.add('-start', target, 'splinterscrystal');
+			this.effectState.time = 3;
+		},
+		onEnd(target) {
+			this.add('-end', target, 'splinterscrystal');
+		},
+		onAfterMove(pokemon) {
+			pokemon.volatiles['splinterscrystal'].time--;
+			if (!pokemon.volatiles['splinterscrystal'].time) {
+				pokemon.removeVolatile('splinterscrystal');
+				return;
+			}
+			//this.add('-activate', pokemon, 'splinterscrystal');
+			this.activeTarget = pokemon;
+			const damage = this.actions.getConfusionDamage(pokemon, 25, true);
+			if (typeof damage !== 'number') throw new Error("Splinters (Crystal) damage not dealt");
+			const activeMove = {id: this.toID('splinterscrystal'), effectType: 'Move', type: 'Crystal'};
+			this.damage(damage, pokemon, pokemon, activeMove as ActiveMove);
+		},
+	},
+	splintersshadow: {
+		name: 'splintersshadow',
+		// this is a volatile status
+		onStart(target, source, sourceEffect) {
+			this.add('-start', target, 'splintersshadow');
+			this.effectState.time = 3;
+		},
+		onEnd(target) {
+			this.add('-end', target, 'splintersshadow');
+		},
+		onAfterMove(pokemon) {
+			pokemon.volatiles['splintersshadow'].time--;
+			if (!pokemon.volatiles['splintersshadow'].time) {
+				pokemon.removeVolatile('splintersshadow');
+				return;
+			}
+			//this.add('-activate', pokemon, 'splintersshadow');
+			this.activeTarget = pokemon;
+			const damage = this.actions.getConfusionDamage(pokemon, 25, true);
+			if (typeof damage !== 'number') throw new Error("Splinters (Shadow) damage not dealt");
+			const activeMove = {id: this.toID('splintersshadow'), effectType: 'Move', type: 'Shadow'};
+			this.damage(damage, pokemon, pokemon, activeMove as ActiveMove);
+		},
+	},
+
+
 	flinch: {
 		name: 'flinch',
 		duration: 1,

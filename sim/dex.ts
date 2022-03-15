@@ -266,7 +266,6 @@ export class ModdedDex {
 			if(targetTyping === '???') return 1;
 			else if(targetTyping === 'Shadow') return -1;
 		}
-		else if(sourceType === 'Shadow' && targetTyping === '???') return 1;
 
 		if (!typeData) return 0;
 		switch (typeData.damageTaken[sourceType]) {

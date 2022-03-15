@@ -104,12 +104,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 		priority: 0,
 		flags: {},
 		isMax: true,
-		self: {
+		/*self: {
 			onHit(source) {
 				if (!source.volatiles['dynamax']) return;
-				//this.field.setWeather('shadowsky');
+				this.field.setWeather('shadowsky');
 			},
-		},
+		},*/
 		target: "adjacentFoe",
 		type: "Shadow",
 	},
@@ -172,6 +172,27 @@ export const Moves: {[moveid: string]: MoveData} = {
 		},
 		target: "any",
 		type: "Flying",
+	},
+	ceaselessedge: {
+		num: 6003,
+		accuracy: 90,
+		basePower: 65,
+		category: "Physical",
+		name: "Ceaseless Edge",
+		pp: 15,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1},
+		critRatio: 2,
+		secondary: {
+			chance: 100,
+			onHit(target, source, move) {
+				let splintersType = move.type.toLowerCase();
+				if (splintersType === '???') splintersType = '';
+				target.addVolatile('splinters' + splintersType);
+			},
+		},
+		target: "normal",
+		type: "Dark",
 	},
 	chloroblast: {
 		num: 6004,
@@ -492,6 +513,27 @@ export const Moves: {[moveid: string]: MoveData} = {
 		},
 		target: "any",
 		type: "Fairy",
+	},
+	stoneaxe: {
+		num: 6018,
+		accuracy: 90,
+		basePower: 65,
+		category: "Physical",
+		name: "Stone Axe",
+		pp: 15,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1},
+		critRatio: 2,
+		secondary: {
+			chance: 100,
+			onHit(target, source, move) {
+				let splinterType = move.type.toLowerCase();
+				if (splinterType === '???') splinterType = '';
+				target.addVolatile('splinters' + splinterType);
+			},
+		},
+		target: "normal",
+		type: "Rock",
 	},
 	takeheart: {
 		num: 6019,

@@ -1755,7 +1755,7 @@ export class BattleActions {
 	 * context for its damage, unlike the regular damage formula (though this only comes up
 	 * for base damage).
 	 */
-	getConfusionDamage(pokemon: Pokemon, basePower: number) {
+	getConfusionDamage(pokemon: Pokemon, basePower: number, blockRando: boolean = false) {
 		const tr = this.battle.trunc;
 
 		const attack = pokemon.calculateStat('atk', pokemon.boosts['atk']);
@@ -1765,7 +1765,7 @@ export class BattleActions {
 
 		// Damage is 16-bit context in self-hit confusion damage
 		let damage = tr(baseDamage, 16);
-		damage = this.battle.randomizer(damage);
+		if (!blockRando) damage = this.battle.randomizer(damage);
 		return Math.max(1, damage);
 	}
 
