@@ -46,6 +46,11 @@ export const MovesText: {[k: string]: MoveText} = {
 		desc: "Has a 30% chance to give the target frostbite.",
 		shortDesc: "30% chance to give the target frostbite.",
 	},
+	ceaselessedge: {
+		name: "Ceaseless Edge",
+		desc: "Has a higher chance for a critical hit. The target will be damaged by splinters after its next 3 moves. These splinters' damage will be the same type as this move (usually dark)..",
+		shortDesc: "High critical hit ratio. Gives target splinters.",
+	},
 	chloroblast: {
 		name: "Chloroblast",
 		desc: "If this move is successful, the user must recharge on the following turn and cannot select a move. Whether or not this move is successful and even if it would cause fainting, the user loses 1/2 of its maximum HP, rounded up, unless the user has the Magic Guard Ability. This move is prevented from executing and the user does not lose HP if any active Pokemon has the Damp Ability.",
@@ -120,6 +125,11 @@ export const MovesText: {[k: string]: MoveText} = {
 		name: "Springtide Storm",
 		desc: "If Therian forme: Has a 30% chance to lower the target's Special Defense by 1 stage. If not Therian Forme: Has a 30% chance to raise the user's Special Attack and Special Defense by 1 stage.",
 		shortDesc: "Effect depends on the user's forme.",
+	},
+	stoneaxe: {
+		name: "Stone Axe",
+		desc: "Has a higher chance for a critical hit. The target will be damaged by splinters after its next 3 moves. These splinters' damage will be the same type as this move (usually rock)..",
+		shortDesc: "High critical hit ratio. Gives target splinters.",
 	},
 	takeheart: {
 		name: "Take Heart",
