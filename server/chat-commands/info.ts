@@ -625,9 +625,10 @@ export const commands: Chat.ChatCommands = {
 					}
 				}
 				if (!tierDisplay) tierDisplay = 'tiers';
-				const displayedTier = tierDisplay === 'tiers' ? pokemon.tier :
+				let displayedTier = tierDisplay === 'tiers' ? pokemon.tier :
 					tierDisplay === 'doubles tiers' ? pokemon.doublesTier :
-					pokemon.num >= 0 ? String(pokemon.num) : pokemon.tier;
+					String(pokemon.num);//pokemon.num >= 0 ? String(pokemon.num) : pokemon.tier;
+				if(displayedTier === '(PU)') displayedTier = '--';
 				buffer += `|raw|${Chat.getDataPokemonHTML(pokemon, dex.gen, displayedTier)}\n`;
 				if (showDetails) {
 					let weighthit = 20;
