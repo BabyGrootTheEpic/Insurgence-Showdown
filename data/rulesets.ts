@@ -14,7 +14,7 @@ export const Rulesets: {[k: string]: FormatData} = {
 		name: 'BGTE NatDex AG',
 		desc: "In addition to Smogon's [Gen 8] National Dex AG, allows level 120 Pokémon, Cosplay Pikachu, Let's GO Starters, Spiky-eared Pichu, Eternal Flower Floette, Totems, duplicate fusions, duplicate LGPE starters, Gems, everything added by the Insurgence fork, and everything added by this fork. (BGTE stands for BabyGrootTheEpic, the creator of this fork.)",
 		ruleset: [
-			'Obtainable', '!NoFusionDupes', '!Limit One LGPE Starter', 'Max Level = 120', 'Default Level = 120', 'NatDex Megas', 'Sketch Gen 8 Moves',
+			'Obtainable', '!NoFusionDupes', '!Limit One LGPE Starter', 'Max Level = 120', 'Default Level = 100', 'NatDex Megas', 'Sketch Gen 8 Moves',
 			'DynaMega Mod', 'DynaZ Mod', 'Endless Battle Clause', 'Nickname Clause', 'Team Preview', 'HP Percentage Mod', 'Cancel Mod', 'Zoroark-Mega Illusion Thing',
 		],
 		//This fork's formats are all NatDex, so most instances of isNonstandard in data/formats-data.ts, data/item.ts, and data/moves.ts have been commented out.
@@ -24,9 +24,9 @@ export const Rulesets: {[k: string]: FormatData} = {
 		name: 'BGTE Standard',
 		desc: "BGTE NatDex AG with a few extra clauses and bans.",
 		//Singles formats should also be given 'Singles Bans'. Free-For-All formats should also be given 'FFA Bans'.
-		ruleset: ['BGTE NatDex AG', 'Species Clause', 'Dynamax Clause', 'Evasion Moves Clause', 'OHKO Clause', 'Planet Series Clause', 'Shadow Clause'],
+		ruleset: ['BGTE NatDex AG', 'Species Clause', 'Dynamax Clause', 'Evasion Moves Clause', 'OHKO Clause', 'Moody Clause', 'Planet Series Clause', 'Shadow Clause'],
 		banlist: [
-			'Glitch', 'Moody', //Abilities
+			'Glitch', //Abilities
 			'Permafrost', //'Dark Sonata', //Moves
 			'Bright Powder', 'King\'s Rock', 'Razor Fang', 'Lax Incense', //Items
 		],
@@ -37,6 +37,13 @@ export const Rulesets: {[k: string]: FormatData} = {
 		desc: "A National Dex variant of the in-game Flat Rules.",
 		ruleset: ['BGTE NatDex AG', '!Endless Battle Clause', 'Species Clause', 'Item Clause', 'Adjust Level Down = 50', 'Picked Team Size = Auto'],
 		banlist: ['Mythical', 'Restricted Legendary'],
+	},
+	natdexlc: {
+		effectType: 'ValidatorRule',
+		name: 'NatDex LC',
+		desc: "Only level 1-5 Pok&eacute;mon that are able to evolve and have no previous evolution are allowed",
+		ruleset: ['BGTE Standard', '!Max Level', '!Default Level', 'Little Cup Rule'],
+		banlist: ['Dragon Rage', 'Sonic Boom', 'Eevium Z', 'Eevee-Tutored'],
 	},
 	natdexmaxberries: {
 		effectType: 'ValidatorRule',
@@ -174,7 +181,10 @@ export const Rulesets: {[k: string]: FormatData} = {
 		name: 'Custom Game Megas',
 		desc: "Custom Game with no Mega Evolution limit.",
 		// no restrictions, for serious (other than team preview)
-		ruleset: ['HP Percentage Mod', 'Team Preview', 'Cancel Mod', 'NatDex Megas', 'Multi Mega Mod', 'Max Team Size = 24', 'Max Move Count = 24', 'Max Level = 9999', 'Default Level = 120', 'Zoroark-Mega Illusion Thing'],
+		ruleset: [
+			'HP Percentage Mod', 'Team Preview', 'Cancel Mod', 'NatDex Megas', 'Multi Mega Mod', 'DynaMega Mod', 'DynaZ Mod',
+			'Max Team Size = 24', 'Max Move Count = 24', 'Max Level = 9999', 'Default Level = 100', 'Zoroark-Mega Illusion Thing',
+		],
 	},
 
 	//Validator Rules
@@ -254,7 +264,7 @@ export const Rulesets: {[k: string]: FormatData} = {
 			'AG', //Pokémon
 			'Arena Trap', 'Shadow Tag', //Abilities
 			'Baton Pass', //Moves
-			'Delta Mawilite + Mawile-Delta', 'Gengarite + Gengar', 'Legend Plate', 'Crystal Piece Arceus + Arceus', 'Crystal Piece Giratina + Giratina' //Items
+			'Delta Mawilite', 'Gengarite', 'Legend Plate', 'Crystal Piece Arceus', 'Crystal Piece Giratina' //Items
 		],
 	},
 	ffabans: {
@@ -1194,9 +1204,9 @@ export const Rulesets: {[k: string]: FormatData} = {
 		desc: "Only allows two Pok&eacute;mon in battle",
 		ruleset: ['Picked Team Size = 2'],
 	},
-	littlecup: {
+	littlecuprule: {
 		effectType: 'ValidatorRule',
-		name: 'Little Cup',
+		name: 'Little Cup Rule',
 		desc: "Only allows Pok&eacute;mon that can evolve and don't have any prior evolutions",
 		ruleset: ['Max Level = 5'],
 		onValidateSet(set) {

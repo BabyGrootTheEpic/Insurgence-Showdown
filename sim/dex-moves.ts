@@ -566,7 +566,11 @@ export class DataMove extends BasicEffect implements Readonly<BasicEffect & Move
 		}
 
 		if (!this.gen) {
-			if (this.num >= 743) {
+			if(this.num >= 8000 && this.num < 9000) {
+				this.gen = 5; //Zeta/Omicron moves
+			} else if(this.num >= 7000 && this.num < 8000) {
+				this.gen = 3; //Shadow moves
+			} else if (this.num >= 743) {
 				this.gen = 8;
 			} else if (this.num >= 622) {
 				this.gen = 7;

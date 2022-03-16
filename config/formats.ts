@@ -100,6 +100,20 @@ export const Formats: FormatList = [
 		restricted: ['Restricted Legendary'],
 	},
 	{
+		name: "[Gen 8] Little Cup",
+		desc: `Singles NatDex LC with Dynamax Clause. Little Cup means that only level 1-5 Pok&eacute;mon that are able to evolve and have no previous evolution are allowed.`,
+
+		mod: 'gen8',
+		rated: false,
+		ruleset: ['NatDex LC', 'Singles Bans'],
+	},
+	
+	
+	
+	{
+		section: "Modded Singles",
+	},
+	{
 		name: "[Gen 8] Inverse AG",
 		desc: `The type matchup chart is inverted: weaknesses become resistances, while resistances and immunities become weaknesses.`,
 		
@@ -201,15 +215,6 @@ export const Formats: FormatList = [
 		battle: {trunc: Math.trunc},
 		rated: false,
 		ruleset: ['NatDex Linked', 'Singles Bans'],
-	},
-	{
-		name: "[Gen 8] 350 Cup",
-		desc: `Pok&eacute;mon with a BST of 350 or lower get their base stats doubled.`,
-		
-		mod: 'gen8',
-		battle: {trunc: Math.trunc},
-		rated: false,
-		ruleset: ['NatDex 350 Cup', 'Singles Bans'],
 	},
 	{
 		name: "[Gen 8] Revelationmons",
@@ -332,6 +337,8 @@ export const Formats: FormatList = [
 
 
 
+
+
 	{
 		section: "Random Doubles",
 		column: 2,
@@ -421,6 +428,22 @@ export const Formats: FormatList = [
 		rated: false,
 		ruleset: ['NatDex Flat Rules', 'Limit Two Restricted'],
 		restricted: ['Restricted Legendary'],
+	},
+	{
+		name: "[Gen 8] (D)Little Cup",
+		desc: `Doubles NatDex LC with Dynamaxing. Little Cup means that only level 1-5 Pok&eacute;mon that are able to evolve and have no previous evolution are allowed.`,
+
+		mod: 'gen8',
+		gameType: 'doubles',
+		rated: false,
+		ruleset: ['NatDex LC', '!Dynamax Clause'],
+	},
+	
+	
+	
+	{
+		section: "Modded Doubles",
+		column: 2,
 	},
 	{
 		name: "[Gen 8] (D)Inverse AG",
@@ -534,16 +557,6 @@ export const Formats: FormatList = [
 		battle: {trunc: Math.trunc},
 		rated: false,
 		ruleset: ['NatDex Linked', '!Dynamax Clause'],
-	},
-	{
-		name: "[Gen 8] (D)350 Cup",
-		desc: `Pok&eacute;mon with a BST of 350 or lower get their base stats doubled. This format allows Dynamaxing.`,
-		
-		mod: 'gen8',
-		gameType: 'doubles',
-		battle: {trunc: Math.trunc},
-		rated: false,
-		ruleset: ['NatDex 350 Cup', '!Dynamax Clause'],
 	},
 	{
 		name: "[Gen 8] (D)Revelationmons",
@@ -677,6 +690,8 @@ export const Formats: FormatList = [
 
 
 
+
+
 	{
 		section: "Random Triples",
 		column: 3,
@@ -766,6 +781,22 @@ export const Formats: FormatList = [
 		rated: false,
 		ruleset: ['NatDex Flat Rules', 'Limit Two Restricted'],
 		restricted: ['Restricted Legendary'],
+	},
+	{
+		name: "[Gen 8] (T)Little Cup",
+		desc: `Triples NatDex LC with Dynamax Clause. Little Cup means that only level 1-5 Pok&eacute;mon that are able to evolve and have no previous evolution are allowed.`,
+
+		mod: 'gen8',
+		gameType: 'triples',
+		rated: false,
+		ruleset: ['NatDex LC'],
+	},
+	
+	
+	
+	{
+		section: "Modded Triples",
+		column: 3,
 	},
 	{
 		name: "[Gen 8] (T)Inverse AG",
@@ -879,16 +910,6 @@ export const Formats: FormatList = [
 		battle: {trunc: Math.trunc},
 		rated: false,
 		ruleset: ['NatDex Linked'],
-	},
-	{
-		name: "[Gen 8] (T)350 Cup",
-		desc: `Pok&eacute;mon with a BST of 350 or lower get their base stats doubled.`,
-		
-		mod: 'gen8',
-		gameType: 'triples',
-		battle: {trunc: Math.trunc},
-		rated: false,
-		ruleset: ['NatDex 350 Cup'],
 	},
 	{
 		name: "[Gen 8] (T)Revelationmons",
@@ -1022,6 +1043,8 @@ export const Formats: FormatList = [
 
 
 
+
+
 	{
 		section: "Random Multis",
 		column: 4,
@@ -1119,6 +1142,23 @@ export const Formats: FormatList = [
 		rated: false,
 		ruleset: ['NatDex Flat Rules', 'Limit Two Restricted'],
 		restricted: ['Restricted Legendary'],
+	},
+	{
+		name: "[Gen 8] (M)Little Cup",
+		desc: `Multi Battle NatDex LC with Dynamax Clause. Little Cup means that only level 1-5 Pok&eacute;mon that are able to evolve and have no previous evolution are allowed.`,
+
+		mod: 'gen8',
+		gameType: 'multi',
+		tournamentShow: false,
+		rated: false,
+		ruleset: ['NatDex LC'],
+	},
+	
+	
+	
+	{
+		section: "Modded Multis",
+		column: 4,
 	},
 	{
 		name: "[Gen 8] (M)Inverse AG",
@@ -1242,17 +1282,6 @@ export const Formats: FormatList = [
 		battle: {trunc: Math.trunc},
 		rated: false,
 		ruleset: ['NatDex Linked'],
-	},
-	{
-		name: "[Gen 8] (M)350 Cup",
-		desc: `Pok&eacute;mon with a BST of 350 or lower get their base stats doubled.`,
-		
-		mod: 'gen8',
-		gameType: 'multi',
-		tournamentShow: false,
-		battle: {trunc: Math.trunc},
-		rated: false,
-		ruleset: ['NatDex 350 Cup'],
 	},
 	{
 		name: "[Gen 8] (M)Revelationmons",
@@ -1397,6 +1426,8 @@ export const Formats: FormatList = [
 
 
 
+
+
 	{
 		section: "Random FFAs",
 		column: 5,
@@ -1413,7 +1444,7 @@ export const Formats: FormatList = [
 		ruleset: ['Rndm Hackmons'],
 	},
 	{
-		name: "[Gen 8] FFA HackmonsCup Linked",
+		name: "[Gen 8] FFA Hackmons Cup Linked",
 		desc: `Randomized teams of level-balanced Pok&eacute;mon with absolutely any ability, moves, and useful item (excluding CAP). The first two moves in a Pok&eacute;mon's moveset are used simultaneously. This format allows Dynamaxing.`,
 
 		mod: 'linked',
@@ -1494,6 +1525,23 @@ export const Formats: FormatList = [
 		rated: false,
 		ruleset: ['NatDex Flat Rules', 'Limit Two Restricted'],
 		restricted: ['Restricted Legendary'],
+	},
+	{
+		name: "[Gen 8] FFA Little Cup",
+		desc: `FFA NatDex LC with Dynamax Clause. Little Cup means that only level 1-5 Pok&eacute;mon that are able to evolve and have no previous evolution are allowed.`,
+
+		mod: 'gen8',
+		gameType: 'freeforall',
+		tournamentShow: false,
+		rated: false,
+		ruleset: ['NatDex LC', 'FFA Bans'],
+	},
+	
+	
+	
+	{
+		section: "Modded FFAs",
+		column: 5,
 	},
 	{
 		name: "[Gen 8] FFA Inverse AG",
@@ -1617,17 +1665,6 @@ export const Formats: FormatList = [
 		battle: {trunc: Math.trunc},
 		rated: false,
 		ruleset: ['NatDex Linked', 'FFA Bans'],
-	},
-	{
-		name: "[Gen 8] FFA 350 Cup",
-		desc: `Pok&eacute;mon with a BST of 350 or lower get their base stats doubled.`,
-		
-		mod: 'gen8',
-		gameType: 'freeforall',
-		tournamentShow: false,
-		battle: {trunc: Math.trunc},
-		rated: false,
-		ruleset: ['NatDex 350 Cup', 'FFA Bans'],
 	},
 	{
 		name: "[Gen 8] FFA Revelationmons",
@@ -1770,6 +1807,8 @@ export const Formats: FormatList = [
 
 
 
+
+
 	/*
 	// Custom Formats
 	///////////////////////////////////////////////////////////////////
@@ -1805,28 +1844,28 @@ export const Formats: FormatList = [
 		name: "[Gen 8] NatDex LC National Dex Draft",
 
 		mod: 'gen8',
-		ruleset: ['Obtainable', 'Draft', '+Unreleased', '+Past', 'Team Preview', 'Double Item Clause', 'Little Cup', 'Dynamax Clause'],
+		ruleset: ['Obtainable', 'Draft', '+Unreleased', '+Past', 'Team Preview', 'Double Item Clause', 'Little Cup Rule', 'Dynamax Clause'],
 		banlist: ['Dragon Rage', 'Sonic Boom'],
 	},
 	{
 		name: "[Gen 8] NatDex LC National Dex Legacy",
 
 		mod: 'gen8',
-		ruleset: ['Obtainable', 'Draft', '+Unreleased', '+Past', '+PastMove', 'Team Preview', 'Double Item Clause', 'Little Cup', 'Dynamax Clause'],
+		ruleset: ['Obtainable', 'Draft', '+Unreleased', '+Past', '+PastMove', 'Team Preview', 'Double Item Clause', 'Little Cup Rule', 'Dynamax Clause'],
 		banlist: ['Dragon Rage', 'Sonic Boom'],
 	},
 	{
 		name: "[Gen 8] NatDex LC National Dex Leaks Draft",
 
 		mod: 'gen8',
-		ruleset: ['Obtainable', 'Draft', '+Unreleased', '+Past', 'Team Preview', 'Double Item Clause', 'Little Cup', 'Dynamax Clause'],
+		ruleset: ['Obtainable', 'Draft', '+Unreleased', '+Past', 'Team Preview', 'Double Item Clause', 'Little Cup Rule', 'Dynamax Clause'],
 		banlist: ['Dragon Rage', 'Sonic Boom'],
 	},
 	{
 		name: "[Gen 8] NatDex LC National Dex Leaks Legacy",
 
 		mod: 'gen8',
-		ruleset: ['Obtainable', 'Draft', '+Unreleased', '+Past', '+PastMove', 'Team Preview', 'Double Item Clause', 'Little Cup', 'Dynamax Clause'],
+		ruleset: ['Obtainable', 'Draft', '+Unreleased', '+Past', '+PastMove', 'Team Preview', 'Double Item Clause', 'Little Cup Rule', 'Dynamax Clause'],
 		banlist: ['Dragon Rage', 'Sonic Boom'],
 	},
 	{
@@ -1939,7 +1978,7 @@ export const Formats: FormatList = [
 	{
 		name: "[Gen 8] NatDex LC",
 		mod: 'gen8',
-		ruleset: ['Little Cup', 'Standard NatDex', 'Ban Unbalanced Moves', 'Dynamax Clause', 'OHKO Clause', 'Evasion Moves Clause', 'Species Clause', 'Sleep Clause Mod', 'Z-Move Clause'],
+		ruleset: ['Little Cup Rule', 'Standard NatDex', 'Ban Unbalanced Moves', 'Dynamax Clause', 'OHKO Clause', 'Evasion Moves Clause', 'Species Clause', 'Sleep Clause Mod', 'Z-Move Clause'],
 		banlist: [
 			'Corsola-Galar', 'Cutiefly', 'Drifloon', 'Gastly', 'Gothita', 'Rufflet', 'Scraggy', 'Scyther', 'Sneasel', 'Swirlix', 'Tangela', 'Vullaby', 'Vulpix-Alola', 'Woobat', 'Zigzagoon-Base',
 			'Chlorophyll', 'Moody', 'Baton Pass', 'Sticky Web',
@@ -2066,7 +2105,7 @@ export const Formats: FormatList = [
 		mod: 'gen8',
 		gameType: 'doubles',
 		searchShow: false,
-		ruleset: ['Standard Doubles', 'Little Cup', 'Dynamax Clause', 'Swagger Clause', 'Sleep Clause Mod'],
+		ruleset: ['Standard Doubles', 'Little Cup Rule', 'Dynamax Clause', 'Swagger Clause', 'Sleep Clause Mod'],
 		banlist: ['Corsola-Galar', 'Cutiefly', 'Ponyta-Base', 'Scyther', 'Sneasel', 'Swirlix', 'Tangela', 'Vulpix', 'Vulpix-Alola'],
 	},
 	{
@@ -2770,7 +2809,7 @@ export const Formats: FormatList = [
 		],
 
 		mod: 'gen8bdsp',
-		ruleset: ['Little Cup', 'Standard'],
+		ruleset: ['Little Cup Rule', 'Standard'],
 		banlist: ['Gligar', 'Meditite', 'Misdreavus', 'Murkrow', 'Scyther', 'Sneasel', 'Tangela', 'Vulpix', 'Yanma', 'Moody', 'Baton Pass'],
 	},
 	{
@@ -4038,7 +4077,7 @@ export const Formats: FormatList = [
 
 		mod: 'gen7',
 		searchShow: false,
-		ruleset: ['Little Cup', 'Standard', 'Swagger Clause'],
+		ruleset: ['Little Cup Rule', 'Standard', 'Swagger Clause'],
 		banlist: [
 			'Aipom', 'Cutiefly', 'Drifloon', 'Gligar', 'Gothita', 'Meditite', 'Misdreavus', 'Murkrow', 'Porygon',
 			'Scyther', 'Sneasel', 'Swirlix', 'Tangela', 'Trapinch', 'Vulpix-Base', 'Wingull', 'Yanma',
@@ -4353,7 +4392,7 @@ export const Formats: FormatList = [
 
 		mod: 'gen6',
 		searchShow: false,
-		ruleset: ['Standard', 'Little Cup'],
+		ruleset: ['Standard', 'Little Cup Rule'],
 		banlist: [
 			'Drifloon', 'Gligar', 'Meditite', 'Misdreavus', 'Murkrow', 'Scyther', 'Sneasel', 'Swirlix', 'Tangela', 'Yanma',
 			'Baton Pass', 'Dragon Rage', 'Sonic Boom', 'Swagger',
