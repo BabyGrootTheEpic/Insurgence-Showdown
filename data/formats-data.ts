@@ -1320,7 +1320,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		randomBattleLevel: 76,
 		randomDoubleBattleMoves: ["transform"],
 		randomDoubleBattleLevel: 88,
-		tier: "(PU)",
+		tier: "LC",
 	},
 	dittodelta: {
 		tier: "(PU)",
