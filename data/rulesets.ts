@@ -1775,6 +1775,7 @@ export const Rulesets: {[k: string]: FormatData} = {
 		effectType: 'ValidatorRule',
 		name: 'Same Type Clause',
 		desc: "Forces all Pok&eacute;mon on a team to share a type with each other",
+		banlist: ['Eevite', 'Protean Maxima'],
 		onBegin() {
 			this.add('rule', 'Same Type Clause: Pokémon in a team must share a type');
 		},
