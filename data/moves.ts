@@ -507,7 +507,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 				if (source.species.forme === 'Therian') {
 					this.boost({spd: -1}, target, source);
 				} else {
-					this.boost({spa: 1, spd: 1}, target);
+					this.boost({spa: 1, spd: 1}, source);
 				}
 			},
 		},
@@ -17467,7 +17467,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 				this.debug('weakened by weather');
 				return this.chainModify(0.5);
 			}
-			if (this.field.isWeather(['newmoon'])) {
+			if (pokemon.effectiveWeather() === 'newmoon') {
 				this.debug('weakened by weather');
 				return this.chainModify(0.3);
 			}
@@ -17506,6 +17506,10 @@ export const Moves: {[moveid: string]: MoveData} = {
 			if (['raindance', 'primordialsea', 'sandstorm', 'hail'].includes(pokemon.effectiveWeather())) {
 				this.debug('weakened by weather');
 				return this.chainModify(0.5);
+			}
+			if (pokemon.effectiveWeather() === 'newmoon') {
+				this.debug('weakened by weather');
+				return this.chainModify(0.3);
 			}
 		},
 		secondary: null,
