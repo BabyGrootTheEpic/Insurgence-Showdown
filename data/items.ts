@@ -55,15 +55,16 @@ export const Items: {[itemid: string]: ItemData} = {
 	//Zeta & Omicron:
 	dugtrinite: {
 		name: "Dugtrinite",
-		//The Zeta/Omicron wiki doesn't the sprite, and I'm not far enough into my Omicron save to see the item, so this will use Typhlosionite's sprite for now.
+		/*The Zeta/Omicron wiki doesn't have the sprite, there isn't any image that is obviously this item in the game's files,
+		* and I'm not far enough into my Omicron save to see the item, so this will use Typhlosionite's sprite for now.*/
 		spritenum: 752 + 65,
-		/*megaStone: "Dugtrio-Mega",
+		megaStone: "Dugtrio-Mega",
 		megaEvolves: "Dugtrio",
 		itemUser: ["Dugtrio"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
-		},*/
+		},
 		num: 9002,
 		gen: 6,
 		//isNonstandard: "Past",
@@ -71,8 +72,7 @@ export const Items: {[itemid: string]: ItemData} = {
 	sceptilitezo: {
 		name: "Sceptilite ZO",
 		spritenum: 752 - 5,
-		megaStone: "Sceptile-Mega",
-		//megaStone: "Sceptile-Mega-ZO",
+		megaStone: "Sceptile-Mega-ZO",
 		megaEvolves: "Sceptile",
 		itemUser: ["Sceptile"],
 		onTakeItem(item, source) {
@@ -86,8 +86,7 @@ export const Items: {[itemid: string]: ItemData} = {
 	swampertitezo: {
 		name: "Swampertite ZO",
 		spritenum: 752 - 4,
-		megaStone: "Swampert-Mega",
-		//megaStone: "Swampert-Mega-ZO",
+		megaStone: "Swampert-Mega-ZO",
 		megaEvolves: "Swampert",
 		itemUser: ["Swampert"],
 		onTakeItem(item, source) {
@@ -101,13 +100,13 @@ export const Items: {[itemid: string]: ItemData} = {
 	golurkite: {
 		name: "Golurkite",
 		spritenum: 752 - 3,
-		/*megaStone: "Golurk-Mega",
+		megaStone: "Golurk-Mega",
 		megaEvolves: "Golurk",
 		itemUser: ["Golurk"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
-		},*/
+		},
 		num: 9005,
 		gen: 6,
 		//isNonstandard: "Past",

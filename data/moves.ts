@@ -15315,6 +15315,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 				(pkmn.substr(-4) !== 'mega' &&
 				pkmn.substr(-5) !== 'megax' &&
 				pkmn.substr(-5) !== 'megay' &&
+				pkmn.substr(-6) !== 'megazo' &&
 				pkmn.substr(-8) !== 'megabase' &&
 				pkmn.substr(-5) !== 'megae' &&
 				pkmn.substr(-5) !== 'megaf' &&

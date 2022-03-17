@@ -3,6 +3,10 @@ export const Aliases: {[alias: string]: string} = {
 	///////////////////////////////////////////////////////////////////
 
 	//megas
+	megadugtrio: "Dugtrio-Mega",
+	megasceptilezo: "Sceptile-Mega-ZO",
+	megaswampertzo: "Swampert-Mega-ZO",
+	megagolurk: "Golurk-Mega",
 	megapoliwrath: "Poliwrath-Mega",
 	megamarowak: "Marowak-Mega",
 	megaeevee: "Eevee-Mega-Base",
@@ -189,6 +193,20 @@ export const Aliases: {[alias: string]: string} = {
 	deltamegalucario: "Lucario-Delta-Mega",
 
 	//deltas
+	deltajirachi: "Jirachi-Delta",
+	deltavictini: "Victini-Delta",
+	//deltamiloticf: "Milotic-Delta-F",
+	//deltapinsir: "Pinsir-Delta",
+	//deltazangoose: "Zangoose-Delta",
+	//deltachimecho: "Chimecho-Delta",
+	//deltaaggroni: "Aggron-Delta-I",
+	//deltaninetales: "Ninetales-Delta",
+	//deltaaerodactyl: "Aerodactyl-Delta",
+	//deltaraichus: "Raichu-Delta-S",
+	//deltablastoises: "Blastoise-Delta-S",
+	//deltacharizarde: "Charizard-Delta-E",
+	//deltamachamp: "Machamp-Delta",
+	//deltahoundoom: "Houndoom-Delta",
 	deltabulbasaur: "Bulbasaur-Delta",
 	deltaivysaur: "Ivysaur-Delta",
 	deltavenusaur: "Venusaur-Delta",

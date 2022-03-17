@@ -4,6 +4,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	testmon: {
 		tier: "AG",
 	},
+	ausitto: {
+		//isNonstandard: "Past",
+		tier: "(PU)",
+	},
 	bulbasaur: {
 		tier: "LC",
 	},
@@ -476,6 +480,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		randomBattleLevel: 82,
 		randomDoubleBattleMoves: ["highhorsepower", "memento", "protect", "rockslide", "substitute", "suckerpunch"],
 		randomDoubleBattleLevel: 88,
+		tier: "(PU)",
+	},
+	dugtriomega: {
+		//isNonstandard: "Past",
 		tier: "(PU)",
 	},
 	dugtriodelta: {
@@ -2239,6 +2247,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		//isNonstandard: "Past",
 		tier: "(PU)",
 	},
+	sceptilemegazo: {
+		//isNonstandard: "Past",
+		tier: "(PU)",
+	},
 	sceptiledelta: {
 		tier: "(PU)",
 	},
@@ -2282,6 +2294,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "(PU)",
 	},
 	swampertmega: {
+		//isNonstandard: "Past",
+		tier: "(PU)",
+	},
+	swampertmegazo: {
 		//isNonstandard: "Past",
 		tier: "(PU)",
 	},
@@ -3220,6 +3236,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		randomDoubleBattleLevel: 77,
 		tier: "(PU)",
 	},
+	jirachidelta: {
+		//isNonstandard: "Past",
+		tier: "(PU)",
+	},
 	jirachimega: {
 		//isNonstandard: "Past",
 		tier: "Uber",
@@ -3840,6 +3860,9 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		randomBattleLevel: 78,
 		randomDoubleBattleMoves: ["boltstrike", "glaciate", "protect", "uturn", "vcreate", "zenheadbutt"],
 		randomDoubleBattleLevel: 81,
+		tier: "(PU)",
+	},
+	victinidelta: {
 		tier: "(PU)",
 	},
 	snivy: {
@@ -4664,13 +4687,17 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		randomDoubleBattleLevel: 86,
 		tier: "(PU)",
 	},
+	golurkmega: {
+		//isNonstandard: "Past",
+		tier: "(PU)",
+	},
 	golurkdelta: {
 		tier: "(PU)",
 	},
 	pawniard: {
 		tier: "LC",
 	},
-	parniarddelta: {
+	pawniarddelta: {
 		tier: "LC",
 	},
 	bisharp: {

@@ -369,7 +369,7 @@ export const Rulesets: {[k: string]: FormatData} = {
 		name: 'Useless Items Clause',
 		desc: "Bans items with no effect.",
 		banlist: [
-			'Dragon Scale', 'Dugtrinite', 'Golurkite', 'Legend Plate', //NYI
+			'Dragon Scale', 'Legend Plate', //NYI
 			'TR00', 'TR01', 'TR02', 'TR03', 'TR04', 'TR05', 'TR06', 'TR07', 'TR08', 'TR09', 'TR10', 'TR11', 'TR12', 'TR13', 'TR14', 'TR15', 'TR16', 'TR17', 'TR18', 'TR19', 'TR20',
 			'TR21', 'TR22', 'TR23', 'TR24', 'TR25', 'TR26', 'TR27', 'TR28', 'TR29', 'TR30', 'TR31', 'TR32', 'TR33', 'TR34', 'TR35', 'TR36', 'TR37', 'TR38', 'TR39', 'TR40', 'TR41',
 			'TR42', 'TR43', 'TR44', 'TR45', 'TR46', 'TR47', 'TR48', 'TR49', 'TR50', 'TR51', 'TR52', 'TR53', 'TR54', 'TR55', 'TR56', 'TR57', 'TR58', 'TR59', 'TR60', 'TR61', 'TR62',
@@ -421,8 +421,8 @@ export const Rulesets: {[k: string]: FormatData} = {
 			'Blazikenite', 'Cacturnite', 'Cameruptite', 'Charizardite X', 'Charizardite Y', 'Chatotite', 'Crawdite', 'Cryogonite', 'Crystal Fragment', 'Crucibellite', 'Delta Bisharpite',
 			'Delta Blastoisinite', 'Delta Cameruptite', 'Delta Charizardite', 'Delta Etigirafarigite', 'Delta Froslassite', 'Delta Galladite', 'Delta Gardevoirite', 'Delta Glalitite',
 			'Delta Lopunnite', 'Delta Lucarionite', 'Delta Mawilite', 'Delta Medichamite', 'Delta Metagrossite Ruin', 'Delta Metagrossite Spider', 'Delta Milotite', 'Delta Pidgeotite',
-			'Delta Sablenite', 'Delta Scizorite', 'Delta Sunflorite', 'Delta Typhlosionite', 'Delta Venusaurite', 'Diancite', 'Donphanite', /*'Dugtrinite',*/ 'Eevite', 'Etigirafarigite',
-			'Feraligatite', 'Flygonite', 'Froslassite', 'Galladite', 'Garchompite', 'Gardevoirite', 'Gengarite', 'Glalitite', /*'Golurkite',*/ 'Gothitite', 'Gyaradosite', 'Haxorite',
+			'Delta Sablenite', 'Delta Scizorite', 'Delta Sunflorite', 'Delta Typhlosionite', 'Delta Venusaurite', 'Diancite', 'Donphanite', 'Dugtrinite', 'Eevite', 'Etigirafarigite',
+			'Feraligatite', 'Flygonite', 'Froslassite', 'Galladite', 'Garchompite', 'Gardevoirite', 'Gengarite', 'Glalitite', 'Golurkite', 'Gothitite', 'Gyaradosite', 'Haxorite',
 			'Heracronite', 'Houndoominite', 'Hydreigonite', 'Jirachite', 'Kangaskhanite', 'Latiasite', 'Latiosite', 'Lopunnite', 'Lucarionite', 'Magcargonite', 'Manectite', 'Marowite',
 			'Mawilite', 'Medichamite', 'Meganiumite', 'Metagrossite', 'Mewtwonite X', 'Mewtwonite Y', 'Milotite', 'Miltankite', 'Pidgeotite', 'Pinsirite', 'Politoedite', 'Poliwrathite',
 			'Reuniclite', 'Sablenite', 'Salamencite', 'Sceptilite', 'Sceptilite ZO', 'Scizorite', 'Shadow Mewtwonite', 'Sharpedonite', 'Shiftrite', 'Slowbronite', 'Spiritombite',

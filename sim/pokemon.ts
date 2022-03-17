@@ -1208,7 +1208,7 @@ export class Pokemon {
 			if (this.species.num === 493) {
 				// Arceus formes
 				const item = this.getItem();
-				const targetForme = (item?.onPlate ? 'Arceus-' + item.onPlate : 'Arceus');
+				const targetForme = (item?.onPlate ? 'Arceus-' + item.onPlate.replace('???', 'Typeless') : 'Arceus');
 				if (this.species.name !== targetForme) {
 					this.formeChange(targetForme);
 				}

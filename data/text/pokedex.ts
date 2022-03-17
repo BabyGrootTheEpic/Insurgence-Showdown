@@ -2,6 +2,9 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	testmon: {
 		name: "Testmon",
 	},
+	ausitto: {
+		name: "Ausitto",
+	},
 	bulbasaur: {
 		name: "Bulbasaur",
 	},
@@ -316,6 +319,9 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	},
 	dugtrio: {
 		name: "Dugtrio",
+	},
+	dugtriomega: {
+		name: "Dugtrio-Mega",
 	},
 	dugtrioalola: {
 		name: "Dugtrio-Alola",
@@ -1346,6 +1352,9 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	sceptilemega: {
 		name: "Sceptile-Mega",
 	},
+	sceptilemegazo: {
+		name: "Sceptile-Mega-ZO",
+	},
 	sceptiledelta: {
 		name: "Sceptile-Delta",
 	},
@@ -1381,6 +1390,9 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	},
 	swampertmega: {
 		name: "Swampert-Mega",
+	},
+	swampertmegazo: {
+		name: "Swampert-Mega-ZO",
 	},
 	poochyena: {
 		name: "Poochyena",
@@ -1994,6 +2006,9 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	jirachi: {
 		name: "Jirachi",
 	},
+	jirachidelta: {
+		name: "Jirachi-Delta",
+	},
 	jirachimega: {
 		name: "Jirachi-Mega",
 	},
@@ -2555,6 +2570,9 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	victini: {
 		name: "Victini",
 	},
+	victinidelta: {
+		name: "Victini-Delta",
+	},
 	snivy: {
 		name: "Snivy",
 	},
@@ -3106,6 +3124,9 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	},
 	golurk: {
 		name: "Golurk",
+	},
+	golurkmega: {
+		name: "Golurk-Mega",
 	},
 	golurkdelta: {
 		name: "Golurk-Delta",

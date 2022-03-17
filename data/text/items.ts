@@ -14,8 +14,7 @@ export const ItemsText: {[k: string]: ItemText} = {
 	},
 	dugtrinite: {
 		name: "Dugtrinite",
-		desc: "Not yet implemented!",
-		//desc: "If held by a Dugtrio, this item allows it to Mega Evolve in battle.",
+		desc: "If held by a Dugtrio, this item allows it to Mega Evolve in battle.",
 	},
 	sceptilitezo: {
 		name: "Sceptilite ZO",
@@ -27,8 +26,7 @@ export const ItemsText: {[k: string]: ItemText} = {
 	},
 	golurkite: {
 		name: "Golurkite",
-		desc: "Not yet implemented!",
-		//desc: "If held by a Golurk, this item allows it to Mega Evolve in battle.",
+		desc: "If held by a Golurk, this item allows it to Mega Evolve in battle.",
 	},
 	strangemachine: {
 		name: "Strange Machine",

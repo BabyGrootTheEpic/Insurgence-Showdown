@@ -13,6 +13,11 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 		],
 		eventOnly: true,
 	},
+	ausitto: {
+		learnset: {
+			sketch: ["5L50", "5L60", "5L70", "5L80", "5L90", "5L100", "5L110", "5L120"],
+		},
+	},
 	missingno: {
 		learnset: {
 			blizzard: ["6M", "5M", "3L1"],
@@ -57764,6 +57769,12 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 		],
 		eventOnly: true,
 	},
+	jirachidelta: {
+		/*learnset: {
+			fairyforce: ["5T"],
+		},*/
+		eventOnly: true,
+	},
 	deoxys: {
 		learnset: {
 			tesseract: ["5M"],
@@ -67025,6 +67036,12 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			//5S8: https://pokemonzetaomicron.fandom.com/wiki/Mt._Press#Level_4_2
 			{generation: 5, level: 50, shiny: 1, moves: ["zenheadbutt", "flameburst", "reversal", "flamecharge"]},
 		],
+		eventOnly: true,
+	},
+	victinidelta: {
+		/*learnset: {
+			fairyfyre: ["5T"],
+		},*/
 		eventOnly: true,
 	},
 	snivy: {
