@@ -157,9 +157,6 @@ export const Formats: FormatList = [
 		battle: {trunc: Math.trunc},
 		rated: false,
 		ruleset: ['[Gen 8] Multi Mega', 'Stoneless Mega Mod'],
-		searchShow: false,
-		challengeShow: false,
-		tournamentShow: false,
 	},
 	{
 		name: "[Gen 8] 12-mon Multi Mega",
@@ -330,9 +327,6 @@ export const Formats: FormatList = [
 		rated: false,
 		// no restrictions, for serious (other than team preview)
 		ruleset: ['Custom Game Megas', 'Stoneless Mega Mod'],
-		searchShow: false,
-		challengeShow: false,
-		tournamentShow: false,
 	},
 
 
@@ -494,9 +488,6 @@ export const Formats: FormatList = [
 		battle: {trunc: Math.trunc},
 		rated: false,
 		ruleset: ['[Gen 8] (D)Multi Mega', 'Stoneless Mega Mod'],
-		searchShow: false,
-		challengeShow: false,
-		tournamentShow: false,
 	},
 	{
 		name: "[Gen 8] (D)12-mon Multi Mega",
@@ -683,9 +674,6 @@ export const Formats: FormatList = [
 		rated: false,
 		// no restrictions, for serious (other than team preview)
 		ruleset: ['Custom Game Megas', 'Stoneless Mega Mod'],
-		searchShow: false,
-		challengeShow: false,
-		tournamentShow: false,
 	},
 
 
@@ -847,9 +835,6 @@ export const Formats: FormatList = [
 		battle: {trunc: Math.trunc},
 		rated: false,
 		ruleset: ['[Gen 8] (T)Multi Mega', 'Stoneless Mega Mod'],
-		searchShow: false,
-		challengeShow: false,
-		tournamentShow: false,
 	},
 	{
 		name: "[Gen 8] (T)12-mon Multi Mega",
@@ -1036,9 +1021,6 @@ export const Formats: FormatList = [
 		rated: false,
 		// no restrictions, for serious (other than team preview)
 		ruleset: ['Custom Game Megas', 'Stoneless Mega Mod'],
-		searchShow: false,
-		challengeShow: false,
-		tournamentShow: false,
 	},
 
 
@@ -1214,8 +1196,6 @@ export const Formats: FormatList = [
 		battle: {trunc: Math.trunc},
 		rated: false,
 		ruleset: ['[Gen 8] (M)Multi Mega', 'Stoneless Mega Mod'],
-		searchShow: false,
-		challengeShow: false,
 	},
 	{
 		name: "[Gen 8] (M)12-mon Multi Mega",
@@ -1420,8 +1400,6 @@ export const Formats: FormatList = [
 		rated: false,
 		// no restrictions, for serious (other than team preview)
 		ruleset: ['Custom Game Megas', 'Stoneless Mega Mod'],
-		searchShow: false,
-		challengeShow: false,
 	},
 
 
@@ -1597,8 +1575,6 @@ export const Formats: FormatList = [
 		battle: {trunc: Math.trunc},
 		rated: false,
 		ruleset: ['[Gen 8] FFA Multi Mega', 'Stoneless Mega Mod'],
-		searchShow: false,
-		challengeShow: false,
 	},
 	{
 		name: "[Gen 8] FFA 12-mon Multi Mega",
@@ -1801,8 +1777,6 @@ export const Formats: FormatList = [
 		rated: false,
 		// no restrictions, for serious (other than team preview)
 		ruleset: ['Custom Game Megas', 'Stoneless Mega Mod'],
-		searchShow: false,
-		challengeShow: false,
 	},
 
 

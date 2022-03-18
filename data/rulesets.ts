@@ -454,11 +454,24 @@ export const Rulesets: {[k: string]: FormatData} = {
 	stonelessmegamod: {
 		effectType: 'Rule',
 		name: 'Stoneless Mega Mod',
-		desc: "Not yet implemented.",
-		//desc: "Allows Pokémon to Mega Evolve without their Mega Stone, though the Pokémon must still be a species capable of Mega Evolution.\nCharizard, Mewtwo, Sceptile, and Swampert will default to their Y/ORAS mega. To use their X/ZO Mega, give their HP stat 2 useless EVs.",
+		desc: "Allows Pokémon to Mega Evolve without their Mega Stone, though the Pokémon must still be a species capable of Mega Evolution.\nCharizard, Mewtwo, Sceptile, and Swampert will default to their Y/ORAS mega. To use their X/ZO Mega, give their HP stat 2 useless EVs.",
 		onBegin() {
-			this.add('rule', 'Stoneless Mega Mod is not yet implemented');
-			//this.add('rule', 'Stoneless Mega Mod: Pokémon don\'t need their Mega Stone to Mega Evolve');
+			this.add('rule', 'Stoneless Mega Mod: Pokémon don\'t need their Mega Stone to Mega Evolve');
+			for (const pokemon of this.getAllPokemon()) {
+				let megaID = pokemon.species.id + 'mega';
+				if (['charizardmega', 'mewtwomega', 'sceptilemega', 'swampertmega'].includes(megaID)) {
+					const evMod = pokemon.set.evs.hp % 4;
+					if (pokemon.species.num < 151) { //Charizard (6) & Mewtwo (150)
+						if(evMod === 2) megaID += 'x';
+						else megaID += 'y';
+					} else if (evMod === 2) megaID += 'zo'; //Sceptile (254) & Swampert (260)
+				} else if (megaID === 'eeveetutoredmega') megaID = 'eeveemegabase';
+
+				const megaSpecies = this.dex.species.get(megaID)?.name;
+				if (megaSpecies && megaSpecies.includes('-Mega') && typeof pokemon.canMegaEvo !== 'string') {
+					pokemon.canMegaEvo = megaSpecies;
+				}
+			}
 		},
 	},
 	multibilitymod: {
