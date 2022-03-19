@@ -458,18 +458,18 @@ export const Rulesets: {[k: string]: FormatData} = {
 		onBegin() {
 			this.add('rule', 'Stoneless Mega Mod: Pokémon don\'t need their Mega Stone to Mega Evolve');
 			for (const pokemon of this.getAllPokemon()) {
-				let megaID = pokemon.species.id + 'mega';
-				if (['charizardmega', 'mewtwomega', 'sceptilemega', 'swampertmega'].includes(megaID)) {
-					const evMod = pokemon.set.evs.hp % 4;
-					if (pokemon.species.num < 151) { //Charizard (6) & Mewtwo (150)
-						if(evMod === 2) megaID += 'x';
-						else megaID += 'y';
-					} else if (evMod === 2) megaID += 'zo'; //Sceptile (254) & Swampert (260)
-				} else if (megaID === 'eeveetutoredmega') megaID = 'eeveemegabase';
+				if (typeof pokemon.canMegaEvo !== 'string') {
+					let megaID = pokemon.species.id + 'mega';
+					if (['charizardmega', 'mewtwomega', 'sceptilemega', 'swampertmega'].includes(megaID)) {
+						const evMod = pokemon.set.evs.hp % 4;
+						if (pokemon.species.num < 151) { //Charizard (6) & Mewtwo (150)
+							if(evMod === 2) megaID += 'x';
+							else megaID += 'y';
+						} else if (evMod === 2) megaID += 'zo'; //Sceptile (254) & Swampert (260)
+					} else if (megaID === 'eeveetutoredmega') megaID = 'eeveemegabase';
 
-				const megaSpecies = this.dex.species.get(megaID)?.name;
-				if (megaSpecies && megaSpecies.includes('-Mega') && typeof pokemon.canMegaEvo !== 'string') {
-					pokemon.canMegaEvo = megaSpecies;
+					const megaSpecies = this.dex.species.get(megaID)?.name;
+					if (megaSpecies && megaSpecies.includes('-Mega')) pokemon.canMegaEvo = megaSpecies;
 				}
 			}
 		},

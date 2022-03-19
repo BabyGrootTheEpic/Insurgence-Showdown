@@ -387,7 +387,7 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 	},
 	etherealshroud: {
 		name: "Ethereal Shroud",
-		desc: "If a Pokemon uses a Bug- or Poison-type attack against this Pokemon, that Pokemon's attacking stat is halved when calculating the damage to this Pokemon. This Pokémon is immune to Normal- and Fighting type moves.",
+		desc: "If a Pokemon uses a Bug- or Poison-type attack against this Pokemon, that Pokemon's attacking stat is halved when calculating the damage to this Pokemon. This Pokemon is immune to Normal- and Fighting type moves.",
 		shortDesc: "Gains the immunities and resistances of the Ghost-type.",
 	},
 	eventhorizon: {
@@ -1005,8 +1005,8 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 	},
 	omnitype: {
 		name: "Omnitype",
-		desc: "This Pokemon has the defensive properties of every type.",
-		shortDesc: "This Pokemon has the defensive properties of every type.",
+		desc: "If this Pokemon is a Giratina-Primal, it has the defensive properties of every type except Shadow.",
+		shortDesc: "If this Pokemon is a Giratina-Primal, it has the defensive properties of every type.",
 
 		activate: "  [POKEMON] has become every type!",
 	},
@@ -1066,7 +1066,7 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 	},
 	phototroph: {
 		name: "Phototroph",
-		desc: "Restores 1/16 of this Pokémons maximum HP, rounded down, at the end of each turn. If Sunny Day is active, this Pokemon restores 1/8 of its maximum HP, rounded down, at the end of each turn. Does not heal in Darkness or Rain.",
+		desc: "Restores 1/16 of this Pokemons maximum HP, rounded down, at the end of each turn. If Sunny Day is active, this Pokemon restores 1/8 of its maximum HP, rounded down, at the end of each turn. Does not heal in Darkness or Rain.",
 		shortDesc: "Restores 1/16 of its max HP each turn. Heals 1/8 in Sun and nothing in Darkness or Rain.",
 	},
 	pickpocket: {
@@ -1668,7 +1668,7 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 	synchronize: {
 		name: "Synchronize",
 		desc: "If another Pokemon burns, paralyzes, poisons, badly poisons, or gives frostbite to this Pokemon, that Pokemon receives the same non-volatile status condition.",
-		shortDesc: "If another Pokemon gives this Pokémon brn/par/psn/tox/fsb, it also gets that status.",
+		shortDesc: "If another Pokemon gives this Pokemon brn/par/psn/tox/fsb, it also gets that status.",
 		gen7: {
 			desc: "If another Pokemon burns, paralyzes, poisons, or badly poisons this Pokemon, that Pokemon receives the same non-volatile status condition.",
 			shortDesc: "If another Pokemon burns/poisons/paralyzes this Pokemon, it also gets that status.",

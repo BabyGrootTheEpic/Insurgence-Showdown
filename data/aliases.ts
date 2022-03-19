@@ -535,7 +535,6 @@ export const Aliases: {[alias: string]: string} = {
 	tworestricted: "[Gen 8] Flat Rules 2R",
 	inverseag: "[Gen 8] Inverse AG",
 	inverseanythinggoes: "[Gen 8] Inverse AG",
-	inverse: "[Gen 8] Inverse AG",
 	inverseagdmax: "[Gen 8] Inverse AG Dmax",
 	inverseagdynamax: "[Gen 8] Inverse AG Dmax",
 	inverseagd: "[Gen 8] Inverse AG Dmax",
