@@ -433,6 +433,15 @@ export const Rulesets: {[k: string]: FormatData} = {
 			this.add('rule', 'Mega Stone Clause: Mega Stones are banned.');
 		},
 	},
+	typechangeabilityclause: {
+		effectType: 'ValidatorRule',
+		name: 'Type Change Ability Clause',
+		desc: "Bans abilities that can change a Pokémon's type in battle.",
+		banlist: ['Color Change', 'Forecast', 'Libero', 'Protean', 'Protean Maxima', 'Eevite', 'Multitype + Legend Plate'],
+		onBegin() {
+			this.add('rule', 'Type Change Ability Clause: Abilities that modify types are banned.');
+		},
+	},
 
 
 	//Mods
@@ -454,7 +463,7 @@ export const Rulesets: {[k: string]: FormatData} = {
 	stonelessmegamod: {
 		effectType: 'Rule',
 		name: 'Stoneless Mega Mod',
-		desc: "Allows Pokémon to Mega Evolve without their Mega Stone, though the Pokémon must still be a species capable of Mega Evolution.\nCharizard, Mewtwo, Sceptile, and Swampert will default to their Y/ORAS mega. To use their X/ZO Mega, give their HP stat 2 useless EVs.",
+		desc: "Allows Pokémon to Mega Evolve without their Mega Stone, though the Pokémon must still be a species capable of Mega Evolution. Charizard, Mewtwo, Sceptile, and Swampert will default to their Y/ORAS mega. To use their X/ZO Mega, give their HP stat 2 useless EVs.",
 		onBegin() {
 			this.add('rule', 'Stoneless Mega Mod: Pokémon don\'t need their Mega Stone to Mega Evolve');
 			for (const pokemon of this.getAllPokemon()) {
@@ -1788,7 +1797,6 @@ export const Rulesets: {[k: string]: FormatData} = {
 		effectType: 'ValidatorRule',
 		name: 'Same Type Clause',
 		desc: "Forces all Pok&eacute;mon on a team to share a type with each other",
-		banlist: ['Eevite', 'Protean Maxima'],
 		onBegin() {
 			this.add('rule', 'Same Type Clause: Pokémon in a team must share a type');
 		},

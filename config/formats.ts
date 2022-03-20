@@ -78,7 +78,7 @@ export const Formats: FormatList = [
 		mod: 'gen8',
 		battle: {trunc: Math.trunc},
 		rated: false,
-		ruleset: ['BGTE Standard', 'Singles Bans', 'Same Type Clause'],
+		ruleset: ['BGTE Standard', 'Singles Bans', 'Same Type Clause', 'Type Change Ability Clause'],
 	},
 	{
 		name: "[Gen 8] Flat Rules",
@@ -398,7 +398,7 @@ export const Formats: FormatList = [
 		gameType: 'doubles',
 		battle: {trunc: Math.trunc},
 		rated: false,
-		ruleset: ['BGTE Standard', 'Same Type Clause', '!Dynamax Clause'],
+		ruleset: ['BGTE Standard', 'Same Type Clause', 'Type Change Ability Clause', '!Dynamax Clause'],
 	},
 	{
 		name: "[Gen 8] (D)Flat Rules",
@@ -743,7 +743,7 @@ export const Formats: FormatList = [
 		gameType: 'triples',
 		battle: {trunc: Math.trunc},
 		rated: false,
-		ruleset: ['BGTE Standard', 'Same Type Clause'],
+		ruleset: ['BGTE Standard', 'Same Type Clause', 'Type Change Ability Clause'],
 	},
 	{
 		name: "[Gen 8] (T)Flat Rules",
@@ -1094,7 +1094,7 @@ export const Formats: FormatList = [
 		tournamentShow: false,
 		battle: {trunc: Math.trunc},
 		rated: false,
-		ruleset: ['BGTE Standard', 'Same Type Clause'],
+		ruleset: ['BGTE Standard', 'Same Type Clause', 'Type Change Ability Clause'],
 	},
 	{
 		name: "[Gen 8] (M)Flat Rules",
@@ -1471,7 +1471,7 @@ export const Formats: FormatList = [
 		tournamentShow: false,
 		battle: {trunc: Math.trunc},
 		rated: false,
-		ruleset: ['BGTE Standard', 'FFA Bans', 'Same Type Clause'],
+		ruleset: ['BGTE Standard', 'FFA Bans', 'Same Type Clause', 'Type Change Ability Clause'],
 	},
 	{
 		name: "[Gen 8] FFA Flat Rules",

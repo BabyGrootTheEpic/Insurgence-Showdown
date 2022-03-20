@@ -80,6 +80,7 @@ export const commands: Chat.ChatCommands = {
 			`<p><strong>Added Abilities:</strong> All new abilities from <a href="https://wiki.p-insurgence.com/Category:Abilities">Insurgence</a> have been added. (Periodic Orbit might not work properly outside of singles formats)</p>` +
 			`<p><strong>Items:</strong> Blank Plate, <a href="https://bulbapedia.bulbagarden.net/wiki/Legend_Plate#Effect">Legend Plate</a>, and items required by new forms have been added</p>` +
 			`<p><strong>Added Learnsets:</strong> Added learnsets and events from Legends: Arceus, Brilliant Diamond/Shining Pearl, Insurgence, &amp; Zeta/Omicron. Also added custom events for Mawile, the Tapus, and Mime Jr.</p>` +
+			`<p><strong>Commands:</strong> <code>/weak Omnitype</code> and <code>/legendplate</code></p>` +
 			`<p><strong>Other:</strong> Shininess is no longer validated. The status condition <a href="https://serebii.net/legendsarceus/frostbitedrowsy.shtml">frostbite</a> has been added. All moves' freeze chances (except Permafrost's) have been changed to frostbite. All frostbite chances are doubled in hail.</p>`
 		);
 	},
