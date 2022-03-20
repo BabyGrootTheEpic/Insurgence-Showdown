@@ -10091,12 +10091,20 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 10,
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
-		onModifyType(move, pokemon) {
+		onModifyType(move, pokemon, target) {
 			if (pokemon.ignoringItem()) return;
 			const item = pokemon.getItem();
-			if (item.id && item.onPlate && !item.zMove) {
-				move.type = item.onPlate;
+			if (item.id) {
+				if (item.onPlate && !item.zMove) {
+					move.type = item.onPlate;
+				} else if(item.id === 'legendplate' && target) {
+					const legendPlateType = target.getLegendPlateType();
+					if (legendPlateType) move.type = legendPlateType;
+				}
 			}
+		},
+		onModifyMove(move, pokemon) {
+			if (pokemon.getItem().id === 'legendplate') move.ignoreAbility = true;
 		},
 		secondary: null,
 		target: "normal",

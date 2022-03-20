@@ -1420,7 +1420,7 @@ export class Pokemon {
 		if(effect && effect.id.slice(0, 9) === 'splinters') {
 			let splinterType = (effect.id.slice(9) || '???');
 			if (splinterType !== '???') splinterType = Dex.types.get(splinterType).name;
-			let typeMod = this.battle.dex.getEffectiveness(splinterType, this.types);
+			let typeMod = this.battle.dex.getEffectiveness(splinterType, this.getTypes());
 
 			if(splinterType === 'Shadow')
 			{
@@ -1998,6 +1998,15 @@ export class Pokemon {
 			totalTypeMod += this.battle.runEvent('Effectiveness', this, type, move, typeMod);
 		}
 		return totalTypeMod;
+	}
+
+	getLegendPlateType() {
+		const validTypes = this.battle.dex.getLegendPlateTypes(this.getTypes())
+		if (validTypes) {
+			//If there are multiple valid types, pick one at random.
+			if (validTypes.length > 1) return validTypes[this.battle.random(validTypes.length)];
+			else return validTypes[0];
+		}
 	}
 
 	/** false = immune, true = not immune */

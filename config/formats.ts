@@ -28,7 +28,6 @@ export const Formats: FormatList = [
 
 		mod: 'gen8',
 		team: 'randomHC',
-		rated: false,
 		ruleset: ['Rndm Hackmons'],
 	},
 	{
@@ -37,7 +36,6 @@ export const Formats: FormatList = [
 
 		mod: 'linked',
 		team: 'randomHC',
-		rated: false,
 		ruleset: ['Rndm Hackmons'],
 	},
 	
@@ -344,7 +342,6 @@ export const Formats: FormatList = [
 		mod: 'gen8',
 		gameType: 'doubles',
 		team: 'randomHC',
-		rated: false,
 		ruleset: ['Rndm Hackmons'],
 	},
 	{
@@ -354,7 +351,6 @@ export const Formats: FormatList = [
 		mod: 'linked',
 		gameType: 'doubles',
 		team: 'randomHC',
-		rated: false,
 		ruleset: ['Rndm Hackmons'],
 	},
 	
@@ -691,7 +687,6 @@ export const Formats: FormatList = [
 		mod: 'gen8',
 		gameType: 'triples',
 		team: 'randomHC',
-		rated: false,
 		ruleset: ['Rndm Hackmons'],
 	},
 	{
@@ -701,7 +696,6 @@ export const Formats: FormatList = [
 		mod: 'linked',
 		gameType: 'triples',
 		team: 'randomHC',
-		rated: false,
 		ruleset: ['Rndm Hackmons'],
 	},
 
@@ -1039,7 +1033,6 @@ export const Formats: FormatList = [
 		gameType: 'multi',
 		tournamentShow: false,
 		team: 'randomHC',
-		rated: false,
 		ruleset: ['Rndm Hackmons'],
 	},
 	{
@@ -1050,7 +1043,6 @@ export const Formats: FormatList = [
 		gameType: 'multi',
 		tournamentShow: false,
 		team: 'randomHC',
-		rated: false,
 		ruleset: ['Rndm Hackmons'],
 	},
 
@@ -1418,7 +1410,6 @@ export const Formats: FormatList = [
 		gameType: 'freeforall',
 		tournamentShow: false,
 		team: 'randomHC',
-		rated: false,
 		ruleset: ['Rndm Hackmons'],
 	},
 	{
@@ -1429,7 +1420,6 @@ export const Formats: FormatList = [
 		gameType: 'freeforall',
 		tournamentShow: false,
 		team: 'randomHC',
-		rated: false,
 		ruleset: ['Rndm Hackmons'],
 	},
 

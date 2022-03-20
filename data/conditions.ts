@@ -1411,7 +1411,7 @@ export const Conditions: {[k: string]: ConditionData} = {
 		name: 'Arceus',
 		onTypePriority: 1,
 		onType(types, pokemon) {
-			if (pokemon.transformed || pokemon.ability !== 'multitype' && this.gen >= 8) return types;
+			if (pokemon.getItem().id === 'legendplate' || pokemon.transformed || pokemon.ability !== 'multitype' && this.gen >= 8) return types;
 			let type: string | undefined = 'Normal';
 			if (pokemon.ability === 'multitype') {
 				type = pokemon.getItem().onPlate;

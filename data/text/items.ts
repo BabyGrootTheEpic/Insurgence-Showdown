@@ -9,8 +9,7 @@ export const ItemsText: {[k: string]: ItemText} = {
 	},
 	legendplate: {
 		name: "Legend Plate",
-		desc: "Not yet implemented!",
-		//desc: "Judgment's type changes to be super-effective on the target. Judgment ignores abilities.",
+		desc: "Judgment ignores abilities and becomes a super-effective type.",
 	},
 	dugtrinite: {
 		name: "Dugtrinite",

@@ -276,6 +276,80 @@ export class ModdedDex {
 		}
 	}
 
+	/**Returns an array of types that a Legend Plate Judgment would pick against defenderTypes.
+	 * The type chosen is based off of the information here: https://bulbapedia.bulbagarden.net/wiki/Legend_Plate#Effect
+	 */
+	getLegendPlateTypes(defenderTypes: string[]) {
+		if(defenderTypes.length === 0) return;
+
+		let validTypes = [];
+		let typeMods = [];
+		let greatestTypeMod;
+		/*Makes an array of all the effective types (except Crystal and Shadow) and finds their typeMod against the defender.
+		* The greatest typeMod is recorded in greatestTypeMod.*/
+		for (const type of this.types.names()) {
+			if(!['Crystal', 'Shadow'].includes(type)) {
+				const isntImmune = this.getImmunity(type, defenderTypes);
+				if(isntImmune) {
+					const typeMod = this.getEffectiveness(type, defenderTypes);
+					validTypes.push(type);
+					typeMods.push(typeMod);
+					if (!greatestTypeMod || typeMod > greatestTypeMod) greatestTypeMod = typeMod;
+				}
+			}
+		}
+		if (validTypes.length === 0) {
+			let errorMsg = "getLegendPlate() found no valid types against ";
+			for (const type in defenderTypes) errorMsg += `${type}/`
+			throw new Error(errorMsg.substr(-1) + '-type');
+		}
+
+		//Removes all types that don't have a typeMod equal to greatestTypeMod.
+		for (let i = 0; i < typeMods.length; i++) {
+			if (greatestTypeMod && typeMods[i] < greatestTypeMod) {
+				validTypes.splice(i,1);
+				typeMods.splice(i,1)
+				i--;
+			}
+		}
+		if (validTypes.length === 1) return validTypes;
+
+		//Defensive tiebreakers go in order of the targets types, not all at once.
+		for (let typeNum = 0; typeNum < defenderTypes.length; typeNum++) {
+			//If any types in validTypes[] are immune to defenderTypes[typeNum], removes types that aren't.
+			const immunities: string[] = [];
+			for (const type of validTypes) {
+				const isImmune = !this.getImmunity(defenderTypes[typeNum], type);
+				if (isImmune) immunities.push(type);
+			}
+			if (immunities.length > 0) {
+				if (immunities.length === 1) return immunities;
+				validTypes = immunities;
+			}
+
+			typeMods = [];
+			let smallestTypeMod;
+			//Records the defensive typeMods of all validTypes[]. The smallest typeMod is recorded in smallestTypeMod.
+			for (const type of validTypes) {
+				const typeMod = this.getEffectiveness(defenderTypes[typeNum], type);
+				typeMods.push(typeMod);
+				if (!smallestTypeMod || typeMod < smallestTypeMod) smallestTypeMod = typeMod;
+			}
+
+			//Removes all types that don't have a typeMod equal to smallestTypeMod.
+			for (let i = 0; i < typeMods.length; i++) {
+				if (smallestTypeMod && typeMods[i] > smallestTypeMod) {
+					validTypes.splice(i,1);
+					typeMods.splice(i,1)
+					i--;
+				}
+			}
+			if (validTypes.length === 1) return validTypes;
+		}
+
+		return validTypes;
+	}
+
 	getDescs(table: keyof TextTableData, id: ID, dataEntry: AnyObject) {
 		if (dataEntry.shortDesc) {
 			return {

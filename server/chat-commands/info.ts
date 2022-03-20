@@ -78,7 +78,7 @@ export const commands: Chat.ChatCommands = {
 			`<li>Zeta &amp; Omicron: <a href="https://pokemonzetaomicron.fandom.com/wiki/Starter_Pok%C3%A9mon#Stat_Modifications">Starters</a>, <a href="https://pokemonzetaomicron.fandom.com/wiki/Special_Pokemon#Obtainable_Delta_Pok.C3.A9mon">Delta Pok&eacute;mon (WIP)</a>, <a href="https://pokemonzetaomicron.fandom.com/wiki/Fakemon">Fakemon (WIP)</a>, <a href="https://pokemonzetaomicron.fandom.com/wiki/Special_Pokemon#Shadow_Pok.C3.A9mon">Shadow Pok&eacute;mon (NYI)</a>, <a href="https://pokemonzetaomicron.fandom.com/wiki/Strange_Machine">Strange Machine Mewtwo</a>, Mega Dugtrio, Mega Golurk, &amp; an additional Mega Evolution for Sceptile and Swampert.</li></ul>` +
 			`<p><strong>Added Moves:</strong> All new moves from <a href="https://serebii.net/legendsarceus/newattacks.shtml">Legends: Arceus</a>, <a href="https://wiki.p-insurgence.com/Category:Moves">Insurgence</a>, &amp; <a href="https://pokemonzetaomicron.fandom.com/wiki/Category:Exclusive_Moves">Zeta/Omicron (WIP)</a> have been added. Two custom moves, Give Balloon and Frigid Wind, have also been added.</p>` +
 			`<p><strong>Added Abilities:</strong> All new abilities from <a href="https://wiki.p-insurgence.com/Category:Abilities">Insurgence</a> have been added. (Periodic Orbit might not work properly outside of singles formats)</p>` +
-			`<p><strong>Items:</strong> Blank Plate, <a href="https://www.serebii.net/itemdex/legendplate.shtml">Legend Plate (NYI)</a>, and items required by new forms have been added</p>` +
+			`<p><strong>Items:</strong> Blank Plate, <a href="https://bulbapedia.bulbagarden.net/wiki/Legend_Plate#Effect">Legend Plate</a>, and items required by new forms have been added</p>` +
 			`<p><strong>Added Learnsets:</strong> Added learnsets and events from Legends: Arceus, Brilliant Diamond/Shining Pearl, Insurgence, &amp; Zeta/Omicron. Also added custom events for Mawile, the Tapus, and Mime Jr.</p>` +
 			`<p><strong>Other:</strong> Shininess is no longer validated. The status condition <a href="https://serebii.net/legendsarceus/frostbitedrowsy.shtml">frostbite</a> has been added. All moves' freeze chances (except Permafrost's) have been changed to frostbite. All frostbite chances are doubled in hail.</p>`
 		);
@@ -87,6 +87,49 @@ export const commands: Chat.ChatCommands = {
 		`/addedfeatures - Lists what has been added by this server.`
 	],
 
+	legendplate(target, room, user) {
+		if (!target) return this.parse('/help legendplate');
+		if (!this.runBroadcast()) return;
+		const {dex, targets} = this.splitFormat(target.split(/[,/]/).map(toID));
+
+		let species: {types: string[], [k: string]: any} = dex.species.get(targets[0]);
+		const type1 = dex.types.get(targets[0]);
+		const type2 = dex.types.get(targets[1]);
+		const type3 = dex.types.get(targets[2]);
+
+		if (species.exists) {
+			target = species.name;
+		} else {
+			const types = [];
+			if (type1.exists) {
+				types.push(type1.name);
+				if (type2.exists && type2 !== type1) {
+					types.push(type2.name);
+				}
+				if (type3.exists && type3 !== type1 && type3 !== type2) {
+					types.push(type3.name);
+				}
+			}
+
+			if (types.length === 0) {
+				return this.errorReply(Utils.html`${target} isn't a recognized type or Pokemon${Dex.gen > dex.gen ? ` in Gen ${dex.gen}` : ""}.`);
+			}
+			species = {types: types};
+			target = types.join("/");
+		}
+
+		const legendPlateTypes = dex.getLegendPlateTypes(species.types);
+		if (legendPlateTypes && legendPlateTypes.length > 0) {
+			if(legendPlateTypes.length === 1) this.sendReply(`Legend Plate Judgement will be ${legendPlateTypes[0]}-type against ${target}.`);
+			else this.sendReply(`Against ${target}, Legend Plate Judgement will choose one of the following types: ${legendPlateTypes.join(', ')}`);
+		} else this.sendReply('¯\\_(ツ)_/¯');
+	},
+	legendplatehelp: [
+		`/legendplate [pokemon] - Shows what type Legend Plate Judgment would become against a Pokémon.`,
+		`/legendplate [type 1]/[type 2] - Shows what type Legend Plate Judgment would become against a type or type combination.`,
+		`!legendplate [pokemon] - Shows everyone what type Legend Plate Judgment would become against a Pokémon. Requires: + % @ # &`,
+		`!legendplate [type 1]/[type 2] - Shows everyone what type Legend Plate Judgment would become against a type or type combination. Requires: + % @ # &`,
+	],
 
 	ip: 'whois',
 	rooms: 'whois',
@@ -628,7 +671,7 @@ export const commands: Chat.ChatCommands = {
 				let displayedTier = tierDisplay === 'tiers' ? pokemon.tier :
 					tierDisplay === 'doubles tiers' ? pokemon.doublesTier :
 					String(pokemon.num);//pokemon.num >= 0 ? String(pokemon.num) : pokemon.tier;
-				if(displayedTier === '(PU)') displayedTier = '--';
+				if(displayedTier === '(PU)') displayedTier = '-';
 				buffer += `|raw|${Chat.getDataPokemonHTML(pokemon, dex.gen, displayedTier)}\n`;
 				if (showDetails) {
 					let weighthit = 20;

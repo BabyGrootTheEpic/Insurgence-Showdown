@@ -42,12 +42,14 @@ export const Items: {[itemid: string]: ItemData} = {
 	legendplate: {
 		name: "Legend Plate",
 		spritenum: 752 - 2,
+		//Implemented in Judgment and Multitype
 		onTakeItem(item, pokemon, source) {
 			if ((source && source.baseSpecies.num === 493) || pokemon.baseSpecies.num === 493) {
 				return false;
 			}
 			return true;
 		},
+		itemUser: ["Arceus"],
 		num: 9001,
 		gen: 8,
 	},

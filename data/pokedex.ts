@@ -4252,7 +4252,6 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		changesFrom: "Snorlax",
 	},
 	snorlaxdelta: {
-		gen: 6,
 		num: 143,
 		name: "Snorlax-Delta",
 		types: ["Grass"],
@@ -4268,6 +4267,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		cosmeticFormes: ["Snorlax-Delta-Summer", "Snorlax-Delta-Autumn", "Snorlax-Delta-Winter", "Snorlax-Delta-Sakura"],
 		formeOrder: ["Snorlax-Delta", "Snorlax-Delta-Summer", "Snorlax-Delta-Autumn", "Snorlax-Delta-Winter", "Snorlax-Delta-Sakura"],
 		canHatch: true,
+		gen: 5,
 	},
 	articuno: {
 		num: 144,

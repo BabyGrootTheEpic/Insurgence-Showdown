@@ -2633,6 +2633,21 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		name: "Multitype",
 		rating: 4,
 		num: 121,
+		//Legend Plate:
+		onPrepareHit(source, target, move) {
+			if (move.hasBounced || move.name !== 'Judgment' || source.getItem().id !== 'legendplate'
+			|| source.species.baseSpecies !== 'Arceus' || source.species.forme === 'Primal') return;
+
+			const type = move.type;
+			if (type && /*type !== '???' &&*/ source.getTypes().join() !== type) {
+				let typeForme = 'Arceus';
+				if(type !== 'Normal') {
+					if(type === '???') typeForme += '-Typless';
+					else typeForme += '-' + type;
+				}
+				source.formeChange(typeForme, this.effect);
+			}
+		},
 	},
 	mummy: {
 		name: "Mummy",
