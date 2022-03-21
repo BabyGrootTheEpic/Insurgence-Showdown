@@ -1673,24 +1673,24 @@ export class BattleActions {
 		// types
 		let typeMod = target.runEffectiveness(move);
 
-		if(move.type === 'Shadow')
+		if (move.type === 'Shadow')
 		{
 			//Shadow-type moves are resisted by Shadow Pokémon and super effective against everything else.
-			if(target.hasType('Shadow') || (target.species.name.includes('-Shadow') && target.species.baseSpecies !== 'Calyrex')) {
+			if (target.hasType('Shadow') || (target.species.name.includes('-Shadow') && target.species.baseSpecies !== 'Calyrex')) {
 				typeMod = -1;
 			}
 			else typeMod = 1;
 		}
 
-		if(move.id === 'tesseract')
+		if (move.id === 'tesseract')
 		{
 			//20% chance of being super-effective
-			if(this.battle.random(5) === 0)
+			if (this.battle.random(5) === 0)
 			{
 				//This should make it work properly in Inverse Battles (meaning it will still be super-effective in Inverse Battles, not resisted)
-				if(this.battle.ruleTable.has('Inverse Mod'))
+				if (this.battle.ruleTable.has('Inverse Mod'))
 				{
-					if(typeMod > -1) typeMod = -1;
+					if (typeMod > -1) typeMod = -1;
 				}
 				else if (typeMod < 1) typeMod = 1;
 			}
@@ -1700,6 +1700,8 @@ export class BattleActions {
 			//Always supper-effective (unless target is immune)
 			if (typeMod < 1) typeMod = 1;
 		}
+
+		if (target.volatiles['angelwings']) typeMod++;
 
 		typeMod = this.battle.clampIntRange(typeMod, -6, 6);
 		target.getMoveHitData(move).typeMod = typeMod;

@@ -12859,7 +12859,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		name: "Victini-Delta",
 		baseSpecies: "Victini",
 		forme: "Delta",
-		types: ["Fairy", "Fire"],
+		types: ["Fire", "Fairy"],
 		gender: "N",
 		baseStats: {hp: 100, atk: 100, def: 100, spa: 100, spd: 100, spe: 100},
 		abilities: {0: "Victory Star"},

@@ -167,10 +167,120 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 
 	//Zeta & Omicron:
+	abyssalcrush: {
+		name: "Abyssal Crush",
+		desc: "Deals damage to the target equal to the target's maximum HP. Ignores accuracy and evasiveness modifiers. This attack's accuracy is equal to (user's level - target's level + 30)%, and fails if the target is at a higher level. Pokemon with the Sturdy Ability are immune.",
+		shortDesc: "OHKOs the target. Fails if user is a lower level.",
+	},
+	adapt: {
+		name: "Adapt",
+		desc: "Lowers the user's Attack and raises the user's Defense by 6 stages.",
+		shortDesc: "Lowers Atk and raises Def by 6. Usually goes first.",
+	},
+	angelwings: {
+		name: "Angel Wings",
+		desc: "Raises the user's Attack and Special Attack by 2 stages and raises the user's Speed by 1 stage. The user gains a weakness to every type. Fails if used multiple times.",
+		shortDesc: "+2 Atk, SpA; +1 Spe; +weakness to all types.",
+	},
+	bullethail: {
+		name: "Bullet Hail",
+		desc: "Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times.",
+		shortDesc: "Hits 2-5 times in one turn.",
+	},
+	darkepitaph: {
+		name: "Dark Epitaph",
+		desc: "Deals damage to the target equal to the target's maximum HP. Ignores accuracy and evasiveness modifiers. This attack's accuracy is equal to (user's level - target's level + 30)%, and fails if the target is at a higher level. Pokemon with the Sturdy Ability are immune.",
+		shortDesc: "OHKOs the target. Fails if user is a lower level.",
+	},
+	devour: {
+		name: "Devour",
+		desc: "The user recovers 1/2 the HP lost by the target, rounded half up. If Big Root is held by the user, the HP recovered is 1.3x normal, rounded half down.",
+		shortDesc: "User recovers 50% of the damage dealt.",
+	},
+	dragonflux: {
+		name: "Dragon Flux",
+		desc: "Deals damage to the target equal to the target's maximum HP. Ignores accuracy and evasiveness modifiers. This attack's accuracy is equal to (user's level - target's level + 30)%, and fails if the target is at a higher level. Pokemon with the Sturdy Ability are immune.",
+		shortDesc: "OHKOs the target. Fails if user is a lower level.",
+	},
+	echolocation: {
+		name: "Echolocation",
+		desc: "Raises the user's accuracy by 2 stages.",
+		shortDesc: "Raises the user's accuracy by 2.",
+	},
+	epicenter: {
+		name: "Epicenter",
+		desc: "Raises the user's accuracy by 2 stages.",
+		shortDesc: "Raises the user's accuracy by 2.",
+	},
+	fairyforce: {
+		name: "Fairy Force",
+		desc: "Has a 35% chance to make the target flinch.",
+		shortDesc: "35% chance to make the target flinch.",
+	},
+	fairyfyre: {
+		name: "Fairy Fyre",
+		desc: "This move combines Fire in its type effectiveness against the target.",
+		shortDesc: "Combines Fire in its type effectiveness.",
+	},
+	flashfreeze: {
+		name: "Flash Freeze",
+		desc: "Causes the target to become a Ice type. Fails if the target is an Arceus or a Silvally, or if the target is already purely Ice type.",
+		shortDesc: "Changes the target's type to Ice.",
+	},
+	forestsurge: {
+		name: "Forest Surge",
+		desc: "Deals damage to the target equal to the target's maximum HP. Ignores accuracy and evasiveness modifiers. This attack's accuracy is equal to (user's level - target's level + 30)%, and fails if the target is at a higher level. Pokemon with the Sturdy Ability are immune.",
+		shortDesc: "OHKOs the target. Fails if user is a lower level.",
+	},
+	infernalrage: {
+		name: "Infernal Rage",
+		desc: "Deals damage to the target equal to the target's maximum HP. Ignores accuracy and evasiveness modifiers. This attack's accuracy is equal to (user's level - target's level + 30)%, and fails if the target is at a higher level. Pokemon with the Sturdy Ability are immune.",
+		shortDesc: "OHKOs the target. Fails if user is a lower level.",
+	},
+	nervalcut: {
+		name: "Nerval Cut",
+		desc: "Deals damage to the target equal to the target's maximum HP. Ignores accuracy and evasiveness modifiers. This attack's accuracy is equal to (user's level - target's level + 30)%, and fails if the target is at a higher level. Pokemon with the Sturdy Ability are immune.",
+		shortDesc: "OHKOs the target. Fails if user is a lower level.",
+	},
+	omnifist: {
+		name: "Omnifist",
+		desc: "Deals damage to the target equal to the target's maximum HP. Ignores accuracy and evasiveness modifiers. This attack's accuracy is equal to (user's level - target's level + 30)%, and fails if the target is at a higher level. Pokemon with the Sturdy Ability are immune.",
+		shortDesc: "OHKOs the target. Fails if user is a lower level.",
+	},
+	ragestate: {
+		name: "Rage State",
+		desc: "Lowers the user's Defense and raises the user's Attack by 6 stages.",
+		shortDesc: "Lowers Def and raises Atk by 6. Usually goes first.",
+	},
+	razorstorm: {
+		name: "Razor Storm",
+		desc: "Deals damage to the target equal to the target's maximum HP. Ignores accuracy and evasiveness modifiers. This attack's accuracy is equal to (user's level - target's level + 30)%, and fails if the target is at a higher level. Pokemon with the Sturdy Ability are immune.",
+		shortDesc: "OHKOs the target. Fails if user is a lower level.",
+	},
+	solarcharge: {
+		name: "Solar Charge",
+		desc: "Has a 10% chance to burn the target. If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
+		shortDesc: "Has 33% recoil. 10% chance to burn. Thaws user.",
+	},
+	soulwrecker: {
+		name: "Soul Wrecker",
+		desc: "Deals damage to the target equal to the target's maximum HP. Ignores accuracy and evasiveness modifiers. This attack's accuracy is equal to (user's level - target's level + 30)%, and fails if the target is at a higher level. Pokemon with the Sturdy Ability are immune.",
+		shortDesc: "OHKOs the target. Fails if user is a lower level.",
+	},
 	tesseract: {
 		name: "Tesseract",
 		desc: "Has a 20% chance of being super effective.",
 		shortDesc: "20% chance of being super effective.",
+	},
+	titanicforce: {
+		name: "Titanic Force",
+		desc: "Deals damage to the target equal to the target's maximum HP. Ignores accuracy and evasiveness modifiers. This attack's accuracy is equal to (user's level - target's level + 30)%, and fails if the target is at a higher level. Pokemon with the Sturdy Ability are immune.",
+		shortDesc: "OHKOs the target. Fails if user is a lower level.",
+	},
+	voidcaller: {
+		name: "Void Caller",
+		desc: "Deals damage to the target equal to the target's maximum HP. Ignores accuracy and evasiveness modifiers. This attack's accuracy is equal to (user's level - target's level + 30)%, and fails if the target is at a higher level. Pokemon with the Sturdy Ability are immune.",
+		shortDesc: "OHKOs the target. Fails if user is a lower level.",
 	},
 
 	//Normal & Insurgence:
