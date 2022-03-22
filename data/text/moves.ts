@@ -267,6 +267,10 @@ export const MovesText: {[k: string]: MoveText} = {
 		desc: "Deals damage to the target equal to the target's maximum HP. Ignores accuracy and evasiveness modifiers. This attack's accuracy is equal to (user's level - target's level + 30)%, and fails if the target is at a higher level. Pokemon with the Sturdy Ability are immune.",
 		shortDesc: "OHKOs the target. Fails if user is a lower level.",
 	},
+	terraforce: {
+		name: "Terraforce",
+		shortDesc: "No additional effect.",
+	},
 	tesseract: {
 		name: "Tesseract",
 		desc: "Has a 20% chance of being super effective.",
