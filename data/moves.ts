@@ -372,8 +372,9 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 10,
 		priority: 0,
 		flags: {snatch: 1},
-		onHit(pokemon) {
-			if(!pokemon.volatiles['powertrick']) pokemon.addVolatile('powershift');
+		volatileStatus: 'powershift',
+		onTryHit(target) {
+			if (target.volatiles['powertrick']) return false;
 		},
 		condition: {
 			onStart(pokemon) {
@@ -890,7 +891,8 @@ export const Moves: {[moveid: string]: MoveData} = {
 		basePower: 0,
 		category: "Physical",
 		name: "Infernal Rage",
-		pp: 3,
+		pp: 4,
+		noPPBoosts: true,
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
 		ohko: true,
@@ -997,6 +999,19 @@ export const Moves: {[moveid: string]: MoveData} = {
 		type: "Psychic",
 		zMove: {basePower: 180},
 		maxMove: {basePower: 130},
+	},
+	terraforce: {
+		num: 8030,
+		accuracy: 120,
+		basePower: 60,
+		category: "Physical",
+		name: "Terraforce",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		secondary: null,
+		target: "normal",
+		type: "Steel",
 	},
 	tesseract: {
 		num: 8031,
@@ -14556,8 +14571,9 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 10,
 		priority: 0,
 		flags: {snatch: 1},
-		onHit(pokemon) {
-			if(!pokemon.volatiles['powershift']) pokemon.addVolatile('powertrick');
+		volatileStatus: 'powertrick',
+		onTryHit(target) {
+			if (target.volatiles['powershift']) return false;
 		},
 		condition: {
 			onStart(pokemon) {
