@@ -30,6 +30,7 @@ export function toID(text: any): ID {
 		text = text.roomid;
 	}
 	if (typeof text !== 'string' && typeof text !== 'number') return '';
+	if (text === '???') return text as ID;
 	return ('' + text).toLowerCase().replace(/[^a-z0-9]+/g, '') as ID;
 	/* eslint-enable @typescript-eslint/prefer-optional-chain */
 }
