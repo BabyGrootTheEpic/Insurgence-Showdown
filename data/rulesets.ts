@@ -1892,8 +1892,7 @@ export const Rulesets: {[k: string]: FormatData} = {
 		},
 		onEffectivenessPriority: 1,
 		onEffectiveness(typeMod, target, type, move) {
-			// The effectiveness of Achilles Heel, Freeze Dry on Water, and Corrode on Steel aren't reverted. Tesseract's Inverse Battle functionality is in sim/battle-actions.ts
-			if (move && move.id === 'achillesheel') return;
+			// The effectiveness of Freeze Dry on Water and Corrode on Steel aren't reverted.
 			if (move && move.id === 'freezedry' && type === 'Water') return;
 			if (move && move.id === 'corrode' && type === 'Steel') return;
 			if (move && !this.dex.getImmunity(move, type)) return 1;

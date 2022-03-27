@@ -1682,26 +1682,26 @@ export class BattleActions {
 			else typeMod = 1;
 		}
 
-		if (move.id === 'tesseract')
-		{
-			//20% chance of being super-effective
-			if (this.battle.random(5) === 0)
-			{
-				//This should make it work properly in Inverse Battles (meaning it will still be super-effective in Inverse Battles, not resisted)
-				if (this.battle.ruleTable.has('Inverse Mod'))
-				{
-					if (typeMod > -1) typeMod = -1;
-				}
-				else if (typeMod < 1) typeMod = 1;
-			}
-		}
-		else if(move.id === 'achillesheel' || move.id === 'maxtesseract')
-		{
-			//Always supper-effective (unless target is immune)
-			if (typeMod < 1) typeMod = 1;
+		if (target.volatiles['angelwings']) {
+			if (this.battle.ruleTable.has('inversemod')) typeMod--;
+			else typeMod++;
 		}
 
-		if (target.volatiles['angelwings']) typeMod++;
+		let forceSuperEffective = false;
+		if (move.id === 'tesseract') {
+			//20% chance of being super-effective
+			let chance = 20;
+			if (pokemon.hasAbility('serenegrace')) chance *= 2;
+			if (pokemon.side.getSideCondition('waterpledge')) chance *= 2;
+			if (this.battle.random(100) < chance) forceSuperEffective = true;
+		}
+		else if(move.id === 'achillesheel' || move.id === 'maxtesseract') forceSuperEffective = true;
+		if(forceSuperEffective) {
+			if (this.battle.ruleTable.has('inversemod')) {
+				if (typeMod > -1) typeMod = -1;
+			}
+			else if (typeMod < 1) typeMod = 1;
+		}
 
 		typeMod = this.battle.clampIntRange(typeMod, -6, 6);
 		target.getMoveHitData(move).typeMod = typeMod;
