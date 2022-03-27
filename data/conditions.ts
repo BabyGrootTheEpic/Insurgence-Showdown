@@ -1074,7 +1074,7 @@ export const Conditions: {[k: string]: ConditionData} = {
 		onFieldStart(field, source, effect) {
 			if (effect?.effectType === 'Ability') {
 				if (this.gen <= 5) this.effectState.duration = 0;
-				this.add('-weather', 'NewMoon', '[from] ability: ' + effect, '[of] ' + source);
+				this.add('-weather', 'NewMoon', '[from] ability: ' + effect.name, '[of] ' + source);
 			} else {
 				this.add('-weather', 'NewMoon');
 			}
