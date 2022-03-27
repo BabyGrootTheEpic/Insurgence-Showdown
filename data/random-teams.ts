@@ -550,7 +550,7 @@ export class RandomTeams {
 
 					banReason = ruleTable.check('basepokemon:' + toID(species.baseSpecies));
 					if (banReason) continue;
-					if (banReason !== '' || this.dex.species.get(species.baseSpecies).isNonstandard === species.isNonstandard) {
+					if (banReason !== '' || this.dex.species.get(species.baseSpecies).isNonstandard !== species.isNonstandard) {
 						const nonexistentCheck = Tags.nonexistent.genericFilter!(species) && nonexistentBanReason;
 						let tagWhitelisted = false;
 						let tagBlacklisted = false;
@@ -575,10 +575,10 @@ export class RandomTeams {
 						}
 					}
 				}
+				speciesPool.push(species);
 				const num = species.num;
 				if (pool.includes(num)) continue;
 				pool.push(num);
-				speciesPool.push(species);
 			}
 		}
 
@@ -2248,7 +2248,7 @@ export class RandomTeams {
 				PUBL: 87,
 				PU: 88, "(PU)": 88, NFE: 88,
 			};
-			const customScale: {[k: string]: number} = {delibird: 100, luvdisc: 100, spinda: 100, unown: 100};
+			const customScale: {[k: string]: number} = {delibird: 100, glalie: 76, luvdisc: 100, spinda: 100, unown: 100};
 
 			level = customScale[species.id] || tierScale[species.tier] || 80;
 		// Arbitrary levelling base on data files (typically winrate-influenced)

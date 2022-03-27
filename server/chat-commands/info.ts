@@ -1667,18 +1667,18 @@ export const commands: Chat.ChatCommands = {
 		];
 
 		const indefinitePunishments = [
-			`<strong>Indefinite global punishments</strong>:`,
-			`<strong>permalock</strong> - Issued for repeated instances of bad behavior and is rarely the result of a single action. ` +
-				`These can be appealed in the <a href="https://www.smogon.com/forums/threads/discipline-appeal-rules.3583479/">Discipline Appeal</a>` +
-				` forum after at least 3 months without incident.`,
-			`<strong>permaban</strong> - Unappealable global ban typically issued for the most severe cases of offensive/inappropriate behavior.`,
+			this.tr`<strong>Indefinite global punishments</strong>:`,
+			this.tr`<strong>permalock</strong> - Issued for repeated instances of bad behavior and is rarely the result of a single action. ` +
+				this.tr`These can be appealed in the <a href="https://www.smogon.com/forums/threads/discipline-appeal-rules.3583479/">Discipline Appeal</a>` +
+				this.tr` forum after at least 3 months without incident.`,
+			this.tr`<strong>permaban</strong> - Unappealable global ban typically issued for the most severe cases of offensive/inappropriate behavior.`,
 		];
 
 		this.sendReplyBox(
 			(showRoom ? roomPunishments.map(str => this.tr(str)).join('<br />') : ``) +
 			(showRoom && showGlobal ? `<br /><br />` : ``) +
 			(showGlobal ? globalPunishments.map(str => this.tr(str)).join('<br />') : ``) +
-			(showGlobal ? `<br /><br />${indefinitePunishments.map(str => this.tr(str)).join('<br />')}` : ``)
+			(showGlobal ? `<br /><br />${indefinitePunishments.join('<br />')}` : ``)
 		);
 	},
 	punishmentshelp: [
@@ -1790,9 +1790,9 @@ export const commands: Chat.ChatCommands = {
 	smogintro(target, room, user) {
 		if (!this.runBroadcast()) return;
 		this.sendReplyBox(
-			`Welcome to Smogon's official simulator! The <a href="https://www.smogon.com/forums/forums/264">Smogon Info / Intro Hub</a> can help you get integrated into the community.<br />` +
+			`Welcome to Smogon's official simulator! The <a href="https://www.smogon.com/forums/forums/intro_hub">Information & Resources forum</a> can help you get integrated into the community.<br />` +
 			`- <a href="https://www.smogon.com/forums/threads/3526346">Useful Smogon Info</a><br />` +
-			`- <a href="https://www.smogon.com/forums/threads/3498332">Tiering FAQ</a><br />`
+			`- <a href="https://www.smogon.com/forums/threads/3644714">Tiering FAQ</a><br />`
 		);
 	},
 	smogintrohelp: [`/smogintro - Provides an introduction to Smogon.`],

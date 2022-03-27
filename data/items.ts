@@ -216,7 +216,7 @@ export const Items: {[itemid: string]: ItemData} = {
 			if (target.boosts['spe'] === 6 || noAtkChange || noContraryAtkChange) {
 				return;
 			}
-			if (effect.id === 'intimidate') {
+			if (effect.name === 'Intimidate') {
 				target.useItem();
 			}
 		},
@@ -1865,6 +1865,13 @@ export const Items: {[itemid: string]: ItemData} = {
 				return this.chainModify([4915, 4096]);
 			}
 		},
+		onModifyAtkPriority: 1,
+		onModifyAtk(spd, pokemon) {
+			if (pokemon.baseSpecies.name === 'Clamperl-Delta') {
+				return this.chainModify(2);
+			}
+		},
+		itemUser: ["Clamperl-Delta"],
 		num: 250,
 		gen: 2,
 	},
@@ -1903,6 +1910,13 @@ export const Items: {[itemid: string]: ItemData} = {
 		fling: {
 			basePower: 30,
 		},
+		onModifyDefPriority: 1,
+		onModifyDef(spd, pokemon) {
+			if (pokemon.baseSpecies.name === 'Clamperl-Delta') {
+				return this.chainModify(2);
+			}
+		},
+		itemUser: ["Clamperl-Delta"],
 		num: 235,
 		gen: 2,
 	},
