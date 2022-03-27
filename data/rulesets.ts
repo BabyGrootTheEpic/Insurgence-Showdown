@@ -437,7 +437,7 @@ export const Rulesets: {[k: string]: FormatData} = {
 		effectType: 'ValidatorRule',
 		name: 'Type Change Ability Clause',
 		desc: "Bans abilities that can change a Pokémon's type in battle.",
-		banlist: ['Color Change', 'Forecast', 'Libero', 'Protean', 'Protean Maxima', 'Eevite', 'Multitype + Legend Plate'],
+		banlist: ['Color Change', 'Forecast', 'Libero', 'Mimicry', 'Protean', 'Protean Maxima', 'Eevite', 'Multitype + Legend Plate'],
 		onBegin() {
 			this.add('rule', 'Type Change Ability Clause: Abilities that modify types are banned.');
 		},
