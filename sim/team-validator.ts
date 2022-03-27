@@ -1341,10 +1341,12 @@ export class TeamValidator {
 		const doublesTierTag = 'pokemontag:' + toID(doublesTier);
 		setHas[doublesTierTag] = true;
 
+		/* To support the Stoneless Mega Mod, this check has been moved to data/condition.ts
 		// Only pokemon that can gigantamax should have the Gmax flag
 		if (!tierSpecies.canGigantamax && set.gigantamax) {
 			return `${tierSpecies.name} cannot Gigantamax but is flagged as being able to.`;
 		}
+		*/
 
 		let banReason = ruleTable.check('pokemon:' + species.id);
 		if (banReason) {
