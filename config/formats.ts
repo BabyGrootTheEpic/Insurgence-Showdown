@@ -176,12 +176,12 @@ export const Formats: FormatList = [
 	},
 	{
 		name: "[Gen 8] 24 moves",
-		desc: `Each Pok&eacute;mon may have up to 24 moves. Use the 'Import/Export' feature of the teambuilder to give a Pok&eacute;mon more than 4 moves.`,
+		desc: `Each Pok&eacute;mon may have up to 24 moves, but effort values are banned. Use the 'Import/Export' feature of the teambuilder to give a Pok&eacute;mon more than 4 moves.`,
 		
 		mod: 'gen8',
 		battle: {trunc: Math.trunc},
 		rated: false,
-		ruleset: ['BGTE Standard', 'Singles Bans', 'Max Move Count = 24'],
+		ruleset: ['BGTE Standard', 'Singles Bans', 'Max Move Count = 24', 'EV limit = 3'],
 	},
 	{
 		name: "[Gen 8] Pokebilities",
@@ -507,13 +507,13 @@ export const Formats: FormatList = [
 	},
 	{
 		name: "[Gen 8] (D)24 moves",
-		desc: `Each Pok&eacute;mon may have up to 24 moves. Use the 'Import/Export' feature of the teambuilder to give a Pok&eacute;mon more than 4 moves. This format allows Dynamaxing.`,
+		desc: `Each Pok&eacute;mon may have up to 24 moves, but effort values are banned. Use the 'Import/Export' feature of the teambuilder to give a Pok&eacute;mon more than 4 moves. This format allows Dynamaxing.`,
 		
 		mod: 'gen8',
 		gameType: 'doubles',
 		battle: {trunc: Math.trunc},
 		rated: false,
-		ruleset: ['BGTE Standard', '!Dynamax Clause', 'Max Move Count = 24'],
+		ruleset: ['BGTE Standard', '!Dynamax Clause', 'Max Move Count = 24', 'EV limit = 3'],
 	},
 	{
 		name: "[Gen 8] (D)Pokebilities",
@@ -852,13 +852,13 @@ export const Formats: FormatList = [
 	},
 	{
 		name: "[Gen 8] (T)24 moves",
-		desc: `Each Pok&eacute;mon may have up to 24 moves. Use the 'Import/Export' feature of the teambuilder to give a Pok&eacute;mon more than 4 moves.`,
+		desc: `Each Pok&eacute;mon may have up to 24 moves, but effort values are banned. Use the 'Import/Export' feature of the teambuilder to give a Pok&eacute;mon more than 4 moves.`,
 		
 		mod: 'gen8',
 		gameType: 'triples',
 		battle: {trunc: Math.trunc},
 		rated: false,
-		ruleset: ['BGTE Standard', 'Max Move Count = 24'],
+		ruleset: ['BGTE Standard', 'Max Move Count = 24', 'EV limit = 3'],
 	},
 	{
 		name: "[Gen 8] (T)Pokebilities",
@@ -1213,14 +1213,14 @@ export const Formats: FormatList = [
 	},
 	{
 		name: "[Gen 8] (M)24 moves",
-		desc: `Each Pok&eacute;mon may have up to 24 moves. Use the 'Import/Export' feature of the teambuilder to give a Pok&eacute;mon more than 4 moves.`,
+		desc: `Each Pok&eacute;mon may have up to 24 moves, but effort values are banned. Use the 'Import/Export' feature of the teambuilder to give a Pok&eacute;mon more than 4 moves.`,
 		
 		mod: 'gen8',
 		gameType: 'multi',
 		tournamentShow: false,
 		battle: {trunc: Math.trunc},
 		rated: false,
-		ruleset: ['BGTE Standard', 'Max Move Count = 24'],
+		ruleset: ['BGTE Standard', 'Max Move Count = 24', 'EV limit = 3'],
 	},
 	{
 		name: "[Gen 8] (M)Pokebilities",
@@ -1590,14 +1590,14 @@ export const Formats: FormatList = [
 	},
 	{
 		name: "[Gen 8] FFA 24 moves",
-		desc: `Each Pok&eacute;mon may have up to 24 moves. Use the 'Import/Export' feature of the teambuilder to give a Pok&eacute;mon more than 4 moves.`,
+		desc: `Each Pok&eacute;mon may have up to 24 moves, but effort values are banned. Use the 'Import/Export' feature of the teambuilder to give a Pok&eacute;mon more than 4 moves.`,
 		
 		mod: 'gen8',
 		gameType: 'freeforall',
 		tournamentShow: false,
 		battle: {trunc: Math.trunc},
 		rated: false,
-		ruleset: ['BGTE Standard', 'FFA Bans', 'Max Move Count = 24'],
+		ruleset: ['BGTE Standard', 'FFA Bans', 'Max Move Count = 24', 'EV limit = 3'],
 	},
 	{
 		name: "[Gen 8] FFA Pokebilities",
