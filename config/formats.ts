@@ -181,7 +181,7 @@ export const Formats: FormatList = [
 		mod: 'gen8',
 		battle: {trunc: Math.trunc},
 		rated: false,
-		ruleset: ['BGTE Standard', 'Singles Bans', 'Max Move Count = 24', 'EV limit = 3'],
+		ruleset: ['BGTE Standard', 'Singles Bans', 'Max Move Count = 24', '!! EV Limit = 3'],
 	},
 	{
 		name: "[Gen 8] Pokebilities",
@@ -513,7 +513,7 @@ export const Formats: FormatList = [
 		gameType: 'doubles',
 		battle: {trunc: Math.trunc},
 		rated: false,
-		ruleset: ['BGTE Standard', '!Dynamax Clause', 'Max Move Count = 24', 'EV limit = 3'],
+		ruleset: ['BGTE Standard', '!Dynamax Clause', 'Max Move Count = 24', '!! EV Limit = 3'],
 	},
 	{
 		name: "[Gen 8] (D)Pokebilities",
@@ -858,7 +858,7 @@ export const Formats: FormatList = [
 		gameType: 'triples',
 		battle: {trunc: Math.trunc},
 		rated: false,
-		ruleset: ['BGTE Standard', 'Max Move Count = 24', 'EV limit = 3'],
+		ruleset: ['BGTE Standard', 'Max Move Count = 24', '!! EV Limit = 3'],
 	},
 	{
 		name: "[Gen 8] (T)Pokebilities",
@@ -1220,7 +1220,7 @@ export const Formats: FormatList = [
 		tournamentShow: false,
 		battle: {trunc: Math.trunc},
 		rated: false,
-		ruleset: ['BGTE Standard', 'Max Move Count = 24', 'EV limit = 3'],
+		ruleset: ['BGTE Standard', 'Max Move Count = 24', '!! EV Limit = 3'],
 	},
 	{
 		name: "[Gen 8] (M)Pokebilities",
@@ -1597,7 +1597,7 @@ export const Formats: FormatList = [
 		tournamentShow: false,
 		battle: {trunc: Math.trunc},
 		rated: false,
-		ruleset: ['BGTE Standard', 'FFA Bans', 'Max Move Count = 24', 'EV limit = 3'],
+		ruleset: ['BGTE Standard', 'FFA Bans', 'Max Move Count = 24', '!! EV Limit = 3'],
 	},
 	{
 		name: "[Gen 8] FFA Pokebilities",
