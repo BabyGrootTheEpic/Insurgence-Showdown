@@ -691,7 +691,7 @@ export class RandomTeams {
 			const hasAllMovesBan = ruleTable.check('pokemontag:allmoves');
 			for (const move of this.dex.moves.all()) {
 				// Legality of specific HP types can't be altered in built formats anyway
-				if (move.name.startsWith('Hidden Power ')) continue;
+				if (move.name.startsWith('Hidden Power ') || move.id === 'wishperiodic') continue;
 				let banReason = ruleTable.check('move:' + move.id);
 				if (banReason) continue;
 				if (banReason !== '') {
