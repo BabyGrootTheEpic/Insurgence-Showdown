@@ -38,6 +38,14 @@ export const Formats: FormatList = [
 		team: 'randomHC',
 		ruleset: ['Rndm Hackmons'],
 	},
+	{
+		name: "[Gen 8] Hackmons Cup 24",
+		desc: `Randomized teams of level-balanced Pok&eacute;mon with absolutely any ability, moves, and useful item (excluding CAP). Each player will have 24 Pokémon that will each have 24 moves. This format allows Dynamaxing.`,
+
+		mod: 'gen8',
+		team: 'randomHC',
+		ruleset: ['Rndm Hackmons', 'Max Team Size = 24', 'Max Move Count = 24'],
+	},
 	
 	
 	
@@ -352,6 +360,15 @@ export const Formats: FormatList = [
 		gameType: 'doubles',
 		team: 'randomHC',
 		ruleset: ['Rndm Hackmons'],
+	},
+	{
+		name: "[Gen 8] (D)Hackmons Cup 24",
+		desc: `Randomized teams of level-balanced Pok&eacute;mon with absolutely any ability, moves, and useful item (excluding CAP). Each player will have 24 Pokémon that will each have 24 moves. This format allows Dynamaxing.`,
+
+		mod: 'gen8',
+		gameType: 'doubles',
+		team: 'randomHC',
+		ruleset: ['Rndm Hackmons', 'Max Team Size = 24', 'Max Move Count = 24'],
 	},
 	
 	
@@ -697,6 +714,15 @@ export const Formats: FormatList = [
 		gameType: 'triples',
 		team: 'randomHC',
 		ruleset: ['Rndm Hackmons'],
+	},
+	{
+		name: "[Gen 8] (T)Hackmons Cup 24",
+		desc: `Randomized teams of level-balanced Pok&eacute;mon with absolutely any ability, moves, and useful item (excluding CAP). Each player will have 24 Pokémon that will each have 24 moves. This format allows Dynamaxing.`,
+
+		mod: 'gen8',
+		gameType: 'triples',
+		team: 'randomHC',
+		ruleset: ['Rndm Hackmons', 'Max Team Size = 24', 'Max Move Count = 24'],
 	},
 
 
@@ -1044,6 +1070,16 @@ export const Formats: FormatList = [
 		tournamentShow: false,
 		team: 'randomHC',
 		ruleset: ['Rndm Hackmons'],
+	},
+	{
+		name: "[Gen 8] (M)Hackmons Cup 24",
+		desc: `Randomized teams of level-balanced Pok&eacute;mon with absolutely any ability, moves, and useful item (excluding CAP). Each player will have 24 Pokémon that will each have 24 moves. This format allows Dynamaxing.`,
+
+		mod: 'gen8',
+		gameType: 'multi',
+		tournamentShow: false,
+		team: 'randomHC',
+		ruleset: ['Rndm Hackmons', 'Max Team Size = 24', 'Max Move Count = 24'],
 	},
 
 
@@ -1421,6 +1457,16 @@ export const Formats: FormatList = [
 		tournamentShow: false,
 		team: 'randomHC',
 		ruleset: ['Rndm Hackmons'],
+	},
+	{
+		name: "[Gen 8] FFA Hackmons Cup 24",
+		desc: `Randomized teams of level-balanced Pok&eacute;mon with absolutely any ability, moves, and useful item (excluding CAP). Each player will have 24 Pokémon that will each have 24 moves. This format allows Dynamaxing.`,
+
+		mod: 'gen8',
+		gameType: 'freeforall',
+		tournamentShow: false,
+		team: 'randomHC',
+		ruleset: ['Rndm Hackmons', 'Max Team Size = 24', 'Max Move Count = 24'],
 	},
 
 

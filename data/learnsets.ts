@@ -91418,7 +91418,6 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 	hawlucha: {
 		learnset: {
 			achillesheel: ["6M"],
-			acid: ["6M"],
 			acrobatics: ["8M", "7M", "6M"],
 			aerialace: ["8L12", "7M", "7L16", "6M", "6L16"],
 			agility: ["8M", "7E", "6E"],
