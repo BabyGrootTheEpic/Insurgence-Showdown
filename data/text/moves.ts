@@ -431,7 +431,7 @@ export const MovesText: {[k: string]: MoveText} = {
 	ancientroar: {
 		name: "Ancient Roar",
 		desc: "No additional effect.",
-		shortDesc: "No additional effect. Hits adjacent Pokémon.",
+		shortDesc: "No additional effect.",
 	},
 	appleacid: {
 		name: "Apple Acid",
@@ -1750,7 +1750,7 @@ export const MovesText: {[k: string]: MoveText} = {
 	drakonvoice: {
 		name: "Drakon Voice",
 		desc: "No additional effect.",
-		shortDesc: "No additional effect. Hits adjacent Pokemon.",
+		shortDesc: "No additional effect. Hits adjacent foes.",
 	},
 	dreameater: {
 		name: "Dream Eater",
