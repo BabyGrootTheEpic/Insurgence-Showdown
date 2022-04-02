@@ -259,7 +259,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 	headlongrush: {
 		num: 6007,
 		accuracy: 100,
-		basePower: 100,
+		basePower: 120,
 		category: "Physical",
 		name: "Headlong Rush",
 		pp: 5,
