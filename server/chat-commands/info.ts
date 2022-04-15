@@ -2219,7 +2219,9 @@ export const commands: Chat.ChatCommands = {
 				formatName = formatName.slice(8);
 				formatId = toID(formatName);
 			}
-			if (formatId === 'battlespotdoubles') {
+			if (formatId === 'anythinggoes') {
+				formatId = 'ag';
+			} else if (formatId === 'battlespotdoubles') {
 				formatId = 'battle_spot_doubles';
 			} else if (formatId === 'battlespottriples') {
 				formatId = 'battle_spot_triples';
@@ -2236,7 +2238,7 @@ export const commands: Chat.ChatCommands = {
 				formatId = 'uber';
 			} else if (formatId.includes('vgc')) {
 				formatId = 'vgc' + formatId.slice(-2);
-				formatName = 'VGC20' + formatId.slice(-2);
+				formatName = 'VGC 20' + formatId.slice(-2);
 			} else if (extraFormat.effectType !== 'Format') {
 				formatName = formatId = '';
 			}
@@ -2247,9 +2249,9 @@ export const commands: Chat.ChatCommands = {
 				german: 'de',
 				portuguese: 'pt',
 			};
-			let id = pokemon.id;
+			let id = pokemon.name.toLowerCase();
 			// Special case for Meowstic-M
-			if (id === 'meowstic') id = 'meowsticm' as ID;
+			if (id === 'meowstic') id = 'meowstic-m';
 			if (['ou', 'uu'].includes(formatId) && generation === 'sm' &&
 				room?.settings.language && room.settings.language in supportedLanguages) {
 				// Limited support for translated analysis
@@ -2290,7 +2292,13 @@ export const commands: Chat.ChatCommands = {
 		if (format.id) {
 			let formatName = format.name;
 			let formatId: string = format.id;
-			if (formatId === 'battlespotdoubles') {
+			if (formatName.startsWith('[Gen ') && formatName.slice(6, 8) === '] ') {
+				formatName = formatName.slice(8);
+				formatId = toID(formatName);
+			}
+			if (formatId === 'anythinggoes') {
+				formatId = 'ag';
+			} else if (formatId === 'battlespotdoubles') {
 				formatId = 'battle_spot_doubles';
 			} else if (formatId === 'battlespottriples') {
 				formatId = 'battle_spot_triples';
@@ -2307,7 +2315,7 @@ export const commands: Chat.ChatCommands = {
 				formatId = 'uber';
 			} else if (formatId.includes('vgc')) {
 				formatId = `vgc${formatId.slice(-2)}`;
-				formatName = `VGC20${formatId.slice(-2)}`;
+				formatName = `VGC 20${formatId.slice(-2)}`;
 			} else if (format.effectType !== 'Format') {
 				formatName = formatId = '';
 			}
@@ -2673,7 +2681,9 @@ export const commands: Chat.ChatCommands = {
 	],
 
 	async show(target, room, user, connection) {
-		if (!room?.persist && !this.pmTarget) return this.errorReply(`/show cannot be used in temporary rooms.`);
+		if (!room?.persist && !this.pmTarget && !room?.roomid.startsWith('help-')) {
+			return this.errorReply(`/show cannot be used in temporary rooms.`);
+		}
 		if (!toID(target).trim()) return this.parse(`/help show`);
 		if (Monitor.countNetRequests(connection.ip)) {
 			return this.errorReply(`You are using this command too quickly. Wait a bit and try again.`);
