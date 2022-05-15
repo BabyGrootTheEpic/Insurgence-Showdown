@@ -133,11 +133,11 @@ export const Rulesets: {[k: string]: FormatData} = {
 		name: 'NatDex AAA',
 		desc: "Pok&eacute;mon can use any ability, barring the few that are restricted.",
 		ruleset: ['BGTE Standard', '!Obtainable Abilities', '2 Ability Clause', 'AAA Restricted Abilities', 'Battle Forme Ability Check', 'Choice Pendulum Clause'],
-		banlist: ['Shedinja', 'Ancient Presence', 'Omnitype'], //Glitch is banned by BGTE Standard.
+		banlist: ['Shedinja', 'Sepulcumbra', 'Ancient Presence', 'Omnitype', 'Wonder Guard'], //Glitch is banned by BGTE Standard.
 		restricted: [
 			'Arena Trap', 'Comatose', 'Contrary', 'Fluffy', 'Fur Coat', 'Gorilla Tactics', 'Huge Power', 'Ice Scales', 'Illusion', 'Imposter', 'Innards Out',
 			'Intrepid Sword', 'Libero', 'Magnet Pull', 'Neutralizing Gas', 'Parental Bond', 'Poison Heal', 'Protean', 'Pure Power', 'Simple', 'Shadow Tag',
-			'Speed Boost', 'Stakeout', 'Water Bubble', 'Wonder Guard', //Base Game Abilities
+			'Speed Boost', 'Stakeout', 'Stench', 'Water Bubble', //Base Game Abilities
 			'Athenian', 'Fired Up', 'Chlorofury', 'Phototroph', 'Unleafed', 'Winter Joy', //Insurgence Abilities
 		],
 		//Singles:					unbanlist: ['Missingno.'],

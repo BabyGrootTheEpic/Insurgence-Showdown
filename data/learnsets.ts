@@ -18,7 +18,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			sketch: ["5L50", "5L60", "5L70", "5L80", "5L90", "5L100", "5L110", "5L120"],
 		},
 	},
-	/*divaevus: {
+	divaevus: {
 		learnset: {
 			adapt: ["5L62", "5S0"],
 			agility: ["5L58", "5S0"],
@@ -1474,7 +1474,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			//fumble: ["5M"],
 			//specialshrine: ["5M"],
 			//powershrine: ["5M"],
-			angelwings: ["5M"]
+			angelwings: ["5M"],
 			attract: ["5M"],
 			brickbreak: ["5M"],
 			chargebeam: ["5M"],
@@ -1858,7 +1858,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			zenheadbutt: ["5T"],
 			zombiestrike: ["5M"],
 		},
-	},*/
+	},
 	missingno: {
 		learnset: {
 			blizzard: ["6M", "5M", "3L1"],
@@ -29062,20 +29062,20 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			dualwingbeat: ["8T"],
 			endure: ["8M", "8L60"],
 			facade: ["8M"],
-			fierywrath: ["8L45", "8S0"],
+			fierywrath: ["8L45", "8S0", "8S1"],
 			fly: ["8M"],
 			foulplay: ["8M"],
 			gigaimpact: ["8M"],
 			gust: ["8L1"],
 			hex: ["8M"],
-			hurricane: ["8M", "8L55", "8S0"],
+			hurricane: ["8M", "8L55", "8S0", "8S1"],
 			hyperbeam: ["8M"],
 			hypervoice: ["8M"],
 			imprison: ["8M"],
 			lashout: ["8T"],
 			leer: ["8L1"],
 			memento: ["8L65"],
-			nastyplot: ["8M", "8L50", "8S0"],
+			nastyplot: ["8M", "8L50", "8S0", "8S1"],
 			payback: ["8M", "8L5"],
 			protect: ["8M"],
 			rest: ["8M"],
@@ -29089,7 +29089,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			snore: ["8M"],
 			steelwing: ["8M"],
 			substitute: ["8M"],
-			suckerpunch: ["8L30", "8S0"],
+			suckerpunch: ["8L30", "8S0", "8S1"],
 			swift: ["8M"],
 			taunt: ["8M"],
 			uturn: ["8M"],
@@ -29097,6 +29097,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 		},
 		eventData: [
 			{generation: 8, level: 70, moves: ["fierywrath", "hurricane", "suckerpunch", "nastyplot"]},
+			{generation: 8, level: 70, shiny: true, moves: ["fierywrath", "hurricane", "suckerpunch", "nastyplot"], pokeball: "cherishball"},
 		],
 		eventOnly: true,
 	},

@@ -538,8 +538,7 @@ export class RandomTeams {
 				if (requiredType && !species.types.includes(requiredType)) continue;
 				if (minSourceGen && species.gen < minSourceGen) continue;
 				const num = species.num;
-				//UFI is -925
-				if ((num < 0 && num !== -925) || pool.includes(num)) continue;
+				if (pool.includes(num)) continue;
 				if (num > last) continue;
 				pool.push(num);
 				//Don't check Pokémon below MissingNo in pokedex.ts

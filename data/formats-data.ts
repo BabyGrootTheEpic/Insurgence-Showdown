@@ -4,9 +4,113 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	testmon: {
 		tier: "AG",
 	},
+	divaevus: {
+		//isNonstandard: "Past",
+		tier: "Uber",
+	},
+	maladeux: {
+		//isNonstandard: "Past",
+		tier: "Uber",
+	},
 	ausitto: {
 		//isNonstandard: "Past",
 		tier: "(PU)",
+	},
+	megasparce: {
+		//isNonstandard: "Past",
+		tier: "Uber",
+	},
+	fulsignis: {
+		//isNonstandard: "Past",
+		tier: "Uber",
+	},
+	umilautus: {
+		//isNonstandard: "Past",
+		tier: "Uber",
+	},
+	gaiacastus: {
+		//isNonstandard: "Past",
+		tier: "Uber",
+	},
+	tonitreum: {
+		//isNonstandard: "Past",
+		tier: "Uber",
+	},
+	terranumen: {
+		//isNonstandard: "Past",
+		tier: "Uber",
+	},
+	adamandura: {
+		//isNonstandard: "Past",
+		tier: "Uber",
+	},
+	geludeus: {
+		//isNonstandard: "Past",
+		tier: "Uber",
+	},
+	memorpheus: {
+		//isNonstandard: "Past",
+		tier: "Uber",
+	},
+	certapugno: {
+		//isNonstandard: "Past",
+		tier: "Uber",
+	},
+	ryubestia: {
+		//isNonstandard: "Past",
+		tier: "Uber",
+	},
+	exarego: {
+		//isNonstandard: "Past",
+		tier: "(PU)",
+	},
+	venocoluber: {
+		//isNonstandard: "Past",
+		tier: "(PU)",
+	},
+	ferrocalyps: {
+		//isNonstandard: "Past",
+		tier: "Uber",
+	},
+	sepulcumbra: {
+		//isNonstandard: "Past",
+		tier: "Uber",
+	},
+	caelitus: {
+		//isNonstandard: "Past",
+		tier: "Uber",
+	},
+	leporea: {
+		//isNonstandard: "Past",
+		tier: "(PU)",
+	},
+	warhaxorus: {
+		//isNonstandard: "Past",
+		tier: "Uber",
+	},
+	cybergoomy: {
+		//isNonstandard: "Past",
+		tier: "Uber",
+	},
+	hydreigod: {
+		//isNonstandard: "Past",
+		tier: "Uber",
+	},
+	machamence: {
+		//isNonstandard: "Past",
+		tier: "Uber",
+	},
+	rizeflygon: {
+		//isNonstandard: "Past",
+		tier: "(PU)",
+	},
+	shineflygon: {
+		//isNonstandard: "Past",
+		tier: "Uber",
+	},
+	gigagoomy: {
+		//isNonstandard: "Past",
+		tier: "Uber",
 	},
 	bulbasaur: {
 		tier: "LC",
@@ -87,6 +191,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		//isNonstandard: "Past",
 		tier: "(PU)",
 	},
+	charizarddeltae: {
+		//isNonstandard: "Past",
+		tier: "(PU)",
+	},
 	squirtle: {
 		tier: "LC",
 	},
@@ -126,6 +234,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		randomDoubleBattleLevel: 80,
 		isNonstandard: "Gigantamax",
 		tier: "AG",
+	},
+	blastoisedeltas: {
+		//isNonstandard: "Past",
+		tier: "(PU)",
 	},
 	caterpie: {
 		tier: "LC",
@@ -333,6 +445,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		randomDoubleBattleLevel: 86,
 		tier: "(PU)",
 	},
+	raichudeltas: {
+		//isNonstandard: "Past",
+		tier: "(PU)",
+	},
 	sandshrew: {
 		tier: "LC",
 	},
@@ -412,6 +528,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		randomBattleLevel: 79,
 		randomDoubleBattleMoves: ["auroraveil", "blizzard", "encore", "freezedry", "moonblast"],
 		randomDoubleBattleLevel: 81,
+		tier: "(PU)",
+	},
+	ninetalesdelta: {
+		//isNonstandard: "Past",
 		tier: "(PU)",
 	},
 	igglybuff: {
@@ -647,6 +767,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	machampgmax: {
 		isNonstandard: "Gigantamax",
 		tier: "AG",
+	},
+	machampdelta: {
+		//isNonstandard: "Past",
+		tier: "(PU)",
 	},
 	bellsprout: {
 		//isNonstandard: "Past",
@@ -1317,6 +1441,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		//isNonstandard: "Past",
 		tier: "(PU)",
 	},
+	pinsirdelta: {
+		//isNonstandard: "Past",
+		tier: "(PU)",
+	},
 	tauros: {
 		randomBattleMoves: ["bodyslam", "closecombat", "rockslide", "throatchop", "zenheadbutt"],
 		randomBattleLevel: 82,
@@ -1529,6 +1657,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "(PU)",
 	},
 	aerodactylmega: {
+		//isNonstandard: "Past",
+		tier: "(PU)",
+	},
+	aerodactyldelta: {
 		//isNonstandard: "Past",
 		tier: "(PU)",
 	},
@@ -2198,6 +2330,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		//isNonstandard: "Past",
 		tier: "(PU)",
 	},
+	houndoomdelta: {
+		//isNonstandard: "Past",
+		tier: "(PU)",
+	},
 	phanpy: {
 		//isNonstandard: "Past",
 		tier: "LC",
@@ -2698,6 +2834,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		randomBattleLevel: 84,
 		tier: "(PU)",
 	},
+	aggrondeltai: {
+		//isNonstandard: "Past",
+		tier: "(PU)",
+	},
 	meditite: {
 		//isNonstandard: "Past",
 		tier: "LC",
@@ -2919,6 +3059,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		//isNonstandard: "Past",
 		tier: "(PU)",
 	},
+	zangoosedelta: {
+		//isNonstandard: "Past",
+		tier: "(PU)",
+	},
 	seviper: {
 		//isNonstandard: "Past",
 		tier: "(PU)",
@@ -3018,6 +3162,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		//isNonstandard: "Past",
 		tier: "(PU)",
 	},
+	miloticdeltaf: {
+		//isNonstandard: "Past",
+		tier: "(PU)",
+	},
 	castform: {
 		//isNonstandard: "Past",
 		tier: "(PU)",
@@ -3077,6 +3225,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "LC",
 	},
 	chimecho: {
+		//isNonstandard: "Past",
+		tier: "(PU)",
+	},
+	chimechodelta: {
 		//isNonstandard: "Past",
 		tier: "(PU)",
 	},

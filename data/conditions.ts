@@ -1363,7 +1363,7 @@ export const Conditions: {[k: string]: ConditionData} = {
 				pokemon.formeChange('cramorant');
 			}
 			this.add('-start', pokemon, 'Dynamax', (pokemon.gigantamax && pokemon.species.canGigantamax) ? 'Gmax' : '');
-			if (pokemon.baseSpecies.name === 'Shedinja') return;
+			if (pokemon.baseSpecies.name === 'Shedinja' || pokemon.baseSpecies.name === 'Sepulcumbra') return;
 
 			// Changes based on dynamax level, 2 is max (at LVL 10)
 			const ratio = 2; // TODO: Implement Dynamax levels
@@ -1392,7 +1392,7 @@ export const Conditions: {[k: string]: ConditionData} = {
 		onResidualPriority: -100,
 		onEnd(pokemon) {
 			this.add('-end', pokemon, 'Dynamax');
-			if (pokemon.baseSpecies.name === 'Shedinja') return;
+			if (pokemon.baseSpecies.name === 'Shedinja' || pokemon.baseSpecies.name === 'Sepulcumbra') return;
 			pokemon.hp = pokemon.getUndynamaxedHP();
 			pokemon.maxhp = pokemon.baseMaxhp;
 			this.add('-heal', pokemon, pokemon.getHealth, '[silent]');

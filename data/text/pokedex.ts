@@ -2,8 +2,86 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	testmon: {
 		name: "Testmon",
 	},
+	divaevus: {
+		name: "Divaevus",
+	},
+	maladeux: {
+		name: "Maladeux",
+	},
 	ausitto: {
 		name: "Ausitto",
+	},
+	megasparce: {
+		name: "Megasparce",
+	},
+	fulsignis: {
+		name: "Fulsignis",
+	},
+	umilautus: {
+		name: "Umilautus",
+	},
+	gaiacastus: {
+		name: "Gaiacastus",
+	},
+	tonitreum: {
+		name: "Tonitreum",
+	},
+	terranumen: {
+		name: "Terranumen",
+	},
+	adamandura: {
+		name: "Adamandura",
+	},
+	geludeus: {
+		name: "Geludeus",
+	},
+	memorpheus: {
+		name: "Memorpheus",
+	},
+	certapugno: {
+		name: "Certapugno",
+	},
+	ryubestia: {
+		name: "Ryubestia",
+	},
+	exarego: {
+		name: "Exarego",
+	},
+	venocoluber: {
+		name: "Venocoluber",
+	},
+	ferrocalyps: {
+		name: "Ferrocalyps",
+	},
+	sepulcumbra: {
+		name: "Sepulcumbra",
+	},
+	caelitus: {
+		name: "Caelitus",
+	},
+	leporea: {
+		name: "Leporea",
+	},
+	warhaxorus: {
+		name: "WarHaxorus",
+	},
+	cybergoomy: {
+		name: "CyberGoomy",
+	},
+	hydreigod: {
+		name: "Hydreigod",
+	},
+	machamence: {
+		name: "Machamence",
+	},
+	rizeflygon: {
+		name: "RizeFlygon",
+	},
+	shineflygon: {
+		name: "ShineFlygon",
+	},
+	gigagoomy: {
+		name: "GigaGoomy",
 	},
 	bulbasaur: {
 		name: "Bulbasaur",
@@ -62,6 +140,9 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	charizarddeltamega: {
 		name: "Charizard-Delta-Mega",
 	},
+	charizarddeltae: {
+		name: "Charizard-Delta-E",
+	},
 	squirtle: {
 		name: "Squirtle",
 	},
@@ -88,6 +169,9 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	},
 	blastoisedeltamega: {
 		name: "Blastoise-Delta-Mega",
+	},
+	blastoisedeltas: {
+		name: "Blastoise-Delta-S",
 	},
 	caterpie: {
 		name: "Caterpie",
@@ -227,6 +311,9 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	raichudelta: {
 		name: "Raichu-Delta",
 	},
+	raichudeltas: {
+		name: "Raichu-Delta-S",
+	},
 	sandshrew: {
 		name: "Sandshrew",
 	},
@@ -274,6 +361,9 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	},
 	ninetalesalola: {
 		name: "Ninetales-Alola",
+	},
+	ninetalesdelta: {
+		name: "Ninetales-Delta",
 	},
 	jigglypuff: {
 		name: "Jigglypuff",
@@ -406,6 +496,9 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	},
 	machampgmax: {
 		name: "Machamp-Gmax",
+	},
+	machampdelta: {
+		name: "Machamp-Delta",
 	},
 	bellsprout: {
 		name: "Bellsprout",
@@ -731,6 +824,9 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	pinsirmega: {
 		name: "Pinsir-Mega",
 	},
+	pinsirdelta: {
+		name: "Pinsir-Delta",
+	},
 	tauros: {
 		name: "Tauros",
 	},
@@ -814,6 +910,9 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	},
 	aerodactylmega: {
 		name: "Aerodactyl-Mega",
+	},
+	aerodactyldelta: {
+		name: "Aerodactyl-Delta",
 	},
 	snorlax: {
 		name: "Snorlax",
@@ -1244,6 +1343,9 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	houndoommega: {
 		name: "Houndoom-Mega",
 	},
+	houndoomdelta: {
+		name: "Houndoom-Delta",
+	},
 	kingdra: {
 		name: "Kingdra",
 	},
@@ -1604,6 +1706,9 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	aggrondelta: {
 		name: "Aggron-Delta",
 	},
+	aggrondeltai: {
+		name: "Aggron-Delta-I",
+	},
 	meditite: {
 		name: "Meditite",
 	},
@@ -1748,6 +1853,9 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	zangoose: {
 		name: "Zangoose",
 	},
+	zangoosedelta: {
+		name: "Zangoose-Delta",
+	},
 	seviper: {
 		name: "Seviper",
 	},
@@ -1808,6 +1916,9 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	miloticdeltamega: {
 		name: "Milotic-Delta-Mega",
 	},
+	miloticdeltaf: {
+		name: "Milotic-Delta-F",
+	},
 	castform: {
 		name: "Castform",
 	},
@@ -1846,6 +1957,9 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	},
 	chimecho: {
 		name: "Chimecho",
+	},
+	chimechodelta: {
+		name: "Chimecho-Delta",
 	},
 	absol: {
 		name: "Absol",
