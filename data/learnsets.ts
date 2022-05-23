@@ -59673,9 +59673,9 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 		eventOnly: true,
 	},
 	jirachidelta: {
-		/*learnset: {
+		learnset: {
 			fairyforce: ["5T"],
-		},*/
+		},
 		eventOnly: true,
 	},
 	deoxys: {
@@ -68943,9 +68943,9 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 		eventOnly: true,
 	},
 	victinidelta: {
-		/*learnset: {
+		learnset: {
 			fairyfyre: ["5T"],
-		},*/
+		},
 		eventOnly: true,
 	},
 	snivy: {
