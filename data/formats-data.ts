@@ -90,7 +90,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	},
 	cybergoomy: {
 		//isNonstandard: "Past",
-		tier: "Uber",
+		tier: "AG",
 	},
 	hydreigod: {
 		//isNonstandard: "Past",
@@ -110,7 +110,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	},
 	gigagoomy: {
 		//isNonstandard: "Past",
-		tier: "Uber",
+		tier: "AG",
 	},
 	bulbasaur: {
 		tier: "LC",
