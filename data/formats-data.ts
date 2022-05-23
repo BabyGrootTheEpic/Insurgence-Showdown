@@ -62,11 +62,11 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	},
 	exarego: {
 		//isNonstandard: "Past",
-		tier: "(PU)",
+		tier: "Uber",
 	},
 	venocoluber: {
 		//isNonstandard: "Past",
-		tier: "(PU)",
+		tier: "Uber",
 	},
 	ferrocalyps: {
 		//isNonstandard: "Past",
@@ -82,7 +82,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	},
 	leporea: {
 		//isNonstandard: "Past",
-		tier: "(PU)",
+		tier: "Uber",
 	},
 	warhaxorus: {
 		//isNonstandard: "Past",
