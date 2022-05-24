@@ -12,7 +12,7 @@ export const Rulesets: {[k: string]: FormatData} = {
 	bgtenatdexag: {
 		effectType: 'ValidatorRule',
 		name: 'BGTE NatDex AG',
-		desc: "In addition to Smogon's [Gen 8] National Dex AG, allows level 120 Pokémon, Cosplay Pikachu, Let's GO Starters, Spiky-eared Pichu, Eternal Flower Floette, Totems, duplicate fusions, duplicate LGPE starters, Gems, everything added by the Insurgence fork, and everything added by this fork. (BGTE stands for BabyGrootTheEpic, the creator of this fork.)",
+		desc: "In addition to Smogon's [Gen 8] National Dex AG, allows level 120 Pokémon, Cosplay Pikachu, Let's GO Starters (even both on the same team), Spiky-eared Pichu, Eternal Flower Floette, Totems, multiple fusions on the same team, Gems, everything added by the Insurgence fork, and everything added by this fork. (BGTE stands for BabyGrootTheEpic, the creator of this fork.)",
 		ruleset: [
 			'Obtainable', '!NoFusionDupes', '!Limit One LGPE Starter', 'Max Level = 120', 'Default Level = 100', 'NatDex Megas', 'Sketch Gen 8 Moves',
 			'DynaMega Mod', 'DynaZ Mod', 'Endless Battle Clause', 'Nickname Clause', 'Team Preview', 'HP Percentage Mod', 'Cancel Mod', 'Zoroark-Mega Illusion Thing',
@@ -24,7 +24,7 @@ export const Rulesets: {[k: string]: FormatData} = {
 		name: 'BGTE Standard',
 		desc: "BGTE NatDex AG with a few extra clauses and bans.",
 		//Singles formats should also be given 'Singles Bans'. Free-For-All formats should also be given 'FFA Bans'.
-		ruleset: ['BGTE NatDex AG', 'Species Clause', 'Dynamax Clause', 'Evasion Moves Clause', 'OHKO Clause', 'Moody Clause', 'Planet Series Clause', 'Shadow Clause'],
+		ruleset: ['BGTE NatDex AG', 'Forme Clause', 'Dynamax Clause', 'Evasion Moves Clause', 'OHKO Clause', 'Moody Clause', 'Planet Series Clause', 'Shadow Clause'],
 		banlist: [
 			'Glitch', //Abilities
 			'Permafrost', //'Dark Sonata', //Moves
