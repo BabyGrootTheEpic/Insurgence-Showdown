@@ -2,6 +2,10 @@ export const Aliases: {[alias: string]: string} = {
 	//This Forks' aliases:
 	///////////////////////////////////////////////////////////////////
 
+	//These decide which mega Zoroak-Mega's illusion will default to:
+	charizardmega: "Charizard-Mega-X",
+	mewtwomega: "Mewtwo-Mega-X",
+
 	//megas
 	megadugtrio: "Dugtrio-Mega",
 	megasceptilezo: "Sceptile-Mega-ZO",

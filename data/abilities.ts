@@ -1859,7 +1859,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 				const possibleTarget = pokemon.side.pokemon[i];
 				if (!possibleTarget.fainted) {
 					// pokemon.illusion = possibleTarget;
-					pokemon.illusion = new Pokemon(possibleTarget.set, possibleTarget.side);
+					pokemon.illusion = possibleTarget.illusionClone();
 					break;
 				}
 			}
@@ -5021,9 +5021,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 
 			const target = this.sample(possibleTargets);
 			const ability = target.getAbility();
-			if (pokemon.illusion) {
-				this.add('-ability', pokemon, ability, '[from] ability: Trace', '[of] ' + target, "[silent]");
-			} else {
+			if (!pokemon.illusion) {
 				this.add('-ability', pokemon, ability, '[from] ability: Trace', '[of] ' + target);
 			}
 			pokemon.setAbility(ability);
