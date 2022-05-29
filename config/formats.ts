@@ -138,15 +138,6 @@ export const Formats: FormatList = [
 		ruleset: ['BGTE NatDex AG', 'Inverse Mod'],
 	},
 	{
-		name: "[Gen 8] Max Berries",
-		desc: `All berries have their effects maximized.`,
-
-		mod: 'maxberries',
-		battle: {trunc: Math.trunc},
-		rated: false,
-		ruleset: ['NatDex Max Berries', 'Singles Bans'],
-	},
-	{
 		name: "[Gen 8] Multi Mega",
 		desc: `Removes Mega Evolution limit and Ultra Burst limit.`,
 		
@@ -471,16 +462,6 @@ export const Formats: FormatList = [
 		battle: {trunc: Math.trunc},
 		rated: false,
 		ruleset: ['BGTE NatDex AG', 'Inverse Mod'],
-	},
-	{
-		name: "[Gen 8] (D)Max Berries",
-		desc: `All berries have their effects maximized. This format allows Dynamaxing.`,
-
-		mod: 'maxberries',
-		gameType: 'doubles',
-		battle: {trunc: Math.trunc},
-		rated: false,
-		ruleset: ['NatDex Max Berries', '!Dynamax Clause'],
 	},
 	{
 		name: "[Gen 8] (D)Multi Mega",
@@ -825,16 +806,6 @@ export const Formats: FormatList = [
 		battle: {trunc: Math.trunc},
 		rated: false,
 		ruleset: ['BGTE NatDex AG', 'Inverse Mod'],
-	},
-	{
-		name: "[Gen 8] (T)Max Berries",
-		desc: `All berries have their effects maximized.`,
-
-		mod: 'maxberries',
-		gameType: 'triples',
-		battle: {trunc: Math.trunc},
-		rated: false,
-		ruleset: ['NatDex Max Berries'],
 	},
 	{
 		name: "[Gen 8] (T)Multi Mega",
@@ -1191,17 +1162,6 @@ export const Formats: FormatList = [
 		battle: {trunc: Math.trunc},
 		rated: false,
 		ruleset: ['BGTE NatDex AG', 'Inverse Mod'],
-	},
-	{
-		name: "[Gen 8] (M)Max Berries",
-		desc: `All berries have their effects maximized.`,
-
-		mod: 'maxberries',
-		gameType: 'multi',
-		tournamentShow: false,
-		battle: {trunc: Math.trunc},
-		rated: false,
-		ruleset: ['NatDex Max Berries'],
 	},
 	{
 		name: "[Gen 8] (M)Multi Mega",
@@ -1578,17 +1538,6 @@ export const Formats: FormatList = [
 		battle: {trunc: Math.trunc},
 		rated: false,
 		ruleset: ['BGTE NatDex AG', 'Inverse Mod'],
-	},
-	{
-		name: "[Gen 8] FFA Max Berries",
-		desc: `All berries have their effects maximized.`,
-
-		mod: 'maxberries',
-		gameType: 'freeforall',
-		tournamentShow: false,
-		battle: {trunc: Math.trunc},
-		rated: false,
-		ruleset: ['NatDex Max Berries', 'FFA Bans'],
 	},
 	{
 		name: "[Gen 8] FFA Multi Mega",

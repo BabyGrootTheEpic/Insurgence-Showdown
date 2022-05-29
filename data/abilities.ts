@@ -2121,105 +2121,56 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		num: 102,
 	},
 	lernean: {
-		onResidualOrder: 27,
+		onResidualOrder: 29,
 		onResidual(pokemon) {
-			if (pokemon.baseSpecies.baseSpecies !== 'Hydreigon' || !pokemon.hp) return;
+			if (!pokemon.baseSpecies.id.includes('hydreigonmega') || !pokemon.species.id.includes('hydreigonmega') || !pokemon.hp) {
+				return;
+			}
 			if (pokemon.species.id === 'hydreigonmeganine') return;
 			if (pokemon.hp < (pokemon.maxhp / 5)) {
+				this.add('-activate', pokemon, 'ability: Lernean');
 				pokemon.formeChange('Hydreigon-Mega-Nine', this.effect, true);
 				return;
 			}
 			if (pokemon.species.id === 'hydreigonmegaeight') return;
 			if (pokemon.hp < (2 * pokemon.maxhp / 5)) {
+				this.add('-activate', pokemon, 'ability: Lernean');
 				pokemon.formeChange('Hydreigon-Mega-Eight', this.effect, true);
 				return;
 			}
 			if (pokemon.species.id === 'hydreigonmegaseven') return;
 			if (pokemon.hp < (3 * pokemon.maxhp / 5)) {
+				this.add('-activate', pokemon, 'ability: Lernean');
 				pokemon.formeChange('Hydreigon-Mega-Seven', this.effect, true);
 				return;
 			}
 			if (pokemon.species.id === 'hydreigonmegasix') return;
 			if (pokemon.hp < (4 * pokemon.maxhp / 5)) {
+				this.add('-activate', pokemon, 'ability: Lernean');
 				pokemon.formeChange('Hydreigon-Mega-Six', this.effect, true);
-				return;
-			} else {
-				pokemon.formeChange('Hydreigon-Mega-Five', this.effect, true);
 			}
 		},
-		onDamagePriority: 1,
-		onDamage(damage, target, source, effect) {
-			if (target.baseSpecies.baseSpecies !== 'Hydreigon' || !target.hp) return;
-			if (target.species.id === 'hydreigonmeganine') return;
-			if (target.hp < (target.maxhp / 5)) {
-				target.formeChange('Hydreigon-Mega-Nine', this.effect, true);
-				return;
-			}
-			if (target.species.id === 'hydreigonmegaeight') return;
-			if (target.hp < (2 * target.maxhp / 5)) {
-				target.formeChange('Hydreigon-Mega-Eight', this.effect, true);
-				return;
-			}
-			if (target.species.id === 'hydreigonmegaseven') return;
-			if (target.hp < (3 * target.maxhp / 5)) {
-				target.formeChange('Hydreigon-Mega-Seven', this.effect, true);
-				return;
-			}
-			if (target.species.id === 'hydreigonmegasix') return;
-			if (target.hp < (4 * target.maxhp / 5)) {
-				target.formeChange('Hydreigon-Mega-Six', this.effect, true);
-				return;
-			} else {
-				target.formeChange('Hydreigon-Mega-Five', this.effect, true);
-			}
-		},
-		onPrepareHit(pokemon, target, move) {
-			if (pokemon.baseSpecies.baseSpecies !== 'Hydreigon') return;
-			let n = 1;
-			if (pokemon.species.id === 'hydreigonmegafive') n = 5;
-			if (pokemon.species.id === 'hydreigonmegasix') n = 6;
-			if (pokemon.species.id === 'hydreigonmegaseven') n = 7;
-			if (pokemon.species.id === 'hydreigonmegaeight') n = 8;
-			if (pokemon.species.id === 'hydreigonmeganine') n = 9;
-			if (['iceball', 'rollout', 'dragonrage', 'sonicboom', 'naturalgift', 'fling', 'seismictoss'].includes(move.id)) return;
-			if (move.category !== 'Status' &&
-				!move.selfdestruct && !move.multihit && !move.flags['charge'] && !move.spreadHit && !move.isZ
-			) {
-				move.multihit = n;
+		onPrepareHit(source, target, move) {
+			if (!source.species.id.includes('hydreigonmega')) return;
+			if (move.category === 'Status' || move.selfdestruct || move.multihit) return;
+			if (['dynamaxcannon', 'endeavor', 'fling', 'iceball', 'rollout'].includes(move.id)) return;
+			if (!move.flags['charge'] && !move.spreadHit && !move.isZ && !move.isMax) {
+				if (source.species.id === 'hydreigonmeganine') move.multihit = 9;
+				else if (source.species.id === 'hydreigonmegaeight') move.multihit = 8;
+				else if (source.species.id === 'hydreigonmegaseven') move.multihit = 7;
+				else if (source.species.id === 'hydreigonmegasix') move.multihit = 6;
+				else move.multihit = 5;
 				move.multihitType = 'lernean';
 			}
 		},
-		onBasePowerPriority: 8,
-		onBasePower(basePower, pokemon, target, move) {
-			if (pokemon.baseSpecies.baseSpecies !== 'Hydreigon') return;
-			let n = 1;
-			if (pokemon.species.id === 'hydreigonmegafive') n = 5;
-			if (pokemon.species.id === 'hydreigonmegasix') n = 6;
-			if (pokemon.species.id === 'hydreigonmegaseven') n = 7;
-			if (pokemon.species.id === 'hydreigonmegaeight') n = 8;
-			if (pokemon.species.id === 'hydreigonmeganine') n = 9;
-			const multiplier = (((0.075 * (n - 3)) * (n - move.hit)) / (0.5 * (n - 1)) + 1) / n;
-			if (move.multihitType === 'lernean') return this.chainModify(multiplier);
-		},
-		onModifyMove(move, pokemon) {
-			if (pokemon.baseSpecies.baseSpecies !== 'Hydreigon') return;
-			let n = 1;
-			if (pokemon.species.id === 'hydreigonmegafive') n = 5;
-			if (pokemon.species.id === 'hydreigonmegasix') n = 6;
-			if (pokemon.species.id === 'hydreigonmegaseven') n = 7;
-			if (pokemon.species.id === 'hydreigonmegaeight') n = 8;
-			if (pokemon.species.id === 'hydreigonmeganine') n = 9;
-			if (move.secondaries) {
-				this.debug('balancing secondary chance');
-				for (const secondary of move.secondaries) {
-					if (secondary.chance && move.hit === (n - 1)) {
-						secondary.chance *= 1;
-					} else {
-						secondary.chance = 0;
-					}
-				}
+		// Damage modifier implemented in BattleActions#modifyDamage()
+		onSourceModifySecondaries(secondaries, target, source, move) {
+			if (move.multihitType === 'lernean' && move.id === 'secretpower' && move.hit < 2) {
+				// hack to prevent accidentally suppressing King's Rock/Razor Fang
+				return secondaries.filter(effect => effect.volatileStatus === 'flinch');
 			}
 		},
+		isPermanent: true,
 		name: "Lernean",
 		gen: 6,
 		rating: 4,
@@ -3159,11 +3110,6 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		num: 257,
 	},
 	periodicorbit: {
-		onAfterMoveSecondary(target, source, move) {
-			if (move.id === 'wish') {
-				this.actions.useMove('wishperiodic', source, target);
-			}
-		},
 		name: "Periodic Orbit",
 		gen: 6,
 		rating: 4,
@@ -3378,7 +3324,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			if (!this.effectState.target.hp) return;
 			const ability = target.getAbility();
 			const additionalBannedAbilities = [
-				'noability', 'flowergift', 'forecast', 'hungerswitch', 'illusion', 'imposter', 'neutralizinggas', 'powerofalchemy', 'receiver', 'trace', 'wonderguard',
+				'noability', 'flowergift', 'forecast', 'hungerswitch', 'illusion', 'imposter', 'neutralizinggas', 'powerofalchemy', 'receiver', 'trace', 'wonderguard', 'lernean'
 			];
 			if (target.getAbility().isPermanent || additionalBannedAbilities.includes(target.ability)) return;
 			this.add('-ability', this.effectState.target, ability, '[from] ability: Power of Alchemy', '[of] ' + target);
@@ -3508,7 +3454,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			const move = this.dex.getActiveMove(action.move.id);
 			let type = move.type;
 			const dict = {
-				'Normal': 'Eevee-Mega-Base',
+				'Normal': 'Eevee-Mega',
 				'Water': 'Eevee-Mega-V',
 				'Electric': 'Eevee-Mega-J',
 				'Fire': 'Eevee-Mega-F',
@@ -3540,7 +3486,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			const move = this.dex.getActiveMove(action.move.id);
 			let type = move.type;
 			const dict = {
-				'Normal': 'Eevee-Mega-Base',
+				'Normal': 'Eevee-Mega',
 				'Water': 'Eevee-Mega-V',
 				'Electric': 'Eevee-Mega-J',
 				'Fire': 'Eevee-Mega-F',
@@ -3784,7 +3730,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			if (!this.effectState.target.hp) return;
 			const ability = target.getAbility();
 			const additionalBannedAbilities = [
-				'noability', 'flowergift', 'forecast', 'hungerswitch', 'illusion', 'imposter', 'neutralizinggas', 'powerofalchemy', 'receiver', 'trace', 'wonderguard',
+				'noability', 'flowergift', 'forecast', 'hungerswitch', 'illusion', 'imposter', 'neutralizinggas', 'powerofalchemy', 'receiver', 'trace', 'wonderguard', 'lernean'
 			];
 			if (target.getAbility().isPermanent || additionalBannedAbilities.includes(target.ability)) return;
 			this.add('-ability', this.effectState.target, ability, '[from] ability: Receiver', '[of] ' + target);
@@ -5012,7 +4958,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 
 			const additionalBannedAbilities = [
 				// Zen Mode included here for compatability with Gen 5-6
-				'noability', 'flowergift', 'forecast', 'hungerswitch', 'illusion', 'imposter', 'neutralizinggas', 'powerofalchemy', 'receiver', 'trace', 'zenmode',
+				'noability', 'flowergift', 'forecast', 'hungerswitch', 'illusion', 'imposter', 'neutralizinggas', 'powerofalchemy', 'receiver', 'trace', 'zenmode', 'lernean'
 			];
 			const possibleTargets = pokemon.adjacentFoes().filter(target => (
 				!target.getAbility().isPermanent && !additionalBannedAbilities.includes(target.ability)

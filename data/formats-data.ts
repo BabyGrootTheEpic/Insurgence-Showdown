@@ -1511,7 +1511,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		isNonstandard: "Gigantamax",
 		tier: "AG",
 	},
-	eeveemegabase: {
+	eeveemega: {
 		//isNonstandard: "Past",
 		tier: "(PU)",
 	},
@@ -5109,7 +5109,23 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		randomDoubleBattleLevel: 84,
 		tier: "(PU)",
 	},
-	hydreigonmegafive: {
+	hydreigonmega: {
+		//isNonstandard: "Past",
+		tier: "Uber",
+	},
+	hydreigonmegasix: {
+		//isNonstandard: "Past",
+		tier: "Uber",
+	},
+	hydreigonmegaseven: {
+		//isNonstandard: "Past",
+		tier: "Uber",
+	},
+	hydreigonmegaeight: {
+		//isNonstandard: "Past",
+		tier: "Uber",
+	},
+	hydreigonmeganine: {
 		//isNonstandard: "Past",
 		tier: "Uber",
 	},
@@ -6267,10 +6283,6 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "(PU)",
 	},
 	mimikyutotem: {
-		//isNonstandard: "Past",
-		tier: "(PU)",
-	},
-	mimikyubustedtotem: {
 		//isNonstandard: "Past",
 		tier: "(PU)",
 	},

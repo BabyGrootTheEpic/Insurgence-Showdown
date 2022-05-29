@@ -1651,6 +1651,24 @@ export class BattleActions {
 			const bondModifier = this.battle.gen > 6 ? 0.25 : 0.5;
 			this.battle.debug(`Parental Bond modifier: ${bondModifier}`);
 			baseDamage = this.battle.modify(baseDamage, bondModifier);
+		} else if (move.multihitType === 'lernean') {
+			// Lernean modifier
+			let headCount = -1;
+			if (pokemon.species.id === 'hydreigonmega') headCount = 5;
+			else if (pokemon.species.id === 'hydreigonmegasix') headCount = 6;
+			else if (pokemon.species.id === 'hydreigonmegaseven') headCount = 7;
+			else if (pokemon.species.id === 'hydreigonmegaeight') headCount = 8;
+			else if (pokemon.species.id === 'hydreigonmeganine') headCount = 9;
+
+			if (headCount > 0) {
+				const lerneanModifier = (((0.075 * (headCount - 3)) * (headCount - move.hit)) / (0.5 * (headCount - 1)) + 1) / headCount;
+				this.battle.debug(`Lernean modifier: ${lerneanModifier}`);
+				baseDamage = this.battle.modify(baseDamage, lerneanModifier);
+			} else {
+				console.log(`${pokemon.species.name} just tried to use a lernean multihit, but should't be able to. Its attack: ${move.name}. Its ability: ${pokemon.ability}. Hit #${move.hit}`);
+				this.battle.debug(`Preventing illegal Lernean multihits`);
+				if (move.hit > 0) baseDamage = this.battle.modify(baseDamage, 0);
+			}
 		}
 
 		// weather modifier

@@ -2022,7 +2022,7 @@ export const Items: {[itemid: string]: ItemData} = {
 	eevite: {
 		name: "Eevite",
 		spritenum: 752 + 33,
-		megaStone: "Eevee-Mega-Base",
+		megaStone: "Eevee-Mega",
 		megaEvolves: "Eevee-Tutored",
 		itemUser: ["Eevee-Tutored"],
 		onTakeItem(item, source) {
@@ -3161,7 +3161,7 @@ export const Items: {[itemid: string]: ItemData} = {
 	hydreigonite: {
 		name: "Hydreigonite",
 		spritenum: 752 + 42,
-		megaStone: "Hydreigon-Mega-Five",
+		megaStone: "Hydreigon-Mega",
 		megaEvolves: "Hydreigon",
 		itemUser: ["Hydreigon"],
 		onTakeItem(item, source) {

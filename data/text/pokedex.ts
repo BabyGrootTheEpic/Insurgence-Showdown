@@ -863,7 +863,7 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	eeveetutored: {
 		name: "Eevee-Tutored",
 	},
-	eeveemegabase: {
+	eeveemega: {
 		name: "Eevee-Mega",
 	},
 	vaporeon: {
@@ -3302,8 +3302,20 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	hydreigon: {
 		name: "Hydreigon",
 	},
-	hydreigonmegafive: {
+	hydreigonmega: {
 		name: "Hydreigon-Mega",
+	},
+	hydreigonmegasix: {
+		name: "Hydreigon-Mega-Six",
+	},
+	hydreigonmegaseven: {
+		name: "Hydreigon-Mega-Seven",
+	},
+	hydreigonmegaeight: {
+		name: "Hydreigon-Mega-Eight",
+	},
+	hydreigonmeganine: {
+		name: "Hydreigon-Mega-Nine",
 	},
 	hydreigondelta: {
 		name: "Hydreigon-Delta",

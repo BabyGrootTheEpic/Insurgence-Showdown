@@ -758,8 +758,8 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 	},
 	lernean: {
 		name: "Lernean",
-		desc: "This Pokemon gains a head for each 20% of damage it has taken, it hits once for each head with decreasing damage per hit. It doesn't lose heads on recovery.",
-		shortDesc: "This Pokemon gains more heads the lower it's HP gets and hits once for each head.",
+		desc: "If this Pokemon is a Hydreigon-Mega, it will gain more heads if its HP decreases below 80%, 60%, 40%, or 20%, gaining multiple heads if its HP falls below multiple of these thresholds at once. Restoring HP does not remove heads and more heads will not generate if a threshold has previously been reached. It starts with 5 heads and hits once for each head with decreasing damage per hit.",
+		shortDesc: "If Hydreigon-Mega, gains heads when losing HP and hits once for each head.",
 	},
 	levitate: {
 		name: "Levitate",
@@ -1054,8 +1054,8 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 	},
 	periodicorbit: {
 		name: "Periodic Orbit",
-		desc: "Wish happens after one and three turns, Future Sight and Doom Desire happen after two and five turns. Might not work properly outside of singles.",
-		shortDesc: "Wish, Future Sight and Doom Desire happen twice.",
+		desc: "Wish happens after one and three turns, Future Sight and Doom Desire happen after two and five turns.",
+		shortDesc: "Wish, Future Sight, and Doom Desire happen twice.",
 	},
 	perishbody: {
 		name: "Perish Body",

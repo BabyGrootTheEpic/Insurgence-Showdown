@@ -4345,10 +4345,10 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		color: "Brown",
 		eggGroups: ["Field"],
 		otherFormes: [
-			"Eevee-Mega-Base", "Eevee-Mega-V", "Eevee-Mega-J", "Eevee-Mega-F", "Eevee-Mega-E", "Eevee-Mega-U", "Eevee-Mega-L", "Eevee-Mega-G", "Eevee-Mega-S",
+			"Eevee-Mega", "Eevee-Mega-V", "Eevee-Mega-J", "Eevee-Mega-F", "Eevee-Mega-E", "Eevee-Mega-U", "Eevee-Mega-L", "Eevee-Mega-G", "Eevee-Mega-S",
 		],
 		formeOrder: [
-			"Eevee-Tutored", "Eevee-Mega-Base", "Eevee-Mega-V", "Eevee-Mega-J", "Eevee-Mega-F", "Eevee-Mega-E", "Eevee-Mega-U", "Eevee-Mega-L", "Eevee-Mega-G", "Eevee-Mega-S",
+			"Eevee-Tutored", "Eevee-Mega", "Eevee-Mega-V", "Eevee-Mega-J", "Eevee-Mega-F", "Eevee-Mega-E", "Eevee-Mega-U", "Eevee-Mega-L", "Eevee-Mega-G", "Eevee-Mega-S",
 		],
 		canGigantamax: "G-Max Cuddle",
 	},
@@ -4367,11 +4367,11 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		eggGroups: ["Field"],
 		changesFrom: "Eevee-Tutored",
 	},
-	eeveemegabase: {
+	eeveemega: {
 		num: 133,
-		name: "Eevee-Mega-Base",
+		name: "Eevee-Mega",
 		baseSpecies: "Eevee-Tutored",
-		forme: "Mega-Base",
+		forme: "Mega",
 		types: ["Normal"],
 		genderRatio: {M: 0.875, F: 0.125},
 		baseStats: {hp: 83, atk: 83, def: 83, spa: 83, spd: 83, spe: 83},
@@ -16452,10 +16452,10 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		evoLevel: 64,
 		eggGroups: ["Dragon"],
 		otherFormes: [
-			"Hydreigon-Mega-Five", "Hydreigon-Mega-Six", "Hydreigon-Mega-Seven", "Hydreigon-Mega-Eight", "Hydreigon-Mega-Nine", "Hydreigon-Delta",
+			"Hydreigon-Mega", "Hydreigon-Mega-Six", "Hydreigon-Mega-Seven", "Hydreigon-Mega-Eight", "Hydreigon-Mega-Nine", "Hydreigon-Delta",
 		],
 		formeOrder: [
-			"Hydreigon", "Hydreigon-Mega-Five", "Hydreigon-Mega-Six", "Hydreigon-Mega-Seven", "Hydreigon-Mega-Eight", "Hydreigon-Mega-Nine", "Hydreigon-Delta",
+			"Hydreigon", "Hydreigon-Mega", "Hydreigon-Mega-Six", "Hydreigon-Mega-Seven", "Hydreigon-Mega-Eight", "Hydreigon-Mega-Nine", "Hydreigon-Delta",
 		],
 	},
 	hydreigondelta: {
@@ -16474,11 +16474,11 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		evoLevel: 64,
 		eggGroups: ["Undiscovered"],
 	},
-	hydreigonmegafive: {
+	hydreigonmega: {
 		num: 635,
-		name: "Hydreigon-Mega-Five",
+		name: "Hydreigon-Mega",
 		baseSpecies: "Hydreigon",
-		forme: "Mega-Five",
+		forme: "Mega",
 		types: ["Dark", "Dragon"],
 		baseStats: {hp: 92, atk: 130, def: 105, spa: 170, spd: 105, spe: 98},
 		abilities: {0: "Lernean"},

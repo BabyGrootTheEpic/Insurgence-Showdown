@@ -45,13 +45,6 @@ export const Rulesets: {[k: string]: FormatData} = {
 		ruleset: ['BGTE Standard', '!Max Level', '!Default Level', 'Little Cup Rule'],
 		banlist: ['Dragon Rage', 'Sonic Boom', 'Eevium Z', 'Eevee-Tutored'],
 	},
-	natdexmaxberries: {
-		effectType: 'ValidatorRule',
-		name: 'NatDex Max Berries',
-		desc: "The first two moves in a Pok&eacute;mon's moveset are used simultaneously.", //Requires mod: 'maxberries',
-		ruleset: ['BGTE Standard'],
-		banlist: ['Jaboca Berry', 'Rowap Berry', 'Starf Berry', 'Baton Pass', 'Block', 'Bug Bite', 'Knock Off', 'Mean Look', 'Pluck', 'Substitute'],
-	},
 	natdexpokebilities: {
 		effectType: 'ValidatorRule',
 		name: 'NatDex Pokebilities',
@@ -292,25 +285,6 @@ export const Rulesets: {[k: string]: FormatData} = {
 			this.add('rule', 'Custom Events Clause: Custom events for Mawile and the Tapus are banned');
 		},
 	},
-	periodicorbitclause: {
-		effectType: 'ValidatorRule',
-		name: 'Periodic Orbit Clause',
-		desc: "Bans Preriodic Orbit in non-singles formats, as the ability only works in singles.",
-		onValidateTeam(team) {
-			const gameType = this.format.gameType;
-			if (gameType !== 'singles') {
-				for (const set of team) {
-					if (this.toID(set.ability) === 'periodicorbit') {
-						return [`${set.name}'s ability Periodic Orbit is banned by Periodic Orbit Clause, because it doesn't work in this gamemode.`];
-					}
-					const species = this.toID(set.species);
-					if (this.toID(set.item) === 'jirachite' && (species === 'jirachi' || species === 'jirachimega')) {
-						return [`${set.name}'s item Jirachite is banned by Periodic Orbit Clause, because Jirachi-Mega's ability Periodic Orbit doesn't work in this gamemode.`];
-					}
-				}
-			}
-		},
-	},
 	battleformeabilitycheck: {
 		effectType: 'ValidatorRule',
 		name: 'Battle Forme Ability Check',
@@ -478,7 +452,7 @@ export const Rulesets: {[k: string]: FormatData} = {
 							if (pokemon.species.num === 376) megaID = 'metagrossdeltarcrystal'; //Metagross-Delta-R (376)
 							else megaID += 'zo'; //Sceptile (254) & Swampert (260)
 						}
-					} else if (megaID === 'eeveetutoredmega') megaID = 'eeveemegabase';
+					} else if (megaID === 'eeveetutoredmega') megaID = 'eeveemega';
 
 					const megaSpecies = this.dex.species.get(megaID);
 					if (megaSpecies.exists && megaSpecies.isMega) pokemon.canMegaEvo = megaSpecies.name;
