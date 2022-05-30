@@ -484,6 +484,9 @@ export const Aliases: {[alias: string]: string} = {
 	//moves
 	wildfiretm: "Brush Fire",
 
+	//items
+	steelixite: "Steelixite Steel",
+
 	//singles formats
 	anythinggoes: "[Gen 8] Anything Goes",
 	ag: "[Gen 8] Anything Goes",

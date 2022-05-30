@@ -6286,6 +6286,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		//isNonstandard: "Past",
 		tier: "(PU)",
 	},
+	mimikyubustedtotem: {
+		//isNonstandard: "Past",
+		tier: "(PU)",
+	},
 	bruxish: {
 		//isNonstandard: "Past",
 		tier: "(PU)",

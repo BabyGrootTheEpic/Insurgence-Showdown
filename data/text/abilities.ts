@@ -1066,7 +1066,7 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 	},
 	phototroph: {
 		name: "Phototroph",
-		desc: "Restores 1/16 of this Pokemons maximum HP, rounded down, at the end of each turn. If Sunny Day is active, this Pokemon restores 1/8 of its maximum HP, rounded down, at the end of each turn. Does not heal in Darkness or Rain.",
+		desc: "Restores 1/16 of this Pokemon's maximum HP, rounded down, at the end of each turn. If Sunny Day is active, this Pokemon restores 1/8 of its maximum HP, rounded down, at the end of each turn. Does not heal in Darkness or Rain.",
 		shortDesc: "Restores 1/16 of its max HP each turn. Heals 1/8 in Sun and nothing in Darkness or Rain.",
 	},
 	pickpocket: {

@@ -1858,13 +1858,13 @@ export const Moves: {[moveid: string]: MoveData} = {
 					if (!target.getMoveHitData(move).crit && !move.infiltrates) {
 						this.debug('Aurora Veil weaken');
 						if (this.activePerHalf > 1) {
-							if (this.field.isWeather(['newmoon'])) {
+							if (this.field.isWeather('newmoon')) {
 								return this.chainModify([8, 15]);
 							} else {
 								return this.chainModify([2732, 4096]);
 							}
 						}
-						if (this.field.isWeather(['newmoon'])) {
+						if (this.field.isWeather('newmoon')) {
 							return this.chainModify(0.4);
 						} else {
 							return this.chainModify(0.5);
@@ -5605,7 +5605,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 
 			const additionalBannedSourceAbilities = [
 				// Zen Mode included here for compatability with Gen 5-6
-				'flowergift', 'forecast', 'hungerswitch', 'illusion', 'imposter', 'neutralizinggas', 'powerofalchemy', 'receiver', 'trace', 'zenmode', 'lernean'
+				'flowergift', 'forecast', 'hungerswitch', 'illusion', 'imposter', 'neutralizinggas', 'powerofalchemy', 'receiver', 'trace', 'zenmode',
 			];
 			if (
 				target.ability === source.ability ||
@@ -6366,7 +6366,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		priority: 0,
 		flags: {protect: 1, reflectable: 1, mirror: 1},
 		onModifyMove(move) {
-			if (this.field.isWeather(['newmoon'])) move.boosts = {accuracy: -2};
+			if (this.field.isWeather('newmoon')) move.boosts = {accuracy: -2};
 		},
 		boosts: {
 			accuracy: -1,
@@ -7276,7 +7276,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 			return null;
 		},
 		onModifyMove(move) {
-			if (this.field.isWeather(['newmoon'])) move.boosts = {spa: 1, spd: 1, spe: 1};
+			if (this.field.isWeather('newmoon')) move.boosts = {spa: 1, spd: 1, spe: 1};
 		},
 		boosts: {
 			spa: 2,
@@ -9685,7 +9685,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		priority: 0,
 		flags: {snatch: 1},
 		onModifyMove(move) {
-			if (this.field.isWeather(['newmoon'])) move.boosts = {atk: 2, accuracy: 2};
+			if (this.field.isWeather('newmoon')) move.boosts = {atk: 2, accuracy: 2};
 		},
 		boosts: {
 			atk: 1,
@@ -11002,13 +11002,13 @@ export const Moves: {[moveid: string]: MoveData} = {
 					if (!target.getMoveHitData(move).crit && !move.infiltrates) {
 						this.debug('Light Screen weaken');
 						if (this.activePerHalf > 1) {
-							if (this.field.isWeather(['newmoon'])) {
+							if (this.field.isWeather('newmoon')) {
 								return this.chainModify([8, 15]);
 							} else {
 								return this.chainModify([2732, 4096]);
 							}
 						}
-						if (this.field.isWeather(['newmoon'])) {
+						if (this.field.isWeather('newmoon')) {
 							return this.chainModify(0.4);
 						} else {
 							return this.chainModify(0.5);
@@ -11267,7 +11267,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 				return;
 			}
 			this.add('-prepare', attacker, move.name, defender);
-			if (this.field.isWeather(['newmoon'])) {
+			if (this.field.isWeather('newmoon')) {
 				this.attrLastMove('[still]');
 				this.addMove('-anim', attacker, move.name, defender);
 				return;
@@ -13378,7 +13378,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 			},
 			onResidualOrder: 11,
 			onResidual(pokemon) {
-				if (this.field.isWeather(['newmoon'])) {
+				if (this.field.isWeather('newmoon')) {
 					this.damage(pokemon.baseMaxhp / 2);
 				} else {
 					this.damage(pokemon.baseMaxhp / 4);
@@ -15415,13 +15415,13 @@ export const Moves: {[moveid: string]: MoveData} = {
 					if (!target.getMoveHitData(move).crit && !move.infiltrates) {
 						this.debug('Reflect weaken');
 						if (this.activePerHalf > 1) {
-							if (this.field.isWeather(['newmoon'])) {
+							if (this.field.isWeather('newmoon')) {
 								return this.chainModify([8, 15]);
 							} else {
 								return this.chainModify([2732, 4096]);
 							}
 						}
-						if (this.field.isWeather(['newmoon'])) {
+						if (this.field.isWeather('newmoon')) {
 							return this.chainModify(0.4);
 						} else {
 							return this.chainModify(0.5);
@@ -15522,7 +15522,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 				pokemon.formeChange('Meloetta' + meloettaForme, this.effect, false, '[msg]');
 			}
 			if (move.willChangeFormeDelta) {
-				const meloettaForme = pokemon.species.id === 'meloettadeltamagician' ? '-Mime' : '-Magician';
+				const meloettaForme = pokemon.species.id === 'meloettadeltamagician' ? '' : '-Magician';
 				pokemon.formeChange('Meloetta-Delta' + meloettaForme, this.effect, true, '[msg]');
 			}
 		},
@@ -15906,7 +15906,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 
 			const additionalBannedTargetAbilities = [
 				// Zen Mode included here for compatability with Gen 5-6
-				'flowergift', 'forecast', 'hungerswitch', 'illusion', 'imposter', 'neutralizinggas', 'powerofalchemy', 'receiver', 'trace', 'wonderguard', 'zenmode', 'lernean'
+				'flowergift', 'forecast', 'hungerswitch', 'illusion', 'imposter', 'neutralizinggas', 'powerofalchemy', 'receiver', 'trace', 'wonderguard', 'zenmode',
 			];
 
 			if (target.getAbility().isPermanent || additionalBannedTargetAbilities.includes(target.ability) ||
@@ -19079,7 +19079,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		priority: 0,
 		flags: {protect: 1, mirror: 1, nonsky: 1},
 		onBasePower(basePower, pokemon, target) {
-			if (this.field.isWeather(['newmoon'])) {
+			if (this.field.isWeather('newmoon')) {
 				this.debug('weakened by weather');
 				return this.chainModify(1.5);
 			}

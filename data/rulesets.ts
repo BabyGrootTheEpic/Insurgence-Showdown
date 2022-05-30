@@ -343,7 +343,6 @@ export const Rulesets: {[k: string]: FormatData} = {
 		name: 'Useless Items Clause',
 		desc: "Bans items with no effect.",
 		banlist: [
-			'Dragon Scale', //NYI
 			'TR00', 'TR01', 'TR02', 'TR03', 'TR04', 'TR05', 'TR06', 'TR07', 'TR08', 'TR09', 'TR10', 'TR11', 'TR12', 'TR13', 'TR14', 'TR15', 'TR16', 'TR17', 'TR18', 'TR19', 'TR20',
 			'TR21', 'TR22', 'TR23', 'TR24', 'TR25', 'TR26', 'TR27', 'TR28', 'TR29', 'TR30', 'TR31', 'TR32', 'TR33', 'TR34', 'TR35', 'TR36', 'TR37', 'TR38', 'TR39', 'TR40', 'TR41',
 			'TR42', 'TR43', 'TR44', 'TR45', 'TR46', 'TR47', 'TR48', 'TR49', 'TR50', 'TR51', 'TR52', 'TR53', 'TR54', 'TR55', 'TR56', 'TR57', 'TR58', 'TR59', 'TR60', 'TR61', 'TR62',
@@ -378,7 +377,7 @@ export const Rulesets: {[k: string]: FormatData} = {
 			'Blue Orb', 'Crystal Piece Arceus', 'Crystal Piece Giratina', 'Crystal Piece Regigigas', 'Red Orb', //Primal formes' items
 			'Burn Drive', 'Chill Drive', 'Douse Drive', 'Shock Drive', //Drives
 			'Adamant Orb', 'Griseous Orb', 'Lustrous Orb', //Origin formes' items
-			'Deep Sea Scale', 'Deep Sea Tooth', /*'Dragon Scale',*/ 'Leek', 'Legend Plate', 'Light Ball', 'Lucky Punch', 'Metal Powder', 'Quick Powder', 'Rusted Shield',
+			'Deep Sea Scale', 'Deep Sea Tooth', 'Dragon Scale', 'Leek', 'Legend Plate', 'Light Ball', 'Lucky Punch', 'Metal Powder', 'Quick Powder', 'Rusted Shield',
 			'Rusted Sword', 'Soul Dew', 'Stick', 'Thick Club', 'Vile Vial', 
 		],
 		onBegin() {

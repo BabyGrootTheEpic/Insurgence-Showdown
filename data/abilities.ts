@@ -1364,15 +1364,17 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		num: 108,
 	},
 	foundry: {
-		onModifyMovePriority: -1,
+		onModifyTypePriority: -1,
 		onModifyType(move, pokemon) {
-			const noModifyType = ['judgment', 'multiattack', 'naturalgift', 'revelationdance', 'technoblast', 'weatherball'];
+			const noModifyType = [
+				'judgment', 'multiattack', 'naturalgift', 'revelationdance', 'technoblast', 'terrainpulse', 'weatherball',
+			];
 			if (move.type === 'Rock' && !noModifyType.includes(move.id) && !(move.isZ && move.category !== 'Status')) {
 				move.type = 'Fire';
 				move.foundryBoosted = true;
 			}
 		},
-		onBasePowerPriority: 8,
+		onBasePowerPriority: 23,
 		onBasePower(basePower, pokemon, target, move) {
 			if (move.foundryBoosted) return this.chainModify([4915, 4096]);
 		},
@@ -1382,7 +1384,6 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 				this.actions.useMove('stealthcoal', pokemon, target);
 				return null;
 			}
-			return;
 		},
 		name: "Foundry",
 		gen: 6,
@@ -1988,15 +1989,17 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		num: 22,
 	},
 	intoxicate: {
-		onModifyMovePriority: -1,
+		onModifyTypePriority: -1,
 		onModifyType(move, pokemon) {
-			const noModifyType = ['judgment', 'multiattack', 'naturalgift', 'revelationdance', 'technoblast', 'weatherball'];
+			const noModifyType = [
+				'judgment', 'multiattack', 'naturalgift', 'revelationdance', 'technoblast', 'terrainpulse', 'weatherball',
+			];
 			if (move.type === 'Normal' && !noModifyType.includes(move.id) && !(move.isZ && move.category !== 'Status')) {
 				move.type = 'Poison';
 				move.intoxicateBoosted = true;
 			}
 		},
-		onBasePowerPriority: 8,
+		onBasePowerPriority: 23,
 		onBasePower(basePower, pokemon, target, move) {
 			if (move.intoxicateBoosted) return this.chainModify([4915, 4096]);
 		},
@@ -3324,7 +3327,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			if (!this.effectState.target.hp) return;
 			const ability = target.getAbility();
 			const additionalBannedAbilities = [
-				'noability', 'flowergift', 'forecast', 'hungerswitch', 'illusion', 'imposter', 'neutralizinggas', 'powerofalchemy', 'receiver', 'trace', 'wonderguard', 'lernean'
+				'noability', 'flowergift', 'forecast', 'hungerswitch', 'illusion', 'imposter', 'neutralizinggas', 'powerofalchemy', 'receiver', 'trace', 'wonderguard',
 			];
 			if (target.getAbility().isPermanent || additionalBannedAbilities.includes(target.ability)) return;
 			this.add('-ability', this.effectState.target, ability, '[from] ability: Power of Alchemy', '[of] ' + target);
@@ -3730,7 +3733,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			if (!this.effectState.target.hp) return;
 			const ability = target.getAbility();
 			const additionalBannedAbilities = [
-				'noability', 'flowergift', 'forecast', 'hungerswitch', 'illusion', 'imposter', 'neutralizinggas', 'powerofalchemy', 'receiver', 'trace', 'wonderguard', 'lernean'
+				'noability', 'flowergift', 'forecast', 'hungerswitch', 'illusion', 'imposter', 'neutralizinggas', 'powerofalchemy', 'receiver', 'trace', 'wonderguard',
 			];
 			if (target.getAbility().isPermanent || additionalBannedAbilities.includes(target.ability)) return;
 			this.add('-ability', this.effectState.target, ability, '[from] ability: Receiver', '[of] ' + target);
@@ -4701,8 +4704,8 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			}
 		},
 		onEnd(pokemon) {
-			if (pokemon.species.name === 'Typhlosion-Delta-Mega' || !pokemon.hp) return;
-			if (pokemon.species.name === 'Typhlosion-Delta-Mega-Active') pokemon.formeChange('Typhlosion-Delta-Mega', this.effect, false);
+			if (pokemon.species.name !== 'Typhlosion-Delta-Mega-Active' || !pokemon.hp) return;
+			pokemon.formeChange('Typhlosion-Delta-Mega', this.effect, false);
 		},
 		name: "Supercell",
 		gen: 6,
@@ -4958,7 +4961,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 
 			const additionalBannedAbilities = [
 				// Zen Mode included here for compatability with Gen 5-6
-				'noability', 'flowergift', 'forecast', 'hungerswitch', 'illusion', 'imposter', 'neutralizinggas', 'powerofalchemy', 'receiver', 'trace', 'zenmode', 'lernean'
+				'noability', 'flowergift', 'forecast', 'hungerswitch', 'illusion', 'imposter', 'neutralizinggas', 'powerofalchemy', 'receiver', 'trace', 'zenmode',
 			];
 			const possibleTargets = pokemon.adjacentFoes().filter(target => (
 				!target.getAbility().isPermanent && !additionalBannedAbilities.includes(target.ability)

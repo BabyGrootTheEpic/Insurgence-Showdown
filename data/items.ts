@@ -4279,7 +4279,7 @@ export const Items: {[itemid: string]: ItemData} = {
 			basePower: 60,
 		},
 		onTakeItem(item, pokemon, source) {
-			if ((source && source.baseSpecies.num === 150) || pokemon.baseSpecies.num === 150) {
+			if ((source && source.baseSpecies.baseSpecies === 'Mewtwo') || pokemon.baseSpecies.baseSpecies === 'Mewtwo') {
 				return false;
 			}
 			return true;
@@ -7641,8 +7641,7 @@ export const Items: {[itemid: string]: ItemData} = {
 			basePower: 60,
 		},
 		onTakeItem(item, pokemon, source) {
-			if ((source && (source.species.id === 'volcaronadelta' || source.species.id === 'volcaronadeltaarmor'))
-			|| pokemon.species.id === 'volcaronadelta' || pokemon.species.id === 'volcaronadeltaarmor') {
+			if ((source && source.baseSpecies.baseSpecies === 'Volcarona-Delta') || pokemon.baseSpecies.baseSpecies === 'Volcarona-Delta') {
 				return false;
 			}
 			return true;

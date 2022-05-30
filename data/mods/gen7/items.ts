@@ -555,7 +555,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 		inherit: true,
 		isNonstandard: null,
 	},
-	steelixite: {
+	steelixitesteel: {
 		inherit: true,
 		isNonstandard: null,
 	},

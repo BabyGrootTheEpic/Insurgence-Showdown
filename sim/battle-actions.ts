@@ -1717,8 +1717,7 @@ export class BattleActions {
 		if(forceSuperEffective) {
 			if (this.battle.ruleTable.has('inversemod')) {
 				if (typeMod > -1) typeMod = -1;
-			}
-			else if (typeMod < 1) typeMod = 1;
+			} else if (typeMod < 1) typeMod = 1;
 		}
 
 		typeMod = this.battle.clampIntRange(typeMod, -6, 6);
