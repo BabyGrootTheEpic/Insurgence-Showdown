@@ -52,7 +52,7 @@ export const Rulesets: {[k: string]: FormatData} = {
 		ruleset: ['BGTE Standard', 'Pokebilities Mod'],
 		banlist: [
 			'AG', 'Uber', 'Power Construct',
-			'Glalie', 'Octillery', 'Remoraid', 'Snorunt', 'Bidoof', 'Bibarel', 'Smeargle', //Moody
+			'Glalie', 'Octillery', 'Remoraid', 'Snorunt', 'Bidoof', 'Bibarel', 'Smeargle', 'Geludeus', 'Umilautus' //Moody
 		],
 		//Singles:	banlist: ['Diglett-Base', 'Dugtrio-Base', 'Trapinch', 'Gothita', 'Gothitelle', 'Gothorita', 'Wobbuffet', 'Wynaut'], //Arena Trap & Shadow Tag
 	},
@@ -636,7 +636,7 @@ export const Rulesets: {[k: string]: FormatData} = {
 		desc: "Pok&eacute;mon have all of their released abilities simultaneously.", //Requres mod: 'pokebilities',
 		/*banlist: [
 			// Moody:
-			'Glalie', 'Octillery', 'Remoraid', 'Snorunt', 'Bidoof', 'Bibarel', 'Smeargle',
+			'Glalie', 'Octillery', 'Remoraid', 'Snorunt', 'Bidoof', 'Bibarel', 'Smeargle', 'Geludeus', 'Umilautus'
 			//Arena Trap:
 			'Diglett-Base', 'Dugtrio-Base', 'Trapinch',
 			// Shadow Tag:

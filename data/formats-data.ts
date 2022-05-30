@@ -26,7 +26,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	},
 	umilautus: {
 		//isNonstandard: "Past",
-		tier: "Uber",
+		tier: "AG", //Its only ability is banned in Ubers
 	},
 	gaiacastus: {
 		//isNonstandard: "Past",
@@ -46,7 +46,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	},
 	geludeus: {
 		//isNonstandard: "Past",
-		tier: "Uber",
+		tier: "AG", //Its only ability is banned in Ubers
 	},
 	memorpheus: {
 		//isNonstandard: "Past",
