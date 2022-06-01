@@ -1037,10 +1037,11 @@ export class BattleActions {
 		}
 
 		// 4. self drops (start checking for targets[i] === false here)
-		if (moveData.self && !move.selfDropped) this.selfDrops(targets, pokemon, move, moveData, isSecondary);
+		const lerneanBlock = move.multihitType === 'lernean' && typeof move.multihit === 'number' && move.multihit - move.hit !== 0 && target && target.hp > 0;
+		if (moveData.self && !move.selfDropped && !lerneanBlock) this.selfDrops(targets, pokemon, move, moveData, isSecondary);
 
 		// 5. secondary effects
-		if (moveData.secondaries) this.secondaries(targets, pokemon, move, moveData, isSelf);
+		if (moveData.secondaries && !lerneanBlock) this.secondaries(targets, pokemon, move, moveData, isSelf);
 
 		// 6. force switch
 		if (moveData.forceSwitch) damage = this.forceSwitch(damage, targets, pokemon, move);
@@ -1651,24 +1652,11 @@ export class BattleActions {
 			const bondModifier = this.battle.gen > 6 ? 0.25 : 0.5;
 			this.battle.debug(`Parental Bond modifier: ${bondModifier}`);
 			baseDamage = this.battle.modify(baseDamage, bondModifier);
-		} else if (move.multihitType === 'lernean') {
+		} else if (move.multihitType === 'lernean' && typeof move.multihit === 'number' && move.multihit > 0) {
 			// Lernean modifier
-			let headCount = -1;
-			if (pokemon.species.id === 'hydreigonmega') headCount = 5;
-			else if (pokemon.species.id === 'hydreigonmegasix') headCount = 6;
-			else if (pokemon.species.id === 'hydreigonmegaseven') headCount = 7;
-			else if (pokemon.species.id === 'hydreigonmegaeight') headCount = 8;
-			else if (pokemon.species.id === 'hydreigonmeganine') headCount = 9;
-
-			if (headCount > 0) {
-				const lerneanModifier = (((0.075 * (headCount - 3)) * (headCount - move.hit)) / (0.5 * (headCount - 1)) + 1) / headCount;
-				this.battle.debug(`Lernean modifier: ${lerneanModifier}`);
-				baseDamage = this.battle.modify(baseDamage, lerneanModifier);
-			} else {
-				console.log(`${pokemon.species.name} just tried to use a lernean multihit, but should't be able to. Its attack: ${move.name}. Its ability: ${pokemon.ability}. Hit #${move.hit}`);
-				this.battle.debug(`Preventing illegal Lernean multihits`);
-				if (move.hit > 0) baseDamage = this.battle.modify(baseDamage, 0);
-			}
+			const lerneanModifier = (((0.075 * (move.multihit - 3)) * (move.multihit - move.hit)) / (0.5 * (move.multihit - 1)) + 1) / move.multihit;
+			this.battle.debug(`Lernean modifier: ${lerneanModifier}`);
+			baseDamage = this.battle.modify(baseDamage, lerneanModifier);
 		}
 
 		// weather modifier
