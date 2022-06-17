@@ -126,7 +126,7 @@ export const Rulesets: {[k: string]: FormatData} = {
 		effectType: 'ValidatorRule',
 		name: 'NatDex AAA',
 		desc: "Pok&eacute;mon can use any ability, barring the few that are restricted.",
-		ruleset: ['BGTE Standard', '!Obtainable Abilities', '2 Ability Clause', 'AAA Restricted Abilities', 'Battle Forme Ability Check', 'Choice Pendulum Clause'],
+		ruleset: ['BGTE Standard', '!Obtainable Abilities', '2 Ability Clause', 'AAA Restricted Abilities', 'Choice Pendulum Clause'],
 		banlist: ['Shedinja', 'Sepulcumbra', 'Ancient Presence', 'Omnitype', 'Wonder Guard'], //Glitch is banned by BGTE Standard.
 		restricted: [
 			'Arena Trap', 'Comatose', 'Contrary', 'Fluffy', 'Fur Coat', 'Gorilla Tactics', 'Huge Power', 'Ice Scales', 'Illusion', 'Imposter', 'Innards Out',
@@ -284,23 +284,6 @@ export const Rulesets: {[k: string]: FormatData} = {
 		],
 		onBegin() {
 			this.add('rule', 'Custom Events Clause: Custom events for Mawile and the Tapus are banned');
-		},
-	},
-	battleformeabilitycheck: {
-		effectType: 'ValidatorRule',
-		name: 'Battle Forme Ability Check',
-		desc: "Prevents Zacian-Crowned and Zamazenta-Crowned from having an illegal ability, since they are battle-only formes.",
-		onValidateSet(set) {
-			// Temporary fix until battle-only is implemented properly
-			const species = this.toID(set.species);
-			const ability = this.toID(set.ability);
-			const item = this.toID(set.item);
-			if (species === 'zamazentacrowned' && ability !== 'dauntlessshield' && item === 'rustedshield') {
-				return [`Zamazenta-Crowned can only use Dauntless Shield because it is a battle-only forme.`];
-			}
-			if (species === 'zaciancrowned' && ability !== 'intrepidsword' && item === 'rustedsword') {
-				return [`Zacian-Crowned can only use Intrepid Sword because it is a battle-only forme.`];
-			}
 		},
 	},
 	choicependulumclause: {
