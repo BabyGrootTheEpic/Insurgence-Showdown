@@ -1057,11 +1057,11 @@ export const Conditions: {[k: string]: ConditionData} = {
 		},
 		onWeatherModifyDamage(damage, attacker, defender, move) {
 			if (move.type === 'Dark' || move.type === 'Ghost') {
-				this.debug('newmoon damage boost');
+				this.debug('New Moon damage boost');
 				return this.chainModify(1.35);
 			}
 			if (move.type === 'Fairy') {
-				this.debug('newmoon fairy weaken');
+				this.debug('New Moon fairy weaken');
 				return this.chainModify(0.75);
 			}
 		},
@@ -1345,8 +1345,8 @@ export const Conditions: {[k: string]: ConditionData} = {
 	dynamax: {
 		name: 'Dynamax',
 		noCopy: true,
-		duration: 3,
 		onStart(pokemon) {
+			this.effectState.turns = 0;
 			pokemon.removeVolatile('minimize');
 			pokemon.removeVolatile('substitute');
 			if (pokemon.volatiles['torment']) {
@@ -1384,6 +1384,9 @@ export const Conditions: {[k: string]: ConditionData} = {
 			return null;
 		},
 		onResidualPriority: -100,
+		onResidual() {
+			this.effectState.turns++;
+		},
 		onEnd(pokemon) {
 			this.add('-end', pokemon, 'Dynamax');
 			if (pokemon.baseSpecies.name === 'Shedinja' || pokemon.baseSpecies.name === 'Sepulcumbra') return;
