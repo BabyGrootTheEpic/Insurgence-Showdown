@@ -4628,6 +4628,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 						effectType: 'Move',
 						isFutureMove: true,
 						type: 'Steel',
+						recentForme: source.species,
 					},
 				});
 			}
@@ -7147,6 +7148,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 						effectType: 'Move',
 						isFutureMove: true,
 						type: 'Psychic',
+						recentForme: source.species,
 					},
 				});
 			}
